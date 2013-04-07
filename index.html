@@ -9,8 +9,7 @@
   <meta name="author" content="ftakao2007">
 
   
-  <meta name="description" content="ec2関連のまとめ EC2にDropboxをインストールしてOctopressの記事を共有する 概要 Octopressの記事はローカルに保存して編集するので、通常その環境でしか作業できない。
-DropboxにOctopressの記事を置くことで、様々な環境で記事を編集できるようにする。 &hellip;">
+  <meta name="description" content="ec2関連のまとめ EC2にDropboxをインストールしてOctopressの記事を共有する ※※※ Dropbox上のファイルが消失する可能性のある作業が含まれますので以下作業をする場合は自己責任でお願いしますm( )m 概要 Octopressの記事はローカルに保存して編集するので、 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -99,6 +98,8 @@ DropboxにOctopressの記事を置くことで、様々な環境で記事を編�
 
 <h1>EC2にDropboxをインストールしてOctopressの記事を共有する</h1>
 
+<p>※※※ Dropbox上のファイルが消失する可能性のある作業が含まれますので以下作業をする場合は自己責任でお願いしますm(<em> </em>)m</p>
+
 <h2>概要</h2>
 
 <p>Octopressの記事はローカルに保存して編集するので、通常その環境でしか作業できない。
@@ -175,7 +176,7 @@ DropboxにOctopressの記事を置くことで、様々な環境で記事を編�
 
 <p>Dropboxを起動すると即同期がはじまります。デフォルトではDropboxのすべてのファイル
 同期が始まるのですが、ここで焦ってファイルを削除すると必要なDropbox上の大元のファイルを削除してしまう可能性があります。
-rmなどで直接削除せず、exclude addを実行しましょう(コマンド実行後、反映されるまで1分くらいかかることがあります)。
+rmなどで直接削除せず、exclude addを実行してください(コマンド実行後、反映されるまで1分くらいかかることがあります)。
 実行が完了すると対象ファイルは見えなくなります。</p>
 
 <p>あと、普段は停止して必要な時のみ同期させてリソースを節約したほうがよいかもです。</p>
@@ -248,10 +249,10 @@ rmなどで直接削除せず、exclude addを実行しましょう(コマンド
 
 <p>接続しようとすると<code>fatal: The remote end hung up unexpectedly</code>のエラーがでるのでsshの権限を設定する</p>
 
-<p><a href="http://d.hatena.ne.jp/tmd45/20110203/1296744114">githubにパスワードなしでssh接続する設定</a> で鍵を作っていた。これ(id_rsa)を<code>~/.ssh</code>に移動。600への権限変更も忘れずに。<br/>
+<p><a href="http://d.hatena.ne.jp/tmd45/20110203/1296744114">githubにパスワードなしでssh接続する設定</a> で鍵を事前に作っていた。これ(id_rsa)を<code>~/.ssh</code>に移動。600への権限変更も忘れずに。<br/>
 ※ 既存の鍵を上書きしないように注意。</p>
 
-<p>これで編集できるようになる。<br/>
+<p>これでgithubに上げられるようになる。<br/>
 <a href="http://ftakao2007.github.io/blog/2013/04/06/octpress/">Octopress まとめ</a></p>
 </div>
   
