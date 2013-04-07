@@ -4,7 +4,7 @@
   <title><![CDATA[Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-04-08T00:42:58+09:00</updated>
+  <updated>2013-04-08T00:54:21+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -12,6 +12,31 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[一人ハッカソン]]></title>
+    <link href="http://ftakao2007.github.com/blog/2013/04/08/diary/"/>
+    <updated>2013-04-08T00:46:00+09:00</updated>
+    <id>http://ftakao2007.github.com/blog/2013/04/08/diary</id>
+    <content type="html"><![CDATA[<p>この土日は嵐だったので予定をキャンセルして家で一人ハッカソンやってました。</p>
+
+<ul>
+<li>ec2にDropboxをインストール</li>
+<li>ec2にOctopressにdeployできる環境を構築</li>
+<li>herokuでハロワを表示</li>
+<li>MacにOctopressにdeployできる環境を構築</li>
+<li>Macにfabricをインストール</li>
+<li>munin, Nagios, Zabbixの調査開始</li>
+<li>Octopressにcategory表示のプラグイン追加</li>
+<li>githubにmunin自動構築スクリプトをアップ</li>
+<li>Dropboxに置いてある画像をOctopressで表示できるようにした</li>
+</ul>
+
+
+<p>色んなジャンルをつまみ食いしながらいろいろできました:-)<br/>
+画像はDropboxからbox.comが使えれば、50Gまで無料で使えるから次はこれをやってみようかなぁ。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[zabix]]></title>
