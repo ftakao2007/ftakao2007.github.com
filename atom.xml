@@ -4,7 +4,7 @@
   <title><![CDATA[Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-04-08T00:54:21+09:00</updated>
+  <updated>2013-04-08T00:57:19+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -18,7 +18,10 @@
     <link href="http://ftakao2007.github.com/blog/2013/04/08/diary/"/>
     <updated>2013-04-08T00:46:00+09:00</updated>
     <id>http://ftakao2007.github.com/blog/2013/04/08/diary</id>
-    <content type="html"><![CDATA[<p>この土日は嵐だったので予定をキャンセルして家で一人ハッカソンやってました。</p>
+    <content type="html"><![CDATA[<p>この土日は嵐だったので予定をキャンセルして家で一人ハッカソンやってました。<br/>
+厳密には一人での開発はハッカソンとは言わないみたいですが。。</p>
+
+<p>以下今回の成果です。</p>
 
 <ul>
 <li>ec2にDropboxをインストール</li>
