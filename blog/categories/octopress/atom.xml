@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: octopress | Octopress Blog]]></title>
+  <link href="http://ftakao2007.github.com/blog/categories/octopress/atom.xml" rel="self"/>
+  <link href="http://ftakao2007.github.com/"/>
+  <updated>2013-04-07T16:42:54+09:00</updated>
+  <id>http://ftakao2007.github.com/</id>
+  <author>
+    <name><![CDATA[ftakao2007]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[octopress まとめ]]></title>
+    <link href="http://ftakao2007.github.com/blog/2013/04/06/octpress/"/>
+    <updated>2013-04-06T19:28:00+09:00</updated>
+    <id>http://ftakao2007.github.com/blog/2013/04/06/octpress</id>
+    <content type="html"><![CDATA[<h3>初期設定</h3>
+
+<ul>
+<li><a href="http://k-ui.jp/blog/2011/08/30/try-to-octopress/">Octopress 使う</a></li>
+<li><a href="http://atijust.github.io/">GitHub+Octopressでブログ構築</a></li>
+</ul>
+
+
+<h3>記法など</h3>
+
+<ul>
+<li><a href="http://sesame.github.io/blog/2012/12/09/how-to-use-octopress/">Octopressの使い方</a></li>
+<li>記事の作成</li>
+<li>記事の反映</li>
+<li>記事のアップ</li>
+<li>記事のプレビュー</li>
+<li>記法</li>
+</ul>
+
+
+<p>コマンド覚書
+``` bash
+rake preview
+http://localhost:4000</p>
+
+<p>rake new_post["TITLE"]
+vi source/_posts/2013-04-06-TITLE.markdown
+rake generate
+rake deploy
+http://ftakao2007.github.io
+```</p>
+
+<h3>画像テスト</h3>
+
+<p>Dropboxのpublicフォルダを利用</p>
+
+<p><img src="https://dl.dropbox.com/u/37468049/20130406_onesan.jpg" alt="画像テスト" /></p>
+
+<p>わぁい</p>
+]]></content>
+  </entry>
+  
+</feed>
