@@ -4,7 +4,7 @@
   <title><![CDATA[Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-04-07T16:55:04+09:00</updated>
+  <updated>2013-04-07T17:33:56+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -154,7 +154,27 @@ rmなどで直接削除せず、exclude addを実行しましょう(コマンド
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>あとはDropbox内のoctopressディレクトリに移動して編集する。<br/>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>git config --global user.name <span class="s2">&quot;Your Name&quot;</span>
+</span><span class='line'>git config --global user.email you@example.com
+</span><span class='line'>git commit --amend --reset-author
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>※  この辺はエラーメッセージに実行してくださいと出たので設定しました。最後の行は実行しなくてもよいかもです。</p>
+
+<h4>githubのアクセス設定</h4>
+
+<p>接続しようとすると<code>fatal: The remote end hung up unexpectedly</code>のエラーがでるのでsshの権限を設定する</p>
+
+<p><a href="http://d.hatena.ne.jp/tmd45/20110203/1296744114">githubにパスワードなしでssh接続する設定</a> で鍵を作っていた。これ(id_rsa)を<code>~/.ssh</code>に移動。600への権限変更も忘れずに。<br/>
+※ 既存の鍵を上書きしないように注意。</p>
+
+<p>これで編集できるようになる。<br/>
 <a href="http://ftakao2007.github.io/blog/2013/04/06/octpress/">Octopress まとめ</a></p>
 ]]></content>
   </entry>
