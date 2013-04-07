@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: monitor | Octopress Blog]]></title>
+  <link href="http://ftakao2007.github.com/blog/categories/monitor/atom.xml" rel="self"/>
+  <link href="http://ftakao2007.github.com/"/>
+  <updated>2013-04-08T00:40:39+09:00</updated>
+  <id>http://ftakao2007.github.com/</id>
+  <author>
+    <name><![CDATA[ftakao2007]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[zabix]]></title>
+    <link href="http://ftakao2007.github.com/blog/2013/04/08/zabix/"/>
+    <updated>2013-04-08T00:20:00+09:00</updated>
+    <id>http://ftakao2007.github.com/blog/2013/04/08/zabix</id>
+    <content type="html"><![CDATA[<p><a href="http://www.zabbix.jp/documents/what_is_zabbix">Zabbixとは</a></p>
+
+<h1>特徴</h1>
+
+<p>オープンソースの統合監視ソフト</p>
+
+<h1>長所、短所</h1>
+
+<h2>長所</h2>
+
+<h2>短所</h2>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[nagios]]></title>
+    <link href="http://ftakao2007.github.com/blog/2013/04/08/nagios/"/>
+    <updated>2013-04-08T00:16:00+09:00</updated>
+    <id>http://ftakao2007.github.com/blog/2013/04/08/nagios</id>
+    <content type="html"><![CDATA[<p><a href="http://www.ibsnet.co.jp/solution/nagios.html">Nagios(株式会社アイビス)</a></p>
+
+<h1>特徴</h1>
+
+<p>オープンソースの統合監視ソフト</p>
+
+<h1>長所、短所</h1>
+
+<h2>長所</h2>
+
+<h2>短所</h2>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[munin]]></title>
+    <link href="http://ftakao2007.github.com/blog/2013/04/08/munin/"/>
+    <updated>2013-04-08T00:07:00+09:00</updated>
+    <id>http://ftakao2007.github.com/blog/2013/04/08/munin</id>
+    <content type="html"><![CDATA[<p><a href="http://tech.lexues.co.jp/archives/1052">ちょっとMuninいれてみました。</a></p>
+
+<h1>特徴</h1>
+
+<ul>
+<li>リソース監視<br/>
+→ クリティカルな問題ではないが、何か重い時のボトルネック発見</li>
+</ul>
+
+
+<h1>長所、短所</h1>
+
+<h2>長所</h2>
+
+<ul>
+<li>手軽</li>
+<li>yumで入る</li>
+<li>DBが必要なく、httpdが動いていればOK</li>
+</ul>
+
+
+<h2>短所</h2>
+
+<ul>
+<li>設定はCUIのみ</li>
+<li>ユーザー管理の概念が無い</li>
+<li>サーバクライアント方式で、被監視サーバにはクライアント(munin-node)を入れる必要がある</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

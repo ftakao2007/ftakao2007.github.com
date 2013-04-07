@@ -9,12 +9,8 @@
   <meta name="author" content="ftakao2007">
 
   
-  <meta name="description" content="ちょっとMuninいれてみました。 特徴 リソース監視
-→ クリティカルな問題ではないが、何か重い時のボトルネック発見 長所、短所 長所 手軽
-yumで入る
-DBが必要なく、httpdが動いていればOK 短所 設定はCUIのみ
-ユーザー管理の概念が無い
-サーバクライアント方式で、 &hellip;">
+  <meta name="description" content="Zabbixとは 特徴 オープンソースの統合監視ソフト 長所、短所 長所 短所
+">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -70,6 +66,98 @@ DBが必要なく、httpdが動いていればOK 短所 設定はCUIのみ
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/04/08/zabix/">Zabix</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-08T00:20:00+09:00" pubdate data-updated="true">Apr 8<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://www.zabbix.jp/documents/what_is_zabbix">Zabbixとは</a></p>
+
+<h1>特徴</h1>
+
+<p>オープンソースの統合監視ソフト</p>
+
+<h1>長所、短所</h1>
+
+<h2>長所</h2>
+
+<h2>短所</h2>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/04/08/nagios/">Nagios</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-08T00:16:00+09:00" pubdate data-updated="true">Apr 8<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://www.ibsnet.co.jp/solution/nagios.html">Nagios(株式会社アイビス)</a></p>
+
+<h1>特徴</h1>
+
+<p>オープンソースの統合監視ソフト</p>
+
+<h1>長所、短所</h1>
+
+<h2>長所</h2>
+
+<h2>短所</h2>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -834,7 +922,7 @@ MacBook/MacBook Pro (Intl)</p>
   </header>
 
 
-  <div class="entry-content"><h3>初期設定</h3>
+  <div class="entry-content"><h1>初期設定</h1>
 
 <ul>
 <li><a href="http://k-ui.jp/blog/2011/08/30/try-to-octopress/">Octopress 使う</a></li>
@@ -842,7 +930,7 @@ MacBook/MacBook Pro (Intl)</p>
 </ul>
 
 
-<h3>記法など</h3>
+<h1>記法など</h1>
 
 <ul>
 <li><a href="http://sesame.github.io/blog/2012/12/09/how-to-use-octopress/">Octopressの使い方</a></li>
@@ -875,144 +963,15 @@ MacBook/MacBook Pro (Intl)</p>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h3>画像テスト</h3>
+<h1>画像テスト</h1>
 
 <p>Dropboxのpublicフォルダを利用</p>
 
 <p><img src="https://dl.dropbox.com/u/37468049/20130406_onesan.jpg" alt="画像テスト" /></p>
 
 <p>わぁい</p>
-</div>
-  
-  
 
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/04/06/kentou/">検討事項</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-04-06T18:43:00+09:00" pubdate data-updated="true">Apr 6<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h1>Octopress使い方</h1>
-
-<h2>まとめに利用</h2>
-
-<ul>
-<li><p>EC2にRedmineを入れてそこにまとめているが、単純にまとめるだけならブログの方が情報が共有できる。</p></li>
-<li><p>パスワードを入力する必要もなくアクセスが容易</p></li>
-<li><p>Redmineのためだけに立ち上げているインスタンスを落とすことで経費が削減できる</p></li>
-</ul>
-
-
-<h1>やること</h1>
-
-<p>いずれできたらいいなぁくらいの温度感</p>
-
-<h2>Octopressについて</h2>
-
-<ul>
-<li>iPadで日本語の読み書き
-→ nkfインストール</li>
-</ul>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>wget http://mirror.centos.org/centos/6/os/i386/Packages/nkf-2.0.8b-6.2.el6.i686.rpm
-</span><span class='line'>sudo yum localinstall nkf-2.0.8b-6.2.el6.i686.rpm
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>→ 後回し</p>
-
-<ul>
-<li><p>今のところローカルMacのVMware上CentOS6に環境を構築しているので、どこでも編集することができない<br/>
-→ どこの環境でも手軽に更新できるようにしたい<br/>
-→ EC2に環境を構築すればそこにアクセスすればiPad, iPodtuchでも編集できる。(iOSのAWSアプリを使えばモバイルから手軽にインスタンスの起動と停止できるよね)<br/>
-→ 作業フォルダをDropboxに置けば、記事は常に最新に保てる<br/>
-→ EC2にDropboxって設定できるのかな<br/>
-→ できた</p></li>
-<li><p>ブログの画像ファイル置き場作成<br/>
-→ Dropboxのpublicフォルダを使えばいいかなぁ<br/>
-→ <a href="http://ftakao2007.github.io/blog/2013/04/06/octpress/">できた</a></p></li>
-</ul>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/04/06/link/">Link</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-04-06T18:11:00+09:00" pubdate data-updated="true">Apr 6<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h1>リンク集</h1>
-
-<h2>Webサービス(ftakao2007)</h2>
-
-<ul>
-<li><a href="https://github.com/ftakao2007" title="ftakao2007のgithub">github</a></li>
-<li><a href="http://www.slideshare.net/Ftakao2007" title="ftakao2007のslideshare">slideshare</a></li>
-</ul>
-
-
-<h2>ブログ内リンク</h2>
-
-<ul>
-<li><a href="http://ftakao2007.github.io/blog/2013/04/06/octpress/">Octopressまとめ</a></li>
-<li><a href="http://ftakao2007.github.io/blog/2013/04/06/centos/">CentOSの設定</a></li>
-</ul>
-
+<h1><a href="http://www.mk-mode.com/octopress/2012/12/18/octopress-add-category-list/">Octopress - カテゴリリストの追加！</a></h1>
 </div>
   
   
@@ -1035,6 +994,14 @@ MacBook/MacBook Pro (Intl)</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/04/08/zabix/">zabix</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/08/nagios/">nagios</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/04/08/munin/">munin</a>
       </li>
     
@@ -1046,15 +1013,11 @@ MacBook/MacBook Pro (Intl)</p>
         <a href="/blog/2013/04/07/command/">command</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/04/07/mac/">Macの環境構築</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/04/07/ec2/">ec2</a>
-      </li>
-    
   </ul>
+</section>
+<section>
+  <h1>Categories</h1>
+    <ul id="category-list"><li><a href='/blog/categories/command/'>command (1)</a></li><li><a href='/blog/categories/diary/'>diary (1)</a></li><li><a href='/blog/categories/fabric/'>fabric (1)</a></li><li><a href='/blog/categories/monitor/'>monitor (3)</a></li><li><a href='/blog/categories/octopress/'>octopress (1)</a></li><li><a href='/blog/categories/os/'>OS (3)</a></li><li><a href='/blog/categories/matome/'>まとめ (2)</a></li></ul>
 </section>
 
 
