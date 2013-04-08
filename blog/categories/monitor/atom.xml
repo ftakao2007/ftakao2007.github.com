@@ -4,7 +4,7 @@
   <title><![CDATA[Category: monitor | Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/blog/categories/monitor/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-04-08T20:39:34+09:00</updated>
+  <updated>2013-04-08T20:41:46+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -105,6 +105,10 @@
 <li>サーバクライアント方式で、被監視サーバにはクライアント(munin-node)を入れる必要がある</li>
 </ul>
 
+
+<h1>構築</h1>
+
+<p><a href="http://guide.flexserver.jp/help/flexs/guide/grp49/guide581">複数台構成のMunin監視設定</a></p>
 ]]></content>
   </entry>
   
