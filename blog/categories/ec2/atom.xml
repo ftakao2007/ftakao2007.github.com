@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: OS | Octopress Blog]]></title>
-  <link href="http://ftakao2007.github.com/blog/categories/os/atom.xml" rel="self"/>
+  <title><![CDATA[Category: ec2 | Octopress Blog]]></title>
+  <link href="http://ftakao2007.github.com/blog/categories/ec2/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
   <updated>2013-04-10T00:27:38+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
@@ -14,30 +14,30 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Macの環境構築]]></title>
-    <link href="http://ftakao2007.github.com/blog/2013/04/07/mac/"/>
-    <updated>2013-04-07T20:04:00+09:00</updated>
-    <id>http://ftakao2007.github.com/blog/2013/04/07/mac</id>
-    <content type="html"><![CDATA[<h1>herokuのインストール</h1>
+    <title type="html"><![CDATA[ec2-windows]]></title>
+    <link href="http://ftakao2007.github.com/blog/2013/04/10/ec2-windows/"/>
+    <updated>2013-04-10T00:13:00+09:00</updated>
+    <id>http://ftakao2007.github.com/blog/2013/04/10/ec2-windows</id>
+    <content type="html"><![CDATA[<h1>iPad(iSSH)でec2のWindowsインスタンスにリモートデスクトップで接続</h1>
 
-<p><a href="http://d.hatena.ne.jp/nshibazaki/20110723/1311494665">Macでherokuの開発環境を作る</a></p>
+<p><img src="https://dl.dropbox.com/u/37468049/ec2_windows01.jpg" alt="Windows接続の図" /></p>
 
-<p>Xcodeは昔インストールしていた。<br/>
-rvmのインストールがうまく動かなかったので<a href="http://ftakao2007.github.io/blog/2013/04/07/ec2/">Octopressの環境を構築</a>を利用。<br/>
-homebrewとgitもインストール済み<br/>
-herokuは<code>gem install heroku</code>でインストールできた。</p>
+<p>わぁい</p>
 
-<p>後は鍵の設定をして表示されている通りコマンドを打てばハロワがでました。</p>
+<h1>設定方法</h1>
 
-<h1>fabricのインストール</h1>
+<h2>EC2設定</h2>
 
-<p>pipをインストールしてからfabricを入れる</p>
+<p><a href="http://www.amodova.com/jp/blog/article/azec202.html">AmazonEC2でリモートデスクトップ:接続編</a></p>
 
-<p><code>bash
-sudo su -
-easy_install pip
-pip install fabric
-</code></p>
+<p>ec2側の設定は上記のサイト通り進めれば問題ないです。</p>
+
+<h2>iPad側設定</h2>
+
+<p>iSSHという有償のソフトを使って接続しました。<br/>
+設定は以下の様な感じ。</p>
+
+<p><img src="https://dl.dropbox.com/u/37468049/ec2_windows02.jpg" alt="Windows接続の図" /></p>
 ]]></content>
   </entry>
   
@@ -165,44 +165,6 @@ git commit --amend --reset-author
 
 <p>これでgithubに上げられるようになる。<br/>
 <a href="http://ftakao2007.github.io/blog/2013/04/06/octpress/">Octopress まとめ</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[CentOS]]></title>
-    <link href="http://ftakao2007.github.com/blog/2013/04/06/centos/"/>
-    <updated>2013-04-06T21:20:00+09:00</updated>
-    <id>http://ftakao2007.github.com/blog/2013/04/06/centos</id>
-    <content type="html"><![CDATA[<h1>CentOS6.4まとめ</h1>
-
-<p>MacのVmware上で動いているCentOS設定のまとめ</p>
-
-<h2>解像度の設定</h2>
-
-<p>システム → 設定 → ディスプレイ<br/>
-1366 * 768</p>
-
-<h2>キーボードの設定</h2>
-
-<h3>レイアウト設定</h3>
-
-<p>システム → 設定 →  キーボード
-MacBook/MacBook Pro (Intl)</p>
-
-<ul>
-<li>レイアウト<br/>
-「日本語」を追加して再ログイン<br/>
-→ ログインしなおすと設定が反映される</li>
-</ul>
-
-
-<h3>日本語入力のショートカット(Anthy)</h3>
-
-<p><code>Ctrl + j</code> で日本語入力と英語入力の切り替え可能</p>
-
-<h2><a href="http://centossrv.com/ntp.shtml">ntp設定</a></h2>
-
-<h2><a href="http://ftakao2007.github.io/blog//2013/04/06/fabric/">fabric インストール</a></h2>
 ]]></content>
   </entry>
   

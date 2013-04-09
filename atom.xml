@@ -4,7 +4,7 @@
   <title><![CDATA[Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-04-08T20:41:46+09:00</updated>
+  <updated>2013-04-10T00:27:38+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -14,11 +14,39 @@
 
   
   <entry>
+    <title type="html"><![CDATA[ec2-windows]]></title>
+    <link href="http://ftakao2007.github.com/blog/2013/04/10/ec2-windows/"/>
+    <updated>2013-04-10T00:13:00+09:00</updated>
+    <id>http://ftakao2007.github.com/blog/2013/04/10/ec2-windows</id>
+    <content type="html"><![CDATA[<h1>iPad(iSSH)でec2のWindowsインスタンスにリモートデスクトップで接続</h1>
+
+<p><img src="https://dl.dropbox.com/u/37468049/ec2_windows01.jpg" alt="Windows接続の図" /></p>
+
+<p>わぁい</p>
+
+<h1>設定方法</h1>
+
+<h2>EC2設定</h2>
+
+<p><a href="http://www.amodova.com/jp/blog/article/azec202.html">AmazonEC2でリモートデスクトップ:接続編</a></p>
+
+<p>ec2側の設定は上記のサイト通り進めれば問題ないです。</p>
+
+<h2>iPad側設定</h2>
+
+<p>iSSHという有償のソフトを使って接続しました。<br/>
+設定は以下の様な感じ。</p>
+
+<p><img src="https://dl.dropbox.com/u/37468049/ec2_windows02.jpg" alt="Windows接続の図" /></p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[chef]]></title>
     <link href="http://ftakao2007.github.com/blog/2013/04/08/chef/"/>
     <updated>2013-04-08T20:38:00+09:00</updated>
     <id>http://ftakao2007.github.com/blog/2013/04/08/chef</id>
-    <content type="html"><![CDATA[<p>chefについてまとめる予定。</p>
+    <content type="html"><![CDATA[
 ]]></content>
   </entry>
   
