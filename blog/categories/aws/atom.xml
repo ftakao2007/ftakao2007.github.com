@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: ec2 | Octopress Blog]]></title>
-  <link href="http://ftakao2007.github.com/blog/categories/ec2/atom.xml" rel="self"/>
+  <title><![CDATA[Category: aws | Octopress Blog]]></title>
+  <link href="http://ftakao2007.github.com/blog/categories/aws/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-04-10T00:27:38+09:00</updated>
+  <updated>2013-04-10T00:31:09+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
