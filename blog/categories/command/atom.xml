@@ -4,7 +4,7 @@
   <title><![CDATA[Category: command | Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/blog/categories/command/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-04-10T20:16:38+09:00</updated>
+  <updated>2013-04-10T23:35:31+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -25,11 +25,53 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[git]]></title>
+    <title type="html"><![CDATA[gitメモ]]></title>
     <link href="http://ftakao2007.github.com/blog/2013/04/07/git/"/>
     <updated>2013-04-07T22:57:00+09:00</updated>
     <id>http://ftakao2007.github.com/blog/2013/04/07/git</id>
-    <content type="html"><![CDATA[<h1>初期設定</h1>
+    <content type="html"><![CDATA[<h1>メモ書き</h1>
+
+<p>コンセプトは、曖昧に覚えていることをとりあえず書き出し、修正しながら身につける。</p>
+
+<h2>リモートリポジトリ</h2>
+
+<ul>
+<li>gitサーバ側に作成されるリポジトリ。クライアント側から作成することはできない。</li>
+<li>このリポジトリが無いとpushできない</li>
+</ul>
+
+
+<h2>master</h2>
+
+<ul>
+<li>masterのブランチ</li>
+<li><code>git commit -m "hoge"</code> のように、commitを初めてした時に自動で作成される</li>
+<li>ブランチは <code>git branch</code> で確認可能</li>
+</ul>
+
+
+<h2>origin</h2>
+
+<ul>
+<li>URLのエイリアスみたいなもの</li>
+<li><code>git remote add origin https://github.com/ftakao2007/test.git</code> で後ろのURLが登録される</li>
+<li>リポジトリごとに異なる</li>
+<li>以下herokuの例
+<code>bash
+fukui-no-MacBook-Air:h ftakao2007$ git remote -v
+heroku  git@heroku.com:quiet-tor-2376.git (fetch)
+heroku  git@heroku.com:quiet-tor-2376.git (push)
+origin  git://github.com/heroku/ruby-sample.git (fetch)
+origin  git://github.com/heroku/ruby-sample.git (push)
+</code></li>
+</ul>
+
+
+<h1>とりあえず手っ取り早くgitを使いたい</h1>
+
+<h2>初期設定</h2>
+
+<h3>まっさらなremoteリポジトリの場合</h3>
 
 <p><code>bash
 git init
@@ -39,17 +81,126 @@ git remote add origin https://github.com/ftakao2007/test.git
 git push -u origin master
 </code></p>
 
-<h1>最低限のコマンド</h1>
-
-<p><a href="http://lealog.hateblo.jp/entry/2012/12/22/023547">最低限の知識でGitの運用をする</a></p>
+<h3>いろいろ使われているremoteリポジトリをローカルに持ってきて使う場合</h3>
 
 <p><code>bash
+git clone https://github.com/ftakao2007/test.git
+cd test
+</code></p>
+
+<h2>編集</h2>
+
+<h3>リモートにプッシュ</h3>
+
+<p><code>bash
+vi munin_construct.py
 git add munin_construct.py
 git status
 git commit -m 'Commit test'
 git pull --rebase origin
 git push origin
 </code></p>
+
+<h2>ブランチ</h2>
+
+<h3>作成、確認、切り替え、コミット、プッシュ</h3>
+
+<p>``` bash
+fukui-no-MacBook-Air:test2 ftakao2007$ git branch
+* master</p>
+
+<p>fukui-no-MacBook-Air:test2 ftakao2007$ git branch test-branch</p>
+
+<p>fukui-no-MacBook-Air:test2 ftakao2007$ git branch
+* master
+  test-branch</p>
+
+<p>fukui-no-MacBook-Air:test2 ftakao2007$ git checkout test-branch
+Switched to branch 'test-branch'</p>
+
+<p>fukui-no-MacBook-Air:test2 ftakao2007$ git branch
+  master
+* test-branch</p>
+
+<p>vi hoge.txt
+git status
+git add hoge.txt
+git status
+git commit -m "hoge"
+git push -u origin test-branch
+git checkout master
+```</p>
+
+<h2>削除</h2>
+
+<h3>ローカルのブランチの削除</h3>
+
+<p>``` bash
+fukui-no-MacBook-Air:test2 ftakao2007$ git branch
+* master
+  test-branch</p>
+
+<p>fukui-no-MacBook-Air:test2 ftakao2007$ git branch -D test-branch
+Deleted branch test-branch (was 19b1e03).</p>
+
+<p>fukui-no-MacBook-Air:test2 ftakao2007$ git branch
+* master
+```</p>
+
+<h3>リモートのブランチ削除</h3>
+
+<p>``` bash
+fukui-no-MacBook-Air:test2 ftakao2007$ git branch -a
+* master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/master
+  remotes/origin/test-branch</p>
+
+<p>fukui-no-MacBook-Air:test2 ftakao2007$ git push origin :test-branch     ※コロンをつける
+Username:
+Password:
+To https://github.com/ftakao2007/test2.git
+ - [deleted]         test-branch</p>
+
+<p>fukui-no-MacBook-Air:test2 ftakao2007$ git branch -a
+* master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/master</p>
+
+<h3>コミットの取り消し</h3>
+
+<p>``` bash
+fukui-no-MacBook-Air:test2 ftakao2007$ git log
+commit f56ca7da10d119fd91fb5f7d1c4799d94f525a91
+Author: ftakao2007 <a href="&#109;&#x61;&#x69;&#x6c;&#116;&#111;&#x3a;&#x66;&#x74;&#x61;&#x6b;&#x61;&#x6f;&#50;&#x30;&#48;&#55;&#x40;&#103;&#109;&#x61;&#105;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;">&#x66;&#x74;&#97;&#x6b;&#x61;&#111;&#50;&#48;&#48;&#55;&#x40;&#x67;&#x6d;&#x61;&#105;&#108;&#46;&#99;&#111;&#109;</a>
+Date:   Wed Apr 10 22:41:52 2013 +0900</p>
+
+<pre><code>a
+</code></pre>
+
+<p>commit 3c63dc839b68e5753da4ab69330e465b31dd17c2
+Author: ftakao2007 <a href="&#109;&#x61;&#x69;&#x6c;&#116;&#x6f;&#58;&#x66;&#x74;&#x61;&#107;&#97;&#111;&#x32;&#x30;&#48;&#x37;&#x40;&#103;&#x6d;&#x61;&#105;&#x6c;&#46;&#x63;&#x6f;&#x6d;">&#x66;&#116;&#x61;&#x6b;&#97;&#111;&#50;&#x30;&#x30;&#55;&#x40;&#103;&#x6d;&#97;&#x69;&#x6c;&#x2e;&#99;&#x6f;&#x6d;</a>
+Date:   Wed Apr 10 22:37:36 2013 +0900</p>
+
+<pre><code>hoge
+</code></pre>
+
+<p>fukui-no-MacBook-Air:test2 ftakao2007$ git reset --soft HEAD^</p>
+
+<p>fukui-no-MacBook-Air:test2 ftakao2007$ git log
+commit 3c63dc839b68e5753da4ab69330e465b31dd17c2
+Author: ftakao2007 <a href="&#x6d;&#97;&#x69;&#108;&#116;&#x6f;&#x3a;&#102;&#116;&#x61;&#x6b;&#x61;&#x6f;&#50;&#x30;&#x30;&#x37;&#x40;&#x67;&#109;&#x61;&#105;&#108;&#46;&#x63;&#x6f;&#109;">&#102;&#x74;&#x61;&#x6b;&#97;&#x6f;&#50;&#x30;&#x30;&#55;&#64;&#103;&#109;&#x61;&#x69;&#108;&#46;&#99;&#x6f;&#109;</a>
+Date:   Wed Apr 10 22:37:36 2013 +0900</p>
+
+<pre><code>hoge
+</code></pre>
+
+<p><code>``
+</code>git reset --hard HEAD<sup>`</sup> にすると、コミットの取り消しと同時にファイルの内容もコミット前に戻る。</p>
+
+<h2>リンク</h2>
+
+<p><a href="http://lealog.hateblo.jp/entry/2012/12/22/023547">最低限の知識でGitの運用をする</a></p>
 
 <h1>README.md</h1>
 
