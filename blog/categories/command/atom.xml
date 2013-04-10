@@ -4,7 +4,7 @@
   <title><![CDATA[Category: command | Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/blog/categories/command/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-04-10T20:15:15+09:00</updated>
+  <updated>2013-04-10T20:16:38+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -12,6 +12,17 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[git-command]]></title>
+    <link href="http://ftakao2007.github.com/blog/2013/04/10/git-command/"/>
+    <updated>2013-04-10T20:13:00+09:00</updated>
+    <id>http://ftakao2007.github.com/blog/2013/04/10/git-command</id>
+    <content type="html"><![CDATA[<h1>git init</h1>
+
+<p>リポジトリの作成を行うコマンド</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[git]]></title>
