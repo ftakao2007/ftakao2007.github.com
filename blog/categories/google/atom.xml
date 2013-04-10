@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: google | Octopress Blog]]></title>
+  <link href="http://ftakao2007.github.com/blog/categories/google/atom.xml" rel="self"/>
+  <link href="http://ftakao2007.github.com/"/>
+  <updated>2013-04-11T08:18:56+09:00</updated>
+  <id>http://ftakao2007.github.com/</id>
+  <author>
+    <name><![CDATA[ftakao2007]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[google]]></title>
+    <link href="http://ftakao2007.github.com/blog/2013/04/11/google/"/>
+    <updated>2013-04-11T08:06:00+09:00</updated>
+    <id>http://ftakao2007.github.com/blog/2013/04/11/google</id>
+    <content type="html"><![CDATA[<h1><a href="http://qiita.com/items/14785a63e064bb1306b9">OctopressでGoogleアナリティクスを使おう！</a></h1>
+
+<p>上記の設定すれば反映されました。</p>
+
+<h1>Google AdSense</h1>
+
+<p>一般的な手順でサイトを申請。</p>
+]]></content>
+  </entry>
+  
+</feed>
