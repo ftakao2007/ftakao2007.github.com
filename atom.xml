@@ -4,7 +4,7 @@
   <title><![CDATA[Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-04-11T00:05:50+09:00</updated>
+  <updated>2013-04-11T00:25:07+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -12,6 +12,21 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[diary]]></title>
+    <link href="http://ftakao2007.github.com/blog/2013/04/11/diary/"/>
+    <updated>2013-04-11T00:16:00+09:00</updated>
+    <id>http://ftakao2007.github.com/blog/2013/04/11/diary</id>
+    <content type="html"><![CDATA[<p>今日はgitについてまとめました。今までCVSというSubversionより
+さらに前のバージョン管理ソフトを使っていました。リビジョンの概念とか
+コミットの単位とか異なっていて違和感があります。みんなgitが
+良いって言っているのでいずれその良さが分る日が来るはず。。
+リスクの無いことはやってみてから考えた方がスムーズですよね。
+仕事は石橋を叩くような作業が多いので、こういう趣味でやりたい放題するのって
+すごく気持ちいいです。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Wireshark]]></title>

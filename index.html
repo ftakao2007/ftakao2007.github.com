@@ -9,9 +9,10 @@
   <meta name="author" content="ftakao2007">
 
   
-  <meta name="description" content="これを入れるとネットワークセミナーが楽しくなるということなので
-とりあえず入れてみました。 あわせて勉強してみたい tcpdumpとtcpreplayとtcprewrite
-">
+  <meta name="description" content="今日はgitについてまとめました。今までCVSというSubversionより
+さらに前のバージョン管理ソフトを使っていました。リビジョンの概念とか
+コミットの単位とか異なっていて違和感があります。みんなgitが
+良いって言っているのでいずれその良さが分る日が来るはず。。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -40,7 +41,7 @@
   <header role="banner"><hgroup>
   <h1><a href="/">Octopress Blog</a></h1>
   
-    <h2>githubでブログ</h2>
+    <h2>自分のためのまとめブログ</h2>
   
 </hgroup>
 
@@ -67,6 +68,48 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/04/11/diary/">Diary</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-11T00:16:00+09:00" pubdate data-updated="true">Apr 11<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>今日はgitについてまとめました。今までCVSというSubversionより
+さらに前のバージョン管理ソフトを使っていました。リビジョンの概念とか
+コミットの単位とか異なっていて違和感があります。みんなgitが
+良いって言っているのでいずれその良さが分る日が来るはず。。
+リスクの無いことはやってみてから考えた方がスムーズですよね。
+仕事は石橋を叩くような作業が多いので、こういう趣味でやりたい放題するのって
+すごく気持ちいいです。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -500,311 +543,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/04/07/git/">Gitメモ</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-04-07T22:57:00+09:00" pubdate data-updated="true">Apr 7<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h1>メモ書き</h1>
-
-<p>コンセプトは、曖昧に覚えていることをとりあえず書き出し、修正しながら身につける。</p>
-
-<h2>リモートリポジトリ</h2>
-
-<ul>
-<li>gitサーバ側に作成されるリポジトリ。クライアント側から作成することはできない。</li>
-<li>このリポジトリが無いとpushできない</li>
-</ul>
-
-
-<h2>master</h2>
-
-<ul>
-<li>masterのブランチ</li>
-<li><code>git commit -m "hoge"</code> のように、commitを初めてした時に自動で作成される</li>
-<li>ブランチは <code>git branch</code> で確認可能</li>
-</ul>
-
-
-<h2>origin</h2>
-
-<ul>
-<li>URLのエイリアスみたいなもの</li>
-<li><code>git remote add origin https://github.com/ftakao2007/test.git</code> で後ろのURLが登録される</li>
-<li>リポジトリごとに異なる</li>
-<li>以下herokuの例</li>
-</ul>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>fukui-no-MacBook-Air:h ftakao2007<span class="nv">$ </span>git remote -v
-</span><span class='line'>heroku    git@heroku.com:quiet-tor-2376.git <span class="o">(</span>fetch<span class="o">)</span>
-</span><span class='line'>heroku    git@heroku.com:quiet-tor-2376.git <span class="o">(</span>push<span class="o">)</span>
-</span><span class='line'>origin    git://github.com/heroku/ruby-sample.git <span class="o">(</span>fetch<span class="o">)</span>
-</span><span class='line'>origin    git://github.com/heroku/ruby-sample.git <span class="o">(</span>push<span class="o">)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h1>とりあえず手っ取り早くgitを使いたい</h1>
-
-<h2>初期設定</h2>
-
-<h3>まっさらなremoteリポジトリの場合</h3>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>git init
-</span><span class='line'>git add README.md
-</span><span class='line'>git commit -m <span class="s2">&quot;first commit&quot;</span>
-</span><span class='line'>git remote add origin https://github.com/ftakao2007/test.git
-</span><span class='line'>git push -u origin master
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>いろいろ使われているremoteリポジトリをローカルに持ってきて使う場合</h3>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>git clone https://github.com/ftakao2007/test.git
-</span><span class='line'><span class="nb">cd test</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>編集</h2>
-
-<h3>リモートにプッシュ</h3>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>vi munin_construct.py
-</span><span class='line'>git add munin_construct.py
-</span><span class='line'>git status
-</span><span class='line'>git commit -m <span class="s1">&#39;Commit test&#39;</span>
-</span><span class='line'>git pull --rebase origin
-</span><span class='line'>git push origin
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>ブランチ</h2>
-
-<h3>作成、確認、切り替え、コミット、プッシュ</h3>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>fukui-no-MacBook-Air:test2 ftakao2007<span class="nv">$ </span>git branch
-</span><span class='line'>* master
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:test2 ftakao2007<span class="nv">$ </span>git branch <span class="nb">test</span>-branch
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:test2 ftakao2007<span class="nv">$ </span>git branch
-</span><span class='line'>* master
-</span><span class='line'>  <span class="nb">test</span>-branch
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:test2 ftakao2007<span class="nv">$ </span>git checkout <span class="nb">test</span>-branch
-</span><span class='line'>Switched to branch <span class="s1">&#39;test-branch&#39;</span>
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:test2 ftakao2007<span class="nv">$ </span>git branch
-</span><span class='line'>  master
-</span><span class='line'>* <span class="nb">test</span>-branch
-</span><span class='line'>
-</span><span class='line'>vi hoge.txt
-</span><span class='line'>git status
-</span><span class='line'>git add hoge.txt
-</span><span class='line'>git status
-</span><span class='line'>git commit -m <span class="s2">&quot;hoge&quot;</span>
-</span><span class='line'>git push -u origin <span class="nb">test</span>-branch
-</span><span class='line'>git checkout master
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>削除</h2>
-
-<h3>ローカルのブランチの削除</h3>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>fukui-no-MacBook-Air:test2 ftakao2007<span class="nv">$ </span>git branch
-</span><span class='line'>* master
-</span><span class='line'>  <span class="nb">test</span>-branch
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:test2 ftakao2007<span class="nv">$ </span>git branch -D <span class="nb">test</span>-branch
-</span><span class='line'>Deleted branch <span class="nb">test</span>-branch <span class="o">(</span>was 19b1e03<span class="o">)</span>.
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:test2 ftakao2007<span class="nv">$ </span>git branch
-</span><span class='line'>* master
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>リモートのブランチ削除</h3>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>fukui-no-MacBook-Air:test2 ftakao2007<span class="nv">$ </span>git branch -a
-</span><span class='line'>* master
-</span><span class='line'>  remotes/origin/HEAD -&gt; origin/master
-</span><span class='line'>  remotes/origin/master
-</span><span class='line'>  remotes/origin/test-branch
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:test2 ftakao2007<span class="nv">$ </span>git push origin :test-branch     ※コロンをつける
-</span><span class='line'>Username:
-</span><span class='line'>Password:
-</span><span class='line'>To https://github.com/ftakao2007/test2.git
-</span><span class='line'> - <span class="o">[</span>deleted<span class="o">]</span>         <span class="nb">test</span>-branch
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:test2 ftakao2007<span class="nv">$ </span>git branch -a
-</span><span class='line'>* master
-</span><span class='line'>  remotes/origin/HEAD -&gt; origin/master
-</span><span class='line'>  remotes/origin/master
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>コミットの取り消し</h3>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>fukui-no-MacBook-Air:test2 ftakao2007<span class="nv">$ </span>git log
-</span><span class='line'>commit f56ca7da10d119fd91fb5f7d1c4799d94f525a91
-</span><span class='line'>Author: ftakao2007 &lt;ftakao2007@gmail.com&gt;
-</span><span class='line'>Date:   Wed Apr 10 22:41:52 2013 +0900
-</span><span class='line'>
-</span><span class='line'>    a
-</span><span class='line'>
-</span><span class='line'>commit 3c63dc839b68e5753da4ab69330e465b31dd17c2
-</span><span class='line'>Author: ftakao2007 &lt;ftakao2007@gmail.com&gt;
-</span><span class='line'>Date:   Wed Apr 10 22:37:36 2013 +0900
-</span><span class='line'>
-</span><span class='line'>    hoge
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:test2 ftakao2007<span class="nv">$ </span>git reset --soft HEAD^
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:test2 ftakao2007<span class="nv">$ </span>git log
-</span><span class='line'>commit 3c63dc839b68e5753da4ab69330e465b31dd17c2
-</span><span class='line'>Author: ftakao2007 &lt;ftakao2007@gmail.com&gt;
-</span><span class='line'>Date:   Wed Apr 10 22:37:36 2013 +0900
-</span><span class='line'>
-</span><span class='line'>    hoge
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p><code>git reset --hard HEAD^</code> にすると、コミットの取り消しと同時にファイルの内容もコミット前に戻る。</p>
-
-<h2>今後確認すること</h2>
-
-<ul>
-<li>リビジョンてどうなってるの？ぱっとググった感じリビジョンて概念を使わない？世代を超えたファイルのdiffってできないのかな。</li>
-<li>Webでdiffしたら文字化けしてる？</li>
-</ul>
-
-
-<h2>リンク</h2>
-
-<p><a href="http://lealog.hateblo.jp/entry/2012/12/22/023547">最低限の知識でGitの運用をする</a></p>
-
-<h1>README.md</h1>
-
-<p><a href="http://kuroigamen.com/13">gituhub に自分のプロジェクトのリポジトリを作ってみる。</a></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -818,6 +556,10 @@
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/04/11/diary/">diary</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/04/11/wireshark/">Wireshark</a>
@@ -835,15 +577,11 @@
         <a href="/blog/2013/04/08/chef/">chef</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/04/08/fluentd/">fluentd</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/aws/'>aws (2)</a></li><li><a href='/blog/categories/command/'>command (3)</a></li><li><a href='/blog/categories/construct/'>construct (2)</a></li><li><a href='/blog/categories/diary/'>diary (2)</a></li><li><a href='/blog/categories/monitor/'>monitor (4)</a></li><li><a href='/blog/categories/network/'>network (1)</a></li><li><a href='/blog/categories/octopress/'>octopress (1)</a></li><li><a href='/blog/categories/os/'>OS (3)</a></li><li><a href='/blog/categories/matome/'>まとめ (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/aws/'>aws (2)</a></li><li><a href='/blog/categories/command/'>command (3)</a></li><li><a href='/blog/categories/construct/'>construct (2)</a></li><li><a href='/blog/categories/diary/'>diary (3)</a></li><li><a href='/blog/categories/monitor/'>monitor (4)</a></li><li><a href='/blog/categories/network/'>network (1)</a></li><li><a href='/blog/categories/octopress/'>octopress (1)</a></li><li><a href='/blog/categories/os/'>OS (3)</a></li><li><a href='/blog/categories/matome/'>まとめ (2)</a></li></ul>
 </section>
 
 
