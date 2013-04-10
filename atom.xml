@@ -4,7 +4,7 @@
   <title><![CDATA[Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-04-10T23:39:16+09:00</updated>
+  <updated>2013-04-10T23:49:28+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -447,6 +447,14 @@
 
 
 <p><code>git reset --hard HEAD^</code> にすると、コミットの取り消しと同時にファイルの内容もコミット前に戻る。</p>
+
+<h2>今後確認すること</h2>
+
+<ul>
+<li>リビジョンてどうなってるの？ぱっとググった感じリビジョンて概念を使わない？世代を超えたファイルのdiffってできないのかな。</li>
+<li>Webでdiffしたら文字化けしてる？</li>
+</ul>
+
 
 <h2>リンク</h2>
 
