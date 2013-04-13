@@ -4,7 +4,7 @@
   <title><![CDATA[Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-04-13T11:28:18+09:00</updated>
+  <updated>2013-04-13T11:33:53+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[[シェル芸 20130413](http://kokucheese.com/event/index/78710/)]]></title>
+    <link href="http://ftakao2007.github.com/blog/2013/04/13/shellgei/"/>
+    <updated>2013-04-13T11:30:00+09:00</updated>
+    <id>http://ftakao2007.github.com/blog/2013/04/13/shellgei</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[このブログについて]]></title>
@@ -1055,41 +1064,6 @@ MacBook/MacBook Pro (Intl)</p>
 <h1><a href="http://www.mk-mode.com/octopress/2012/12/18/octopress-add-category-list/">Octopress - カテゴリリストの追加！</a></h1>
 
 <h1><a href="http://www.miukoba.net/blog/2013/01/05/start-octopress/">Octopressはじめました</a></h1>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[やりたいこと、やったこと]]></title>
-    <link href="http://ftakao2007.github.com/blog/2013/04/06/kentou/"/>
-    <updated>2013-04-06T18:43:00+09:00</updated>
-    <id>http://ftakao2007.github.com/blog/2013/04/06/kentou</id>
-    <content type="html"><![CDATA[<h1>やりたいこと</h1>
-
-<p>いずれできたらいいなぁくらいの温度感</p>
-
-<h2>iSSHで日本語の読み書き</h2>
-
-<ul>
-<li>nkfインストール</li>
-</ul>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>wget http://mirror.centos.org/centos/6/os/i386/Packages/nkf-2.0.8b-6.2.el6.i686.rpm
-</span><span class='line'>sudo yum localinstall nkf-2.0.8b-6.2.el6.i686.rpm
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>→ iSSHはUTF-8があるので設定はできるのかなぁ</p>
-
-<h2>herokuでRedmineを動かす</h2>
-
-<h1>やったこと</h1>
-
-<h2><a href="http://ftakao2007.github.io/blog/2013/04/07/ec2/">EC2にDropboxを設定</a></h2>
-
-<h2><a href="http://ftakao2007.github.io/blog/2013/04/06/octpress/">Dropboxに画像を置いてブログで表示</a></h2>
 ]]></content>
   </entry>
   
