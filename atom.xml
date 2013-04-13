@@ -4,7 +4,7 @@
   <title><![CDATA[Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-04-13T10:34:57+09:00</updated>
+  <updated>2013-04-13T11:21:13+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -12,6 +12,20 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[このブログについて]]></title>
+    <link href="http://ftakao2007.github.com/blog/2013/04/13/about/"/>
+    <updated>2013-04-13T10:40:00+09:00</updated>
+    <id>http://ftakao2007.github.com/blog/2013/04/13/about</id>
+    <content type="html"><![CDATA[<p>githubの勉強の一環で立ち上げました。日記や調べたことのまとめとして利用しています。
+コンセプトは「とりあえず書き出して、適宜修正しながらみにつける」ですので、ブログの内容は
+間違っている内容や不必要な内容も多いということを前提でご覧いただければと思います。適宜内容は
+改変、修正されます。</p>
+
+<p>何かありましたら<a href="https://github.com/ftakao2007/ftakao2007.github.com">githubのissue</a>にお願いしますm(<em> </em>)m</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[google]]></title>
@@ -25,6 +39,8 @@
 <h1>Google AdSense</h1>
 
 <p>一般的な手順でサイトを申請。</p>
+
+<p><a href="http://gigazine.net/news/20061107_adsense_start/">Google AdSenseの始め方 その1「審査を突破する」</a></p>
 
 <h2>Octopressに設置</h2>
 
@@ -1037,34 +1053,24 @@ MacBook/MacBook Pro (Intl)</p>
 <p>わぁい</p>
 
 <h1><a href="http://www.mk-mode.com/octopress/2012/12/18/octopress-add-category-list/">Octopress - カテゴリリストの追加！</a></h1>
+
+<h1><a href="http://www.miukoba.net/blog/2013/01/05/start-octopress/">Octopressはじめました</a></h1>
 ]]></content>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[検討事項]]></title>
+    <title type="html"><![CDATA[やりたいこと、やったこと]]></title>
     <link href="http://ftakao2007.github.com/blog/2013/04/06/kentou/"/>
     <updated>2013-04-06T18:43:00+09:00</updated>
     <id>http://ftakao2007.github.com/blog/2013/04/06/kentou</id>
-    <content type="html"><![CDATA[<h1>Octopress使い方</h1>
-
-<h2>まとめに利用</h2>
-
-<ul>
-<li><p>EC2にRedmineを入れてそこにまとめているが、単純にまとめるだけならブログの方が情報が共有できる。</p></li>
-<li><p>パスワードを入力する必要もなくアクセスが容易</p></li>
-<li><p>Redmineのためだけに立ち上げているインスタンスを落とすことで経費が削減できる</p></li>
-</ul>
-
-
-<h1>やること</h1>
+    <content type="html"><![CDATA[<h1>やりたいこと</h1>
 
 <p>いずれできたらいいなぁくらいの温度感</p>
 
-<h2>Octopressについて</h2>
+<h2>iSSHで日本語の読み書き</h2>
 
 <ul>
-<li>iPadで日本語の読み書き
-→ nkfインストール</li>
+<li>nkfインストール</li>
 </ul>
 
 
@@ -1075,45 +1081,15 @@ MacBook/MacBook Pro (Intl)</p>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>→ 後回し</p>
+<p>→ iSSHはUTF-8があるので設定はできるのかなぁ</p>
 
-<ul>
-<li><p>今のところローカルMacのVMware上CentOS6に環境を構築しているので、どこでも編集することができない<br/>
-→ どこの環境でも手軽に更新できるようにしたい<br/>
-→ EC2に環境を構築すればそこにアクセスすればiPad, iPodtuchでも編集できる。(iOSのAWSアプリを使えばモバイルから手軽にインスタンスの起動と停止できるよね)<br/>
-→ 作業フォルダをDropboxに置けば、記事は常に最新に保てる<br/>
-→ EC2にDropboxって設定できるのかな<br/>
-→ できた</p></li>
-<li><p>ブログの画像ファイル置き場作成<br/>
-→ Dropboxのpublicフォルダを使えばいいかなぁ<br/>
-→ <a href="http://ftakao2007.github.io/blog/2013/04/06/octpress/">できた</a></p></li>
-</ul>
+<h2>herokuでRedmineを動かす</h2>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Link]]></title>
-    <link href="http://ftakao2007.github.com/blog/2013/04/06/link/"/>
-    <updated>2013-04-06T18:11:00+09:00</updated>
-    <id>http://ftakao2007.github.com/blog/2013/04/06/link</id>
-    <content type="html"><![CDATA[<h1>リンク集</h1>
+<h1>やったこと</h1>
 
-<h2>Webサービス(ftakao2007)</h2>
+<h2>EC2にDropboxを設定</h2>
 
-<ul>
-<li><a href="https://github.com/ftakao2007" title="ftakao2007のgithub">github</a></li>
-<li><a href="http://www.slideshare.net/Ftakao2007" title="ftakao2007のslideshare">slideshare</a></li>
-</ul>
-
-
-<h2>ブログ内リンク</h2>
-
-<ul>
-<li><a href="http://ftakao2007.github.io/blog/2013/04/06/octpress/">Octopressまとめ</a></li>
-<li><a href="http://ftakao2007.github.io/blog/2013/04/06/centos/">CentOSの設定</a></li>
-</ul>
-
+<h2><a href="http://ftakao2007.github.io/blog/2013/04/06/octpress/">Dropboxに画像を置いてブログで表示</a></h2>
 ]]></content>
   </entry>
   
