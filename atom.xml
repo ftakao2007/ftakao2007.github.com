@@ -4,7 +4,7 @@
   <title><![CDATA[Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-04-13T23:57:00+09:00</updated>
+  <updated>2013-04-13T23:59:50+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -87,13 +87,13 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h1>pで表示する場合はnをつけると目的の部分だけ出力できる</h1>
+<ul>
+<li>pで表示する場合はnをつけると目的の部分だけ出力できる</li>
+<li>dで削除する場合はnを付けなければ削除された行以外を出力できる</li>
+<li>sで置換する場合はnを付けなければ目的の語句が置換された状態で全ファイル分出力される
+➡d,sはnを付けると出力結果は何も表示されない</li>
+</ul>
 
-<h1>dで削除する場合はnを付けなければ削除された行以外を出力できる</h1>
-
-<h1>sで置換する場合はnを付けなければ目的の語句が置換された状態で全ファイル分出力される</h1>
-
-<p>➡d,sはnを付けると出力結果は何も表示されない</p>
 
 <h3>e</h3>
 
@@ -843,8 +843,11 @@ n番目の発生を置換</li>
 
 <h2>参考</h2>
 
-<p>&#8220;sed - ストリーミングエディタ&#8221;:http://www.ksknet.net/linuxrz/sed.html
-&#8220;sed に関するメモ&#8221;:http://www.ishilab.net/~ishihara/tips/sed.txt</p>
+<ul>
+<li><a href="http://www.ksknet.net/linuxrz/sed.html">sed - ストリーミングエディタ</a></li>
+<li><a href="http://www.ishilab.net/~ishihara/tips/sed.txt">sed に関するメモ</a></li>
+</ul>
+
 ]]></content>
   </entry>
   
