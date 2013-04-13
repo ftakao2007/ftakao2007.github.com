@@ -4,7 +4,7 @@
   <title><![CDATA[Category: command | Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/blog/categories/command/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-04-13T23:50:12+09:00</updated>
+  <updated>2013-04-13T23:57:00+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -12,6 +12,568 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[sed]]></title>
+    <link href="http://ftakao2007.github.com/blog/2013/04/13/sed/"/>
+    <updated>2013-04-13T23:54:00+09:00</updated>
+    <id>http://ftakao2007.github.com/blog/2013/04/13/sed</id>
+    <content type="html"><![CDATA[<h1>sed (ストリーミングエディタ)</h1>
+
+<h2>Option</h2>
+
+<h3>n</h3>
+
+<p>標準出力を制御
+``` bash
+fukui-no-MacBook-Air:sed ftakao2007$ cat test_sed.txt
+aaa
+bbb123
+ccc</p>
+
+<p>fukui-no-MacBook-Air:sed ftakao2007$ sed '/bbb/p' test_sed.txt
+aaa
+bbb123
+bbb123
+ccc</p>
+
+<ul>
+<li>bbbが含まれている行があればその行を出力するという処理。
+ nオプション無しだと、「テキストの内容＋処理結果」となっている</li>
+</ul>
+
+
+<p>fukui-no-MacBook-Air:sed ftakao2007$ sed -n '/bbb/p' test_sed.txt
+bbb123</p>
+
+<ul>
+<li>nオプションをつけると処理結果のみ出力</li>
+</ul>
+
+
+<p>fukui-no-MacBook-Air:sed ftakao2007$ sed -n '/bbb/d' test_sed.txt</p>
+
+<ul>
+<li>bbbが含まれる行を削除する処理。
+ nオプションをつけている場合は処理結果は何も表示されず、よくわからない。</li>
+</ul>
+
+
+<p>fukui-no-MacBook-Air:sed ftakao2007$ sed '/bbb/d' test_sed.txt
+aaa
+ccc</p>
+
+<ul>
+<li>nオプション無しで実行すると、bbbの行が削除されている事が分かる。
+```</li>
+</ul>
+
+
+<h1>pで表示する場合はnをつけると目的の部分だけ出力できる</h1>
+
+<h1>dで削除する場合はnを付けなければ削除された行以外を出力できる</h1>
+
+<h1>sで置換する場合はnを付けなければ目的の語句が置換された状態で全ファイル分出力される</h1>
+
+<p>➡d,sはnを付けると出力結果は何も表示されない</p>
+
+<h3>e</h3>
+
+<p>次にくる因数はコマンドとみなす
+``` bash
+fukui-no-MacBook-Air:sed ftakao2007$ cat test_sed.txt
+aaa
+bbb123
+ccc</p>
+
+<p>fukui-no-MacBook-Air:sed ftakao2007$ sed '/bbb/d' test_sed.txt
+aaa
+ccc</p>
+
+<p>fukui-no-MacBook-Air:sed ftakao2007$ sed -e '/bbb/d' -e '/ccc/d' test_sed.txt
+aaa</p>
+
+<ul>
+<li>bbbが含まれる行を削除し、cccが含まれる行も削除する</li>
+</ul>
+
+
+<p>fukui-no-MacBook-Air:sed ftakao2007$ sed '/bbb/d' -e '/ccc/d' test_sed.txt
+sed: -e: No such file or directory
+sed: /ccc/d: No such file or directory
+aaa
+ccc</p>
+
+<ul>
+<li>eオプションを使う場合はコマンドごとに明示的にeオプションを指定する必要がある
+```</li>
+</ul>
+
+
+<h3>f</h3>
+
+<p>次にくる因数はスクリプトとみなす
+``` bash
+fukui-no-MacBook-Air:sed ftakao2007$ cat test_sed.txt
+aaa
+bbb123
+ccc</p>
+
+<p>fukui-no-MacBook-Air:sed ftakao2007$ cat sed_test.sed
+/bbb/p</p>
+
+<p>fukui-no-MacBook-Air:sed ftakao2007$ sed -n -f sed_test.sed test_sed.txt
+bbb123
+```</p>
+
+<h3>i</h3>
+
+<p>標準出力に出力せず、直接ファイルを書き換える</p>
+
+<p>``` bash
+fukui-no-MacBook-Air:sed ftakao2007$ cat test_sed.txt
+aaa
+bbb123
+ccc</p>
+
+<p>fukui-no-MacBook-Air:sed ftakao2007$ sed -i.bak '/bbb/d' test_sed.txt</p>
+
+<p>fukui-no-MacBook-Air:sed ftakao2007$ cat test_sed.txt
+aaa
+ccc</p>
+
+<p>fukui-no-MacBook-Air:sed ftakao2007$ cat test_sed.txt.bak
+aaa
+bbb123
+ccc</p>
+
+<ul>
+<li>.bakにバックアップをとって元ファイルはbbbを含む行が削除されている</li>
+</ul>
+
+
+<p>fukui-no-MacBook-Air:sed ftakao2007$ sed -i '/bbb/d' test_sed.txt
+sed: 1: "test_sed2.txt": undefined label 'est_sed.txt'</p>
+
+<ul>
+<li>拡張子を指定しない場合はエラーになる
+```</li>
+</ul>
+
+
+<h2>Command</h2>
+
+<h3>p</h3>
+
+<p>出力する</p>
+
+<p>``` bash
+fukui-no-MacBook-Air:sed ftakao2007$ cat test_sed.txt
+aaa
+bbb123
+ccc</p>
+
+<p>fukui-no-MacBook-Air:sed ftakao2007$ sed -n '1,2p' test_sed.txt
+aaa
+bbb123</p>
+
+<ul>
+<li>1-2行目を出力</li>
+</ul>
+
+
+<p>fukui-no-MacBook-Air:sed ftakao2007$ sed -n '3p' test_sed.txt
+ccc</p>
+
+<ul>
+<li>3行目を出力</li>
+</ul>
+
+
+<p>fukui-no-MacBook-Air:sed ftakao2007$ sed -n '/bbb/p' test_sed.txt
+bbb123</p>
+
+<ul>
+<li>bbbが含まれる行を出力</li>
+</ul>
+
+
+<p>fukui-no-MacBook-Air:sed ftakao2007$ sed -n '$p' test_sed.txt
+ccc</p>
+
+<ul>
+<li>最後の行を出力
+```</li>
+</ul>
+
+
+<h3>d</h3>
+
+<p>削除する
+``` bash
+fukui-no-MacBook-Air:sed ftakao2007$ cat test_sed.txt
+aaa
+bbb123
+ccc</p>
+
+<p>fukui-no-MacBook-Air:sed ftakao2007$ sed '1,2d' test_sed.txt
+ccc</p>
+
+<ul>
+<li>1-2行目を削除</li>
+</ul>
+
+
+<p>fukui-no-MacBook-Air:sed ftakao2007$ sed '3d' test_sed.txt
+aaa
+bbb123</p>
+
+<ul>
+<li>3行目を削除</li>
+</ul>
+
+
+<p>fukui-no-MacBook-Air:sed ftakao2007$ sed '/bbb/d' test_sed.txt
+aaa
+ccc</p>
+
+<ul>
+<li>bbbが含まれる行を削除</li>
+</ul>
+
+
+<p>fukui-no-MacBook-Air:sed ftakao2007$ sed '$d' test_sed.txt
+aaa
+bbb123</p>
+
+<ul>
+<li>最後の行を削除
+```</li>
+</ul>
+
+
+<h3>q</h3>
+
+<p>特定の文字列が含まれる行まで表示
+``` bash
+fukui-no-MacBook-Air:sed ftakao2007$ cat test_sed3.txt
+aaa
+bbbb123bbb456bbb
+ccc
+bbb789bbb</p>
+
+<p>fukui-no-MacBook-Air:sed ftakao2007$ sed '/ccc/q' test_sed3.txt
+aaa
+bbbb123bbb456bbb
+ccc</p>
+
+<ul>
+<li>cccが含まれる行まで表示
+```</li>
+</ul>
+
+
+<h3>s</h3>
+
+<p>置換する</p>
+
+<p>``` bash
+fukui-no-MacBook-Air:sed ftakao2007$ cat test_sed.txt
+aaa
+bbb123
+ccc</p>
+
+<p>fukui-no-MacBook-Air:sed ftakao2007$ sed 's/bbb/xxx/' test_sed.txt
+aaa
+xxx123
+ccc</p>
+
+<ul>
+<li><p>bbbをxxxに置換
+```</p></li>
+<li><p>g
+すべてのパターンに対して処理を実行する
+``` bash
+fukui-no-MacBook-Air:sed ftakao2007$ cat test_sed3.txt
+aaa
+bbb123bbb456bbb
+ccc
+bbb789bbb</p></li>
+</ul>
+
+
+<p>fukui-no-MacBook-Air:sed ftakao2007$ sed 's/bbb/xxx/' test_sed3.txt
+aaa
+xxx123bbb456bbb
+ccc
+xxx789bbb</p>
+
+<ul>
+<li>gオプションが無い場合は最初のみ置換される</li>
+</ul>
+
+
+<p>fukui-no-MacBook-Air:sed ftakao2007$ sed 's/bbb/xxx/g' test_sed3.txt
+aaa
+xxx123xxx456xxx
+ccc
+xxx789xxx</p>
+
+<ul>
+<li><p>gオプションをつけると全てが置換される
+```</p></li>
+<li><p>n(整数)
+n番目の発生を置換
+``` bash
+fukui-no-MacBook-Air:sed ftakao2007$ cat test_sed3.txt
+aaa
+bbbb123bbb456bbb
+ccc
+bbb789bbb</p></li>
+</ul>
+
+
+<p>fukui-no-MacBook-Air:sed ftakao2007$ sed 's/bbb/ddd/1' test_sed3.txt
+aaa
+dddb123bbb456bbb
+ccc
+ddd789bbb</p>
+
+<p>fukui-no-MacBook-Air:sed ftakao2007$ sed 's/bbb/ddd/2' test_sed3.txt
+aaa
+bbbb123ddd456bbb
+ccc
+bbb789ddd</p>
+
+<p>fukui-no-MacBook-Air:sed ftakao2007$ sed 's/bbb/ddd/3' test_sed3.txt
+aaa
+bbbb123bbb456ddd
+ccc
+bbb789bbb
+```</p>
+
+<ul>
+<li>p
+パターンスペースの先頭セグメントから最初の復帰改行までを標準出力に出力する
+``` bash
+fukui-no-MacBook-Air:sed ftakao2007$ cat test_sed3.txt
+aaa
+bbbb123bbb456bbb
+ccc
+bbb789bbb</li>
+</ul>
+
+
+<p>fukui-no-MacBook-Air:sed ftakao2007$ sed -n 's/bbb/ddd/p1' test_sed3.txt
+dddb123bbb456bbb
+ddd789bbb</p>
+
+<p>fukui-no-MacBook-Air:sed ftakao2007$ sed -n 's/bbb/ddd/p2' test_sed3.txt
+bbbb123ddd456bbb
+bbb789ddd</p>
+
+<p>fukui-no-MacBook-Air:sed ftakao2007$ sed -n 's/bbb/ddd/p3' test_sed3.txt
+bbbb123bbb456ddd
+```</p>
+
+<ul>
+<li>w
+ファイルへ書き出す
+``` bash
+fukui-no-MacBook-Air:sed ftakao2007$ cat test_sed3.txt
+aaa
+bbbb123bbb456bbb
+ccc
+bbb789bbb</li>
+</ul>
+
+
+<p>fukui-no-MacBook-Air:sed ftakao2007$ sed -n '/bbb/w bbb.txt     &lt;-ここで一度改行されている
+/bbb/!w aaa.txt' test_sed3.txt</p>
+
+<p>fukui-no-MacBook-Air:sed ftakao2007$ cat bbb.txt
+bbbb123bbb456bbb
+bbb789bbb</p>
+
+<p>fukui-no-MacBook-Air:sed ftakao2007$ cat aaa.txt
+aaa
+ccc</p>
+
+<ul>
+<li>bbbにマッチした行をbbb.txtへ、マッチしなかった行をaaa.txtへ書き出す</li>
+</ul>
+
+
+<p>========================</p>
+
+<p>fukui-no-MacBook-Air:sed ftakao2007$ cat test_sed3.txt
+aaa
+bbbb123bbb456bbb
+ccc
+bbb789bbb</p>
+
+<p>fukui-no-MacBook-Air:sed ftakao2007$ sed 's/bbb/ddd/gw ddd.txt' test_sed3.txt > change.txt</p>
+
+<p>fukui-no-MacBook-Air:sed ftakao2007$ cat ddd.txt
+dddb123ddd456ddd
+ddd789ddd</p>
+
+<p>fukui-no-MacBook-Air:sed ftakao2007$ cat change.txt
+aaa
+dddb123ddd456ddd
+ccc
+ddd789ddd
+fukui-no-MacBook-Air:sed ftakao2007$</p>
+
+<ul>
+<li>変換された行のみddd.txtに保存、変換後の全行をchange.txtに出力
+```</li>
+</ul>
+
+
+<h2>Match</h2>
+
+<h3>空行以外を出力</h3>
+
+<p>``` bash
+fukui-no-MacBook-Air:sed ftakao2007$ cat test_sed4.txt
+aaa</p>
+
+<p>bbbb123bbb456bbb
+ccc</p>
+
+<p> bbb789bbb</p>
+
+<p>fukui-no-MacBook-Air:sed ftakao2007$ sed -n '/./p' test_sed4.txt
+aaa
+bbbb123bbb456bbb
+ccc
+ bbb789bbb</p>
+
+<ul>
+<li>空行以外の行を出力
+```</li>
+</ul>
+
+
+<h3>空行を出力</h3>
+
+<p>``` bash
+fukui-no-MacBook-Air:sed ftakao2007$ cat test_sed4.txt
+aaa</p>
+
+<p>bbbb123bbb456bbb
+ccc</p>
+
+<p> bbb789bbb</p>
+
+<p>fukui-no-MacBook-Air:sed ftakao2007$ sed -n '/<sup>$/p'</sup> test_sed4.txt</p>
+
+<ul>
+<li>空行を出力
+(例は空行2行分が出力されている)
+```</li>
+</ul>
+
+
+<h3>最初の空行から次の空行までを出力</h3>
+
+<p>``` bash
+fukui-no-MacBook-Air:sed ftakao2007$ cat test_sed4.txt
+aaa</p>
+
+<p>bbbb123bbb456bbb
+ccc</p>
+
+<p> bbb789bbb</p>
+
+<p>fukui-no-MacBook-Air:sed ftakao2007$ sed -ne '/<sup>$/,/<sup>$/p'</sup></sup> test_sed4.txt</p>
+
+<p>bbbb123bbb456bbb
+ccc</p>
+
+<ul>
+<li>最初の空行から次の空行までが出力されている</li>
+</ul>
+
+
+<p>fukui-no-MacBook-Air:sed ftakao2007$ sed -ne '/<sup>$/,/<sup>$/p'</sup></sup> test_sed4.txt | sed -e '/<sup>$/d'</sup>
+bbbb123bbb456bbb
+ccc</p>
+
+<ul>
+<li>マッチした最初と最後の空行自体は削除して表示</li>
+</ul>
+
+
+<p>fukui-no-MacBook-Air:sed ftakao2007$ sed -ne '/<sup>$/,/<sup>$/p'</sup></sup> test_sed4.txt | sed -ne '/./p'
+bbbb123bbb456bbb
+ccc</p>
+
+<ul>
+<li>上と同じ結果
+```</li>
+</ul>
+
+
+<h3>最初の空行から次の空行までの行を削除</h3>
+
+<p>``` bash
+fukui-no-MacBook-Air:sed ftakao2007$ cat test_sed4.txt
+aaa</p>
+
+<p>bbbb123bbb456bbb
+ccc</p>
+
+<p> bbb789bbb</p>
+
+<p>fukui-no-MacBook-Air:sed ftakao2007$ sed -e '/<sup>$/,/<sup>$/d'</sup></sup> test_sed4.txt
+aaa
+ bbb789bbb
+fukui-no-MacBook-Air:sed ftakao2007$
+```</p>
+
+<h2>Advance</h2>
+
+<h3>正規表現(?)</h3>
+
+<h4>&amp;</h4>
+
+<p>置換のときに省略して記載できる</p>
+
+<p>``` bash
+fukui-no-MacBook-Air:sed ftakao2007$ cat test_sed.txt
+aaa
+bbb123
+ccc</p>
+
+<p>fukui-no-MacBook-Air:sed ftakao2007$ sed 's/bbb/bbb_add_/' test_sed.txt
+aaa
+bbb_add_123
+ccc</p>
+
+<ul>
+<li>bbbの直後に<em>add</em>を追加する</li>
+</ul>
+
+
+<p>fukui-no-MacBook-Air:sed ftakao2007$ sed 's/bbb/&amp;<em>add</em>/' test_sed.txt
+aaa
+bbb_add_123
+ccc</p>
+
+<ul>
+<li>先ほどと同じ結果。「bbb」のかわりに「&amp;」で指定
+```</li>
+</ul>
+
+
+<h2>参考</h2>
+
+<p>"sed - ストリーミングエディタ":http://www.ksknet.net/linuxrz/sed.html
+"sed に関するメモ":http://www.ishilab.net/~ishihara/tips/sed.txt</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[git-command]]></title>
@@ -173,14 +735,14 @@ To https://github.com/ftakao2007/test2.git
 <p>``` bash
 fukui-no-MacBook-Air:test2 ftakao2007$ git log
 commit f56ca7da10d119fd91fb5f7d1c4799d94f525a91
-Author: ftakao2007 <a href="&#x6d;&#97;&#105;&#108;&#x74;&#111;&#58;&#102;&#x74;&#97;&#x6b;&#97;&#x6f;&#50;&#x30;&#x30;&#x37;&#64;&#103;&#x6d;&#x61;&#105;&#108;&#46;&#x63;&#111;&#x6d;">&#x66;&#x74;&#x61;&#x6b;&#x61;&#x6f;&#x32;&#x30;&#48;&#x37;&#x40;&#103;&#109;&#x61;&#105;&#108;&#46;&#99;&#111;&#109;</a>
+Author: ftakao2007 <a href="&#x6d;&#x61;&#105;&#x6c;&#116;&#111;&#x3a;&#102;&#x74;&#97;&#107;&#97;&#111;&#x32;&#x30;&#x30;&#x37;&#64;&#x67;&#109;&#x61;&#x69;&#108;&#x2e;&#x63;&#x6f;&#x6d;">&#102;&#116;&#x61;&#x6b;&#97;&#111;&#x32;&#x30;&#48;&#55;&#x40;&#103;&#x6d;&#x61;&#105;&#x6c;&#x2e;&#99;&#111;&#x6d;</a>
 Date:   Wed Apr 10 22:41:52 2013 +0900</p>
 
 <pre><code>a
 </code></pre>
 
 <p>commit 3c63dc839b68e5753da4ab69330e465b31dd17c2
-Author: ftakao2007 <a href="&#x6d;&#97;&#105;&#108;&#x74;&#x6f;&#x3a;&#102;&#116;&#x61;&#x6b;&#x61;&#111;&#x32;&#48;&#x30;&#55;&#x40;&#103;&#x6d;&#97;&#x69;&#x6c;&#x2e;&#99;&#x6f;&#x6d;">&#x66;&#116;&#x61;&#x6b;&#x61;&#x6f;&#x32;&#48;&#x30;&#55;&#x40;&#x67;&#109;&#97;&#105;&#x6c;&#46;&#x63;&#x6f;&#109;</a>
+Author: ftakao2007 <a href="&#x6d;&#97;&#105;&#x6c;&#x74;&#x6f;&#x3a;&#x66;&#116;&#97;&#107;&#97;&#x6f;&#50;&#x30;&#x30;&#55;&#64;&#103;&#x6d;&#97;&#x69;&#x6c;&#x2e;&#99;&#111;&#x6d;">&#102;&#116;&#x61;&#x6b;&#x61;&#111;&#x32;&#48;&#x30;&#55;&#x40;&#103;&#109;&#x61;&#x69;&#108;&#46;&#x63;&#x6f;&#x6d;</a>
 Date:   Wed Apr 10 22:37:36 2013 +0900</p>
 
 <pre><code>hoge
@@ -190,7 +752,7 @@ Date:   Wed Apr 10 22:37:36 2013 +0900</p>
 
 <p>fukui-no-MacBook-Air:test2 ftakao2007$ git log
 commit 3c63dc839b68e5753da4ab69330e465b31dd17c2
-Author: ftakao2007 <a href="&#109;&#97;&#105;&#x6c;&#x74;&#111;&#58;&#102;&#116;&#97;&#x6b;&#x61;&#111;&#x32;&#48;&#x30;&#55;&#64;&#x67;&#x6d;&#97;&#105;&#108;&#x2e;&#99;&#x6f;&#109;">&#x66;&#116;&#97;&#x6b;&#97;&#111;&#x32;&#x30;&#x30;&#x37;&#64;&#x67;&#109;&#97;&#x69;&#x6c;&#46;&#99;&#111;&#x6d;</a>
+Author: ftakao2007 <a href="&#x6d;&#x61;&#105;&#108;&#116;&#x6f;&#58;&#x66;&#116;&#97;&#107;&#97;&#111;&#50;&#x30;&#x30;&#55;&#64;&#x67;&#x6d;&#97;&#105;&#108;&#46;&#x63;&#x6f;&#109;">&#102;&#116;&#x61;&#x6b;&#x61;&#111;&#x32;&#48;&#48;&#x37;&#64;&#103;&#x6d;&#97;&#105;&#x6c;&#46;&#99;&#111;&#x6d;</a>
 Date:   Wed Apr 10 22:37:36 2013 +0900</p>
 
 <pre><code>hoge

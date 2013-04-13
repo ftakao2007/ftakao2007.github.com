@@ -9,10 +9,22 @@
   <meta name="author" content="ftakao2007">
 
   
-  <meta name="description" content="やりたいこと いずれできたらいいなぁくらいの温度感 iSSHで日本語の読み書き nkfインストール 1
+  <meta name="description" content="初期設定 Octopress 使う
+GitHub+Octopressでブログ構築 記法など Octopressの使い方
+記事の作成
+記事の反映
+記事のアップ
+記事のプレビュー
+記法 コマンド覚書 1
 2
-wget http://mirror.centos.org/centos/6/os/i386/Packages/nkf-2.0.8b-6.2.el6.i686.rpm
-sudo yum &hellip;">
+3
+4
+5
+6
+7
+8
+rake preview
+http://localhost:4000 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,6 +92,93 @@ sudo yum &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/04/06/octpress/">Octopress まとめ</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-06T19:28:00+09:00" pubdate data-updated="true">Apr 6<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h1>初期設定</h1>
+
+<ul>
+<li><a href="http://k-ui.jp/blog/2011/08/30/try-to-octopress/">Octopress 使う</a></li>
+<li><a href="http://atijust.github.io/">GitHub+Octopressでブログ構築</a></li>
+</ul>
+
+
+<h1>記法など</h1>
+
+<ul>
+<li><a href="http://sesame.github.io/blog/2012/12/09/how-to-use-octopress/">Octopressの使い方</a></li>
+<li>記事の作成</li>
+<li>記事の反映</li>
+<li>記事のアップ</li>
+<li>記事のプレビュー</li>
+<li>記法</li>
+</ul>
+
+
+<p>コマンド覚書</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>rake preview
+</span><span class='line'>http://localhost:4000
+</span><span class='line'>
+</span><span class='line'>rake new_post<span class="o">[</span><span class="s2">&quot;TITLE&quot;</span><span class="o">]</span>
+</span><span class='line'>vi <span class="nb">source</span>/_posts/2013-04-06-TITLE.markdown
+</span><span class='line'>rake generate
+</span><span class='line'>rake deploy
+</span><span class='line'>http://ftakao2007.github.io
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h1>画像テスト</h1>
+
+<p>Dropboxのpublicフォルダを利用</p>
+
+<p><img src="https://dl.dropbox.com/u/37468049/20130406_onesan.jpg" alt="画像テスト" /></p>
+
+<p>わぁい</p>
+
+<h1><a href="http://www.mk-mode.com/octopress/2012/12/18/octopress-add-category-list/">Octopress - カテゴリリストの追加！</a></h1>
+
+<h1><a href="http://www.miukoba.net/blog/2013/01/05/start-octopress/">Octopressはじめました</a></h1>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -265,6 +364,10 @@ sudo yum &hellip;">
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/04/13/sed/">sed</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/04/13/shellgei/">シェル芸 20130413</a>
       </li>
     
@@ -280,15 +383,11 @@ sudo yum &hellip;">
         <a href="/blog/2013/04/11/diary/">diary</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/04/11/wireshark/">Wireshark</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/about/'>about (3)</a></li><li><a href='/blog/categories/aws/'>aws (2)</a></li><li><a href='/blog/categories/command/'>command (3)</a></li><li><a href='/blog/categories/construct/'>construct (2)</a></li><li><a href='/blog/categories/diary/'>diary (3)</a></li><li><a href='/blog/categories/google/'>google (1)</a></li><li><a href='/blog/categories/monitor/'>monitor (4)</a></li><li><a href='/blog/categories/network/'>network (1)</a></li><li><a href='/blog/categories/octopress/'>octopress (1)</a></li><li><a href='/blog/categories/os/'>OS (3)</a></li><li><a href='/blog/categories/mian-qiang-hui/'>勉強会 (1)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/about/'>about (3)</a></li><li><a href='/blog/categories/aws/'>aws (2)</a></li><li><a href='/blog/categories/command/'>command (4)</a></li><li><a href='/blog/categories/construct/'>construct (2)</a></li><li><a href='/blog/categories/diary/'>diary (3)</a></li><li><a href='/blog/categories/google/'>google (1)</a></li><li><a href='/blog/categories/monitor/'>monitor (4)</a></li><li><a href='/blog/categories/network/'>network (1)</a></li><li><a href='/blog/categories/octopress/'>octopress (1)</a></li><li><a href='/blog/categories/os/'>OS (3)</a></li><li><a href='/blog/categories/mian-qiang-hui/'>勉強会 (1)</a></li></ul>
 </section>
 <section>
 <script type="text/javascript"><!--
