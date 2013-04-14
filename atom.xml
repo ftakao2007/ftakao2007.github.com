@@ -4,7 +4,7 @@
   <title><![CDATA[Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-04-14T00:07:35+09:00</updated>
+  <updated>2013-04-14T10:18:52+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -12,6 +12,59 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[逆引きコマンド]]></title>
+    <link href="http://ftakao2007.github.com/blog/2013/04/14/sed-gyakubiki/"/>
+    <updated>2013-04-14T00:20:00+09:00</updated>
+    <id>http://ftakao2007.github.com/blog/2013/04/14/sed-gyakubiki</id>
+    <content type="html"><![CDATA[<h2>改行を</h2>
+
+<h3>したい</h3>
+
+<p>「=」で改行</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>fukui-no-MacBook-Air:tmp ftakao2007<span class="nv">$ </span>cat vimrc
+</span><span class='line'><span class="nb">set </span><span class="nv">fileencoding</span><span class="o">=</span>utf-8
+</span><span class='line'><span class="nb">set </span><span class="nv">fileencodings</span><span class="o">=</span>iso-2022-jp,utf-8,euc-jp
+</span><span class='line'>
+</span><span class='line'>fukui-no-MacBook-Air:tmp ftakao2007<span class="nv">$ </span>cat vimrc | gsed -e <span class="s1">&#39;s/=/\n/g&#39;</span>
+</span><span class='line'><span class="nb">set </span>fileencoding
+</span><span class='line'>utf-8
+</span><span class='line'><span class="nb">set </span>fileencodings
+</span><span class='line'>iso-2022-jp,utf-8,euc-jp
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>消したい</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>fukui-no-MacBook-Air:tmp ftakao2007<span class="nv">$ </span>cat vimrc
+</span><span class='line'><span class="nb">set </span><span class="nv">fileencoding</span><span class="o">=</span>utf-8
+</span><span class='line'><span class="nb">set </span><span class="nv">fileencodings</span><span class="o">=</span>iso-2022-jp,utf-8,euc-jp
+</span><span class='line'>
+</span><span class='line'>fukui-no-MacBook-Air:tmp ftakao2007<span class="nv">$ </span>cat vimrc | tr -d <span class="s1">&#39;\n&#39;</span>
+</span><span class='line'><span class="nb">set </span><span class="nv">fileencoding</span><span class="o">=</span>utf-8set <span class="nv">fileencodings</span><span class="o">=</span>iso-2022-jp,utf-8,euc-jpfukui-no-MacBook-Air:tmp ftakao2007<span class="err">$</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[sed]]></title>
@@ -101,7 +154,7 @@
 
 <h3>e</h3>
 
-<p>次にくる因数はコマンドとみなす</p>
+<p>次にくる値はコマンドとみなす</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -150,7 +203,7 @@
 
 <h3>f</h3>
 
-<p>次にくる因数はスクリプトとみなす</p>
+<p>次にくる値はスクリプトとみなす</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -885,7 +938,7 @@ n番目の発生を置換</li>
 
 <h2><a href="https://github.com/usp-engineers-community/Open-usp-Tukubai">open usp Tukubai のインストール(CentOS 6.4)</a></h2>
 
-<p>覚えたばっかりのgitでインストールしてみる</p>
+<p>gitでインストールしてみる</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -907,6 +960,8 @@ n番目の発生を置換</li>
 </span><span class='line'>wget http://www.usptomo.com/TOMONOKAI_CMS/HTML/DATA.zip
 </span><span class='line'>unzip DATA.zip
 </span></code></pre></td></tr></table></div></figure>
+
+
 
 ]]></content>
   </entry>
@@ -1473,6 +1528,100 @@ herokuは<code>gem install heroku</code>でインストールできた。</p>
 </span><span class='line'>pip install fabric
 </span></code></pre></td></tr></table></div></figure>
 
+
+<h1>gsed, gawkインストール</h1>
+
+<p>gawkはgawkだがgsedはgnu-sedで入れる。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>fukui-no-MacBook-Air:tmp ftakao2007<span class="nv">$ </span>brew install gnu-sed
+</span><span class='line'>Warning: Your Xcode <span class="o">(</span>4.2.1<span class="o">)</span> is outdated
+</span><span class='line'>Please install Xcode 4.6.1.
+</span><span class='line'><span class="o">==</span>&gt; Downloading http://ftpmirror.gnu.org/sed/sed-4.2.2.tar.bz2
+</span><span class='line'><span class="c">######################################################################## 100.0%</span>
+</span><span class='line'><span class="o">==</span>&gt; ./configure --prefix<span class="o">=</span>/usr/local/Cellar/gnu-sed/4.2.2 --program-prefix<span class="o">=</span><span class="nv">g</span>
+</span><span class='line'><span class="o">==</span>&gt; make <span class="nv">install</span>
+</span><span class='line'><span class="o">==</span>&gt; Caveats
+</span><span class='line'>The <span class="nb">command </span>has been installed with the prefix <span class="s1">&#39;g&#39;</span>.
+</span><span class='line'>If you <span class="k">do </span>not want the prefix, install using the <span class="s1">&#39;default-names&#39;</span> option.
+</span><span class='line'><span class="o">==</span>&gt; Summary
+</span><span class='line'>🍺  /usr/local/Cellar/gnu-sed/4.2.2: 8 files, 356K, built in 31 seconds
+</span><span class='line'>
+</span><span class='line'>fukui-no-MacBook-Air:tmp ftakao2007<span class="nv">$ </span>which gsed
+</span><span class='line'>/usr/local/bin/gsed
+</span><span class='line'>
+</span><span class='line'>fukui-no-MacBook-Air:tmp ftakao2007<span class="nv">$ </span>brew install gawk
+</span><span class='line'>Warning: Your Xcode <span class="o">(</span>4.2.1<span class="o">)</span> is outdated
+</span><span class='line'>Please install Xcode 4.6.1.
+</span><span class='line'><span class="o">==</span>&gt; Installing gawk dependency: <span class="nv">xz</span>
+</span><span class='line'><span class="o">==</span>&gt; Downloading http://tukaani.org/xz/xz-5.0.4.tar.bz2
+</span><span class='line'><span class="c">######################################################################## 100.0%</span>
+</span><span class='line'><span class="o">==</span>&gt; ./configure --prefix<span class="o">=</span>/usr/local/Cellar/xz/5.0.4
+</span><span class='line'><span class="o">==</span>&gt; make install
+</span><span class='line'>🍺  /usr/local/Cellar/xz/5.0.4: 58 files, 1.5M, built in 23 <span class="nv">seconds</span>
+</span><span class='line'><span class="o">==</span>&gt; Installing <span class="nv">gawk</span>
+</span><span class='line'><span class="o">==</span>&gt; Downloading http://ftpmirror.gnu.org/gawk/gawk-4.0.2.tar.xz
+</span><span class='line'><span class="c">######################################################################## 100.0%</span>
+</span><span class='line'><span class="o">==</span>&gt; ./configure --prefix<span class="o">=</span>/usr/local/Cellar/gawk/4.0.2
+</span><span class='line'><span class="o">==</span>&gt; <span class="nv">make</span>
+</span><span class='line'><span class="o">==</span>&gt; make <span class="nv">check</span>
+</span><span class='line'><span class="o">==</span>&gt; make install
+</span><span class='line'>🍺  /usr/local/Cellar/gawk/4.0.2: 39 files, 1.5M, built in 26 seconds
+</span><span class='line'>
+</span><span class='line'>fukui-no-MacBook-Air:tmp ftakao2007<span class="nv">$ </span>which gawk
+</span><span class='line'>/usr/local/bin/gawk
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<!--
+# Xcodeバージョンアップ
+以下表示されていたので。
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>Warning: Your Xcode <span class="o">(</span>4.2.1<span class="o">)</span> is outdated
+</span><span class='line'>Please install Xcode 4.6.1.
+</span></code></pre></td></tr></table></div></figure>
+&#8211;>
+
+
+
 ]]></content>
   </entry>
   
@@ -1855,44 +2004,6 @@ ec2のアドレス:10.160.26.123 (仮)<br/>
 <h1>リンク</h1>
 
 <p><a href="http://www.slideshare.net/tafujish/hbstudy41-auto-scalingv13">FablicとMonitを使ってオートスケーリングを自作してみよう</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[CentOS]]></title>
-    <link href="http://ftakao2007.github.com/blog/2013/04/06/centos/"/>
-    <updated>2013-04-06T21:20:00+09:00</updated>
-    <id>http://ftakao2007.github.com/blog/2013/04/06/centos</id>
-    <content type="html"><![CDATA[<h1>CentOS6.4まとめ</h1>
-
-<p>MacのVmware上で動いているCentOS設定のまとめ</p>
-
-<h2>解像度の設定</h2>
-
-<p>システム → 設定 → ディスプレイ<br/>
-1366 * 768</p>
-
-<h2>キーボードの設定</h2>
-
-<h3>レイアウト設定</h3>
-
-<p>システム → 設定 →  キーボード
-MacBook/MacBook Pro (Intl)</p>
-
-<ul>
-<li>レイアウト<br/>
-「日本語」を追加して再ログイン<br/>
-→ ログインしなおすと設定が反映される</li>
-</ul>
-
-
-<h3>日本語入力のショートカット(Anthy)</h3>
-
-<p><code>Ctrl + j</code> で日本語入力と英語入力の切り替え可能</p>
-
-<h2><a href="http://centossrv.com/ntp.shtml">ntp設定</a></h2>
-
-<h2><a href="http://ftakao2007.github.io/blog//2013/04/06/fabric/">fabric インストール</a></h2>
 ]]></content>
   </entry>
   

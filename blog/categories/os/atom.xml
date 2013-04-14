@@ -4,7 +4,7 @@
   <title><![CDATA[Category: OS | Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/blog/categories/os/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-04-14T00:07:35+09:00</updated>
+  <updated>2013-04-14T10:18:52+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -38,6 +38,66 @@ sudo su -
 easy_install pip
 pip install fabric
 </code></p>
+
+<h1>gsed, gawkインストール</h1>
+
+<p>gawkはgawkだがgsedはgnu-sedで入れる。
+``` bash
+fukui-no-MacBook-Air:tmp ftakao2007$ brew install gnu-sed
+Warning: Your Xcode (4.2.1) is outdated
+Please install Xcode 4.6.1.
+==> Downloading http://ftpmirror.gnu.org/sed/sed-4.2.2.tar.bz2</p>
+
+<h6>################################################################## 100.0%</h6>
+
+<p>==> ./configure --prefix=/usr/local/Cellar/gnu-sed/4.2.2 --program-prefix=g
+==> make install
+==> Caveats
+The command has been installed with the prefix 'g'.
+If you do not want the prefix, install using the 'default-names' option.
+==> Summary
+🍺  /usr/local/Cellar/gnu-sed/4.2.2: 8 files, 356K, built in 31 seconds</p>
+
+<p>fukui-no-MacBook-Air:tmp ftakao2007$ which gsed
+/usr/local/bin/gsed</p>
+
+<p>fukui-no-MacBook-Air:tmp ftakao2007$ brew install gawk
+Warning: Your Xcode (4.2.1) is outdated
+Please install Xcode 4.6.1.
+==> Installing gawk dependency: xz
+==> Downloading http://tukaani.org/xz/xz-5.0.4.tar.bz2</p>
+
+<h6>################################################################## 100.0%</h6>
+
+<p>==> ./configure --prefix=/usr/local/Cellar/xz/5.0.4
+==> make install
+🍺  /usr/local/Cellar/xz/5.0.4: 58 files, 1.5M, built in 23 seconds
+==> Installing gawk
+==> Downloading http://ftpmirror.gnu.org/gawk/gawk-4.0.2.tar.xz</p>
+
+<h6>################################################################## 100.0%</h6>
+
+<p>==> ./configure --prefix=/usr/local/Cellar/gawk/4.0.2
+==> make
+==> make check
+==> make install
+🍺  /usr/local/Cellar/gawk/4.0.2: 39 files, 1.5M, built in 26 seconds</p>
+
+<p>fukui-no-MacBook-Air:tmp ftakao2007$ which gawk
+/usr/local/bin/gawk
+```</p>
+
+<!--
+# Xcodeバージョンアップ
+以下表示されていたので。
+``` bash
+Warning: Your Xcode (4.2.1) is outdated
+Please install Xcode 4.6.1.
+```
+-->
+
+
+
 ]]></content>
   </entry>
   
