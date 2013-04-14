@@ -4,7 +4,7 @@
   <title><![CDATA[Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-04-14T10:48:24+09:00</updated>
+  <updated>2013-04-14T19:55:02+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -977,6 +977,14 @@ n番目の発生を置換</li>
 
 <p>を目的とします。勉強会でその時スゲーって思ってまとめても、あのコマンドどこだったっけとなることが多かったので
 今後勉強会で学んだことは逆引き的に上記のページに集約しようと思います。</p>
+
+<h2>リンク</h2>
+
+<ul>
+<li><p><a href="http://www.slideshare.net/HirofumiSaito/usp-lt-20130413">wgetとcurlで並列ダウンロード(hi_saito さん)</a></p></li>
+<li><p><a href="https://twitter.com/usptomo/status/323068045532737536/photo/1">本日一番の訳わからない写真</a></p></li>
+</ul>
+
 ]]></content>
   </entry>
   
