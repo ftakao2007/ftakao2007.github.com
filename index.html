@@ -9,18 +9,10 @@
   <meta name="author" content="ftakao2007">
 
   
-  <meta name="description" content="改行を したい 「=」で改行 1
-2
-3
-4
-5
-6
-7
-8
-9
-fukui-no-MacBook-Air:tmp ftakao2007$ cat vimrc
-set fileencoding=utf-8
-set fileencodings=iso-2022-jp,utf-8,euc-jp &hellip;">
+  <meta name="description" content="初期設定 AWSのEC2 API Toolsをインストールなしで利用する方法
+➡基本的にこの設定でOK
+AWSのログインとかがあるメニューから証明書取得の画面を開き、証明書と秘密鍵を取得する。 2013/03/31こちらのアクセスキーとシークレットキーでアクセスする方法に変更
+EC2 API &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -88,6 +80,419 @@ set fileencodings=iso-2022-jp,utf-8,euc-jp &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/04/15/ec2-api-tools/">Ec2-api-tools</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-15T19:45:00+09:00" pubdate data-updated="true">Apr 15<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h1>初期設定</h1>
+
+<p><a href="http://engineer.blog.lancers.jp/2012/12/ec2-api-tools/">AWSのEC2 API Toolsをインストールなしで利用する方法</a>
+➡基本的にこの設定でOK
+AWSのログインとかがあるメニューから証明書取得の画面を開き、証明書と秘密鍵を取得する。</p>
+
+<p>2013/03/31こちらのアクセスキーとシークレットキーでアクセスする方法に変更
+<a href="http://blog.serverworks.co.jp/tech/2013/03/29/accesskeyid_secretkey_on_ec2-api-tools/">EC2 API ToolsでアクセスキーIDとシークレットアクセスキーを使う</a></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c"># cp pk-xxxxxxxxxxxx.pem /opt/aws/apitools/ec2/</span>
+</span><span class='line'><span class="c"># cp cert-xxxxxxxxxxxx.pem /opt/aws/apitools/ec2/</span>
+</span><span class='line'>
+</span><span class='line'>vi ~/.bashrc
+</span><span class='line'>
+</span><span class='line'><span class="nb">export </span><span class="nv">EC2_HOME</span><span class="o">=</span>/opt/aws/apitools/ec2
+</span><span class='line'><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$EC2_HOME</span>/bin
+</span><span class='line'><span class="c"># export EC2_PRIVATE_KEY=$EC2_HOME/pk-xxxxxxxxxxxx.pem</span>
+</span><span class='line'><span class="c"># export EC2_CERT=$EC2_HOME/cert-xxxxxxxxxxxx.pem</span>
+</span><span class='line'><span class="nb">export </span><span class="nv">AWS_ACCESS_KEY</span><span class="o">=</span>xxxxxxxxxxxxxxxxxxec2-api-tools
+</span><span class='line'><span class="nb">export </span><span class="nv">AWS_SECRET_KEY</span><span class="o">=</span>yyyyyyyyyyyyyyyyyyyyyyyyyyy
+</span><span class='line'><span class="nb">export </span><span class="nv">EC2_URL</span><span class="o">=</span>http://ec2.ap-northeast-1.amazonaws.com
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h1>諸情報</h1>
+
+<h2>実行ファイルのPATH</h2>
+
+<p>/opt/aws/bin</p>
+
+<h2>環境変数</h2>
+
+<h3>EC2_HOME</h3>
+
+<p>ec2-api-toolsのHOME
+* 例
+export EC2_HOME=/opt/aws/apitools/ec2</p>
+
+<h3>EC2_PRIVATE_KEY</h3>
+
+<p>秘密鍵のPATH。今は使ってない</p>
+
+<ul>
+<li>例
+export EC2_PRIVATE_KEY=$EC2_HOME/pk-XXXXXXXXXXXXXXXXXXXXX.pem</li>
+</ul>
+
+
+<h3>EC2_CERT</h3>
+
+<p>証明書のPATH。今は使ってない。</p>
+
+<ul>
+<li>例
+export EC2_CERT=$EC2_HOME/cert-XXXXXXXXXXXXXXXXXXXXXXX.pem</li>
+</ul>
+
+
+<h3>AWS_ACCESS_KEY</h3>
+
+<p>AWSアクセスキー</p>
+
+<ul>
+<li>例
+export AWS_ACCESS_KEY=xxxxxxxxxxxxxxxxxx</li>
+</ul>
+
+
+<h3>AWS_SECRET_KEY</h3>
+
+<p>AWSシークレットキー</p>
+
+<ul>
+<li>例
+export AWS_SECRET_KEY=yyyyyyyyyyyyyyyyyyyyyyyyyyy</li>
+</ul>
+
+
+<h3>EC2_URL</h3>
+
+<p>リージョンの指定</p>
+
+<ul>
+<li>例
+export EC2_URL=http://ec2.ap-northeast-1.amazonaws.com</li>
+</ul>
+
+
+<h1>コマンド</h1>
+
+<h2>確認</h2>
+
+<h3>ec2ver</h3>
+
+<p>バージョンの表示</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="o">[</span>ec2-user@ip-10-146-39-194 ~<span class="o">]</span><span class="nv">$ </span>ec2ver
+</span><span class='line'>1.6.6.0 2012-12-01
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>ec2-describe-images</h3>
+
+<p>AMIの表示</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="o">[</span>ec2-user@ip-10-146-39-194 ~<span class="o">]</span><span class="nv">$ </span> ec2-describe-images -x all
+</span><span class='line'>IMAGE   ami-1fd85d1e    001108612011/CentOS-63-40T-EBS-PhilChen 001108612011    available       public          x86_64  machine aki-44992845                    ebs     paravirtual     xen
+</span><span class='line'>BLOCKDEVICEMAPPING      EBS     /dev/sda1               snap-af93b78f   40      <span class="nb">true    </span>standard
+</span><span class='line'>IMAGE   ami-e802b5e9    014836023992/ProxySnifferGUI-46-Z-win64-04      014836023992    available       public          x86_64  machine                 windows ebs     hvm     xen
+</span><span class='line'>BLOCKDEVICEMAPPING      EBS     /dev/sda1               snap-339edc59   35      <span class="nb">true    </span>standard
+</span><span class='line'>IMAGE   ami-a4ea50a5    014836023992/ProxySnifferGUI-50-K-win64-03      014836023992    available       public          x86_64  machine                 windows ebs     hvm     xen
+</span><span class='line'>BLOCKDEVICEMAPPING      EBS     /dev/sda1               snap-9b2e46bb   35      <span class="nb">true    </span>standard
+</span><span class='line'>...
+</span><span class='line'>
+</span><span class='line'>※AMIの一覧が表示される
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>インスタンス操作関連</h2>
+
+<h3>ec2-describe-instances</h3>
+
+<p>インスタンスの一覧の情報が表示される</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>RESERVATION  r-a16fc3a2  492323174246    magento_sg
+</span><span class='line'>INSTANCE  i-1f433f1c  ami-87932986            stopped magento_key 0       t1.micro    2013-01-06T00:53:08+0000    ap-northeast-1a aki-44992845            monitoring-disabled                 ebs     paravirtual xen hXdxF1357433587195  sg-17a3c816 default <span class="nb">false  </span>
+</span><span class='line'>BLOCKDEVICE   /dev/sdf    vol-5bb81c79    2013-02-11T07:14:32.000Z    <span class="nb">false      </span>
+</span><span class='line'>TAG   instance    i-1f433f1c  Name    magento_amazon
+</span><span class='line'>
+</span><span class='line'>RESERVATION   r-9dfb469e  492323174246    nfs_test_sg,stg_sg
+</span><span class='line'>INSTANCE  i-7b470978  ami-4e6cd34f    ec2-54-249-240-55.ap-northeast-1.compute.amazonaws.com  ip-10-146-39-194.ap-northeast-1.compute.internal    running wordpress_key   0       t1.micro    2013-01-19T23:50:01+0000    ap-northeast-1b aki-44992845            monitoring-disabled 54.249.240.55   10.146.39.194           ebs                 paravirtual xen xuoXb1358639400459  sg-86076187, sg-3f58323e    default <span class="nb">false  </span>
+</span><span class='line'>BLOCKDEVICE   /dev/sda1   vol-42cf7b60    2013-01-19T23:50:05.000Z    <span class="nb">true       </span>
+</span><span class='line'>TAG   instance    i-7b470978  Name    Redmine
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>※ 引数にインスタンスIDを指定数と、そのインスタンスの情報のみ表示される</p>
+
+<h3>ec2-start-instances</h3>
+
+<p>インスタンスを起動</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="o">[</span>ec2-user@ip-10-146-39-194 ~<span class="o">]</span><span class="nv">$ </span>ec2-start-instances --region ap-northeast-1 i-1f433f1c
+</span><span class='line'>INSTANCE  i-1f433f1c  stopped pending
+</span><span class='line'>
+</span><span class='line'><span class="o">[</span>ec2-user@ip-10-146-39-194 ~<span class="o">]</span><span class="nv">$ </span>ec2-describe-instance-status
+</span><span class='line'>INSTANCE  i-1f433f1c  ap-northeast-1a running 16  ok  ok  active  
+</span><span class='line'>SYSTEMSTATUS  reachability    passed  
+</span><span class='line'>INSTANCESTATUS    reachability    passed  
+</span><span class='line'>INSTANCE  i-7b470978  ap-northeast-1b running 16  ok  ok  active  
+</span><span class='line'>SYSTEMSTATUS  reachability    passed  
+</span><span class='line'>INSTANCESTATUS    reachability    passed
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>ec2-stop-instances</h3>
+
+<p>インスタンスを停止</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="o">[</span>ec2-user@ip-10-146-39-194 ~<span class="o">]</span><span class="nv">$ </span>ec2-stop-instances i-1f433f1c
+</span><span class='line'>INSTANCE  i-1f433f1c  running stopping
+</span><span class='line'>
+</span><span class='line'><span class="o">[</span>ec2-user@ip-10-146-39-194 ~<span class="o">]</span><span class="nv">$ </span>ec2-describe-instances
+</span><span class='line'>RESERVATION   r-a16fc3a2  492323174246    magento_sg
+</span><span class='line'>INSTANCE  i-1f433f1c  ami-87932986            stopped magento_key 0       t1.micro    2013-02-20T15:34:21+0000    ap-northeast-1a aki-44992845            monitoring-disabled                 ebs     paravirtual xen hXdxF1357433587195  sg-17a3c816 default <span class="nb">false  </span>
+</span><span class='line'>BLOCKDEVICE   /dev/sda1   vol-5bb81c79    2013-02-20T15:34:02.000Z    <span class="nb">false      </span>
+</span><span class='line'>TAG   instance    i-1f433f1c  Name    magento_amazon
+</span><span class='line'>
+</span><span class='line'>➡ stoppedになっている
+</span><span class='line'>
+</span><span class='line'>RESERVATION   r-9dfb469e  492323174246    nfs_test_sg,stg_sg
+</span><span class='line'>INSTANCE  i-7b470978  ami-4e6cd34f    ec2-54-249-240-55.ap-northeast-1.compute.amazonaws.com  ip-10-146-39-194.ap-northeast-1.compute.internal    running wordpress_key   0       t1.micro    2013-01-19T23:50:01+0000    ap-northeast-1b aki-44992845            monitoring-disabled 54.249.240.55   10.146.39.194           ebs                 paravirtual xen xuoXb1358639400459  sg-86076187, sg-3f58323e    default <span class="nb">false  </span>
+</span><span class='line'>BLOCKDEVICE   /dev/sda1   vol-42cf7b60    2013-01-19T23:50:05.000Z    <span class="nb">true       </span>
+</span><span class='line'>TAG   instance    i-7b470978  Name    Redmine
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>起動しているインスタンスのみ確認する場合は以下</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="o">[</span>ec2-user@ip-10-146-39-194 ~<span class="o">]</span><span class="nv">$ </span>ec2-stop-instances i-1f433f1c
+</span><span class='line'>INSTANCE  i-1f433f1c  running stopping
+</span><span class='line'>
+</span><span class='line'><span class="o">[</span>ec2-user@ip-10-146-39-194 ~<span class="o">]</span><span class="nv">$ </span>ec2-describe-instance-status
+</span><span class='line'>INSTANCE  i-7b470978  ap-northeast-1b running 16  ok  ok  active  
+</span><span class='line'>SYSTEMSTATUS  reachability    passed  
+</span><span class='line'>INSTANCESTATUS    reachability    passed
+</span><span class='line'>
+</span><span class='line'>※ i-1f433f1cが表示されなくなっている
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>snapshot関連</h2>
+
+<h3>ec2-describe-snapshots</h3>
+
+<p>snapshot一覧の表示</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="o">[</span>ec2-user@ip-10-157-54-96 bin<span class="o">]</span><span class="nv">$ </span>ec2-describe-snapshots --region ap-northeast-1
+</span><span class='line'>SNAPSHOT  snap-a22a9d81   vol-42cf7b60    completed   2013-03-03T07:55:57+0000    100%    492323174246    8   Redmine
+</span><span class='line'>TAG   snapshot    snap-a22a9d81   Name    Redmine
+</span><span class='line'>SNAPSHOT  snap-f363ddd0   vol-42cf7b60    completed   2013-03-05T22:55:59+0000    100%    492323174246    8   Redmine 20130306
+</span><span class='line'>TAG   snapshot    snap-f363ddd0   Name    Redmine
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>ec2-copy-snapshot</h3>
+
+<p>snapshotのコピー</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>ec2-copy-snapshot --region ap-southeast-1 -r ap-northeast-1 -s snap-a22a9d81
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>※東京からシンガポールのリージョンへコピー</p>
+
+<h3>ec2-describe-snapshot</h3>
+
+<p>snapshotのアクセス権限確認</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="o">[</span>ec2-user@ip-10-157-54-96 bin<span class="o">]</span><span class="nv">$ </span>ec2-describe-snapshot-attribute snap-a22a9d81 --create-volume-permission
+</span><span class='line'><span class="o">[</span>ec2-user@ip-10-157-54-96 bin<span class="o">]</span><span class="err">$</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>権限が設定されていない場合(非公開設定)は何も出力されない</p>
+
+<h3>ec2-modify-snapshot-attribute</h3>
+
+<p>snapshotのアクセス権限を変更する</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>ec2-modify-snapshot-attribute <span class="o">(</span>snap_id<span class="o">)</span> -c --add all
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>※すべてのユーザに公開される設定</p>
+
+<h3>ec2-reset-snapshot-attribute</h3>
+
+<p>権限をリセットする</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>ec2-reset-snapshot-attribute <span class="o">(</span>snapshot_id<span class="o">)</span> -c
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>volume関連</h2>
+
+<h3>ec2-detach-volume</h3>
+
+<p>ボリュームをデタッチする</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="o">[</span>ec2-user@ip-10-156-119-74 ~<span class="o">]</span><span class="nv">$ </span>ec2-detach-volume vol-5bb81c79
+</span><span class='line'>ATTACHMENT    vol-5bb81c79    i-1f433f1c  /dev/sda1   detaching   2013-03-26T14:50:06+0000
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>ec2-attach-volume</h3>
+
+<p>ボリュームをアタッチする</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="o">[</span>ec2-user@ip-10-156-119-74 ~<span class="o">]</span><span class="nv">$ </span>ec2-attach-volume vol-5bb81c79 -i i-1f433f1c -d /dev/sda1
+</span><span class='line'>ATTACHMENT    vol-5bb81c79    i-1f433f1c  /dev/sda1   attaching   2013-03-31T14:55:34+0000
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>ec2-create-volume</h3>
+
+<p>ボリュームを作成する</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="o">[</span>ec2-user@ip-10-156-119-74 ~<span class="o">]</span><span class="nv">$ </span>ec2-create-volume --snapshot snap-7971395a -z ap-northeast-1a
+</span><span class='line'>VOLUME    vol-45531e67    8   snap-7971395a   ap-northeast-1a creating    2013-03-31T15:02:11+0000    standard
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Elastic IP関連</h2>
+
+<h3>ec2-describe-addresses</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="o">[</span>ec2-user@ip-10-158-203-131 tmp<span class="o">]</span><span class="nv">$ </span>ec2-describe-addresses
+</span><span class='line'>ADDRESS   54.249.240.55   i-7b470978  standard
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h1>トラブルシューティング</h1>
+
+<h2>&#8220;Instance does not have a volume attached at root (/dev/sda1) ](https://forums.aws.amazon.com/message.jspa?messageID=342081)</h2>
+
+<p>/dev/sdfになっていたのを/dev/sda1でアタッチし直したらOK</p>
+
+<h1>リンク</h1>
+
+<p><a href="http://d.hatena.ne.jp/studio-m/20091104/1257297074">CentOSでec2-api-tools, ec2-ami-toolsを使えるようにする</a>
+<a href="http://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/command-reference.html">API Tools Reference</a>
+<a href="http://nkjmkzk.net/?p=1814">EC2においてEBS Snapshotでバックアップを取得しそれをリカバリする方法</a></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1412,42 +1817,6 @@ n番目の発生を置換</li>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/04/08/chef/">Chef</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-04-08T20:38:00+09:00" pubdate data-updated="true">Apr 8<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content">
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -1461,6 +1830,10 @@ n番目の発生を置換</li>
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/04/15/ec2-api-tools/">ec2-api-tools</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/04/14/sed-gyakubiki/">逆引きコマンド</a>
@@ -1478,15 +1851,11 @@ n番目の発生を置換</li>
         <a href="/blog/2013/04/13/about/">このブログについて</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/04/11/google/">google</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/about/'>about (3)</a></li><li><a href='/blog/categories/aws/'>aws (2)</a></li><li><a href='/blog/categories/command/'>command (5)</a></li><li><a href='/blog/categories/construct/'>construct (2)</a></li><li><a href='/blog/categories/diary/'>diary (3)</a></li><li><a href='/blog/categories/google/'>google (1)</a></li><li><a href='/blog/categories/monitor/'>monitor (4)</a></li><li><a href='/blog/categories/network/'>network (1)</a></li><li><a href='/blog/categories/octopress/'>octopress (1)</a></li><li><a href='/blog/categories/os/'>OS (3)</a></li><li><a href='/blog/categories/mian-qiang-hui/'>勉強会 (1)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/about/'>about (3)</a></li><li><a href='/blog/categories/aws/'>aws (3)</a></li><li><a href='/blog/categories/command/'>command (5)</a></li><li><a href='/blog/categories/construct/'>construct (2)</a></li><li><a href='/blog/categories/diary/'>diary (3)</a></li><li><a href='/blog/categories/ec2/'>ec2 (1)</a></li><li><a href='/blog/categories/google/'>google (1)</a></li><li><a href='/blog/categories/monitor/'>monitor (4)</a></li><li><a href='/blog/categories/network/'>network (1)</a></li><li><a href='/blog/categories/octopress/'>octopress (1)</a></li><li><a href='/blog/categories/os/'>OS (3)</a></li><li><a href='/blog/categories/mian-qiang-hui/'>勉強会 (1)</a></li></ul>
 </section>
 <section>
 <script type="text/javascript"><!--
