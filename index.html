@@ -10,8 +10,10 @@
 
   
   <meta name="description" content="初期設定 AWSのEC2 API Toolsをインストールなしで利用する方法
-➡基本的にこの設定でOK
-AWSのログインとかがあるメニューから証明書取得の画面を開き、証明書と秘密鍵を取得する。 2013/03/31こちらのアクセスキーとシークレットキーでアクセスする方法に変更
+➡基本的にこの設定でOK。
+AWSのログインとかがあるメニューから証明書取得の画面を開き、証明書と秘密鍵を取得する。
+2013/03/31
+こちらのアクセスキーとシークレットキーでアクセスする方法に変更
 EC2 API &hellip;">
   
 
@@ -111,12 +113,15 @@ EC2 API &hellip;">
 
   <div class="entry-content"><h1>初期設定</h1>
 
-<p><a href="http://engineer.blog.lancers.jp/2012/12/ec2-api-tools/">AWSのEC2 API Toolsをインストールなしで利用する方法</a>
-➡基本的にこの設定でOK
-AWSのログインとかがあるメニューから証明書取得の画面を開き、証明書と秘密鍵を取得する。</p>
+<ul>
+<li><p><a href="http://engineer.blog.lancers.jp/2012/12/ec2-api-tools/">AWSのEC2 API Toolsをインストールなしで利用する方法</a><br/>
+➡基本的にこの設定でOK。
+AWSのログインとかがあるメニューから証明書取得の画面を開き、証明書と秘密鍵を取得する。</p></li>
+<li><p>2013/03/31<br/>
+こちらのアクセスキーとシークレットキーでアクセスする方法に変更<br/>
+<a href="http://blog.serverworks.co.jp/tech/2013/03/29/accesskeyid_secretkey_on_ec2-api-tools/">EC2 API ToolsでアクセスキーIDとシークレットアクセスキーを使う</a></p></li>
+</ul>
 
-<p>2013/03/31こちらのアクセスキーとシークレットキーでアクセスする方法に変更
-<a href="http://blog.serverworks.co.jp/tech/2013/03/29/accesskeyid_secretkey_on_ec2-api-tools/">EC2 API ToolsでアクセスキーIDとシークレットアクセスキーを使う</a></p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -156,7 +161,7 @@ AWSのログインとかがあるメニューから証明書取得の画面を�
 <h3>EC2_HOME</h3>
 
 <p>ec2-api-toolsのHOME
-* 例
+* 例<br/>
 export EC2_HOME=/opt/aws/apitools/ec2</p>
 
 <h3>EC2_PRIVATE_KEY</h3>
@@ -164,7 +169,7 @@ export EC2_HOME=/opt/aws/apitools/ec2</p>
 <p>秘密鍵のPATH。今は使ってない</p>
 
 <ul>
-<li>例
+<li>例<br/>
 export EC2_PRIVATE_KEY=$EC2_HOME/pk-XXXXXXXXXXXXXXXXXXXXX.pem</li>
 </ul>
 
@@ -174,7 +179,7 @@ export EC2_PRIVATE_KEY=$EC2_HOME/pk-XXXXXXXXXXXXXXXXXXXXX.pem</li>
 <p>証明書のPATH。今は使ってない。</p>
 
 <ul>
-<li>例
+<li>例<br/>
 export EC2_CERT=$EC2_HOME/cert-XXXXXXXXXXXXXXXXXXXXXXX.pem</li>
 </ul>
 
@@ -184,7 +189,7 @@ export EC2_CERT=$EC2_HOME/cert-XXXXXXXXXXXXXXXXXXXXXXX.pem</li>
 <p>AWSアクセスキー</p>
 
 <ul>
-<li>例
+<li>例<br/>
 export AWS_ACCESS_KEY=xxxxxxxxxxxxxxxxxx</li>
 </ul>
 
@@ -194,7 +199,7 @@ export AWS_ACCESS_KEY=xxxxxxxxxxxxxxxxxx</li>
 <p>AWSシークレットキー</p>
 
 <ul>
-<li>例
+<li>例<br/>
 export AWS_SECRET_KEY=yyyyyyyyyyyyyyyyyyyyyyyyyyy</li>
 </ul>
 
@@ -204,7 +209,7 @@ export AWS_SECRET_KEY=yyyyyyyyyyyyyyyyyyyyyyyyyyy</li>
 <p>リージョンの指定</p>
 
 <ul>
-<li>例
+<li>例<br/>
 export EC2_URL=http://ec2.ap-northeast-1.amazonaws.com</li>
 </ul>
 
@@ -478,15 +483,18 @@ export EC2_URL=http://ec2.ap-northeast-1.amazonaws.com</li>
 
 <h1>トラブルシューティング</h1>
 
-<h2>&#8220;Instance does not have a volume attached at root (/dev/sda1) ](https://forums.aws.amazon.com/message.jspa?messageID=342081)</h2>
+<p><a href="https://forums.aws.amazon.com/message.jspa?messageID=342081">Instance does not have a volume attached at root (/dev/sda1)</a></p>
 
 <p>/dev/sdfになっていたのを/dev/sda1でアタッチし直したらOK</p>
 
 <h1>リンク</h1>
 
-<p><a href="http://d.hatena.ne.jp/studio-m/20091104/1257297074">CentOSでec2-api-tools, ec2-ami-toolsを使えるようにする</a>
-<a href="http://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/command-reference.html">API Tools Reference</a>
-<a href="http://nkjmkzk.net/?p=1814">EC2においてEBS Snapshotでバックアップを取得しそれをリカバリする方法</a></p>
+<ul>
+<li><a href="http://d.hatena.ne.jp/studio-m/20091104/1257297074">CentOSでec2-api-tools, ec2-ami-toolsを使えるようにする</a></li>
+<li><a href="http://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/command-reference.html">API Tools Reference</a></li>
+<li><a href="http://nkjmkzk.net/?p=1814">EC2においてEBS Snapshotでバックアップを取得しそれをリカバリする方法</a></li>
+</ul>
+
 </div>
   
   
