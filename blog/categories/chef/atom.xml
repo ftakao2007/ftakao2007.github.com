@@ -4,7 +4,7 @@
   <title><![CDATA[Category: chef | Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/blog/categories/chef/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-04-16T18:54:00+09:00</updated>
+  <updated>2013-04-17T00:52:47+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -14,11 +14,215 @@
 
   
   <entry>
-    <title type="html"><![CDATA[chef-handson]]></title>
+    <title type="html"><![CDATA[シェフハンズオンセミナー]]></title>
     <link href="http://ftakao2007.github.com/blog/2013/04/16/chef-handson/"/>
     <updated>2013-04-16T18:52:00+09:00</updated>
     <id>http://ftakao2007.github.com/blog/2013/04/16/chef-handson</id>
-    <content type="html"><![CDATA[<h1>chefハンズオンセミナー</h1>
+    <content type="html"><![CDATA[<h1>AWSのUbuntuでChefを動かす</h1>
+
+<p>デフォルトのAWSで用意されているUbuntuにChefをインストールする。<br/>
+ハンズオンのインスタンスは必要なパッケージがすでにいくらかインストールされていたみたいなので
+トライアンドエラーで設定。</p>
+
+<h1>事前準備</h1>
+
+<p>Opscodeでアカウントを作成して鍵ファイルとknife.rbを事前にDLしておく。<br/>
+AWSのインスタンスを利用できる状態にしておく。<br/>
+AWSのaccess keyとsecret access keyを用意しておく。</p>
+
+<h1>AWSにChefクライアントをインストール</h1>
+
+<p>Ubuntu 12.04.2 LTSの64bitを選択</p>
+
+<h1>必要パッケージとChef クライアントのインストール</h1>
+
+<p>``` bash
+sudo apt-get update
+sudo apt-get upgrade
+curl -L http://www.opscode.com/chef/install.sh | sudo bash</p>
+
+<h1>sudo apt-get install ruby git tree g++</h1>
+
+<p>sudo apt-get install (パッケージたくさん)
+```
+※ パッケージはハンズオンで入っていたパッケージを根こそぎ入れた。必要なパッケージは現在精査中。</p>
+
+<p>Chefのgemは以下に入っていることを意識すること<br/>
+-> デフォルトのgemを使うと残念なことになるらしい。
+<code>bash
+ls -ld /opt/chef/embedded/bin/gem
+</code></p>
+
+<p><code>bash
+cd ~
+git clone https://github.com/opscode/chef-repo.git
+cd chef-repo
+tree
+.
+├── chef-repo
+│   ├── certificates
+│   │   └── README.md
+│   ├── chefignore
+│   ├── config
+│   │   └── rake.rb
+│   ├── cookbooks
+│   │   └── README.md
+│   ├── data_bags
+│   │   └── README.md
+│   ├── environments
+│   │   └── README.md
+│   ├── LICENSE
+│   ├── Rakefile
+│   ├── README.md
+│   └── roles
+│       └── README.md
+└── credentials.tgz
+</code></p>
+
+<p>WorkstationとしてChef serverと通信するための環境ファイル用のディレクトリ作成
+<code>bash
+mkdir .chef
+</code></p>
+
+<p>この後、.chefにOpscodeからダウンロードした鍵とknife.rbをscpする。その後chef-repoディレクトリに移動して</p>
+
+<p><code>bash
+knife client list
+XXXX-validator
+</code>
+※ pemファイルをリネームしているとここでエラーが出てしまう。DLしたファイル名をそのまま使う。</p>
+
+<h1>knife-ec2インストール</h1>
+
+<p>先ほどのgemのPATHを意識すること！！
+<code>bash
+sudo /opt/chef/embedded/bin/gem install knife-ec2 --no-ri --no-rdoc
+</code></p>
+
+<p>knife.rbにAWSアクセスするためのキーを記載する
+``` bash</p>
+
+<h1>knife for AWS</h1>
+
+<p>knife[:aws_access_key_id]     = "XXXXXXXXXXXXXXX"
+knife[:aws_secret_access_key] = "XXXXXXXXXXXXXXXXXXXXXXXXXX"
+knife[:region] = "ap-northeast-1"
+```</p>
+
+<h1>cookbookをWorkstationへclone</h1>
+
+<p>``` bash
+cd ~/chef-repo/cookbooks
+git clone https://github.com/cl-lab-k/apache2-take.git
+cd apache2-take
+tree
+.
+├── attributes
+│   └── default.rb     <em>重要
+├── CHANGELOG.md
+├── example
+│   └── apache2-take-ubuntu.sh
+├── files
+│   └── default
+│       └── tests
+│           └── minitest
+│               ├── default_test.rb
+│               └── support
+│                   └── helpers.rb
+├── Gemfile
+├── metadata.rb
+├── README.md
+├── recipes
+│   └── default.rb     </em>重要
+├── templates
+│   └── default        *重要
+│       ├── default.erb
+│       ├── ports.conf.erb
+│       └── twitter-search.html.erb
+└── test</p>
+
+<pre><code>└── kitchen
+    └── Kitchenfile
+</code></pre>
+
+<p>```</p>
+
+<h2>手軽なcookbook</h2>
+
+<ul>
+<li><a href="http://acrmp.github.io/foodcritic/">Food Critic</a></li>
+<li><a href="http://docs.opscode.com/knife_cookbook.html">knife cookbook test</a></li>
+</ul>
+
+
+<h1>Apache2 install</h1>
+
+<p>※ 以下はスクリプトで実行した場合の例。Chefは使っていない。</p>
+
+<h2>script</h2>
+
+<p><code>bash
+cd ~/chef-repo/cookbooks/apache2-take/example/
+sudo sh ./apache2-take-ubuntu.sh
+</code>
+スクリプトの内容は以下</p>
+
+<ul>
+<li>Apache2のインストール&amp;起動</li>
+<li>Apache2のリクエスト待ち受けポートの変更</li>
+<li>Apache2で”default”サイトを有効化</li>
+<li>githubからサイト用コンテンツをclone</li>
+<li>githubからサイト用コンテンツをダウンロード</li>
+</ul>
+
+
+<h1>同様のものをChefで処理</h1>
+
+<p>テスト
+<code>bash
+cd ~/chef-repo
+knife cookbook test apache2-take
+</code>
+FoodCriticを使ったテスト
+<code>bash
+sudo /opt/chef/embedded/bin/gem install foodcritic --no-ri --no-rdoc
+/opt/chef/embedded/bin/foodcritic cookbooks/apache2-take
+</code></p>
+
+<p>このままだと以下の様なエラーが出る
+<code>bash
+FC008: Generated cookbook metadata needs updating: cookbooks/apache2-take/metadata.rb:2
+FC008: Generated cookbook metadata needs updating: cookbooks/apache2-take/metadata.rb:3
+</code>
+<a href="http://acrmp.github.io/foodcritic/">ここ</a>でコードの内容を確認し、スタイルを修正する。</p>
+
+<p><code>bash
+[DEPRECATION] "eval" is deprecated. Please use "evaluate" instead
+</code>
+<a href="http://www.blogosfera.co.uk/2013/04/eval-is-deprecated-please-use-evaluate-instead/">これはバージョンのWarningっぽい。</a>動くので今はスルー。</p>
+
+<h2>cookbookのアップロード</h2>
+
+<p><code>bash
+cd ~/chef-repo/cookbooks/apache2-take
+knife cookbook upload apache2-take
+</code></p>
+
+<p>EC2インスタンス起動
+<code>bash
+knife ec2 server create -S [key pair] -i [key file (XXX.pem)] -r "recipe[apache2-take]" -I ami-77cf4976 --flavor t1.micro -Z ap-northeast-1a -G [Security Group] -x ubuntu -N aws-handson -VV
+</code>
+これで新しいインスタンスが作成され、apacheが立ち上がる。</p>
+
+<h1>メモ書</h1>
+
+<ul>
+<li><p>コンバージョン(収束)させる<br/>
+-> あるべき状態になる、将来ありたい状態と現状を埋める仕組み</p></li>
+<li><p>98%の情報は下記のURLに存在する!<br/>
+http://docs.opscode.com/chef/resources.html</p></li>
+</ul>
+
 ]]></content>
   </entry>
   
