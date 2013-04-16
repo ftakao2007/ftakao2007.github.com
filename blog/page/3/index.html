@@ -9,18 +9,7 @@
   <meta name="author" content="ftakao2007">
 
   
-  <meta name="description" content="Fabricインストール CentOS6.4の場合 1
-2
-3
-4
-5
-6
-7
-su -
-bash
-yum update
-yum -y install python python-devel gcc
-curl http://python-distribute.org/ &hellip;">
+  <meta name="description" content="ec2関連のまとめ EC2にDropboxをインストールしてOctopressの記事を共有する ※※※ Dropbox上のファイルが消失する可能性のある作業が含まれますので以下作業をする場合は自己責任でお願いしますm( )m 概要 Octopressの記事はローカルに保存して編集するので、 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -88,6 +77,201 @@ curl http://python-distribute.org/ &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/04/07/ec2/">Ec2</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-07T10:36:00+09:00" pubdate data-updated="true">Apr 7<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>ec2関連のまとめ</p>
+
+<h1>EC2にDropboxをインストールしてOctopressの記事を共有する</h1>
+
+<p>※※※ Dropbox上のファイルが消失する可能性のある作業が含まれますので以下作業をする場合は自己責任でお願いしますm(<em> </em>)m</p>
+
+<h2>概要</h2>
+
+<p>Octopressの記事はローカルに保存して編集するので、通常その環境でしか作業できない。
+DropboxにOctopressの記事を置くことで、様々な環境で記事を編集できるようにする。</p>
+
+<h2><a href="http://d.hatena.ne.jp/tester7/20120303/1330768342">CUI環境の Linux に Dropbox をインストール</a></h2>
+
+<p>基本的にこの手順にそって作業すればOK<br/>
+(今回の環境はAmazonLinux 64bit)</p>
+
+<h2>ポイントなど</h2>
+
+<ul>
+<li>DLと展開が一度にできなかったので分けて実施</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>wget http://www.dropbox.com/download?plat<span class="o">=</span>lnx.x86_64
+</span><span class='line'>tar zxvf dropbox-lnx.x86_64-2.0.5.tar.gz
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>同期の状態はfilestatusとstatusで確認</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="o">[</span>root@ip-10-156-85-183 Dropbox<span class="o">]</span><span class="c"># dropbox filestatus</span>
+</span><span class='line'>Photos:          syncing
+</span><span class='line'>private:         syncing
+</span><span class='line'>Public:          up to date
+</span><span class='line'>カメラアップロード:       up to date
+</span><span class='line'>
+</span><span class='line'><span class="o">[</span>root@ip-10-156-85-183 ~<span class="o">]</span><span class="c"># dropbox status</span>
+</span><span class='line'>更新中（4,174 件のファイル, 残り 1 時間）
+</span><span class='line'>4,174 件のファイルをダウンロード中 （162.8 kB/秒、残り 1 時間
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>同期対象から除外と確認</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="o">[</span>root@ip-10-156-85-183 ~<span class="o">]</span><span class="c"># dropbox exclude add ~/Dropbox/カメラアップロード</span>
+</span><span class='line'>Excluded:
+</span><span class='line'>Dropbox/カメラアップロード
+</span><span class='line'>
+</span><span class='line'><span class="o">[</span>root@ip-10-156-85-183 ~<span class="o">]</span><span class="c"># dropbox exclude list</span>
+</span><span class='line'>Excluded:
+</span><span class='line'>Dropbox/カメラアップロード
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>気をつけたほうが良いこと</h2>
+
+<p>Dropboxを起動すると即同期がはじまります。デフォルトではDropboxのすべてのファイル
+同期が始まるのですが、ここで焦ってファイルを削除すると必要なDropbox上の大元のファイルを削除してしまう可能性があります。
+rmなどで直接削除せず、exclude addを実行してください(コマンド実行後、反映されるまで1分くらいかかることがあります)。
+実行が完了すると対象ファイルは見えなくなります。</p>
+
+<p>あと、普段は停止して必要な時のみ同期させてリソースを節約したほうがよいかもです。</p>
+
+<h1>Octopressの環境を構築</h1>
+
+<h3>初期設定</h3>
+
+<ul>
+<li><a href="http://k-ui.jp/blog/2011/08/30/try-to-octopress/">Octopress 使う</a></li>
+<li><a href="http://atijust.github.io/">GitHub+Octopressでブログ構築</a></li>
+</ul>
+
+
+<h4>rvmとruby1.9.3のインストール</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>bash -s stable &lt; &lt;<span class="o">(</span>curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer<span class="o">)</span>
+</span><span class='line'><span class="nb">source</span> ~/.bash_profile
+</span><span class='line'>rvm autolibs <span class="nb">enable</span>
+</span><span class='line'>rvm install ruby-1.9.3-p392 <span class="o">&amp;&amp;</span> rvm use ruby-1.9.3-p392
+</span><span class='line'>rvm rubygems latest
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>※ 参考のページはruby-1.9.2-p320で、現在はoctpressフォルダに移動したときに<code>ruby-1.9.3-p392 is not installed.</code>のメッセージが出てしまう。<br/>
+※ <code>rvm rubygems latest</code>は実行しなくてもよいかも。(直前のコマンドで実行されている?)<br/>
+※ CentOS6.4は<a href="http://d.hatena.ne.jp/watanabe162/20120424/1335273582">libyaml-develをインストール</a>しないとエラーになる。<br/>
+デフォルトのリポジトリには入っていないので、EPELリポジトリを追加する必要がある。<br/>
+※ CentOS6.4はsudoが実行できる設定も行う必要がある。</p>
+
+<h4>必要なパッケージのインストール</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>gem install bundler rake
+</span><span class='line'>bundle install
+</span><span class='line'>rake install
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>※ DropBox内に既存の設定がある場合は<code>rake install</code>は実行不要</p>
+
+<h4>githubの設定</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>rake setup_github_pages
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>git config --global user.name <span class="s2">&quot;Your Name&quot;</span>
+</span><span class='line'>git config --global user.email you@example.com
+</span><span class='line'>git commit --amend --reset-author
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>※  この辺はエラーメッセージに実行してくださいと出たので設定しました。最後の行は実行しなくてもよいかもです。</p>
+
+<h4>githubのアクセス設定</h4>
+
+<p>接続しようとすると<code>fatal: The remote end hung up unexpectedly</code>のエラーがでるのでsshの権限を設定する</p>
+
+<p><a href="http://d.hatena.ne.jp/tmd45/20110203/1296744114">githubにパスワードなしでssh接続する設定</a> で鍵を事前に作っていた。これ(id_rsa)を<code>~/.ssh</code>に移動。600への権限変更も忘れずに。<br/>
+※ 既存の鍵を上書きしないように注意。</p>
+
+<p>これでgithubに上げられるようになる。<br/>
+<a href="http://ftakao2007.github.io/blog/2013/04/06/octpress/">Octopress まとめ</a></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -666,6 +850,10 @@ MacBook/MacBook Pro (Intl)</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/04/16/chef-handson/">chef-handson</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/04/15/ec2-api-tools/">ec2-api-tools</a>
       </li>
     
@@ -681,15 +869,11 @@ MacBook/MacBook Pro (Intl)</p>
         <a href="/blog/2013/04/13/shellgei/">シェル芸 20130413</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/04/13/about/">このブログについて</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/about/'>about (3)</a></li><li><a href='/blog/categories/aws/'>aws (3)</a></li><li><a href='/blog/categories/command/'>command (5)</a></li><li><a href='/blog/categories/construct/'>construct (2)</a></li><li><a href='/blog/categories/diary/'>diary (3)</a></li><li><a href='/blog/categories/ec2/'>ec2 (1)</a></li><li><a href='/blog/categories/google/'>google (1)</a></li><li><a href='/blog/categories/monitor/'>monitor (4)</a></li><li><a href='/blog/categories/network/'>network (1)</a></li><li><a href='/blog/categories/octopress/'>octopress (1)</a></li><li><a href='/blog/categories/os/'>OS (3)</a></li><li><a href='/blog/categories/mian-qiang-hui/'>勉強会 (1)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/about/'>about (3)</a></li><li><a href='/blog/categories/aws/'>aws (3)</a></li><li><a href='/blog/categories/chef/'>chef (1)</a></li><li><a href='/blog/categories/command/'>command (5)</a></li><li><a href='/blog/categories/construct/'>construct (2)</a></li><li><a href='/blog/categories/diary/'>diary (3)</a></li><li><a href='/blog/categories/ec2/'>ec2 (1)</a></li><li><a href='/blog/categories/google/'>google (1)</a></li><li><a href='/blog/categories/monitor/'>monitor (4)</a></li><li><a href='/blog/categories/network/'>network (1)</a></li><li><a href='/blog/categories/octopress/'>octopress (1)</a></li><li><a href='/blog/categories/os/'>OS (3)</a></li><li><a href='/blog/categories/mian-qiang-hui/'>勉強会 (2)</a></li></ul>
 </section>
 <section>
 <script type="text/javascript"><!--
