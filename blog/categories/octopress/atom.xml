@@ -4,7 +4,7 @@
   <title><![CDATA[Category: octopress | Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-04-17T00:59:33+09:00</updated>
+  <updated>2013-04-21T18:55:10+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -49,6 +49,11 @@ rake generate
 rake deploy
 http://ftakao2007.github.io
 ```</p>
+
+<ul>
+<li><a href="http://www.mk-mode.com/octopress/2013/01/10/octopress-table-tag/">Octopress - 容易に Table タグ！</a></li>
+</ul>
+
 
 <h1>画像テスト</h1>
 

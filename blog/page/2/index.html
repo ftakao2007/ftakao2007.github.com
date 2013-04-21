@@ -9,7 +9,8 @@
   <meta name="author" content="ftakao2007">
 
   
-  <meta name="description" content="iPad(iSSH)でec2のWindowsインスタンスにリモートデスクトップで接続 わぁい 設定方法 EC2設定 AmazonEC2でリモートデスクトップ:接続編 ec2側の設定は上記のサイト通り進めれば問題ないです。 iPad側設定 iSSHという有償のソフトを使って接続しました。 &hellip;">
+  <meta name="description" content="git init リポジトリの作成を行うコマンド
+">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -44,6 +45,9 @@
   </script>
 
 
+
+  <!-- add ftakao2007 -->
+  <link href="/stylesheets/table.css" rel="stylesheet" type="text/css">
 </head>
 
 <body   >
@@ -77,6 +81,44 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/04/10/git-command/">Git-command</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-10T20:13:00+09:00" pubdate data-updated="true">Apr 10<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h1>git init</h1>
+
+<p>リポジトリの作成を行うコマンド</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -778,158 +820,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/04/07/mac/">Macの環境構築</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-04-07T20:04:00+09:00" pubdate data-updated="true">Apr 7<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h1>herokuのインストール</h1>
-
-<p><a href="http://d.hatena.ne.jp/nshibazaki/20110723/1311494665">Macでherokuの開発環境を作る</a></p>
-
-<p>Xcodeは昔インストールしていた。<br/>
-rvmのインストールがうまく動かなかったので<a href="http://ftakao2007.github.io/blog/2013/04/07/ec2/">Octopressの環境を構築</a>を利用。<br/>
-homebrewとgitもインストール済み<br/>
-herokuは<code>gem install heroku</code>でインストールできた。</p>
-
-<p>後は鍵の設定をして表示されている通りコマンドを打てばハロワがでました。</p>
-
-<h1>fabricのインストール</h1>
-
-<p>pipをインストールしてからfabricを入れる</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo su -
-</span><span class='line'>easy_install pip
-</span><span class='line'>pip install fabric
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h1>gsed, gawkインストール</h1>
-
-<p>gawkはgawkだがgsedはgnu-sedで入れる。</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>fukui-no-MacBook-Air:tmp ftakao2007<span class="nv">$ </span>brew install gnu-sed
-</span><span class='line'>Warning: Your Xcode <span class="o">(</span>4.2.1<span class="o">)</span> is outdated
-</span><span class='line'>Please install Xcode 4.6.1.
-</span><span class='line'><span class="o">==</span>&gt; Downloading http://ftpmirror.gnu.org/sed/sed-4.2.2.tar.bz2
-</span><span class='line'><span class="c">######################################################################## 100.0%</span>
-</span><span class='line'><span class="o">==</span>&gt; ./configure --prefix<span class="o">=</span>/usr/local/Cellar/gnu-sed/4.2.2 --program-prefix<span class="o">=</span><span class="nv">g</span>
-</span><span class='line'><span class="o">==</span>&gt; make <span class="nv">install</span>
-</span><span class='line'><span class="o">==</span>&gt; Caveats
-</span><span class='line'>The <span class="nb">command </span>has been installed with the prefix <span class="s1">&#39;g&#39;</span>.
-</span><span class='line'>If you <span class="k">do </span>not want the prefix, install using the <span class="s1">&#39;default-names&#39;</span> option.
-</span><span class='line'><span class="o">==</span>&gt; Summary
-</span><span class='line'>🍺  /usr/local/Cellar/gnu-sed/4.2.2: 8 files, 356K, built in 31 seconds
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:tmp ftakao2007<span class="nv">$ </span>which gsed
-</span><span class='line'>/usr/local/bin/gsed
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:tmp ftakao2007<span class="nv">$ </span>brew install gawk
-</span><span class='line'>Warning: Your Xcode <span class="o">(</span>4.2.1<span class="o">)</span> is outdated
-</span><span class='line'>Please install Xcode 4.6.1.
-</span><span class='line'><span class="o">==</span>&gt; Installing gawk dependency: <span class="nv">xz</span>
-</span><span class='line'><span class="o">==</span>&gt; Downloading http://tukaani.org/xz/xz-5.0.4.tar.bz2
-</span><span class='line'><span class="c">######################################################################## 100.0%</span>
-</span><span class='line'><span class="o">==</span>&gt; ./configure --prefix<span class="o">=</span>/usr/local/Cellar/xz/5.0.4
-</span><span class='line'><span class="o">==</span>&gt; make install
-</span><span class='line'>🍺  /usr/local/Cellar/xz/5.0.4: 58 files, 1.5M, built in 23 <span class="nv">seconds</span>
-</span><span class='line'><span class="o">==</span>&gt; Installing <span class="nv">gawk</span>
-</span><span class='line'><span class="o">==</span>&gt; Downloading http://ftpmirror.gnu.org/gawk/gawk-4.0.2.tar.xz
-</span><span class='line'><span class="c">######################################################################## 100.0%</span>
-</span><span class='line'><span class="o">==</span>&gt; ./configure --prefix<span class="o">=</span>/usr/local/Cellar/gawk/4.0.2
-</span><span class='line'><span class="o">==</span>&gt; <span class="nv">make</span>
-</span><span class='line'><span class="o">==</span>&gt; make <span class="nv">check</span>
-</span><span class='line'><span class="o">==</span>&gt; make install
-</span><span class='line'>🍺  /usr/local/Cellar/gawk/4.0.2: 39 files, 1.5M, built in 26 seconds
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:tmp ftakao2007<span class="nv">$ </span>which gawk
-</span><span class='line'>/usr/local/bin/gawk
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<!--
-# Xcodeバージョンアップ
-以下表示されていたので。
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>Warning: Your Xcode <span class="o">(</span>4.2.1<span class="o">)</span> is outdated
-</span><span class='line'>Please install Xcode 4.6.1.
-</span></code></pre></td></tr></table></div></figure>
-&#8211;>
-
-
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/3/">&larr; Older</a>
@@ -947,6 +837,10 @@ herokuは<code>gem install heroku</code>でインストールできた。</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/04/20/study-network/">20130419 第14回「ネットワーク パケットを読む会（仮）」</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/04/16/chef-handson/">シェフハンズオンセミナー</a>
       </li>
     
@@ -962,15 +856,11 @@ herokuは<code>gem install heroku</code>でインストールできた。</p>
         <a href="/blog/2013/04/13/sed/">sed</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/04/13/shellgei/">シェル芸 20130413</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/about/'>about (3)</a></li><li><a href='/blog/categories/aws/'>aws (3)</a></li><li><a href='/blog/categories/chef/'>chef (1)</a></li><li><a href='/blog/categories/command/'>command (5)</a></li><li><a href='/blog/categories/construct/'>construct (2)</a></li><li><a href='/blog/categories/diary/'>diary (3)</a></li><li><a href='/blog/categories/ec2/'>ec2 (1)</a></li><li><a href='/blog/categories/google/'>google (1)</a></li><li><a href='/blog/categories/monitor/'>monitor (4)</a></li><li><a href='/blog/categories/network/'>network (1)</a></li><li><a href='/blog/categories/octopress/'>octopress (1)</a></li><li><a href='/blog/categories/os/'>OS (3)</a></li><li><a href='/blog/categories/mian-qiang-hui/'>勉強会 (2)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/about/'>about (3)</a></li><li><a href='/blog/categories/aws/'>aws (3)</a></li><li><a href='/blog/categories/chef/'>chef (1)</a></li><li><a href='/blog/categories/command/'>command (5)</a></li><li><a href='/blog/categories/construct/'>construct (2)</a></li><li><a href='/blog/categories/diary/'>diary (3)</a></li><li><a href='/blog/categories/ec2/'>ec2 (1)</a></li><li><a href='/blog/categories/google/'>google (1)</a></li><li><a href='/blog/categories/monitor/'>monitor (4)</a></li><li><a href='/blog/categories/network/'>network (2)</a></li><li><a href='/blog/categories/octopress/'>octopress (1)</a></li><li><a href='/blog/categories/os/'>OS (3)</a></li><li><a href='/blog/categories/mian-qiang-hui/'>勉強会 (3)</a></li></ul>
 </section>
 <section>
 <script type="text/javascript"><!--
