@@ -108,23 +108,23 @@
   </header>
 
 
-<div class="entry-content"><h1>AWSのUbuntuでChefを動かす</h1>
+<div class="entry-content"><h1 id="AWSのUbuntuでChefを動かす">AWSのUbuntuでChefを動かす</h1>
 
 <p>デフォルトのAWSで用意されているUbuntuにChefをインストールする。<br/>
 ハンズオンのインスタンスは必要なパッケージがすでにいくらかインストールされていたみたいなので
 トライアンドエラーで設定。</p>
 
-<h1>事前準備</h1>
+<h1 id="事前準備">事前準備</h1>
 
 <p>Opscodeでアカウントを作成して鍵ファイルとknife.rbを事前にDLしておく。<br/>
 AWSのインスタンスを利用できる状態にしておく。<br/>
 AWSのaccess keyとsecret access keyを用意しておく。</p>
 
-<h1>AWSにChefクライアントをインストール</h1>
+<h1 id="AWSにChefクライアントをインストール">AWSにChefクライアントをインストール</h1>
 
 <p>Ubuntu 12.04.2 LTSの64bitを選択</p>
 
-<h1>必要パッケージとChef クライアントのインストール</h1>
+<h1 id="必要パッケージとChef+クライアントのインストール">必要パッケージとChef クライアントのインストール</h1>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -218,7 +218,7 @@ AWSのaccess keyとsecret access keyを用意しておく。</p>
 
 <p>※ pemファイルをリネームしているとここでエラーが出てしまう。DLしたファイル名をそのまま使う。</p>
 
-<h1>knife-ec2インストール</h1>
+<h1 id="knife-ec2インストール">knife-ec2インストール</h1>
 
 <p>先ほどのgemのPATHを意識すること！！</p>
 
@@ -240,7 +240,7 @@ AWSのaccess keyとsecret access keyを用意しておく。</p>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h1>cookbookをWorkstationへclone</h1>
+<h1 id="cookbookをWorkstationへclone">cookbookをWorkstationへclone</h1>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -305,7 +305,7 @@ AWSのaccess keyとsecret access keyを用意しておく。</p>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h2>手軽なcookbook</h2>
+<h2 id="手軽なcookbook">手軽なcookbook</h2>
 
 <ul>
 <li><a href="http://acrmp.github.io/foodcritic/">Food Critic</a></li>
@@ -313,11 +313,11 @@ AWSのaccess keyとsecret access keyを用意しておく。</p>
 </ul>
 
 
-<h1>Apache2 install</h1>
+<h1 id="Apache2+install">Apache2 install</h1>
 
 <p>※ 以下はスクリプトで実行した場合の例。Chefは使っていない。</p>
 
-<h2>script</h2>
+<h2 id="script">script</h2>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -337,7 +337,7 @@ AWSのaccess keyとsecret access keyを用意しておく。</p>
 </ul>
 
 
-<h1>同様のものをChefで処理</h1>
+<h1 id="同様のものをChefで処理">同様のものをChefで処理</h1>
 
 <p>テスト</p>
 
@@ -375,7 +375,7 @@ AWSのaccess keyとsecret access keyを用意しておく。</p>
 
 <p><a href="http://www.blogosfera.co.uk/2013/04/eval-is-deprecated-please-use-evaluate-instead/">これはバージョンのWarningっぽい。</a>動くので今はスルー。</p>
 
-<h2>cookbookのアップロード</h2>
+<h2 id="cookbookのアップロード">cookbookのアップロード</h2>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -393,7 +393,7 @@ AWSのaccess keyとsecret access keyを用意しておく。</p>
 
 <p>これで新しいインスタンスが作成され、apacheが立ち上がる。</p>
 
-<h1>メモ書</h1>
+<h1 id="メモ書">メモ書</h1>
 
 <ul>
 <li><p>コンバージョン(収束)させる<br/>
@@ -465,6 +465,10 @@ http://docs.opscode.com/chef/resources.html</p></li>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/04/21/vim/">vim</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/04/20/study-network/">20130419 第14回「ネットワーク パケットを読む会（仮）」</a>
       </li>
     
@@ -480,15 +484,11 @@ http://docs.opscode.com/chef/resources.html</p></li>
         <a href="/blog/2013/04/14/sed-gyakubiki/">逆引きコマンド</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/04/13/sed/">sed</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/about/'>about (3)</a></li><li><a href='/blog/categories/aws/'>aws (3)</a></li><li><a href='/blog/categories/chef/'>chef (1)</a></li><li><a href='/blog/categories/command/'>command (5)</a></li><li><a href='/blog/categories/construct/'>construct (2)</a></li><li><a href='/blog/categories/diary/'>diary (3)</a></li><li><a href='/blog/categories/ec2/'>ec2 (1)</a></li><li><a href='/blog/categories/google/'>google (1)</a></li><li><a href='/blog/categories/monitor/'>monitor (4)</a></li><li><a href='/blog/categories/network/'>network (2)</a></li><li><a href='/blog/categories/octopress/'>octopress (1)</a></li><li><a href='/blog/categories/os/'>OS (3)</a></li><li><a href='/blog/categories/mian-qiang-hui/'>勉強会 (3)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/about/'>about (3)</a></li><li><a href='/blog/categories/aws/'>aws (3)</a></li><li><a href='/blog/categories/bash/'>bash (2)</a></li><li><a href='/blog/categories/chef/'>chef (1)</a></li><li><a href='/blog/categories/command/'>command (5)</a></li><li><a href='/blog/categories/construct/'>construct (2)</a></li><li><a href='/blog/categories/diary/'>diary (3)</a></li><li><a href='/blog/categories/ec2/'>ec2 (1)</a></li><li><a href='/blog/categories/google/'>google (1)</a></li><li><a href='/blog/categories/monitor/'>monitor (4)</a></li><li><a href='/blog/categories/network/'>network (2)</a></li><li><a href='/blog/categories/octopress/'>octopress (1)</a></li><li><a href='/blog/categories/os/'>OS (3)</a></li><li><a href='/blog/categories/vim/'>vim (1)</a></li><li><a href='/blog/categories/mian-qiang-hui/'>勉強会 (3)</a></li></ul>
 </section>
 <section>
 <script type="text/javascript"><!--

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: construct | Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/blog/categories/construct/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-04-21T18:55:10+09:00</updated>
+  <updated>2013-04-21T22:56:12+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -27,9 +27,9 @@
     <link href="http://ftakao2007.github.com/blog/2013/04/06/fabric/"/>
     <updated>2013-04-06T21:53:00+09:00</updated>
     <id>http://ftakao2007.github.com/blog/2013/04/06/fabric</id>
-    <content type="html"><![CDATA[<h1>Fabricインストール</h1>
+    <content type="html"><![CDATA[<h1 id="Fabricインストール">Fabricインストール</h1>
 
-<h2>CentOS6.4の場合</h2>
+<h2 id="CentOS6.4の場合">CentOS6.4の場合</h2>
 
 <p><code>
 su -
@@ -52,7 +52,7 @@ pip uninstall pycrypto
 pip install PyCrypto==2.3
 </code></p>
 
-<h3>テスト</h3>
+<h3 id="テスト">テスト</h3>
 
 <p>``` python fabric_test.py
 from fabric.api import *</p>
@@ -77,11 +77,11 @@ Disconnecting from localhost... done.
 [ftakao2007 script]$
 ```</p>
 
-<h1>EC2で利用する</h1>
+<h1 id="EC2で利用する">EC2で利用する</h1>
 
 <p>インスタンスを作成してsshでアクセスできるところまでは設定済みの想定</p>
 
-<h2>実行方法</h2>
+<h2 id="実行方法">実行方法</h2>
 
 <p>ec2上のユーザ:ec2-user<br/>
 ec2のアドレス:10.160.26.123 (仮)<br/>
@@ -99,18 +99,18 @@ ec2のアドレス:10.160.26.123 (仮)<br/>
 Disconnecting from localhost... done.
 ```</p>
 
-<h1>テクニック</h1>
+<h1 id="テクニック">テクニック</h1>
 
-<h2>キーボードから入力した値をfabricで利用する</h2>
+<h2 id="キーボードから入力した値をfabricで利用する">キーボードから入力した値をfabricで利用する</h2>
 
 <p>fabricというよりpythonの使い方かな。。</p>
 
 <p>``` python
 name = raw_input('Enter name: ')</p>
 
-<h1>name = "aaa"</h1>
+<h1 id="name+=++aaa+">name = "aaa"</h1>
 
-<h1>print name</h1>
+<h1 id="print+name">print name</h1>
 
 <p>def var_test(var=name):</p>
 
@@ -167,7 +167,7 @@ Enter first na_name: taro
 Disconnecting from localhost... done.
 ```</p>
 
-<h1>リンク</h1>
+<h1 id="リンク">リンク</h1>
 
 <p><a href="http://www.slideshare.net/tafujish/hbstudy41-auto-scalingv13">FablicとMonitを使ってオートスケーリングを自作してみよう</a></p>
 ]]></content>

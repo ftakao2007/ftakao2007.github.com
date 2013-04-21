@@ -4,7 +4,7 @@
   <title><![CDATA[Category: aws | Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/blog/categories/aws/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-04-21T18:55:10+09:00</updated>
+  <updated>2013-04-21T22:56:12+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -18,7 +18,7 @@
     <link href="http://ftakao2007.github.com/blog/2013/04/15/ec2-api-tools/"/>
     <updated>2013-04-15T19:45:00+09:00</updated>
     <id>http://ftakao2007.github.com/blog/2013/04/15/ec2-api-tools</id>
-    <content type="html"><![CDATA[<h1>初期設定</h1>
+    <content type="html"><![CDATA[<h1 id="初期設定">初期設定</h1>
 
 <ul>
 <li><p><a href="http://engineer.blog.lancers.jp/2012/12/ec2-api-tools/">AWSのEC2 API Toolsをインストールなしで利用する方法</a><br/>
@@ -32,39 +32,39 @@ AWSのログインとかがあるメニューから証明書取得の画面を�
 
 <p>``` bash</p>
 
-<h1>cp pk-xxxxxxxxxxxx.pem /opt/aws/apitools/ec2/</h1>
+<h1 id="cp+pk-xxxxxxxxxxxx.pem+/opt/aws/apitools/ec2/">cp pk-xxxxxxxxxxxx.pem /opt/aws/apitools/ec2/</h1>
 
-<h1>cp cert-xxxxxxxxxxxx.pem /opt/aws/apitools/ec2/</h1>
+<h1 id="cp+cert-xxxxxxxxxxxx.pem+/opt/aws/apitools/ec2/">cp cert-xxxxxxxxxxxx.pem /opt/aws/apitools/ec2/</h1>
 
 <p>vi ~/.bashrc</p>
 
 <p>export EC2_HOME=/opt/aws/apitools/ec2
 export PATH=$PATH:$EC2_HOME/bin</p>
 
-<h1>export EC2_PRIVATE_KEY=$EC2_HOME/pk-xxxxxxxxxxxx.pem</h1>
+<h1 id="export+EC2_PRIVATE_KEY=$EC2_HOME/pk-xxxxxxxxxxxx.pem">export EC2_PRIVATE_KEY=$EC2_HOME/pk-xxxxxxxxxxxx.pem</h1>
 
-<h1>export EC2_CERT=$EC2_HOME/cert-xxxxxxxxxxxx.pem</h1>
+<h1 id="export+EC2_CERT=$EC2_HOME/cert-xxxxxxxxxxxx.pem">export EC2_CERT=$EC2_HOME/cert-xxxxxxxxxxxx.pem</h1>
 
 <p>export AWS_ACCESS_KEY=xxxxxxxxxxxxxxxxxxec2-api-tools
 export AWS_SECRET_KEY=yyyyyyyyyyyyyyyyyyyyyyyyyyy
 export EC2_URL=http://ec2.ap-northeast-1.amazonaws.com
 ```</p>
 
-<h1>諸情報</h1>
+<h1 id="諸情報">諸情報</h1>
 
-<h2>実行ファイルのPATH</h2>
+<h2 id="実行ファイルのPATH">実行ファイルのPATH</h2>
 
 <p>/opt/aws/bin</p>
 
-<h2>環境変数</h2>
+<h2 id="環境変数">環境変数</h2>
 
-<h3>EC2_HOME</h3>
+<h3 id="EC2_HOME">EC2_HOME</h3>
 
 <p>ec2-api-toolsのHOME
 * 例<br/>
 export EC2_HOME=/opt/aws/apitools/ec2</p>
 
-<h3>EC2_PRIVATE_KEY</h3>
+<h3 id="EC2_PRIVATE_KEY">EC2_PRIVATE_KEY</h3>
 
 <p>秘密鍵のPATH。今は使ってない</p>
 
@@ -74,7 +74,7 @@ export EC2_PRIVATE_KEY=$EC2_HOME/pk-XXXXXXXXXXXXXXXXXXXXX.pem</li>
 </ul>
 
 
-<h3>EC2_CERT</h3>
+<h3 id="EC2_CERT">EC2_CERT</h3>
 
 <p>証明書のPATH。今は使ってない。</p>
 
@@ -84,7 +84,7 @@ export EC2_CERT=$EC2_HOME/cert-XXXXXXXXXXXXXXXXXXXXXXX.pem</li>
 </ul>
 
 
-<h3>AWS_ACCESS_KEY</h3>
+<h3 id="AWS_ACCESS_KEY">AWS_ACCESS_KEY</h3>
 
 <p>AWSアクセスキー</p>
 
@@ -94,7 +94,7 @@ export AWS_ACCESS_KEY=xxxxxxxxxxxxxxxxxx</li>
 </ul>
 
 
-<h3>AWS_SECRET_KEY</h3>
+<h3 id="AWS_SECRET_KEY">AWS_SECRET_KEY</h3>
 
 <p>AWSシークレットキー</p>
 
@@ -104,7 +104,7 @@ export AWS_SECRET_KEY=yyyyyyyyyyyyyyyyyyyyyyyyyyy</li>
 </ul>
 
 
-<h3>EC2_URL</h3>
+<h3 id="EC2_URL">EC2_URL</h3>
 
 <p>リージョンの指定</p>
 
@@ -114,11 +114,11 @@ export EC2_URL=http://ec2.ap-northeast-1.amazonaws.com</li>
 </ul>
 
 
-<h1>コマンド</h1>
+<h1 id="コマンド">コマンド</h1>
 
-<h2>確認</h2>
+<h2 id="確認">確認</h2>
 
-<h3>ec2ver</h3>
+<h3 id="ec2ver">ec2ver</h3>
 
 <p>バージョンの表示
 <code>bash
@@ -126,7 +126,7 @@ export EC2_URL=http://ec2.ap-northeast-1.amazonaws.com</li>
 1.6.6.0 2012-12-01
 </code></p>
 
-<h3>ec2-describe-images</h3>
+<h3 id="ec2-describe-images">ec2-describe-images</h3>
 
 <p>AMIの表示</p>
 
@@ -143,9 +143,9 @@ BLOCKDEVICEMAPPING      EBS     /dev/sda1               snap-9b2e46bb   35      
 <p>※AMIの一覧が表示される
 ```</p>
 
-<h2>インスタンス操作関連</h2>
+<h2 id="インスタンス操作関連">インスタンス操作関連</h2>
 
-<h3>ec2-describe-instances</h3>
+<h3 id="ec2-describe-instances">ec2-describe-instances</h3>
 
 <p>インスタンスの一覧の情報が表示される</p>
 
@@ -163,7 +163,7 @@ TAG instance    i-7b470978  Name    Redmine
 
 <p>※ 引数にインスタンスIDを指定数と、そのインスタンスの情報のみ表示される</p>
 
-<h3>ec2-start-instances</h3>
+<h3 id="ec2-start-instances">ec2-start-instances</h3>
 
 <p>インスタンスを起動
 ``` bash
@@ -179,7 +179,7 @@ SYSTEMSTATUS    reachability    passed<br/>
 INSTANCESTATUS  reachability    passed
 ```</p>
 
-<h3>ec2-stop-instances</h3>
+<h3 id="ec2-stop-instances">ec2-stop-instances</h3>
 
 <p>インスタンスを停止
 ``` bash
@@ -214,9 +214,9 @@ INSTANCESTATUS  reachability    passed</p>
 <p>※ i-1f433f1cが表示されなくなっている
 ```</p>
 
-<h2>snapshot関連</h2>
+<h2 id="snapshot関連">snapshot関連</h2>
 
-<h3>ec2-describe-snapshots</h3>
+<h3 id="ec2-describe-snapshots">ec2-describe-snapshots</h3>
 
 <p>snapshot一覧の表示
 <code>bash
@@ -227,7 +227,7 @@ SNAPSHOT    snap-f363ddd0   vol-42cf7b60    completed   2013-03-05T22:55:59+0000
 TAG snapshot    snap-f363ddd0   Name    Redmine
 </code></p>
 
-<h3>ec2-copy-snapshot</h3>
+<h3 id="ec2-copy-snapshot">ec2-copy-snapshot</h3>
 
 <p>snapshotのコピー
 <code>bash
@@ -235,7 +235,7 @@ ec2-copy-snapshot --region ap-southeast-1 -r ap-northeast-1 -s snap-a22a9d81
 </code>
 ※東京からシンガポールのリージョンへコピー</p>
 
-<h3>ec2-describe-snapshot</h3>
+<h3 id="ec2-describe-snapshot">ec2-describe-snapshot</h3>
 
 <p>snapshotのアクセス権限確認
 <code>bash
@@ -244,7 +244,7 @@ ec2-copy-snapshot --region ap-southeast-1 -r ap-northeast-1 -s snap-a22a9d81
 </code>
 権限が設定されていない場合(非公開設定)は何も出力されない</p>
 
-<h3>ec2-modify-snapshot-attribute</h3>
+<h3 id="ec2-modify-snapshot-attribute">ec2-modify-snapshot-attribute</h3>
 
 <p>snapshotのアクセス権限を変更する
 <code>bash
@@ -252,16 +252,16 @@ ec2-modify-snapshot-attribute (snap_id) -c --add all
 </code>
 ※すべてのユーザに公開される設定</p>
 
-<h3>ec2-reset-snapshot-attribute</h3>
+<h3 id="ec2-reset-snapshot-attribute">ec2-reset-snapshot-attribute</h3>
 
 <p>権限をリセットする
 <code>bash
 ec2-reset-snapshot-attribute (snapshot_id) -c
 </code></p>
 
-<h2>volume関連</h2>
+<h2 id="volume関連">volume関連</h2>
 
-<h3>ec2-detach-volume</h3>
+<h3 id="ec2-detach-volume">ec2-detach-volume</h3>
 
 <p>ボリュームをデタッチする</p>
 
@@ -270,7 +270,7 @@ ec2-reset-snapshot-attribute (snapshot_id) -c
 ATTACHMENT  vol-5bb81c79    i-1f433f1c  /dev/sda1   detaching   2013-03-26T14:50:06+0000
 </code></p>
 
-<h3>ec2-attach-volume</h3>
+<h3 id="ec2-attach-volume">ec2-attach-volume</h3>
 
 <p>ボリュームをアタッチする</p>
 
@@ -279,7 +279,7 @@ ATTACHMENT  vol-5bb81c79    i-1f433f1c  /dev/sda1   detaching   2013-03-26T14:50
 ATTACHMENT  vol-5bb81c79    i-1f433f1c  /dev/sda1   attaching   2013-03-31T14:55:34+0000
 </code></p>
 
-<h3>ec2-create-volume</h3>
+<h3 id="ec2-create-volume">ec2-create-volume</h3>
 
 <p>ボリュームを作成する</p>
 
@@ -288,22 +288,22 @@ ATTACHMENT  vol-5bb81c79    i-1f433f1c  /dev/sda1   attaching   2013-03-31T14:55
 VOLUME  vol-45531e67    8   snap-7971395a   ap-northeast-1a creating    2013-03-31T15:02:11+0000    standard
 </code></p>
 
-<h2>Elastic IP関連</h2>
+<h2 id="Elastic+IP関連">Elastic IP関連</h2>
 
-<h3>ec2-describe-addresses</h3>
+<h3 id="ec2-describe-addresses">ec2-describe-addresses</h3>
 
 <p><code>bash
 [ec2-user@ip-10-158-203-131 tmp]$ ec2-describe-addresses
 ADDRESS 54.249.240.55   i-7b470978  standard
 </code></p>
 
-<h1>トラブルシューティング</h1>
+<h1 id="トラブルシューティング">トラブルシューティング</h1>
 
 <p><a href="https://forums.aws.amazon.com/message.jspa?messageID=342081">Instance does not have a volume attached at root (/dev/sda1)</a></p>
 
 <p>/dev/sdfになっていたのを/dev/sda1でアタッチし直したらOK</p>
 
-<h1>リンク</h1>
+<h1 id="リンク">リンク</h1>
 
 <ul>
 <li><a href="http://d.hatena.ne.jp/studio-m/20091104/1257297074">CentOSでec2-api-tools, ec2-ami-toolsを使えるようにする</a></li>
@@ -319,21 +319,21 @@ ADDRESS 54.249.240.55   i-7b470978  standard
     <link href="http://ftakao2007.github.com/blog/2013/04/10/ec2-windows/"/>
     <updated>2013-04-10T00:13:00+09:00</updated>
     <id>http://ftakao2007.github.com/blog/2013/04/10/ec2-windows</id>
-    <content type="html"><![CDATA[<h1>iPad(iSSH)でec2のWindowsインスタンスにリモートデスクトップで接続</h1>
+    <content type="html"><![CDATA[<h1 id="iPad(iSSH)でec2のWindowsインスタンスにリモートデスクトップで接続">iPad(iSSH)でec2のWindowsインスタンスにリモートデスクトップで接続</h1>
 
 <p><img src="https://dl.dropbox.com/u/37468049/ec2_windows01.jpg" alt="Windows接続の図" /></p>
 
 <p>わぁい</p>
 
-<h1>設定方法</h1>
+<h1 id="設定方法">設定方法</h1>
 
-<h2>EC2設定</h2>
+<h2 id="EC2設定">EC2設定</h2>
 
 <p><a href="http://www.amodova.com/jp/blog/article/azec202.html">AmazonEC2でリモートデスクトップ:接続編</a></p>
 
 <p>ec2側の設定は上記のサイト通り進めれば問題ないです。</p>
 
-<h2>iPad側設定</h2>
+<h2 id="iPad側設定">iPad側設定</h2>
 
 <p>iSSHという有償のソフトを使って接続しました。<br/>
 設定は以下の様な感じ。</p>
@@ -349,21 +349,21 @@ ADDRESS 54.249.240.55   i-7b470978  standard
     <id>http://ftakao2007.github.com/blog/2013/04/07/ec2</id>
     <content type="html"><![CDATA[<p>ec2関連のまとめ</p>
 
-<h1>EC2にDropboxをインストールしてOctopressの記事を共有する</h1>
+<h1 id="EC2にDropboxをインストールしてOctopressの記事を共有する">EC2にDropboxをインストールしてOctopressの記事を共有する</h1>
 
 <p>※※※ Dropbox上のファイルが消失する可能性のある作業が含まれますので以下作業をする場合は自己責任でお願いしますm(<em> </em>)m</p>
 
-<h2>概要</h2>
+<h2 id="概要">概要</h2>
 
 <p>Octopressの記事はローカルに保存して編集するので、通常その環境でしか作業できない。
 DropboxにOctopressの記事を置くことで、様々な環境で記事を編集できるようにする。</p>
 
-<h2><a href="http://d.hatena.ne.jp/tester7/20120303/1330768342">CUI環境の Linux に Dropbox をインストール</a></h2>
+<h2 id="[CUI環境の+Linux+に+Dropbox+をインストール](http://d.hatena.ne.jp/tester7/20120303/1330768342)"><a href="http://d.hatena.ne.jp/tester7/20120303/1330768342">CUI環境の Linux に Dropbox をインストール</a></h2>
 
 <p>基本的にこの手順にそって作業すればOK<br/>
 (今回の環境はAmazonLinux 64bit)</p>
 
-<h2>ポイントなど</h2>
+<h2 id="ポイントなど">ポイントなど</h2>
 
 <ul>
 <li><p>DLと展開が一度にできなかったので分けて実施
@@ -400,7 +400,7 @@ Excluded:
 Dropbox/カメラアップロード
 ```</p>
 
-<h2>気をつけたほうが良いこと</h2>
+<h2 id="気をつけたほうが良いこと">気をつけたほうが良いこと</h2>
 
 <p>Dropboxを起動すると即同期がはじまります。デフォルトではDropboxのすべてのファイル
 同期が始まるのですが、ここで焦ってファイルを削除すると必要なDropbox上の大元のファイルを削除してしまう可能性があります。
@@ -409,9 +409,9 @@ rmなどで直接削除せず、exclude addを実行してください(コマン
 
 <p>あと、普段は停止して必要な時のみ同期させてリソースを節約したほうがよいかもです。</p>
 
-<h1>Octopressの環境を構築</h1>
+<h1 id="Octopressの環境を構築">Octopressの環境を構築</h1>
 
-<h3>初期設定</h3>
+<h3 id="初期設定">初期設定</h3>
 
 <ul>
 <li><a href="http://k-ui.jp/blog/2011/08/30/try-to-octopress/">Octopress 使う</a></li>
@@ -419,7 +419,7 @@ rmなどで直接削除せず、exclude addを実行してください(コマン
 </ul>
 
 
-<h4>rvmとruby1.9.3のインストール</h4>
+<h4 id="rvmとruby1.9.3のインストール">rvmとruby1.9.3のインストール</h4>
 
 <p><code>bash
 bash -s stable &lt; &lt;(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer)
@@ -435,7 +435,7 @@ rvm rubygems latest
 デフォルトのリポジトリには入っていないので、EPELリポジトリを追加する必要がある。<br/>
 ※ CentOS6.4はsudoが実行できる設定も行う必要がある。</p>
 
-<h4>必要なパッケージのインストール</h4>
+<h4 id="必要なパッケージのインストール">必要なパッケージのインストール</h4>
 
 <p><code>bash
 gem install bundler rake
@@ -444,7 +444,7 @@ rake install
 </code>
 ※ DropBox内に既存の設定がある場合は<code>rake install</code>は実行不要</p>
 
-<h4>githubの設定</h4>
+<h4 id="githubの設定">githubの設定</h4>
 
 <p><code>bash
 rake setup_github_pages
@@ -457,7 +457,7 @@ git commit --amend --reset-author
 </code>
 ※  この辺はエラーメッセージに実行してくださいと出たので設定しました。最後の行は実行しなくてもよいかもです。</p>
 
-<h4>githubのアクセス設定</h4>
+<h4 id="githubのアクセス設定">githubのアクセス設定</h4>
 
 <p>接続しようとすると<code>fatal: The remote end hung up unexpectedly</code>のエラーがでるのでsshの権限を設定する</p>
 

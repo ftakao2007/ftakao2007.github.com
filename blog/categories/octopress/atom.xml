@@ -4,7 +4,7 @@
   <title><![CDATA[Category: octopress | Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-04-21T18:55:10+09:00</updated>
+  <updated>2013-04-21T22:56:12+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -18,7 +18,7 @@
     <link href="http://ftakao2007.github.com/blog/2013/04/06/octpress/"/>
     <updated>2013-04-06T19:28:00+09:00</updated>
     <id>http://ftakao2007.github.com/blog/2013/04/06/octpress</id>
-    <content type="html"><![CDATA[<h1>初期設定</h1>
+    <content type="html"><![CDATA[<h1 id="初期設定">初期設定</h1>
 
 <ul>
 <li><a href="http://k-ui.jp/blog/2011/08/30/try-to-octopress/">Octopress 使う</a></li>
@@ -26,7 +26,7 @@
 </ul>
 
 
-<h1>記法など</h1>
+<h1 id="記法など">記法など</h1>
 
 <ul>
 <li><a href="http://sesame.github.io/blog/2012/12/09/how-to-use-octopress/">Octopressの使い方</a></li>
@@ -55,7 +55,7 @@ http://ftakao2007.github.io
 </ul>
 
 
-<h1>画像テスト</h1>
+<h1 id="画像テスト">画像テスト</h1>
 
 <p>Dropboxのpublicフォルダを利用</p>
 
@@ -63,9 +63,11 @@ http://ftakao2007.github.io
 
 <p>わぁい</p>
 
-<h1><a href="http://www.mk-mode.com/octopress/2012/12/18/octopress-add-category-list/">Octopress - カテゴリリストの追加！</a></h1>
+<h1 id="[Octopress+-+カテゴリリストの追加！](http://www.mk-mode.com/octopress/2012/12/18/octopress-add-category-list/)"><a href="http://www.mk-mode.com/octopress/2012/12/18/octopress-add-category-list/">Octopress - カテゴリリストの追加！</a></h1>
 
-<h1><a href="http://www.miukoba.net/blog/2013/01/05/start-octopress/">Octopressはじめました</a></h1>
+<h1 id="[見出し目次の追加](http://rcmdnk.github.io/blog/2013/03/23/octopress/)"><a href="http://rcmdnk.github.io/blog/2013/03/23/octopress/">見出し目次の追加</a></h1>
+
+<h1 id="[Octopressはじめました](http://www.miukoba.net/blog/2013/01/05/start-octopress/)"><a href="http://www.miukoba.net/blog/2013/01/05/start-octopress/">Octopressはじめました</a></h1>
 ]]></content>
   </entry>
   

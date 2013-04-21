@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: bash | Octopress Blog]]></title>
+  <link href="http://ftakao2007.github.com/blog/categories/bash/atom.xml" rel="self"/>
+  <link href="http://ftakao2007.github.com/"/>
+  <updated>2013-04-21T22:56:12+09:00</updated>
+  <id>http://ftakao2007.github.com/</id>
+  <author>
+    <name><![CDATA[ftakao2007]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[逆引きコマンド]]></title>
+    <link href="http://ftakao2007.github.com/blog/2013/04/14/sed-gyakubiki/"/>
+    <updated>2013-04-14T00:20:00+09:00</updated>
+    <id>http://ftakao2007.github.com/blog/2013/04/14/sed-gyakubiki</id>
+    <content type="html"><![CDATA[<h2 id="■改行を">■改行を</h2>
+
+<h3 id="入れたい">入れたい</h3>
+
+<p>「=」で改行
+``` bash
+fukui-no-MacBook-Air:tmp ftakao2007$ cat vimrc
+set fileencoding=utf-8
+set fileencodings=iso-2022-jp,utf-8,euc-jp</p>
+
+<p>fukui-no-MacBook-Air:tmp ftakao2007$ cat vimrc | gsed -e 's/=/=\n/g'
+set fileencoding=
+utf-8
+set fileencodings=
+iso-2022-jp,utf-8,euc-jp
+```</p>
+
+<h3 id="消したい">消したい</h3>
+
+<p>``` bash
+fukui-no-MacBook-Air:tmp ftakao2007$ cat vimrc
+set fileencoding=utf-8
+set fileencodings=iso-2022-jp,utf-8,euc-jp</p>
+
+<p>fukui-no-MacBook-Air:tmp ftakao2007$ cat vimrc | tr -d '\n'
+set fileencoding=utf-8set fileencodings=iso-2022-jp,utf-8,euc-jpfukui-no-MacBook-Air:tmp ftakao2007$
+```</p>
+
+<h2 id="■空行を">■空行を</h2>
+
+<h3 id="消したい">消したい</h3>
+
+<p>``` bash
+fukui-no-MacBook-Air:tmp ftakao2007$ cat aaa.log
+a</p>
+
+<p>gsfe</p>
+
+<p>wefa
+awefa</p>
+
+<p>w
+fukui-no-MacBook-Air:tmp ftakao2007$ sed -e '/<sup>$/d'</sup> aaa.log
+a
+gsfe
+wefa
+awefa
+w
+fukui-no-MacBook-Air:tmp ftakao2007$ sed -ne '/./p' aaa.log
+a
+gsfe
+wefa
+awefa
+w
+fukui-no-MacBook-Air:tmp ftakao2007$
+```</p>
+
+<h2 id="■Webページを">■Webページを</h2>
+
+<h3 id="保存したい">保存したい</h3>
+
+<h4 id="htmlのみ">htmlのみ</h4>
+
+<p><code>bash
+curl http://www.example.com &gt; example.com.html
+</code></p>
+
+<h4 id="[ページを丸ごとローカルに保存](https://sites.google.com/site/hymd3a/google-site/wget)"><a href="https://sites.google.com/site/hymd3a/google-site/wget">ページを丸ごとローカルに保存</a></h4>
+
+<p><code>bash
+wget -r -np -k -l 0 example.com
+</code></p>
+
+<h4 id="データを送る">データを送る</h4>
+
+<p>``` bash
+fukui-no-MacBook-Air:DATA ftakao2007$ curl --data-urlencode a=太郎 http://www.example.com/TOMONOKAI_CMS/CGI/hoge.cgi
+あなたのポストしたデータは、
+a=%E5%A4%AA%E9%83%8E
+です。</p>
+
+<p>fukui-no-MacBook-Air:DATA ftakao2007$ curl --data a=太郎 http://www.example.com/TOMONOKAI_CMS/CGI/hoge.cgi
+あなたのポストしたデータは、
+a=太郎
+です。</p>
+
+<p>fukui-no-MacBook-Air:DATA ftakao2007$ wget --data a=太郎 http://www.example.com/TOMONOKAI_CMS/CGI/hoge.cgi</p>
+
+<ul>
+<li>URLはexample.comに変更してあります
+```</li>
+</ul>
+
+
+<h2 id="■文字コードを">■文字コードを</h2>
+
+<h3 id="変換する">変換する</h3>
+
+<p>``` bash
+fukui-no-MacBook-Air:DATA ftakao2007$ cat numref
+&#25105;&#12293;&#12399;&#12471;&#12455;&#12523;&#33464;&#20154;&#12384;&#12290;
+fukui-no-MacBook-Air:DATA ftakao2007$ cat numref | w3m -T text/html -dump
+我々はシェル芸人だ。</p>
+
+<p>fukui-no-MacBook-Air:DATA ftakao2007$ cat numref | nkf --numchar-input
+我々はシェル芸人だ。
+```</p>
+
+<h2 id="■文字列を">■文字列を</h2>
+
+<h3 id="抽出">抽出</h3>
+
+<p>``` bash
+bash-3.2$ cat a.log
+1
+2
+3
+4
+5
+6
+7
+8
+9</p>
+
+<p>bash-3.2$ cat a.log | grep 5
+5
+```</p>
+
+<h3 id="マッチした前後を抽出">マッチした前後を抽出</h3>
+
+<p><code>bash
+bash-3.2$ cat a.log | grep 5 -A 2
+5
+6
+7
+bash-3.2$ cat a.log | grep 5 -B 2
+3
+4
+5
+</code></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[シェル芸 20130413]]></title>
+    <link href="http://ftakao2007.github.com/blog/2013/04/13/shellgei/"/>
+    <updated>2013-04-13T11:30:00+09:00</updated>
+    <id>http://ftakao2007.github.com/blog/2013/04/13/shellgei</id>
+    <content type="html"><![CDATA[<p><a href="http://kokucheese.com/event/index/78710/">第4回春爛漫シェル芸人撩乱勉強会&amp;第22回勝手に新歓定例会</a></p>
+
+<h1 id="事前準備">事前準備</h1>
+
+<h2 id="wget+curl+w3mの確認">wget curl w3mの確認</h2>
+
+<p>全部入っていた</p>
+
+<p><code>bash
+[mickey@ftakao2007 ~]$ which wget
+/usr/bin/wget
+[mickey@ftakao2007 ~]$ which curl
+/usr/bin/curl
+[mickey@ftakao2007 ~]$ which w3m
+/usr/bin/w3m
+</code></p>
+
+<h2 id="[open+usp+Tukubai+のインストール(CentOS+6.4)](https://github.com/usp-engineers-community/Open-usp-Tukubai)"><a href="https://github.com/usp-engineers-community/Open-usp-Tukubai">open usp Tukubai のインストール(CentOS 6.4)</a></h2>
+
+<p>gitでインストールしてみる</p>
+
+<p><code>bash
+git clone https://github.com/usp-engineers-community/Open-usp-Tukubai.git
+cd Open-usp-Tukubai
+su -
+make install
+</code>
+※ なぜかgitでは入らなかったのでhttpsで</p>
+
+<p><code>bash
+cd ~/work
+wget http://www.usptomo.com/TOMONOKAI_CMS/HTML/DATA.zip
+unzip DATA.zip
+</code></p>
+
+<h2 id="勉強会のまとめについて">勉強会のまとめについて</h2>
+
+<p>正確な情報や丁寧な解説はきっと他の方にまとめていただけると思うので、自分は勉強会で学んだことを端的に
+逆引きでまとめていくというコンセプトにしようと思います。</p>
+
+<ul>
+<li><a href="http://ftakao2007.github.io/blog/2013/04/14/sed-gyakubiki/">逆引きコマンド</a></li>
+</ul>
+
+
+<p>「正確な情報の汎用的な一般解よりも、とりあえずやりたいことができる」<br/>
+「一箇所に情報を集約する」</p>
+
+<p>を目的とします。勉強会でその時スゲーって思ってまとめても、あのコマンドどこだったっけとなることが多かったので
+今後勉強会で学んだことは逆引き的に上記のページに集約しようと思います。</p>
+
+<h2 id="リンク">リンク</h2>
+
+<ul>
+<li><a href="http://www.slideshare.net/ryuichiueda/20130406-18763665">第4回春爛漫シェル芸人撩乱勉強会(上田隆一さん)</a></li>
+<li><a href="http://www.slideshare.net/HirofumiSaito/usp-lt-20130413">wgetとcurlで並列ダウンロード (hi_saito さん)</a></li>
+<li><a href="http://laugh-labo.blogspot.jp/2013/04/4.html?spref=tw">「第4回春爛漫シェル芸人撩乱勉強会&amp;第22回勝手に新歓定例会」に参加してきたよー！ (laugh_K さん)</a></li>
+<li><p><a href="http://kunst1080.hatenablog.com/entry/2013/04/15/004801">「第4回春爛漫シェル芸人撩乱勉強会&amp;第22回勝手に新歓定例会」あそびきにました (kunst1080 さん)</a></p></li>
+<li><p><a href="https://twitter.com/usptomo/status/323068045532737536/photo/1">本日一番の訳わからない写真</a></p></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

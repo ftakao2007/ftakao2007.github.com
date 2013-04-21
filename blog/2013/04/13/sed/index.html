@@ -135,11 +135,11 @@ fukui-no-MacBook-Air:sed ftakao2007 &hellip;">
   </header>
 
 
-<div class="entry-content"><h1>sed (ストリーミングエディタ)</h1>
+<div class="entry-content"><h1 id="sed+(ストリーミングエディタ)">sed (ストリーミングエディタ)</h1>
 
-<h2>Option</h2>
+<h2 id="Option">Option</h2>
 
-<h3>n</h3>
+<h3 id="n">n</h3>
 
 <p>標準出力を制御</p>
 
@@ -216,7 +216,7 @@ fukui-no-MacBook-Air:sed ftakao2007 &hellip;">
 -->
 
 
-<h3>e</h3>
+<h3 id="e">e</h3>
 
 <p>次にくる値はコマンドとみなす</p>
 
@@ -265,7 +265,7 @@ fukui-no-MacBook-Air:sed ftakao2007 &hellip;">
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h3>f</h3>
+<h3 id="f">f</h3>
 
 <p>次にくる値はスクリプトとみなす</p>
 
@@ -292,7 +292,7 @@ fukui-no-MacBook-Air:sed ftakao2007 &hellip;">
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h3>i</h3>
+<h3 id="i">i</h3>
 
 <p>標準出力に出力せず、直接ファイルを書き換える</p>
 
@@ -343,9 +343,9 @@ fukui-no-MacBook-Air:sed ftakao2007 &hellip;">
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h2>Command</h2>
+<h2 id="Command">Command</h2>
 
-<h3>p</h3>
+<h3 id="p">p</h3>
 
 <p>出力する</p>
 
@@ -402,7 +402,7 @@ fukui-no-MacBook-Air:sed ftakao2007 &hellip;">
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h3>d</h3>
+<h3 id="d">d</h3>
 
 <p>削除する</p>
 
@@ -463,7 +463,7 @@ fukui-no-MacBook-Air:sed ftakao2007 &hellip;">
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h3>q</h3>
+<h3 id="q">q</h3>
 
 <p>特定の文字列が含まれる行まで表示</p>
 
@@ -494,7 +494,7 @@ fukui-no-MacBook-Air:sed ftakao2007 &hellip;">
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h3>s</h3>
+<h3 id="s">s</h3>
 
 <p>置換する</p>
 
@@ -761,9 +761,9 @@ n番目の発生を置換</li>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h2>Match</h2>
+<h2 id="Match">Match</h2>
 
-<h3>空行以外を出力</h3>
+<h3 id="空行以外を出力">空行以外を出力</h3>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -798,7 +798,7 @@ n番目の発生を置換</li>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h3>空行を出力</h3>
+<h3 id="空行を出力">空行を出力</h3>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -829,7 +829,7 @@ n番目の発生を置換</li>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h3>最初の空行から次の空行までを出力</h3>
+<h3 id="最初の空行から次の空行までを出力">最初の空行から次の空行までを出力</h3>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -886,7 +886,7 @@ n番目の発生を置換</li>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h3>最初の空行から次の空行までの行を削除</h3>
+<h3 id="最初の空行から次の空行までの行を削除">最初の空行から次の空行までの行を削除</h3>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -915,11 +915,11 @@ n番目の発生を置換</li>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h2>Advance</h2>
+<h2 id="Advance">Advance</h2>
 
-<h3>正規表現(?)</h3>
+<h3 id="正規表現(?)">正規表現(?)</h3>
 
-<h4>&amp;</h4>
+<h4 id="+">&amp;</h4>
 
 <p>置換のときに省略して記載できる</p>
 
@@ -962,7 +962,54 @@ n番目の発生を置換</li>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h2>参考</h2>
+<h3 id="区切り位置">区切り位置</h3>
+
+<p>区切り位置を<code>/</code>の代わりに<code>;</code>にすると、<code>/</code>をエスケープしなくても良くなる</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>fukui-no-MacBook-Air:DATA ftakao2007<span class="nv">$ </span>cat 3.html | gsed -e <span class="s1">&#39;s/&lt;\/td&gt;/&amp;\n/g&#39;</span>
+</span><span class='line'>&lt;table&gt;
+</span><span class='line'>  &lt;tr&gt;
+</span><span class='line'>&lt;td&gt;a&lt;/td&gt;
+</span><span class='line'>&lt;td&gt;b&lt;/td&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;td&gt;c&lt;/td&gt;
+</span><span class='line'>
+</span><span class='line'>  &lt;/tr&gt;
+</span><span class='line'>&lt;/table&gt;
+</span><span class='line'>fukui-no-MacBook-Air:DATA ftakao2007<span class="nv">$ </span>cat 3.html | gsed -e <span class="s1">&#39;s;&lt;/td&gt;;&amp;\n;g&#39;</span>
+</span><span class='line'>&lt;table&gt;
+</span><span class='line'>  &lt;tr&gt;
+</span><span class='line'>&lt;td&gt;a&lt;/td&gt;
+</span><span class='line'>&lt;td&gt;b&lt;/td&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;td&gt;c&lt;/td&gt;
+</span><span class='line'>
+</span><span class='line'>  &lt;/tr&gt;
+</span><span class='line'>&lt;/table&gt;
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2 id="参考">参考</h2>
 
 <ul>
 <li><a href="http://www.ksknet.net/linuxrz/sed.html">sed - ストリーミングエディタ</a></li>
@@ -1032,6 +1079,10 @@ n番目の発生を置換</li>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/04/21/vim/">vim</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/04/20/study-network/">20130419 第14回「ネットワーク パケットを読む会（仮）」</a>
       </li>
     
@@ -1047,15 +1098,11 @@ n番目の発生を置換</li>
         <a href="/blog/2013/04/14/sed-gyakubiki/">逆引きコマンド</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/04/13/sed/">sed</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/about/'>about (3)</a></li><li><a href='/blog/categories/aws/'>aws (3)</a></li><li><a href='/blog/categories/chef/'>chef (1)</a></li><li><a href='/blog/categories/command/'>command (5)</a></li><li><a href='/blog/categories/construct/'>construct (2)</a></li><li><a href='/blog/categories/diary/'>diary (3)</a></li><li><a href='/blog/categories/ec2/'>ec2 (1)</a></li><li><a href='/blog/categories/google/'>google (1)</a></li><li><a href='/blog/categories/monitor/'>monitor (4)</a></li><li><a href='/blog/categories/network/'>network (2)</a></li><li><a href='/blog/categories/octopress/'>octopress (1)</a></li><li><a href='/blog/categories/os/'>OS (3)</a></li><li><a href='/blog/categories/mian-qiang-hui/'>勉強会 (3)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/about/'>about (3)</a></li><li><a href='/blog/categories/aws/'>aws (3)</a></li><li><a href='/blog/categories/bash/'>bash (2)</a></li><li><a href='/blog/categories/chef/'>chef (1)</a></li><li><a href='/blog/categories/command/'>command (5)</a></li><li><a href='/blog/categories/construct/'>construct (2)</a></li><li><a href='/blog/categories/diary/'>diary (3)</a></li><li><a href='/blog/categories/ec2/'>ec2 (1)</a></li><li><a href='/blog/categories/google/'>google (1)</a></li><li><a href='/blog/categories/monitor/'>monitor (4)</a></li><li><a href='/blog/categories/network/'>network (2)</a></li><li><a href='/blog/categories/octopress/'>octopress (1)</a></li><li><a href='/blog/categories/os/'>OS (3)</a></li><li><a href='/blog/categories/vim/'>vim (1)</a></li><li><a href='/blog/categories/mian-qiang-hui/'>勉強会 (3)</a></li></ul>
 </section>
 <section>
 <script type="text/javascript"><!--

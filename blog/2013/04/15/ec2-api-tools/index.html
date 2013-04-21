@@ -111,7 +111,7 @@ EC2 API &hellip;">
   </header>
 
 
-<div class="entry-content"><h1>初期設定</h1>
+<div class="entry-content"><h1 id="初期設定">初期設定</h1>
 
 <ul>
 <li><p><a href="http://engineer.blog.lancers.jp/2012/12/ec2-api-tools/">AWSのEC2 API Toolsをインストールなしで利用する方法</a><br/>
@@ -150,21 +150,21 @@ AWSのログインとかがあるメニューから証明書取得の画面を�
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h1>諸情報</h1>
+<h1 id="諸情報">諸情報</h1>
 
-<h2>実行ファイルのPATH</h2>
+<h2 id="実行ファイルのPATH">実行ファイルのPATH</h2>
 
 <p>/opt/aws/bin</p>
 
-<h2>環境変数</h2>
+<h2 id="環境変数">環境変数</h2>
 
-<h3>EC2_HOME</h3>
+<h3 id="EC2_HOME">EC2_HOME</h3>
 
 <p>ec2-api-toolsのHOME
 * 例<br/>
 export EC2_HOME=/opt/aws/apitools/ec2</p>
 
-<h3>EC2_PRIVATE_KEY</h3>
+<h3 id="EC2_PRIVATE_KEY">EC2_PRIVATE_KEY</h3>
 
 <p>秘密鍵のPATH。今は使ってない</p>
 
@@ -174,7 +174,7 @@ export EC2_PRIVATE_KEY=$EC2_HOME/pk-XXXXXXXXXXXXXXXXXXXXX.pem</li>
 </ul>
 
 
-<h3>EC2_CERT</h3>
+<h3 id="EC2_CERT">EC2_CERT</h3>
 
 <p>証明書のPATH。今は使ってない。</p>
 
@@ -184,7 +184,7 @@ export EC2_CERT=$EC2_HOME/cert-XXXXXXXXXXXXXXXXXXXXXXX.pem</li>
 </ul>
 
 
-<h3>AWS_ACCESS_KEY</h3>
+<h3 id="AWS_ACCESS_KEY">AWS_ACCESS_KEY</h3>
 
 <p>AWSアクセスキー</p>
 
@@ -194,7 +194,7 @@ export AWS_ACCESS_KEY=xxxxxxxxxxxxxxxxxx</li>
 </ul>
 
 
-<h3>AWS_SECRET_KEY</h3>
+<h3 id="AWS_SECRET_KEY">AWS_SECRET_KEY</h3>
 
 <p>AWSシークレットキー</p>
 
@@ -204,7 +204,7 @@ export AWS_SECRET_KEY=yyyyyyyyyyyyyyyyyyyyyyyyyyy</li>
 </ul>
 
 
-<h3>EC2_URL</h3>
+<h3 id="EC2_URL">EC2_URL</h3>
 
 <p>リージョンの指定</p>
 
@@ -214,11 +214,11 @@ export EC2_URL=http://ec2.ap-northeast-1.amazonaws.com</li>
 </ul>
 
 
-<h1>コマンド</h1>
+<h1 id="コマンド">コマンド</h1>
 
-<h2>確認</h2>
+<h2 id="確認">確認</h2>
 
-<h3>ec2ver</h3>
+<h3 id="ec2ver">ec2ver</h3>
 
 <p>バージョンの表示</p>
 
@@ -229,7 +229,7 @@ export EC2_URL=http://ec2.ap-northeast-1.amazonaws.com</li>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h3>ec2-describe-images</h3>
+<h3 id="ec2-describe-images">ec2-describe-images</h3>
 
 <p>AMIの表示</p>
 
@@ -256,9 +256,9 @@ export EC2_URL=http://ec2.ap-northeast-1.amazonaws.com</li>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h2>インスタンス操作関連</h2>
+<h2 id="インスタンス操作関連">インスタンス操作関連</h2>
 
-<h3>ec2-describe-instances</h3>
+<h3 id="ec2-describe-instances">ec2-describe-instances</h3>
 
 <p>インスタンスの一覧の情報が表示される</p>
 
@@ -285,7 +285,7 @@ export EC2_URL=http://ec2.ap-northeast-1.amazonaws.com</li>
 
 <p>※ 引数にインスタンスIDを指定数と、そのインスタンスの情報のみ表示される</p>
 
-<h3>ec2-start-instances</h3>
+<h3 id="ec2-start-instances">ec2-start-instances</h3>
 
 <p>インスタンスを起動</p>
 
@@ -312,7 +312,7 @@ export EC2_URL=http://ec2.ap-northeast-1.amazonaws.com</li>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h3>ec2-stop-instances</h3>
+<h3 id="ec2-stop-instances">ec2-stop-instances</h3>
 
 <p>インスタンスを停止</p>
 
@@ -372,9 +372,9 @@ export EC2_URL=http://ec2.ap-northeast-1.amazonaws.com</li>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h2>snapshot関連</h2>
+<h2 id="snapshot関連">snapshot関連</h2>
 
-<h3>ec2-describe-snapshots</h3>
+<h3 id="ec2-describe-snapshots">ec2-describe-snapshots</h3>
 
 <p>snapshot一覧の表示</p>
 
@@ -391,7 +391,7 @@ export EC2_URL=http://ec2.ap-northeast-1.amazonaws.com</li>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h3>ec2-copy-snapshot</h3>
+<h3 id="ec2-copy-snapshot">ec2-copy-snapshot</h3>
 
 <p>snapshotのコピー</p>
 
@@ -402,7 +402,7 @@ export EC2_URL=http://ec2.ap-northeast-1.amazonaws.com</li>
 
 <p>※東京からシンガポールのリージョンへコピー</p>
 
-<h3>ec2-describe-snapshot</h3>
+<h3 id="ec2-describe-snapshot">ec2-describe-snapshot</h3>
 
 <p>snapshotのアクセス権限確認</p>
 
@@ -415,7 +415,7 @@ export EC2_URL=http://ec2.ap-northeast-1.amazonaws.com</li>
 
 <p>権限が設定されていない場合(非公開設定)は何も出力されない</p>
 
-<h3>ec2-modify-snapshot-attribute</h3>
+<h3 id="ec2-modify-snapshot-attribute">ec2-modify-snapshot-attribute</h3>
 
 <p>snapshotのアクセス権限を変更する</p>
 
@@ -426,7 +426,7 @@ export EC2_URL=http://ec2.ap-northeast-1.amazonaws.com</li>
 
 <p>※すべてのユーザに公開される設定</p>
 
-<h3>ec2-reset-snapshot-attribute</h3>
+<h3 id="ec2-reset-snapshot-attribute">ec2-reset-snapshot-attribute</h3>
 
 <p>権限をリセットする</p>
 
@@ -435,9 +435,9 @@ export EC2_URL=http://ec2.ap-northeast-1.amazonaws.com</li>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h2>volume関連</h2>
+<h2 id="volume関連">volume関連</h2>
 
-<h3>ec2-detach-volume</h3>
+<h3 id="ec2-detach-volume">ec2-detach-volume</h3>
 
 <p>ボリュームをデタッチする</p>
 
@@ -448,7 +448,7 @@ export EC2_URL=http://ec2.ap-northeast-1.amazonaws.com</li>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h3>ec2-attach-volume</h3>
+<h3 id="ec2-attach-volume">ec2-attach-volume</h3>
 
 <p>ボリュームをアタッチする</p>
 
@@ -459,7 +459,7 @@ export EC2_URL=http://ec2.ap-northeast-1.amazonaws.com</li>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h3>ec2-create-volume</h3>
+<h3 id="ec2-create-volume">ec2-create-volume</h3>
 
 <p>ボリュームを作成する</p>
 
@@ -470,9 +470,9 @@ export EC2_URL=http://ec2.ap-northeast-1.amazonaws.com</li>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h2>Elastic IP関連</h2>
+<h2 id="Elastic+IP関連">Elastic IP関連</h2>
 
-<h3>ec2-describe-addresses</h3>
+<h3 id="ec2-describe-addresses">ec2-describe-addresses</h3>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -481,13 +481,13 @@ export EC2_URL=http://ec2.ap-northeast-1.amazonaws.com</li>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h1>トラブルシューティング</h1>
+<h1 id="トラブルシューティング">トラブルシューティング</h1>
 
 <p><a href="https://forums.aws.amazon.com/message.jspa?messageID=342081">Instance does not have a volume attached at root (/dev/sda1)</a></p>
 
 <p>/dev/sdfになっていたのを/dev/sda1でアタッチし直したらOK</p>
 
-<h1>リンク</h1>
+<h1 id="リンク">リンク</h1>
 
 <ul>
 <li><a href="http://d.hatena.ne.jp/studio-m/20091104/1257297074">CentOSでec2-api-tools, ec2-ami-toolsを使えるようにする</a></li>
@@ -558,6 +558,10 @@ export EC2_URL=http://ec2.ap-northeast-1.amazonaws.com</li>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/04/21/vim/">vim</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/04/20/study-network/">20130419 第14回「ネットワーク パケットを読む会（仮）」</a>
       </li>
     
@@ -573,15 +577,11 @@ export EC2_URL=http://ec2.ap-northeast-1.amazonaws.com</li>
         <a href="/blog/2013/04/14/sed-gyakubiki/">逆引きコマンド</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/04/13/sed/">sed</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/about/'>about (3)</a></li><li><a href='/blog/categories/aws/'>aws (3)</a></li><li><a href='/blog/categories/chef/'>chef (1)</a></li><li><a href='/blog/categories/command/'>command (5)</a></li><li><a href='/blog/categories/construct/'>construct (2)</a></li><li><a href='/blog/categories/diary/'>diary (3)</a></li><li><a href='/blog/categories/ec2/'>ec2 (1)</a></li><li><a href='/blog/categories/google/'>google (1)</a></li><li><a href='/blog/categories/monitor/'>monitor (4)</a></li><li><a href='/blog/categories/network/'>network (2)</a></li><li><a href='/blog/categories/octopress/'>octopress (1)</a></li><li><a href='/blog/categories/os/'>OS (3)</a></li><li><a href='/blog/categories/mian-qiang-hui/'>勉強会 (3)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/about/'>about (3)</a></li><li><a href='/blog/categories/aws/'>aws (3)</a></li><li><a href='/blog/categories/bash/'>bash (2)</a></li><li><a href='/blog/categories/chef/'>chef (1)</a></li><li><a href='/blog/categories/command/'>command (5)</a></li><li><a href='/blog/categories/construct/'>construct (2)</a></li><li><a href='/blog/categories/diary/'>diary (3)</a></li><li><a href='/blog/categories/ec2/'>ec2 (1)</a></li><li><a href='/blog/categories/google/'>google (1)</a></li><li><a href='/blog/categories/monitor/'>monitor (4)</a></li><li><a href='/blog/categories/network/'>network (2)</a></li><li><a href='/blog/categories/octopress/'>octopress (1)</a></li><li><a href='/blog/categories/os/'>OS (3)</a></li><li><a href='/blog/categories/vim/'>vim (1)</a></li><li><a href='/blog/categories/mian-qiang-hui/'>勉強会 (3)</a></li></ul>
 </section>
 <section>
 <script type="text/javascript"><!--

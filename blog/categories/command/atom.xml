@@ -4,7 +4,7 @@
   <title><![CDATA[Category: command | Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/blog/categories/command/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-04-21T18:55:10+09:00</updated>
+  <updated>2013-04-21T22:56:12+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -18,9 +18,9 @@
     <link href="http://ftakao2007.github.com/blog/2013/04/14/sed-gyakubiki/"/>
     <updated>2013-04-14T00:20:00+09:00</updated>
     <id>http://ftakao2007.github.com/blog/2013/04/14/sed-gyakubiki</id>
-    <content type="html"><![CDATA[<h2>改行を</h2>
+    <content type="html"><![CDATA[<h2 id="■改行を">■改行を</h2>
 
-<h3>したい</h3>
+<h3 id="入れたい">入れたい</h3>
 
 <p>「=」で改行
 ``` bash
@@ -28,14 +28,14 @@ fukui-no-MacBook-Air:tmp ftakao2007$ cat vimrc
 set fileencoding=utf-8
 set fileencodings=iso-2022-jp,utf-8,euc-jp</p>
 
-<p>fukui-no-MacBook-Air:tmp ftakao2007$ cat vimrc | gsed -e 's/=/\n/g'
-set fileencoding
+<p>fukui-no-MacBook-Air:tmp ftakao2007$ cat vimrc | gsed -e 's/=/=\n/g'
+set fileencoding=
 utf-8
-set fileencodings
+set fileencodings=
 iso-2022-jp,utf-8,euc-jp
 ```</p>
 
-<h3>消したい</h3>
+<h3 id="消したい">消したい</h3>
 
 <p>``` bash
 fukui-no-MacBook-Air:tmp ftakao2007$ cat vimrc
@@ -45,6 +45,119 @@ set fileencodings=iso-2022-jp,utf-8,euc-jp</p>
 <p>fukui-no-MacBook-Air:tmp ftakao2007$ cat vimrc | tr -d '\n'
 set fileencoding=utf-8set fileencodings=iso-2022-jp,utf-8,euc-jpfukui-no-MacBook-Air:tmp ftakao2007$
 ```</p>
+
+<h2 id="■空行を">■空行を</h2>
+
+<h3 id="消したい">消したい</h3>
+
+<p>``` bash
+fukui-no-MacBook-Air:tmp ftakao2007$ cat aaa.log
+a</p>
+
+<p>gsfe</p>
+
+<p>wefa
+awefa</p>
+
+<p>w
+fukui-no-MacBook-Air:tmp ftakao2007$ sed -e '/<sup>$/d'</sup> aaa.log
+a
+gsfe
+wefa
+awefa
+w
+fukui-no-MacBook-Air:tmp ftakao2007$ sed -ne '/./p' aaa.log
+a
+gsfe
+wefa
+awefa
+w
+fukui-no-MacBook-Air:tmp ftakao2007$
+```</p>
+
+<h2 id="■Webページを">■Webページを</h2>
+
+<h3 id="保存したい">保存したい</h3>
+
+<h4 id="htmlのみ">htmlのみ</h4>
+
+<p><code>bash
+curl http://www.example.com &gt; example.com.html
+</code></p>
+
+<h4 id="[ページを丸ごとローカルに保存](https://sites.google.com/site/hymd3a/google-site/wget)"><a href="https://sites.google.com/site/hymd3a/google-site/wget">ページを丸ごとローカルに保存</a></h4>
+
+<p><code>bash
+wget -r -np -k -l 0 example.com
+</code></p>
+
+<h4 id="データを送る">データを送る</h4>
+
+<p>``` bash
+fukui-no-MacBook-Air:DATA ftakao2007$ curl --data-urlencode a=太郎 http://www.example.com/TOMONOKAI_CMS/CGI/hoge.cgi
+あなたのポストしたデータは、
+a=%E5%A4%AA%E9%83%8E
+です。</p>
+
+<p>fukui-no-MacBook-Air:DATA ftakao2007$ curl --data a=太郎 http://www.example.com/TOMONOKAI_CMS/CGI/hoge.cgi
+あなたのポストしたデータは、
+a=太郎
+です。</p>
+
+<p>fukui-no-MacBook-Air:DATA ftakao2007$ wget --data a=太郎 http://www.example.com/TOMONOKAI_CMS/CGI/hoge.cgi</p>
+
+<ul>
+<li>URLはexample.comに変更してあります
+```</li>
+</ul>
+
+
+<h2 id="■文字コードを">■文字コードを</h2>
+
+<h3 id="変換する">変換する</h3>
+
+<p>``` bash
+fukui-no-MacBook-Air:DATA ftakao2007$ cat numref
+&#25105;&#12293;&#12399;&#12471;&#12455;&#12523;&#33464;&#20154;&#12384;&#12290;
+fukui-no-MacBook-Air:DATA ftakao2007$ cat numref | w3m -T text/html -dump
+我々はシェル芸人だ。</p>
+
+<p>fukui-no-MacBook-Air:DATA ftakao2007$ cat numref | nkf --numchar-input
+我々はシェル芸人だ。
+```</p>
+
+<h2 id="■文字列を">■文字列を</h2>
+
+<h3 id="抽出">抽出</h3>
+
+<p>``` bash
+bash-3.2$ cat a.log
+1
+2
+3
+4
+5
+6
+7
+8
+9</p>
+
+<p>bash-3.2$ cat a.log | grep 5
+5
+```</p>
+
+<h3 id="マッチした前後を抽出">マッチした前後を抽出</h3>
+
+<p><code>bash
+bash-3.2$ cat a.log | grep 5 -A 2
+5
+6
+7
+bash-3.2$ cat a.log | grep 5 -B 2
+3
+4
+5
+</code></p>
 ]]></content>
   </entry>
   
@@ -53,11 +166,11 @@ set fileencoding=utf-8set fileencodings=iso-2022-jp,utf-8,euc-jpfukui-no-MacBook
     <link href="http://ftakao2007.github.com/blog/2013/04/13/sed/"/>
     <updated>2013-04-13T23:54:00+09:00</updated>
     <id>http://ftakao2007.github.com/blog/2013/04/13/sed</id>
-    <content type="html"><![CDATA[<h1>sed (ストリーミングエディタ)</h1>
+    <content type="html"><![CDATA[<h1 id="sed+(ストリーミングエディタ)">sed (ストリーミングエディタ)</h1>
 
-<h2>Option</h2>
+<h2 id="Option">Option</h2>
 
-<h3>n</h3>
+<h3 id="n">n</h3>
 
 <p>標準出力を制御
 ``` bash
@@ -112,7 +225,7 @@ ccc</p>
 -->
 
 
-<h3>e</h3>
+<h3 id="e">e</h3>
 
 <p>次にくる値はコマンドとみなす
 ``` bash
@@ -145,7 +258,7 @@ ccc</p>
 </ul>
 
 
-<h3>f</h3>
+<h3 id="f">f</h3>
 
 <p>次にくる値はスクリプトとみなす
 ``` bash
@@ -161,7 +274,7 @@ ccc</p>
 bbb123
 ```</p>
 
-<h3>i</h3>
+<h3 id="i">i</h3>
 
 <p>標準出力に出力せず、直接ファイルを書き換える</p>
 
@@ -196,9 +309,9 @@ sed: 1: "test_sed2.txt": undefined label 'est_sed.txt'</p>
 </ul>
 
 
-<h2>Command</h2>
+<h2 id="Command">Command</h2>
 
-<h3>p</h3>
+<h3 id="p">p</h3>
 
 <p>出力する</p>
 
@@ -242,7 +355,7 @@ ccc</p>
 </ul>
 
 
-<h3>d</h3>
+<h3 id="d">d</h3>
 
 <p>削除する
 ``` bash
@@ -287,7 +400,7 @@ bbb123</p>
 </ul>
 
 
-<h3>q</h3>
+<h3 id="q">q</h3>
 
 <p>特定の文字列が含まれる行まで表示
 ``` bash
@@ -308,7 +421,7 @@ ccc</p>
 </ul>
 
 
-<h3>s</h3>
+<h3 id="s">s</h3>
 
 <p>置換する</p>
 
@@ -466,9 +579,9 @@ fukui-no-MacBook-Air:sed ftakao2007$</p>
 </ul>
 
 
-<h2>Match</h2>
+<h2 id="Match">Match</h2>
 
-<h3>空行以外を出力</h3>
+<h3 id="空行以外を出力">空行以外を出力</h3>
 
 <p>``` bash
 fukui-no-MacBook-Air:sed ftakao2007$ cat test_sed4.txt
@@ -491,7 +604,7 @@ ccc
 </ul>
 
 
-<h3>空行を出力</h3>
+<h3 id="空行を出力">空行を出力</h3>
 
 <p>``` bash
 fukui-no-MacBook-Air:sed ftakao2007$ cat test_sed4.txt
@@ -511,7 +624,7 @@ ccc</p>
 </ul>
 
 
-<h3>最初の空行から次の空行までを出力</h3>
+<h3 id="最初の空行から次の空行までを出力">最初の空行から次の空行までを出力</h3>
 
 <p>``` bash
 fukui-no-MacBook-Air:sed ftakao2007$ cat test_sed4.txt
@@ -551,7 +664,7 @@ ccc</p>
 </ul>
 
 
-<h3>最初の空行から次の空行までの行を削除</h3>
+<h3 id="最初の空行から次の空行までの行を削除">最初の空行から次の空行までの行を削除</h3>
 
 <p>``` bash
 fukui-no-MacBook-Air:sed ftakao2007$ cat test_sed4.txt
@@ -568,11 +681,11 @@ aaa
 fukui-no-MacBook-Air:sed ftakao2007$
 ```</p>
 
-<h2>Advance</h2>
+<h2 id="Advance">Advance</h2>
 
-<h3>正規表現(?)</h3>
+<h3 id="正規表現(?)">正規表現(?)</h3>
 
-<h4>&amp;</h4>
+<h4 id="+">&amp;</h4>
 
 <p>置換のときに省略して記載できる</p>
 
@@ -603,7 +716,39 @@ ccc</p>
 </ul>
 
 
-<h2>参考</h2>
+<h3 id="区切り位置">区切り位置</h3>
+
+<p>区切り位置を<code>/</code>の代わりに<code>;</code>にすると、<code>/</code>をエスケープしなくても良くなる
+``` bash
+fukui-no-MacBook-Air:DATA ftakao2007$ cat 3.html | gsed -e 's/&lt;\/td>/&amp;\n/g'</p>
+
+<table>
+    <tr>
+<td>a</td>
+<td>b</td>
+
+<td>c</td>
+
+    </tr>
+</table>
+
+
+<p>fukui-no-MacBook-Air:DATA ftakao2007$ cat 3.html | gsed -e 's;</td>;&amp;\n;g'</p>
+
+<table>
+    <tr>
+<td>a</td>
+<td>b</td>
+
+<td>c</td>
+
+    </tr>
+</table>
+
+
+<p>```</p>
+
+<h2 id="参考">参考</h2>
 
 <ul>
 <li><a href="http://www.ksknet.net/linuxrz/sed.html">sed - ストリーミングエディタ</a></li>
@@ -618,7 +763,7 @@ ccc</p>
     <link href="http://ftakao2007.github.com/blog/2013/04/10/git-command/"/>
     <updated>2013-04-10T20:13:00+09:00</updated>
     <id>http://ftakao2007.github.com/blog/2013/04/10/git-command</id>
-    <content type="html"><![CDATA[<h1>git init</h1>
+    <content type="html"><![CDATA[<h1 id="git+init">git init</h1>
 
 <p>リポジトリの作成を行うコマンド</p>
 ]]></content>
@@ -629,11 +774,11 @@ ccc</p>
     <link href="http://ftakao2007.github.com/blog/2013/04/07/git/"/>
     <updated>2013-04-07T22:57:00+09:00</updated>
     <id>http://ftakao2007.github.com/blog/2013/04/07/git</id>
-    <content type="html"><![CDATA[<h1>メモ書き</h1>
+    <content type="html"><![CDATA[<h1 id="メモ書き">メモ書き</h1>
 
 <p>コンセプトは、曖昧に覚えていることをとりあえず書き出し、修正しながら身につける。</p>
 
-<h2>リモートリポジトリ</h2>
+<h2 id="リモートリポジトリ">リモートリポジトリ</h2>
 
 <ul>
 <li>gitサーバ側に作成されるリポジトリ。クライアント側から作成することはできない。</li>
@@ -641,7 +786,7 @@ ccc</p>
 </ul>
 
 
-<h2>master</h2>
+<h2 id="master">master</h2>
 
 <ul>
 <li>masterのブランチ</li>
@@ -650,7 +795,7 @@ ccc</p>
 </ul>
 
 
-<h2>origin</h2>
+<h2 id="origin">origin</h2>
 
 <ul>
 <li>URLのエイリアスみたいなもの</li>
@@ -667,11 +812,11 @@ origin  git://github.com/heroku/ruby-sample.git (push)
 </ul>
 
 
-<h1>とりあえず手っ取り早くgitを使いたい</h1>
+<h1 id="とりあえず手っ取り早くgitを使いたい">とりあえず手っ取り早くgitを使いたい</h1>
 
-<h2>初期設定</h2>
+<h2 id="初期設定">初期設定</h2>
 
-<h3>まっさらなremoteリポジトリの場合</h3>
+<h3 id="まっさらなremoteリポジトリの場合">まっさらなremoteリポジトリの場合</h3>
 
 <p><code>bash
 git init
@@ -681,16 +826,16 @@ git remote add origin https://github.com/ftakao2007/test.git
 git push -u origin master
 </code></p>
 
-<h3>いろいろ使われているremoteリポジトリをローカルに持ってきて使う場合</h3>
+<h3 id="いろいろ使われているremoteリポジトリをローカルに持ってきて使う場合">いろいろ使われているremoteリポジトリをローカルに持ってきて使う場合</h3>
 
 <p><code>bash
 git clone https://github.com/ftakao2007/test.git
 cd test
 </code></p>
 
-<h2>編集</h2>
+<h2 id="編集">編集</h2>
 
-<h3>リモートにプッシュ</h3>
+<h3 id="リモートにプッシュ">リモートにプッシュ</h3>
 
 <p><code>bash
 vi munin_construct.py
@@ -701,9 +846,9 @@ git pull --rebase origin
 git push origin
 </code></p>
 
-<h2>ブランチ</h2>
+<h2 id="ブランチ">ブランチ</h2>
 
-<h3>作成、確認、切り替え、コミット、プッシュ</h3>
+<h3 id="作成、確認、切り替え、コミット、プッシュ">作成、確認、切り替え、コミット、プッシュ</h3>
 
 <p>``` bash
 fukui-no-MacBook-Air:test2 ftakao2007$ git branch
@@ -731,9 +876,9 @@ git push -u origin test-branch
 git checkout master
 ```</p>
 
-<h2>削除</h2>
+<h2 id="削除">削除</h2>
 
-<h3>ローカルのブランチの削除</h3>
+<h3 id="ローカルのブランチの削除">ローカルのブランチの削除</h3>
 
 <p>``` bash
 fukui-no-MacBook-Air:test2 ftakao2007$ git branch
@@ -747,7 +892,7 @@ Deleted branch test-branch (was 19b1e03).</p>
 * master
 ```</p>
 
-<h3>リモートのブランチ削除</h3>
+<h3 id="リモートのブランチ削除">リモートのブランチ削除</h3>
 
 <p>``` bash
 fukui-no-MacBook-Air:test2 ftakao2007$ git branch -a
@@ -768,19 +913,19 @@ To https://github.com/ftakao2007/test2.git
   remotes/origin/master
 ```</p>
 
-<h3>コミットの取り消し</h3>
+<h3 id="コミットの取り消し">コミットの取り消し</h3>
 
 <p>``` bash
 fukui-no-MacBook-Air:test2 ftakao2007$ git log
 commit f56ca7da10d119fd91fb5f7d1c4799d94f525a91
-Author: ftakao2007 <a href="&#109;&#97;&#105;&#108;&#x74;&#x6f;&#x3a;&#102;&#116;&#x61;&#x6b;&#97;&#111;&#x32;&#48;&#48;&#x37;&#x40;&#103;&#109;&#97;&#x69;&#108;&#46;&#x63;&#x6f;&#x6d;">&#x66;&#x74;&#x61;&#x6b;&#x61;&#x6f;&#x32;&#x30;&#48;&#55;&#x40;&#103;&#x6d;&#97;&#x69;&#x6c;&#x2e;&#99;&#x6f;&#x6d;</a>
+Author: ftakao2007 <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#x66;&#x74;&#97;&#x6b;&#97;&#x6f;&#x32;&#x30;&#x30;&#55;&#64;&#103;&#109;&#97;&#x69;&#108;&#x2e;&#x63;&#x6f;&#x6d;">&#102;&#116;&#x61;&#107;&#x61;&#x6f;&#50;&#48;&#x30;&#x37;&#64;&#103;&#109;&#97;&#x69;&#108;&#46;&#99;&#111;&#x6d;</a>
 Date:   Wed Apr 10 22:41:52 2013 +0900</p>
 
 <pre><code>a
 </code></pre>
 
 <p>commit 3c63dc839b68e5753da4ab69330e465b31dd17c2
-Author: ftakao2007 <a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#111;&#58;&#x66;&#x74;&#x61;&#107;&#97;&#111;&#50;&#48;&#x30;&#x37;&#x40;&#x67;&#109;&#97;&#105;&#108;&#x2e;&#99;&#111;&#109;">&#x66;&#116;&#x61;&#107;&#97;&#111;&#x32;&#x30;&#x30;&#55;&#x40;&#103;&#x6d;&#97;&#x69;&#108;&#46;&#x63;&#111;&#109;</a>
+Author: ftakao2007 <a href="&#x6d;&#97;&#x69;&#x6c;&#116;&#111;&#58;&#x66;&#116;&#x61;&#x6b;&#97;&#x6f;&#50;&#48;&#48;&#x37;&#64;&#103;&#109;&#97;&#x69;&#x6c;&#46;&#x63;&#111;&#x6d;">&#x66;&#x74;&#x61;&#x6b;&#97;&#x6f;&#50;&#x30;&#x30;&#x37;&#x40;&#103;&#x6d;&#97;&#x69;&#x6c;&#46;&#99;&#x6f;&#109;</a>
 Date:   Wed Apr 10 22:37:36 2013 +0900</p>
 
 <pre><code>hoge
@@ -790,7 +935,7 @@ Date:   Wed Apr 10 22:37:36 2013 +0900</p>
 
 <p>fukui-no-MacBook-Air:test2 ftakao2007$ git log
 commit 3c63dc839b68e5753da4ab69330e465b31dd17c2
-Author: ftakao2007 <a href="&#109;&#x61;&#x69;&#108;&#x74;&#x6f;&#x3a;&#102;&#x74;&#x61;&#107;&#x61;&#x6f;&#50;&#x30;&#x30;&#55;&#x40;&#x67;&#109;&#x61;&#105;&#108;&#46;&#x63;&#x6f;&#109;">&#x66;&#116;&#97;&#x6b;&#x61;&#111;&#50;&#x30;&#x30;&#x37;&#64;&#103;&#x6d;&#x61;&#105;&#108;&#x2e;&#99;&#x6f;&#109;</a>
+Author: ftakao2007 <a href="&#x6d;&#x61;&#x69;&#108;&#x74;&#111;&#x3a;&#102;&#x74;&#x61;&#x6b;&#x61;&#111;&#50;&#48;&#48;&#x37;&#64;&#103;&#109;&#x61;&#x69;&#108;&#46;&#99;&#111;&#x6d;">&#102;&#116;&#97;&#107;&#x61;&#111;&#x32;&#x30;&#x30;&#x37;&#64;&#x67;&#x6d;&#97;&#105;&#108;&#46;&#99;&#111;&#x6d;</a>
 Date:   Wed Apr 10 22:37:36 2013 +0900</p>
 
 <pre><code>hoge
@@ -799,7 +944,7 @@ Date:   Wed Apr 10 22:37:36 2013 +0900</p>
 <p><code>``
 </code>git reset --hard HEAD<sup>`</sup> にすると、コミットの取り消しと同時にファイルの内容もコミット前に戻る。</p>
 
-<h2>今後確認すること</h2>
+<h2 id="今後確認すること">今後確認すること</h2>
 
 <ul>
 <li>リビジョンてどうなってるの？ぱっとググった感じリビジョンて概念を使わない？世代を超えたファイルのdiffってできないのかな。</li>
@@ -807,11 +952,11 @@ Date:   Wed Apr 10 22:37:36 2013 +0900</p>
 </ul>
 
 
-<h2>リンク</h2>
+<h2 id="リンク">リンク</h2>
 
 <p><a href="http://lealog.hateblo.jp/entry/2012/12/22/023547">最低限の知識でGitの運用をする</a></p>
 
-<h1>README.md</h1>
+<h1 id="README.md">README.md</h1>
 
 <p><a href="http://kuroigamen.com/13">gituhub に自分のプロジェクトのリポジトリを作ってみる。</a></p>
 ]]></content>
@@ -822,7 +967,7 @@ Date:   Wed Apr 10 22:37:36 2013 +0900</p>
     <link href="http://ftakao2007.github.com/blog/2013/04/07/command/"/>
     <updated>2013-04-07T20:16:00+09:00</updated>
     <id>http://ftakao2007.github.com/blog/2013/04/07/command</id>
-    <content type="html"><![CDATA[<h1>ssh-keygen</h1>
+    <content type="html"><![CDATA[<h1 id="ssh-keygen">ssh-keygen</h1>
 
 <ul>
 <li><a href="http://d.hatena.ne.jp/tmd45/20110203/1296744114">ローカル（Windows, cygwin）からGithubのリポジトリにpushするメモ</a></li>

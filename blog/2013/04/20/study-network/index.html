@@ -112,20 +112,20 @@
 
 <hr />
 
-<h1><a href="http://www.slideshare.net/hebikuzure/20130419-19149363">フレッシャーズのためのパケット解析入門 (hebikuzure さん)</a></h1>
+<h1 id="[フレッシャーズのためのパケット解析入門+(hebikuzure+さん)](http://www.slideshare.net/hebikuzure/20130419-19149363)"><a href="http://www.slideshare.net/hebikuzure/20130419-19149363">フレッシャーズのためのパケット解析入門 (hebikuzure さん)</a></h1>
 
 <p>なんとなくフワッと使っていた単語をイメージで捉える。</p>
 
-<h3>パケット通信方式</h3>
+<h3 id="パケット通信方式">パケット通信方式</h3>
 
 <p>連続データを一定量ずつ蓄積して1個の伝送単位にして、伝送路の開いているタイミングで送出、
 受信したデータを元の連続データに復元する方式。</p>
 
-<h3>パケット</h3>
+<h3 id="パケット">パケット</h3>
 
 <p>パケット通信方式における情報の伝送単位</p>
 
-<h3>イメージ</h3>
+<h3 id="イメージ">イメージ</h3>
 
 <table>
 <thead>
@@ -151,7 +151,7 @@
 
 <hr />
 
-<h2>パケット解析とは</h2>
+<h2 id="パケット解析とは">パケット解析とは</h2>
 
 <ol>
 <li>パケットキャプチャをする</li>
@@ -161,11 +161,11 @@
 
 <hr />
 
-<h2>パケットキャプチャ</h2>
+<h2 id="パケットキャプチャ">パケットキャプチャ</h2>
 
 <p>パケット一つ一つに含まれるデータを記録する</p>
 
-<h3>パケットに含まれているデータ</h3>
+<h3 id="パケットに含まれているデータ">パケットに含まれているデータ</h3>
 
 <ul>
 <li>送信元</li>
@@ -175,7 +175,7 @@
 </ul>
 
 
-<h3>キャプチャされる場所(〜モデル)</h3>
+<h3 id="キャプチャされる場所(〜モデル)">キャプチャされる場所(〜モデル)</h3>
 
 <p><a href="http://en.wikipedia.org/wiki/OSI_model">OSI参照モデル</a></p>
 
@@ -192,7 +192,7 @@
 </ul>
 
 
-<h3>パケットをキャプチャする場所(実際の場所)</h3>
+<h3 id="パケットをキャプチャする場所(実際の場所)">パケットをキャプチャする場所(実際の場所)</h3>
 
 <ul>
 <li><p>対象デバイス内? or デバイス外?</p>
@@ -263,7 +263,7 @@
 
 <p>＊ どこでキャプチャするのが適切なのか検討し、複数の場所でキャプチャするなど工夫が必要</p>
 
-<h3>パケットをキャプチャする方法</h3>
+<h3 id="パケットをキャプチャする方法">パケットをキャプチャする方法</h3>
 
 <ul>
 <li><p>ハードウェア<br/>
@@ -301,7 +301,7 @@
 </ul>
 
 
-<h3>ソフトウェアによるパケットキャプチャまとめ</h3>
+<h3 id="ソフトウェアによるパケットキャプチャまとめ">ソフトウェアによるパケットキャプチャまとめ</h3>
 
 <table>
 <thead>
@@ -365,7 +365,7 @@
 </table>
 
 
-<h3>データ形式</h3>
+<h3 id="データ形式">データ形式</h3>
 
 <table>
 <thead>
@@ -397,7 +397,7 @@
 
 <p>※ とりあえずpcap形式にしておけば大概のソフトで読める</p>
 
-<h3>どんなデータが記録されるか</h3>
+<h3 id="どんなデータが記録されるか">どんなデータが記録されるか</h3>
 
 <ul>
 <li>パケット全体のバイナリデータ</li>
@@ -409,21 +409,21 @@
 
 <hr />
 
-<h2>パケット解析</h2>
+<h2 id="パケット解析">パケット解析</h2>
 
-<h3>基本的にはツールを利用する</h3>
+<h3 id="基本的にはツールを利用する">基本的にはツールを利用する</h3>
 
 <p>Wireshark / NetworkMiner / OmniPeek / Network Monitor</p>
 
-<h3>力技で独自解析</h3>
+<h3 id="力技で独自解析">力技で独自解析</h3>
 
 <p>pcap形式などのフォーマットは公開されているので独自にバイナリ解析をする</p>
 
 <hr />
 
-<h1>tcpdumpから始まるネットワークエンジニアの朝 (twovs さん)</h1>
+<h1 id="tcpdumpから始まるネットワークエンジニアの朝+(twovs+さん)">tcpdumpから始まるネットワークエンジニアの朝 (twovs さん)</h1>
 
-<h2>tcpdumpとWireshark</h2>
+<h2 id="tcpdumpとWireshark">tcpdumpとWireshark</h2>
 
 <ul>
 <li><p>tcpdump<br/>
@@ -433,51 +433,51 @@
 </ul>
 
 
-<h2>パケット解析で大切なこと</h2>
+<h2 id="パケット解析で大切なこと">パケット解析で大切なこと</h2>
 
-<h3>正常系を知っておくこと</h3>
+<h3 id="正常系を知っておくこと">正常系を知っておくこと</h3>
 
 <p>異常な状態を察知するには正常な状態を知っておくことが大切</p>
 
-<h2>何もしてないのに壊れましたー</h2>
+<h2 id="何もしてないのに壊れましたー">何もしてないのに壊れましたー</h2>
 
-<h3>IPv4だと問題なかったのにIPv6だとつながらない</h3>
+<h3 id="IPv4だと問題なかったのにIPv6だとつながらない">IPv4だと問題なかったのにIPv6だとつながらない</h3>
 
 <p>IPv6アドレスにpingを打ってみたが反応がなかった<br/>
 →IPv4はARPでMACアドレスを取得しているが<strong>IPv6はICMPでMACアドレスを取得している</strong><br/>
 →IPv6ではICMPをフィルタしちゃダメ!!</p>
 
-<h3>IPv6の通信で送り元と送り先でサイズが違う</h3>
+<h3 id="IPv6の通信で送り元と送り先でサイズが違う">IPv6の通信で送り元と送り先でサイズが違う</h3>
 
 <p>送り先でパケットを見たら「padding」というのがひっついていた<br/>
 →小さいデータを送るときは「0」を付加して64byteにしてから投げるようになっている設定があるらしい</p>
 
-<h3>MTU=1500にもかかわらずものすごい大きなデータを送ろうとしていた</h3>
+<h3 id="MTU=1500にもかかわらずものすごい大きなデータを送ろうとしていた">MTU=1500にもかかわらずものすごい大きなデータを送ろうとしていた</h3>
 
 <p>送信元でものすごいでかいデータを送信先に投げている。でも送信先のキャプチャは正常<br/>
 → VMwareのGuestOSでキャプチャするとき、Virtual Switchに行く前のデータをキャプチャしていた<br/>
 → Virtual Switchを通過すると通常のサイズになるらしい。</p>
 
-<h2>まとめ</h2>
+<h2 id="まとめ">まとめ</h2>
 
-<h3>LANケーブルは刺さってる？</h3>
+<h3 id="LANケーブルは刺さってる？">LANケーブルは刺さってる？</h3>
 
 <p>意外と多いらしい。お客様には「ケーブル刺さってるか確認してください」と言うと「馬鹿にしてるのか！」とお叱りを受けるので
 「LANケーブルの抜き差しで直ることがありますので試してください」と言うと、双方ハッピー。</p>
 
-<h3>FireWallの設定とか大丈夫？</h3>
+<h3 id="FireWallの設定とか大丈夫？">FireWallの設定とか大丈夫？</h3>
 
-<h3>IPv6つかってるのにICMPをフィルタしてない？</h3>
+<h3 id="IPv6つかってるのにICMPをフィルタしてない？">IPv6つかってるのにICMPをフィルタしてない？</h3>
 
-<h3>どこのキャプチャを撮ってる？</h3>
+<h3 id="どこのキャプチャを撮ってる？">どこのキャプチャを撮ってる？</h3>
 
 <p>内部？外部？内部でもどこ？VMwareだとVirtual Switchの前？後？</p>
 
-<h1>とある環境(3G回線)であるアプリのパケットを見てみた(totoromasaki さん)</h1>
+<h1 id="とある環境(3G回線)であるアプリのパケットを見てみた(totoromasaki+さん)">とある環境(3G回線)であるアプリのパケットを見てみた(totoromasaki さん)</h1>
 
 <p>私は何も聞いてないです。。</p>
 
-<h1>リンク</h1>
+<h1 id="リンク">リンク</h1>
 
 <p><a href="http://gvtkne.blogspot.jp/2013/04/14.html">ネットワークパケットを読む会(仮) 14回に参加してきた(otahi さん)</a></p>
 </div>
@@ -528,6 +528,8 @@
         <a class="basic-alignment left" href="/blog/2013/04/16/chef-handson/" title="Previous Post: シェフハンズオンセミナー">&laquo; シェフハンズオンセミナー</a>
       
       
+        <a class="basic-alignment right" href="/blog/2013/04/21/vim/" title="Next Post: vim">vim &raquo;</a>
+      
     </p>
   </footer>
 </article>
@@ -539,6 +541,10 @@
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/04/21/vim/">vim</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/04/20/study-network/">20130419 第14回「ネットワーク パケットを読む会（仮）」</a>
@@ -556,15 +562,11 @@
         <a href="/blog/2013/04/14/sed-gyakubiki/">逆引きコマンド</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/04/13/sed/">sed</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/about/'>about (3)</a></li><li><a href='/blog/categories/aws/'>aws (3)</a></li><li><a href='/blog/categories/chef/'>chef (1)</a></li><li><a href='/blog/categories/command/'>command (5)</a></li><li><a href='/blog/categories/construct/'>construct (2)</a></li><li><a href='/blog/categories/diary/'>diary (3)</a></li><li><a href='/blog/categories/ec2/'>ec2 (1)</a></li><li><a href='/blog/categories/google/'>google (1)</a></li><li><a href='/blog/categories/monitor/'>monitor (4)</a></li><li><a href='/blog/categories/network/'>network (2)</a></li><li><a href='/blog/categories/octopress/'>octopress (1)</a></li><li><a href='/blog/categories/os/'>OS (3)</a></li><li><a href='/blog/categories/mian-qiang-hui/'>勉強会 (3)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/about/'>about (3)</a></li><li><a href='/blog/categories/aws/'>aws (3)</a></li><li><a href='/blog/categories/bash/'>bash (2)</a></li><li><a href='/blog/categories/chef/'>chef (1)</a></li><li><a href='/blog/categories/command/'>command (5)</a></li><li><a href='/blog/categories/construct/'>construct (2)</a></li><li><a href='/blog/categories/diary/'>diary (3)</a></li><li><a href='/blog/categories/ec2/'>ec2 (1)</a></li><li><a href='/blog/categories/google/'>google (1)</a></li><li><a href='/blog/categories/monitor/'>monitor (4)</a></li><li><a href='/blog/categories/network/'>network (2)</a></li><li><a href='/blog/categories/octopress/'>octopress (1)</a></li><li><a href='/blog/categories/os/'>OS (3)</a></li><li><a href='/blog/categories/vim/'>vim (1)</a></li><li><a href='/blog/categories/mian-qiang-hui/'>勉強会 (3)</a></li></ul>
 </section>
 <section>
 <script type="text/javascript"><!--

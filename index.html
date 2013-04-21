@@ -9,8 +9,8 @@
   <meta name="author" content="ftakao2007">
 
   
-  <meta name="description" content="第14回「ネットワーク パケットを読む会（仮）」に参加しましたので覚書です。
-ネットワークキャプチャ関連の覚書はここのページに順次追記していきます。 フレッシャーズのためのパケット解析入門 (hebikuzure さん) なんとなくフワッと使っていた単語をイメージで捉える。 パケット通信方式 &hellip;">
+  <meta name="description" content="
+Vimで意外に知らなかった10つのこと ">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -87,6 +87,45 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2013/04/21/vim/">Vim</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-21T19:11:00+09:00" pubdate data-updated="true">Apr 21<span>st</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><ul>
+<li><a href="http://mathemathiko.hatenablog.com/entry/2013/04/21/162303">Vimで意外に知らなかった10つのこと</a></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2013/04/20/study-network/">20130419 第14回「ネットワーク パケットを読む会（仮）」</a></h1>
     
     
@@ -115,20 +154,20 @@
 
 <hr />
 
-<h1><a href="http://www.slideshare.net/hebikuzure/20130419-19149363">フレッシャーズのためのパケット解析入門 (hebikuzure さん)</a></h1>
+<h1 id="[フレッシャーズのためのパケット解析入門+(hebikuzure+さん)](http://www.slideshare.net/hebikuzure/20130419-19149363)"><a href="http://www.slideshare.net/hebikuzure/20130419-19149363">フレッシャーズのためのパケット解析入門 (hebikuzure さん)</a></h1>
 
 <p>なんとなくフワッと使っていた単語をイメージで捉える。</p>
 
-<h3>パケット通信方式</h3>
+<h3 id="パケット通信方式">パケット通信方式</h3>
 
 <p>連続データを一定量ずつ蓄積して1個の伝送単位にして、伝送路の開いているタイミングで送出、
 受信したデータを元の連続データに復元する方式。</p>
 
-<h3>パケット</h3>
+<h3 id="パケット">パケット</h3>
 
 <p>パケット通信方式における情報の伝送単位</p>
 
-<h3>イメージ</h3>
+<h3 id="イメージ">イメージ</h3>
 
 <table>
 <thead>
@@ -154,7 +193,7 @@
 
 <hr />
 
-<h2>パケット解析とは</h2>
+<h2 id="パケット解析とは">パケット解析とは</h2>
 
 <ol>
 <li>パケットキャプチャをする</li>
@@ -164,11 +203,11 @@
 
 <hr />
 
-<h2>パケットキャプチャ</h2>
+<h2 id="パケットキャプチャ">パケットキャプチャ</h2>
 
 <p>パケット一つ一つに含まれるデータを記録する</p>
 
-<h3>パケットに含まれているデータ</h3>
+<h3 id="パケットに含まれているデータ">パケットに含まれているデータ</h3>
 
 <ul>
 <li>送信元</li>
@@ -178,7 +217,7 @@
 </ul>
 
 
-<h3>キャプチャされる場所(〜モデル)</h3>
+<h3 id="キャプチャされる場所(〜モデル)">キャプチャされる場所(〜モデル)</h3>
 
 <p><a href="http://en.wikipedia.org/wiki/OSI_model">OSI参照モデル</a></p>
 
@@ -195,7 +234,7 @@
 </ul>
 
 
-<h3>パケットをキャプチャする場所(実際の場所)</h3>
+<h3 id="パケットをキャプチャする場所(実際の場所)">パケットをキャプチャする場所(実際の場所)</h3>
 
 <ul>
 <li><p>対象デバイス内? or デバイス外?</p>
@@ -266,7 +305,7 @@
 
 <p>＊ どこでキャプチャするのが適切なのか検討し、複数の場所でキャプチャするなど工夫が必要</p>
 
-<h3>パケットをキャプチャする方法</h3>
+<h3 id="パケットをキャプチャする方法">パケットをキャプチャする方法</h3>
 
 <ul>
 <li><p>ハードウェア<br/>
@@ -304,7 +343,7 @@
 </ul>
 
 
-<h3>ソフトウェアによるパケットキャプチャまとめ</h3>
+<h3 id="ソフトウェアによるパケットキャプチャまとめ">ソフトウェアによるパケットキャプチャまとめ</h3>
 
 <table>
 <thead>
@@ -368,7 +407,7 @@
 </table>
 
 
-<h3>データ形式</h3>
+<h3 id="データ形式">データ形式</h3>
 
 <table>
 <thead>
@@ -400,7 +439,7 @@
 
 <p>※ とりあえずpcap形式にしておけば大概のソフトで読める</p>
 
-<h3>どんなデータが記録されるか</h3>
+<h3 id="どんなデータが記録されるか">どんなデータが記録されるか</h3>
 
 <ul>
 <li>パケット全体のバイナリデータ</li>
@@ -412,21 +451,21 @@
 
 <hr />
 
-<h2>パケット解析</h2>
+<h2 id="パケット解析">パケット解析</h2>
 
-<h3>基本的にはツールを利用する</h3>
+<h3 id="基本的にはツールを利用する">基本的にはツールを利用する</h3>
 
 <p>Wireshark / NetworkMiner / OmniPeek / Network Monitor</p>
 
-<h3>力技で独自解析</h3>
+<h3 id="力技で独自解析">力技で独自解析</h3>
 
 <p>pcap形式などのフォーマットは公開されているので独自にバイナリ解析をする</p>
 
 <hr />
 
-<h1>tcpdumpから始まるネットワークエンジニアの朝 (twovs さん)</h1>
+<h1 id="tcpdumpから始まるネットワークエンジニアの朝+(twovs+さん)">tcpdumpから始まるネットワークエンジニアの朝 (twovs さん)</h1>
 
-<h2>tcpdumpとWireshark</h2>
+<h2 id="tcpdumpとWireshark">tcpdumpとWireshark</h2>
 
 <ul>
 <li><p>tcpdump<br/>
@@ -436,51 +475,51 @@
 </ul>
 
 
-<h2>パケット解析で大切なこと</h2>
+<h2 id="パケット解析で大切なこと">パケット解析で大切なこと</h2>
 
-<h3>正常系を知っておくこと</h3>
+<h3 id="正常系を知っておくこと">正常系を知っておくこと</h3>
 
 <p>異常な状態を察知するには正常な状態を知っておくことが大切</p>
 
-<h2>何もしてないのに壊れましたー</h2>
+<h2 id="何もしてないのに壊れましたー">何もしてないのに壊れましたー</h2>
 
-<h3>IPv4だと問題なかったのにIPv6だとつながらない</h3>
+<h3 id="IPv4だと問題なかったのにIPv6だとつながらない">IPv4だと問題なかったのにIPv6だとつながらない</h3>
 
 <p>IPv6アドレスにpingを打ってみたが反応がなかった<br/>
 →IPv4はARPでMACアドレスを取得しているが<strong>IPv6はICMPでMACアドレスを取得している</strong><br/>
 →IPv6ではICMPをフィルタしちゃダメ!!</p>
 
-<h3>IPv6の通信で送り元と送り先でサイズが違う</h3>
+<h3 id="IPv6の通信で送り元と送り先でサイズが違う">IPv6の通信で送り元と送り先でサイズが違う</h3>
 
 <p>送り先でパケットを見たら「padding」というのがひっついていた<br/>
 →小さいデータを送るときは「0」を付加して64byteにしてから投げるようになっている設定があるらしい</p>
 
-<h3>MTU=1500にもかかわらずものすごい大きなデータを送ろうとしていた</h3>
+<h3 id="MTU=1500にもかかわらずものすごい大きなデータを送ろうとしていた">MTU=1500にもかかわらずものすごい大きなデータを送ろうとしていた</h3>
 
 <p>送信元でものすごいでかいデータを送信先に投げている。でも送信先のキャプチャは正常<br/>
 → VMwareのGuestOSでキャプチャするとき、Virtual Switchに行く前のデータをキャプチャしていた<br/>
 → Virtual Switchを通過すると通常のサイズになるらしい。</p>
 
-<h2>まとめ</h2>
+<h2 id="まとめ">まとめ</h2>
 
-<h3>LANケーブルは刺さってる？</h3>
+<h3 id="LANケーブルは刺さってる？">LANケーブルは刺さってる？</h3>
 
 <p>意外と多いらしい。お客様には「ケーブル刺さってるか確認してください」と言うと「馬鹿にしてるのか！」とお叱りを受けるので
 「LANケーブルの抜き差しで直ることがありますので試してください」と言うと、双方ハッピー。</p>
 
-<h3>FireWallの設定とか大丈夫？</h3>
+<h3 id="FireWallの設定とか大丈夫？">FireWallの設定とか大丈夫？</h3>
 
-<h3>IPv6つかってるのにICMPをフィルタしてない？</h3>
+<h3 id="IPv6つかってるのにICMPをフィルタしてない？">IPv6つかってるのにICMPをフィルタしてない？</h3>
 
-<h3>どこのキャプチャを撮ってる？</h3>
+<h3 id="どこのキャプチャを撮ってる？">どこのキャプチャを撮ってる？</h3>
 
 <p>内部？外部？内部でもどこ？VMwareだとVirtual Switchの前？後？</p>
 
-<h1>とある環境(3G回線)であるアプリのパケットを見てみた(totoromasaki さん)</h1>
+<h1 id="とある環境(3G回線)であるアプリのパケットを見てみた(totoromasaki+さん)">とある環境(3G回線)であるアプリのパケットを見てみた(totoromasaki さん)</h1>
 
 <p>私は何も聞いてないです。。</p>
 
-<h1>リンク</h1>
+<h1 id="リンク">リンク</h1>
 
 <p><a href="http://gvtkne.blogspot.jp/2013/04/14.html">ネットワークパケットを読む会(仮) 14回に参加してきた(otahi さん)</a></p>
 </div>
@@ -518,23 +557,23 @@
   </header>
 
 
-  <div class="entry-content"><h1>AWSのUbuntuでChefを動かす</h1>
+  <div class="entry-content"><h1 id="AWSのUbuntuでChefを動かす">AWSのUbuntuでChefを動かす</h1>
 
 <p>デフォルトのAWSで用意されているUbuntuにChefをインストールする。<br/>
 ハンズオンのインスタンスは必要なパッケージがすでにいくらかインストールされていたみたいなので
 トライアンドエラーで設定。</p>
 
-<h1>事前準備</h1>
+<h1 id="事前準備">事前準備</h1>
 
 <p>Opscodeでアカウントを作成して鍵ファイルとknife.rbを事前にDLしておく。<br/>
 AWSのインスタンスを利用できる状態にしておく。<br/>
 AWSのaccess keyとsecret access keyを用意しておく。</p>
 
-<h1>AWSにChefクライアントをインストール</h1>
+<h1 id="AWSにChefクライアントをインストール">AWSにChefクライアントをインストール</h1>
 
 <p>Ubuntu 12.04.2 LTSの64bitを選択</p>
 
-<h1>必要パッケージとChef クライアントのインストール</h1>
+<h1 id="必要パッケージとChef+クライアントのインストール">必要パッケージとChef クライアントのインストール</h1>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -628,7 +667,7 @@ AWSのaccess keyとsecret access keyを用意しておく。</p>
 
 <p>※ pemファイルをリネームしているとここでエラーが出てしまう。DLしたファイル名をそのまま使う。</p>
 
-<h1>knife-ec2インストール</h1>
+<h1 id="knife-ec2インストール">knife-ec2インストール</h1>
 
 <p>先ほどのgemのPATHを意識すること！！</p>
 
@@ -650,7 +689,7 @@ AWSのaccess keyとsecret access keyを用意しておく。</p>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h1>cookbookをWorkstationへclone</h1>
+<h1 id="cookbookをWorkstationへclone">cookbookをWorkstationへclone</h1>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -715,7 +754,7 @@ AWSのaccess keyとsecret access keyを用意しておく。</p>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h2>手軽なcookbook</h2>
+<h2 id="手軽なcookbook">手軽なcookbook</h2>
 
 <ul>
 <li><a href="http://acrmp.github.io/foodcritic/">Food Critic</a></li>
@@ -723,11 +762,11 @@ AWSのaccess keyとsecret access keyを用意しておく。</p>
 </ul>
 
 
-<h1>Apache2 install</h1>
+<h1 id="Apache2+install">Apache2 install</h1>
 
 <p>※ 以下はスクリプトで実行した場合の例。Chefは使っていない。</p>
 
-<h2>script</h2>
+<h2 id="script">script</h2>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -747,7 +786,7 @@ AWSのaccess keyとsecret access keyを用意しておく。</p>
 </ul>
 
 
-<h1>同様のものをChefで処理</h1>
+<h1 id="同様のものをChefで処理">同様のものをChefで処理</h1>
 
 <p>テスト</p>
 
@@ -785,7 +824,7 @@ AWSのaccess keyとsecret access keyを用意しておく。</p>
 
 <p><a href="http://www.blogosfera.co.uk/2013/04/eval-is-deprecated-please-use-evaluate-instead/">これはバージョンのWarningっぽい。</a>動くので今はスルー。</p>
 
-<h2>cookbookのアップロード</h2>
+<h2 id="cookbookのアップロード">cookbookのアップロード</h2>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -803,7 +842,7 @@ AWSのaccess keyとsecret access keyを用意しておく。</p>
 
 <p>これで新しいインスタンスが作成され、apacheが立ち上がる。</p>
 
-<h1>メモ書</h1>
+<h1 id="メモ書">メモ書</h1>
 
 <ul>
 <li><p>コンバージョン(収束)させる<br/>
@@ -847,7 +886,7 @@ http://docs.opscode.com/chef/resources.html</p></li>
   </header>
 
 
-  <div class="entry-content"><h1>初期設定</h1>
+  <div class="entry-content"><h1 id="初期設定">初期設定</h1>
 
 <ul>
 <li><p><a href="http://engineer.blog.lancers.jp/2012/12/ec2-api-tools/">AWSのEC2 API Toolsをインストールなしで利用する方法</a><br/>
@@ -886,21 +925,21 @@ AWSのログインとかがあるメニューから証明書取得の画面を�
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h1>諸情報</h1>
+<h1 id="諸情報">諸情報</h1>
 
-<h2>実行ファイルのPATH</h2>
+<h2 id="実行ファイルのPATH">実行ファイルのPATH</h2>
 
 <p>/opt/aws/bin</p>
 
-<h2>環境変数</h2>
+<h2 id="環境変数">環境変数</h2>
 
-<h3>EC2_HOME</h3>
+<h3 id="EC2_HOME">EC2_HOME</h3>
 
 <p>ec2-api-toolsのHOME
 * 例<br/>
 export EC2_HOME=/opt/aws/apitools/ec2</p>
 
-<h3>EC2_PRIVATE_KEY</h3>
+<h3 id="EC2_PRIVATE_KEY">EC2_PRIVATE_KEY</h3>
 
 <p>秘密鍵のPATH。今は使ってない</p>
 
@@ -910,7 +949,7 @@ export EC2_PRIVATE_KEY=$EC2_HOME/pk-XXXXXXXXXXXXXXXXXXXXX.pem</li>
 </ul>
 
 
-<h3>EC2_CERT</h3>
+<h3 id="EC2_CERT">EC2_CERT</h3>
 
 <p>証明書のPATH。今は使ってない。</p>
 
@@ -920,7 +959,7 @@ export EC2_CERT=$EC2_HOME/cert-XXXXXXXXXXXXXXXXXXXXXXX.pem</li>
 </ul>
 
 
-<h3>AWS_ACCESS_KEY</h3>
+<h3 id="AWS_ACCESS_KEY">AWS_ACCESS_KEY</h3>
 
 <p>AWSアクセスキー</p>
 
@@ -930,7 +969,7 @@ export AWS_ACCESS_KEY=xxxxxxxxxxxxxxxxxx</li>
 </ul>
 
 
-<h3>AWS_SECRET_KEY</h3>
+<h3 id="AWS_SECRET_KEY">AWS_SECRET_KEY</h3>
 
 <p>AWSシークレットキー</p>
 
@@ -940,7 +979,7 @@ export AWS_SECRET_KEY=yyyyyyyyyyyyyyyyyyyyyyyyyyy</li>
 </ul>
 
 
-<h3>EC2_URL</h3>
+<h3 id="EC2_URL">EC2_URL</h3>
 
 <p>リージョンの指定</p>
 
@@ -950,11 +989,11 @@ export EC2_URL=http://ec2.ap-northeast-1.amazonaws.com</li>
 </ul>
 
 
-<h1>コマンド</h1>
+<h1 id="コマンド">コマンド</h1>
 
-<h2>確認</h2>
+<h2 id="確認">確認</h2>
 
-<h3>ec2ver</h3>
+<h3 id="ec2ver">ec2ver</h3>
 
 <p>バージョンの表示</p>
 
@@ -965,7 +1004,7 @@ export EC2_URL=http://ec2.ap-northeast-1.amazonaws.com</li>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h3>ec2-describe-images</h3>
+<h3 id="ec2-describe-images">ec2-describe-images</h3>
 
 <p>AMIの表示</p>
 
@@ -992,9 +1031,9 @@ export EC2_URL=http://ec2.ap-northeast-1.amazonaws.com</li>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h2>インスタンス操作関連</h2>
+<h2 id="インスタンス操作関連">インスタンス操作関連</h2>
 
-<h3>ec2-describe-instances</h3>
+<h3 id="ec2-describe-instances">ec2-describe-instances</h3>
 
 <p>インスタンスの一覧の情報が表示される</p>
 
@@ -1021,7 +1060,7 @@ export EC2_URL=http://ec2.ap-northeast-1.amazonaws.com</li>
 
 <p>※ 引数にインスタンスIDを指定数と、そのインスタンスの情報のみ表示される</p>
 
-<h3>ec2-start-instances</h3>
+<h3 id="ec2-start-instances">ec2-start-instances</h3>
 
 <p>インスタンスを起動</p>
 
@@ -1048,7 +1087,7 @@ export EC2_URL=http://ec2.ap-northeast-1.amazonaws.com</li>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h3>ec2-stop-instances</h3>
+<h3 id="ec2-stop-instances">ec2-stop-instances</h3>
 
 <p>インスタンスを停止</p>
 
@@ -1108,9 +1147,9 @@ export EC2_URL=http://ec2.ap-northeast-1.amazonaws.com</li>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h2>snapshot関連</h2>
+<h2 id="snapshot関連">snapshot関連</h2>
 
-<h3>ec2-describe-snapshots</h3>
+<h3 id="ec2-describe-snapshots">ec2-describe-snapshots</h3>
 
 <p>snapshot一覧の表示</p>
 
@@ -1127,7 +1166,7 @@ export EC2_URL=http://ec2.ap-northeast-1.amazonaws.com</li>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h3>ec2-copy-snapshot</h3>
+<h3 id="ec2-copy-snapshot">ec2-copy-snapshot</h3>
 
 <p>snapshotのコピー</p>
 
@@ -1138,7 +1177,7 @@ export EC2_URL=http://ec2.ap-northeast-1.amazonaws.com</li>
 
 <p>※東京からシンガポールのリージョンへコピー</p>
 
-<h3>ec2-describe-snapshot</h3>
+<h3 id="ec2-describe-snapshot">ec2-describe-snapshot</h3>
 
 <p>snapshotのアクセス権限確認</p>
 
@@ -1151,7 +1190,7 @@ export EC2_URL=http://ec2.ap-northeast-1.amazonaws.com</li>
 
 <p>権限が設定されていない場合(非公開設定)は何も出力されない</p>
 
-<h3>ec2-modify-snapshot-attribute</h3>
+<h3 id="ec2-modify-snapshot-attribute">ec2-modify-snapshot-attribute</h3>
 
 <p>snapshotのアクセス権限を変更する</p>
 
@@ -1162,7 +1201,7 @@ export EC2_URL=http://ec2.ap-northeast-1.amazonaws.com</li>
 
 <p>※すべてのユーザに公開される設定</p>
 
-<h3>ec2-reset-snapshot-attribute</h3>
+<h3 id="ec2-reset-snapshot-attribute">ec2-reset-snapshot-attribute</h3>
 
 <p>権限をリセットする</p>
 
@@ -1171,9 +1210,9 @@ export EC2_URL=http://ec2.ap-northeast-1.amazonaws.com</li>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h2>volume関連</h2>
+<h2 id="volume関連">volume関連</h2>
 
-<h3>ec2-detach-volume</h3>
+<h3 id="ec2-detach-volume">ec2-detach-volume</h3>
 
 <p>ボリュームをデタッチする</p>
 
@@ -1184,7 +1223,7 @@ export EC2_URL=http://ec2.ap-northeast-1.amazonaws.com</li>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h3>ec2-attach-volume</h3>
+<h3 id="ec2-attach-volume">ec2-attach-volume</h3>
 
 <p>ボリュームをアタッチする</p>
 
@@ -1195,7 +1234,7 @@ export EC2_URL=http://ec2.ap-northeast-1.amazonaws.com</li>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h3>ec2-create-volume</h3>
+<h3 id="ec2-create-volume">ec2-create-volume</h3>
 
 <p>ボリュームを作成する</p>
 
@@ -1206,9 +1245,9 @@ export EC2_URL=http://ec2.ap-northeast-1.amazonaws.com</li>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h2>Elastic IP関連</h2>
+<h2 id="Elastic+IP関連">Elastic IP関連</h2>
 
-<h3>ec2-describe-addresses</h3>
+<h3 id="ec2-describe-addresses">ec2-describe-addresses</h3>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -1217,13 +1256,13 @@ export EC2_URL=http://ec2.ap-northeast-1.amazonaws.com</li>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h1>トラブルシューティング</h1>
+<h1 id="トラブルシューティング">トラブルシューティング</h1>
 
 <p><a href="https://forums.aws.amazon.com/message.jspa?messageID=342081">Instance does not have a volume attached at root (/dev/sda1)</a></p>
 
 <p>/dev/sdfになっていたのを/dev/sda1でアタッチし直したらOK</p>
 
-<h1>リンク</h1>
+<h1 id="リンク">リンク</h1>
 
 <ul>
 <li><a href="http://d.hatena.ne.jp/studio-m/20091104/1257297074">CentOSでec2-api-tools, ec2-ami-toolsを使えるようにする</a></li>
@@ -1266,9 +1305,9 @@ export EC2_URL=http://ec2.ap-northeast-1.amazonaws.com</li>
   </header>
 
 
-  <div class="entry-content"><h2>改行を</h2>
+  <div class="entry-content"><h2 id="■改行を">■改行を</h2>
 
-<h3>したい</h3>
+<h3 id="入れたい">入れたい</h3>
 
 <p>「=」で改行</p>
 
@@ -1285,15 +1324,15 @@ export EC2_URL=http://ec2.ap-northeast-1.amazonaws.com</li>
 </span><span class='line'><span class="nb">set </span><span class="nv">fileencoding</span><span class="o">=</span>utf-8
 </span><span class='line'><span class="nb">set </span><span class="nv">fileencodings</span><span class="o">=</span>iso-2022-jp,utf-8,euc-jp
 </span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:tmp ftakao2007<span class="nv">$ </span>cat vimrc | gsed -e <span class="s1">&#39;s/=/\n/g&#39;</span>
-</span><span class='line'><span class="nb">set </span>fileencoding
+</span><span class='line'>fukui-no-MacBook-Air:tmp ftakao2007<span class="nv">$ </span>cat vimrc | gsed -e <span class="s1">&#39;s/=/=\n/g&#39;</span>
+</span><span class='line'><span class="nb">set </span><span class="nv">fileencoding</span><span class="o">=</span>
 </span><span class='line'>utf-8
-</span><span class='line'><span class="nb">set </span>fileencodings
+</span><span class='line'><span class="nb">set </span><span class="nv">fileencodings</span><span class="o">=</span>
 </span><span class='line'>iso-2022-jp,utf-8,euc-jp
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h3>消したい</h3>
+<h3 id="消したい">消したい</h3>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -1310,6 +1349,179 @@ export EC2_URL=http://ec2.ap-northeast-1.amazonaws.com</li>
 </span></code></pre></td></tr></table></div></figure>
 
 
+<h2 id="■空行を">■空行を</h2>
+
+<h3 id="消したい">消したい</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>fukui-no-MacBook-Air:tmp ftakao2007<span class="nv">$ </span>cat aaa.log
+</span><span class='line'>a
+</span><span class='line'>
+</span><span class='line'>gsfe
+</span><span class='line'>
+</span><span class='line'>wefa
+</span><span class='line'>awefa
+</span><span class='line'>
+</span><span class='line'>w
+</span><span class='line'>fukui-no-MacBook-Air:tmp ftakao2007<span class="nv">$ </span>sed -e <span class="s1">&#39;/^$/d&#39;</span> aaa.log
+</span><span class='line'>a
+</span><span class='line'>gsfe
+</span><span class='line'>wefa
+</span><span class='line'>awefa
+</span><span class='line'>w
+</span><span class='line'>fukui-no-MacBook-Air:tmp ftakao2007<span class="nv">$ </span>sed -ne <span class="s1">&#39;/./p&#39;</span> aaa.log
+</span><span class='line'>a
+</span><span class='line'>gsfe
+</span><span class='line'>wefa
+</span><span class='line'>awefa
+</span><span class='line'>w
+</span><span class='line'>fukui-no-MacBook-Air:tmp ftakao2007<span class="err">$</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2 id="■Webページを">■Webページを</h2>
+
+<h3 id="保存したい">保存したい</h3>
+
+<h4 id="htmlのみ">htmlのみ</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>curl http://www.example.com &gt; example.com.html
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4 id="[ページを丸ごとローカルに保存](https://sites.google.com/site/hymd3a/google-site/wget)"><a href="https://sites.google.com/site/hymd3a/google-site/wget">ページを丸ごとローカルに保存</a></h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>wget -r -np -k -l 0 example.com
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4 id="データを送る">データを送る</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>fukui-no-MacBook-Air:DATA ftakao2007<span class="nv">$ </span>curl --data-urlencode <span class="nv">a</span><span class="o">=</span>太郎 http://www.example.com/TOMONOKAI_CMS/CGI/hoge.cgi
+</span><span class='line'>あなたのポストしたデータは、
+</span><span class='line'><span class="nv">a</span><span class="o">=</span>%E5%A4%AA%E9%83%8E
+</span><span class='line'>です。
+</span><span class='line'>
+</span><span class='line'>fukui-no-MacBook-Air:DATA ftakao2007<span class="nv">$ </span>curl --data <span class="nv">a</span><span class="o">=</span>太郎 http://www.example.com/TOMONOKAI_CMS/CGI/hoge.cgi
+</span><span class='line'>あなたのポストしたデータは、
+</span><span class='line'><span class="nv">a</span><span class="o">=</span>太郎
+</span><span class='line'>です。
+</span><span class='line'>
+</span><span class='line'>fukui-no-MacBook-Air:DATA ftakao2007<span class="nv">$ </span>wget --data <span class="nv">a</span><span class="o">=</span>太郎 http://www.example.com/TOMONOKAI_CMS/CGI/hoge.cgi
+</span><span class='line'>
+</span><span class='line'>* URLはexample.comに変更してあります
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2 id="■文字コードを">■文字コードを</h2>
+
+<h3 id="変換する">変換する</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>fukui-no-MacBook-Air:DATA ftakao2007<span class="nv">$ </span>cat numref
+</span><span class='line'>&amp;#25105;&amp;#12293;&amp;#12399;&amp;#12471;&amp;#12455;&amp;#12523;&amp;#33464;&amp;#20154;&amp;#12384;&amp;#12290;
+</span><span class='line'>fukui-no-MacBook-Air:DATA ftakao2007<span class="nv">$ </span>cat numref | w3m -T text/html -dump
+</span><span class='line'>我々はシェル芸人だ。
+</span><span class='line'>
+</span><span class='line'>fukui-no-MacBook-Air:DATA ftakao2007<span class="nv">$ </span>cat numref | nkf --numchar-input
+</span><span class='line'>我々はシェル芸人だ。
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2 id="■文字列を">■文字列を</h2>
+
+<h3 id="抽出">抽出</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>bash-3.2<span class="nv">$ </span>cat a.log
+</span><span class='line'>1
+</span><span class='line'>2
+</span><span class='line'>3
+</span><span class='line'>4
+</span><span class='line'>5
+</span><span class='line'>6
+</span><span class='line'>7
+</span><span class='line'>8
+</span><span class='line'>9
+</span><span class='line'>
+</span><span class='line'>bash-3.2<span class="nv">$ </span>cat a.log | grep 5
+</span><span class='line'>5
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3 id="マッチした前後を抽出">マッチした前後を抽出</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>bash-3.2<span class="nv">$ </span>cat a.log | grep 5 -A 2
+</span><span class='line'>5
+</span><span class='line'>6
+</span><span class='line'>7
+</span><span class='line'>bash-3.2<span class="nv">$ </span>cat a.log | grep 5 -B 2
+</span><span class='line'>3
+</span><span class='line'>4
+</span><span class='line'>5
+</span></code></pre></td></tr></table></div></figure>
 
 </div>
   
@@ -1346,11 +1558,11 @@ export EC2_URL=http://ec2.ap-northeast-1.amazonaws.com</li>
   </header>
 
 
-  <div class="entry-content"><h1>sed (ストリーミングエディタ)</h1>
+  <div class="entry-content"><h1 id="sed+(ストリーミングエディタ)">sed (ストリーミングエディタ)</h1>
 
-<h2>Option</h2>
+<h2 id="Option">Option</h2>
 
-<h3>n</h3>
+<h3 id="n">n</h3>
 
 <p>標準出力を制御</p>
 
@@ -1427,7 +1639,7 @@ export EC2_URL=http://ec2.ap-northeast-1.amazonaws.com</li>
 -->
 
 
-<h3>e</h3>
+<h3 id="e">e</h3>
 
 <p>次にくる値はコマンドとみなす</p>
 
@@ -1476,7 +1688,7 @@ export EC2_URL=http://ec2.ap-northeast-1.amazonaws.com</li>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h3>f</h3>
+<h3 id="f">f</h3>
 
 <p>次にくる値はスクリプトとみなす</p>
 
@@ -1503,7 +1715,7 @@ export EC2_URL=http://ec2.ap-northeast-1.amazonaws.com</li>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h3>i</h3>
+<h3 id="i">i</h3>
 
 <p>標準出力に出力せず、直接ファイルを書き換える</p>
 
@@ -1554,9 +1766,9 @@ export EC2_URL=http://ec2.ap-northeast-1.amazonaws.com</li>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h2>Command</h2>
+<h2 id="Command">Command</h2>
 
-<h3>p</h3>
+<h3 id="p">p</h3>
 
 <p>出力する</p>
 
@@ -1613,7 +1825,7 @@ export EC2_URL=http://ec2.ap-northeast-1.amazonaws.com</li>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h3>d</h3>
+<h3 id="d">d</h3>
 
 <p>削除する</p>
 
@@ -1674,7 +1886,7 @@ export EC2_URL=http://ec2.ap-northeast-1.amazonaws.com</li>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h3>q</h3>
+<h3 id="q">q</h3>
 
 <p>特定の文字列が含まれる行まで表示</p>
 
@@ -1705,7 +1917,7 @@ export EC2_URL=http://ec2.ap-northeast-1.amazonaws.com</li>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h3>s</h3>
+<h3 id="s">s</h3>
 
 <p>置換する</p>
 
@@ -1972,9 +2184,9 @@ n番目の発生を置換</li>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h2>Match</h2>
+<h2 id="Match">Match</h2>
 
-<h3>空行以外を出力</h3>
+<h3 id="空行以外を出力">空行以外を出力</h3>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -2009,7 +2221,7 @@ n番目の発生を置換</li>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h3>空行を出力</h3>
+<h3 id="空行を出力">空行を出力</h3>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -2040,7 +2252,7 @@ n番目の発生を置換</li>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h3>最初の空行から次の空行までを出力</h3>
+<h3 id="最初の空行から次の空行までを出力">最初の空行から次の空行までを出力</h3>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -2097,7 +2309,7 @@ n番目の発生を置換</li>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h3>最初の空行から次の空行までの行を削除</h3>
+<h3 id="最初の空行から次の空行までの行を削除">最初の空行から次の空行までの行を削除</h3>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -2126,11 +2338,11 @@ n番目の発生を置換</li>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h2>Advance</h2>
+<h2 id="Advance">Advance</h2>
 
-<h3>正規表現(?)</h3>
+<h3 id="正規表現(?)">正規表現(?)</h3>
 
-<h4>&amp;</h4>
+<h4 id="+">&amp;</h4>
 
 <p>置換のときに省略して記載できる</p>
 
@@ -2173,7 +2385,54 @@ n番目の発生を置換</li>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h2>参考</h2>
+<h3 id="区切り位置">区切り位置</h3>
+
+<p>区切り位置を<code>/</code>の代わりに<code>;</code>にすると、<code>/</code>をエスケープしなくても良くなる</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>fukui-no-MacBook-Air:DATA ftakao2007<span class="nv">$ </span>cat 3.html | gsed -e <span class="s1">&#39;s/&lt;\/td&gt;/&amp;\n/g&#39;</span>
+</span><span class='line'>&lt;table&gt;
+</span><span class='line'>  &lt;tr&gt;
+</span><span class='line'>&lt;td&gt;a&lt;/td&gt;
+</span><span class='line'>&lt;td&gt;b&lt;/td&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;td&gt;c&lt;/td&gt;
+</span><span class='line'>
+</span><span class='line'>  &lt;/tr&gt;
+</span><span class='line'>&lt;/table&gt;
+</span><span class='line'>fukui-no-MacBook-Air:DATA ftakao2007<span class="nv">$ </span>cat 3.html | gsed -e <span class="s1">&#39;s;&lt;/td&gt;;&amp;\n;g&#39;</span>
+</span><span class='line'>&lt;table&gt;
+</span><span class='line'>  &lt;tr&gt;
+</span><span class='line'>&lt;td&gt;a&lt;/td&gt;
+</span><span class='line'>&lt;td&gt;b&lt;/td&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;td&gt;c&lt;/td&gt;
+</span><span class='line'>
+</span><span class='line'>  &lt;/tr&gt;
+</span><span class='line'>&lt;/table&gt;
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2 id="参考">参考</h2>
 
 <ul>
 <li><a href="http://www.ksknet.net/linuxrz/sed.html">sed - ストリーミングエディタ</a></li>
@@ -2217,9 +2476,9 @@ n番目の発生を置換</li>
 
   <div class="entry-content"><p><a href="http://kokucheese.com/event/index/78710/">第4回春爛漫シェル芸人撩乱勉強会&amp;第22回勝手に新歓定例会</a></p>
 
-<h1>事前準備</h1>
+<h1 id="事前準備">事前準備</h1>
 
-<h2>wget curl w3mの確認</h2>
+<h2 id="wget+curl+w3mの確認">wget curl w3mの確認</h2>
 
 <p>全部入っていた</p>
 
@@ -2238,7 +2497,7 @@ n番目の発生を置換</li>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h2><a href="https://github.com/usp-engineers-community/Open-usp-Tukubai">open usp Tukubai のインストール(CentOS 6.4)</a></h2>
+<h2 id="[open+usp+Tukubai+のインストール(CentOS+6.4)](https://github.com/usp-engineers-community/Open-usp-Tukubai)"><a href="https://github.com/usp-engineers-community/Open-usp-Tukubai">open usp Tukubai のインストール(CentOS 6.4)</a></h2>
 
 <p>gitでインストールしてみる</p>
 
@@ -2264,7 +2523,7 @@ n番目の発生を置換</li>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h2>勉強会のまとめについて</h2>
+<h2 id="勉強会のまとめについて">勉強会のまとめについて</h2>
 
 <p>正確な情報や丁寧な解説はきっと他の方にまとめていただけると思うので、自分は勉強会で学んだことを端的に
 逆引きでまとめていくというコンセプトにしようと思います。</p>
@@ -2280,10 +2539,13 @@ n番目の発生を置換</li>
 <p>を目的とします。勉強会でその時スゲーって思ってまとめても、あのコマンドどこだったっけとなることが多かったので
 今後勉強会で学んだことは逆引き的に上記のページに集約しようと思います。</p>
 
-<h2>リンク</h2>
+<h2 id="リンク">リンク</h2>
 
 <ul>
-<li><p><a href="http://www.slideshare.net/HirofumiSaito/usp-lt-20130413">wgetとcurlで並列ダウンロード(hi_saito さん)</a></p></li>
+<li><a href="http://www.slideshare.net/ryuichiueda/20130406-18763665">第4回春爛漫シェル芸人撩乱勉強会(上田隆一さん)</a></li>
+<li><a href="http://www.slideshare.net/HirofumiSaito/usp-lt-20130413">wgetとcurlで並列ダウンロード (hi_saito さん)</a></li>
+<li><a href="http://laugh-labo.blogspot.jp/2013/04/4.html?spref=tw">「第4回春爛漫シェル芸人撩乱勉強会&amp;第22回勝手に新歓定例会」に参加してきたよー！ (laugh_K さん)</a></li>
+<li><p><a href="http://kunst1080.hatenablog.com/entry/2013/04/15/004801">「第4回春爛漫シェル芸人撩乱勉強会&amp;第22回勝手に新歓定例会」あそびきにました (kunst1080 さん)</a></p></li>
 <li><p><a href="https://twitter.com/usptomo/status/323068045532737536/photo/1">本日一番の訳わからない写真</a></p></li>
 </ul>
 
@@ -2363,17 +2625,17 @@ n番目の発生を置換</li>
   </header>
 
 
-  <div class="entry-content"><h1><a href="http://qiita.com/items/14785a63e064bb1306b9">OctopressでGoogleアナリティクスを使おう！</a></h1>
+  <div class="entry-content"><h1 id="[OctopressでGoogleアナリティクスを使おう！](http://qiita.com/items/14785a63e064bb1306b9)"><a href="http://qiita.com/items/14785a63e064bb1306b9">OctopressでGoogleアナリティクスを使おう！</a></h1>
 
 <p>上記の設定すれば反映されました。</p>
 
-<h1>Google AdSense</h1>
+<h1 id="Google+AdSense">Google AdSense</h1>
 
 <p>一般的な手順でサイトを申請。</p>
 
 <p><a href="http://gigazine.net/news/20061107_adsense_start/">Google AdSenseの始め方 その1「審査を突破する」</a></p>
 
-<h2>Octopressに設置</h2>
+<h2 id="Octopressに設置">Octopressに設置</h2>
 
 <p><a href="http://qiita.com/items/ac729ec076f477f05ac6">Octopressでサイドバーに簡易プロフィールを表示させよう！</a></p>
 
@@ -2427,47 +2689,6 @@ n番目の発生を置換</li>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/04/11/wireshark/">Wireshark</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-04-11T00:02:00+09:00" pubdate data-updated="true">Apr 11<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>これを入れるとネットワークセミナーが楽しくなるということなので
-とりあえず入れてみました。</p>
-
-<h3>あわせて勉強してみたい</h3>
-
-<p><a href="http://www.slideshare.net/tohakushi/tcpdumptcpreplay">tcpdumpとtcpreplayとtcprewrite</a></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -2481,6 +2702,10 @@ n番目の発生を置換</li>
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/04/21/vim/">vim</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/04/20/study-network/">20130419 第14回「ネットワーク パケットを読む会（仮）」</a>
@@ -2498,15 +2723,11 @@ n番目の発生を置換</li>
         <a href="/blog/2013/04/14/sed-gyakubiki/">逆引きコマンド</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/04/13/sed/">sed</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/about/'>about (3)</a></li><li><a href='/blog/categories/aws/'>aws (3)</a></li><li><a href='/blog/categories/chef/'>chef (1)</a></li><li><a href='/blog/categories/command/'>command (5)</a></li><li><a href='/blog/categories/construct/'>construct (2)</a></li><li><a href='/blog/categories/diary/'>diary (3)</a></li><li><a href='/blog/categories/ec2/'>ec2 (1)</a></li><li><a href='/blog/categories/google/'>google (1)</a></li><li><a href='/blog/categories/monitor/'>monitor (4)</a></li><li><a href='/blog/categories/network/'>network (2)</a></li><li><a href='/blog/categories/octopress/'>octopress (1)</a></li><li><a href='/blog/categories/os/'>OS (3)</a></li><li><a href='/blog/categories/mian-qiang-hui/'>勉強会 (3)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/about/'>about (3)</a></li><li><a href='/blog/categories/aws/'>aws (3)</a></li><li><a href='/blog/categories/bash/'>bash (2)</a></li><li><a href='/blog/categories/chef/'>chef (1)</a></li><li><a href='/blog/categories/command/'>command (5)</a></li><li><a href='/blog/categories/construct/'>construct (2)</a></li><li><a href='/blog/categories/diary/'>diary (3)</a></li><li><a href='/blog/categories/ec2/'>ec2 (1)</a></li><li><a href='/blog/categories/google/'>google (1)</a></li><li><a href='/blog/categories/monitor/'>monitor (4)</a></li><li><a href='/blog/categories/network/'>network (2)</a></li><li><a href='/blog/categories/octopress/'>octopress (1)</a></li><li><a href='/blog/categories/os/'>OS (3)</a></li><li><a href='/blog/categories/vim/'>vim (1)</a></li><li><a href='/blog/categories/mian-qiang-hui/'>勉強会 (3)</a></li></ul>
 </section>
 <section>
 <script type="text/javascript"><!--

@@ -108,11 +108,11 @@ git commit -m &hellip;">
   </header>
 
 
-<div class="entry-content"><h1>メモ書き</h1>
+<div class="entry-content"><h1 id="メモ書き">メモ書き</h1>
 
 <p>コンセプトは、曖昧に覚えていることをとりあえず書き出し、修正しながら身につける。</p>
 
-<h2>リモートリポジトリ</h2>
+<h2 id="リモートリポジトリ">リモートリポジトリ</h2>
 
 <ul>
 <li>gitサーバ側に作成されるリポジトリ。クライアント側から作成することはできない。</li>
@@ -120,7 +120,7 @@ git commit -m &hellip;">
 </ul>
 
 
-<h2>master</h2>
+<h2 id="master">master</h2>
 
 <ul>
 <li>masterのブランチ</li>
@@ -129,7 +129,7 @@ git commit -m &hellip;">
 </ul>
 
 
-<h2>origin</h2>
+<h2 id="origin">origin</h2>
 
 <ul>
 <li>URLのエイリアスみたいなもの</li>
@@ -152,11 +152,11 @@ git commit -m &hellip;">
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h1>とりあえず手っ取り早くgitを使いたい</h1>
+<h1 id="とりあえず手っ取り早くgitを使いたい">とりあえず手っ取り早くgitを使いたい</h1>
 
-<h2>初期設定</h2>
+<h2 id="初期設定">初期設定</h2>
 
-<h3>まっさらなremoteリポジトリの場合</h3>
+<h3 id="まっさらなremoteリポジトリの場合">まっさらなremoteリポジトリの場合</h3>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -171,7 +171,7 @@ git commit -m &hellip;">
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h3>いろいろ使われているremoteリポジトリをローカルに持ってきて使う場合</h3>
+<h3 id="いろいろ使われているremoteリポジトリをローカルに持ってきて使う場合">いろいろ使われているremoteリポジトリをローカルに持ってきて使う場合</h3>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -180,9 +180,9 @@ git commit -m &hellip;">
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h2>編集</h2>
+<h2 id="編集">編集</h2>
 
-<h3>リモートにプッシュ</h3>
+<h3 id="リモートにプッシュ">リモートにプッシュ</h3>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -199,9 +199,9 @@ git commit -m &hellip;">
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h2>ブランチ</h2>
+<h2 id="ブランチ">ブランチ</h2>
 
-<h3>作成、確認、切り替え、コミット、プッシュ</h3>
+<h3 id="作成、確認、切り替え、コミット、プッシュ">作成、確認、切り替え、コミット、プッシュ</h3>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -252,9 +252,9 @@ git commit -m &hellip;">
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h2>削除</h2>
+<h2 id="削除">削除</h2>
 
-<h3>ローカルのブランチの削除</h3>
+<h3 id="ローカルのブランチの削除">ローカルのブランチの削除</h3>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -277,7 +277,7 @@ git commit -m &hellip;">
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h3>リモートのブランチ削除</h3>
+<h3 id="リモートのブランチ削除">リモートのブランチ削除</h3>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -314,7 +314,7 @@ git commit -m &hellip;">
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h3>コミットの取り消し</h3>
+<h3 id="コミットの取り消し">コミットの取り消し</h3>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -363,7 +363,7 @@ git commit -m &hellip;">
 
 <p><code>git reset --hard HEAD^</code> にすると、コミットの取り消しと同時にファイルの内容もコミット前に戻る。</p>
 
-<h2>今後確認すること</h2>
+<h2 id="今後確認すること">今後確認すること</h2>
 
 <ul>
 <li>リビジョンてどうなってるの？ぱっとググった感じリビジョンて概念を使わない？世代を超えたファイルのdiffってできないのかな。</li>
@@ -371,11 +371,11 @@ git commit -m &hellip;">
 </ul>
 
 
-<h2>リンク</h2>
+<h2 id="リンク">リンク</h2>
 
 <p><a href="http://lealog.hateblo.jp/entry/2012/12/22/023547">最低限の知識でGitの運用をする</a></p>
 
-<h1>README.md</h1>
+<h1 id="README.md">README.md</h1>
 
 <p><a href="http://kuroigamen.com/13">gituhub に自分のプロジェクトのリポジトリを作ってみる。</a></p>
 </div>
@@ -441,6 +441,10 @@ git commit -m &hellip;">
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/04/21/vim/">vim</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/04/20/study-network/">20130419 第14回「ネットワーク パケットを読む会（仮）」</a>
       </li>
     
@@ -456,15 +460,11 @@ git commit -m &hellip;">
         <a href="/blog/2013/04/14/sed-gyakubiki/">逆引きコマンド</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/04/13/sed/">sed</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/about/'>about (3)</a></li><li><a href='/blog/categories/aws/'>aws (3)</a></li><li><a href='/blog/categories/chef/'>chef (1)</a></li><li><a href='/blog/categories/command/'>command (5)</a></li><li><a href='/blog/categories/construct/'>construct (2)</a></li><li><a href='/blog/categories/diary/'>diary (3)</a></li><li><a href='/blog/categories/ec2/'>ec2 (1)</a></li><li><a href='/blog/categories/google/'>google (1)</a></li><li><a href='/blog/categories/monitor/'>monitor (4)</a></li><li><a href='/blog/categories/network/'>network (2)</a></li><li><a href='/blog/categories/octopress/'>octopress (1)</a></li><li><a href='/blog/categories/os/'>OS (3)</a></li><li><a href='/blog/categories/mian-qiang-hui/'>勉強会 (3)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/about/'>about (3)</a></li><li><a href='/blog/categories/aws/'>aws (3)</a></li><li><a href='/blog/categories/bash/'>bash (2)</a></li><li><a href='/blog/categories/chef/'>chef (1)</a></li><li><a href='/blog/categories/command/'>command (5)</a></li><li><a href='/blog/categories/construct/'>construct (2)</a></li><li><a href='/blog/categories/diary/'>diary (3)</a></li><li><a href='/blog/categories/ec2/'>ec2 (1)</a></li><li><a href='/blog/categories/google/'>google (1)</a></li><li><a href='/blog/categories/monitor/'>monitor (4)</a></li><li><a href='/blog/categories/network/'>network (2)</a></li><li><a href='/blog/categories/octopress/'>octopress (1)</a></li><li><a href='/blog/categories/os/'>OS (3)</a></li><li><a href='/blog/categories/vim/'>vim (1)</a></li><li><a href='/blog/categories/mian-qiang-hui/'>勉強会 (3)</a></li></ul>
 </section>
 <section>
 <script type="text/javascript"><!--

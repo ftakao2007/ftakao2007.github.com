@@ -4,7 +4,7 @@
   <title><![CDATA[Category: chef | Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/blog/categories/chef/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-04-21T18:55:10+09:00</updated>
+  <updated>2013-04-21T22:56:12+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -18,30 +18,30 @@
     <link href="http://ftakao2007.github.com/blog/2013/04/16/chef-handson/"/>
     <updated>2013-04-16T18:52:00+09:00</updated>
     <id>http://ftakao2007.github.com/blog/2013/04/16/chef-handson</id>
-    <content type="html"><![CDATA[<h1>AWSのUbuntuでChefを動かす</h1>
+    <content type="html"><![CDATA[<h1 id="AWSのUbuntuでChefを動かす">AWSのUbuntuでChefを動かす</h1>
 
 <p>デフォルトのAWSで用意されているUbuntuにChefをインストールする。<br/>
 ハンズオンのインスタンスは必要なパッケージがすでにいくらかインストールされていたみたいなので
 トライアンドエラーで設定。</p>
 
-<h1>事前準備</h1>
+<h1 id="事前準備">事前準備</h1>
 
 <p>Opscodeでアカウントを作成して鍵ファイルとknife.rbを事前にDLしておく。<br/>
 AWSのインスタンスを利用できる状態にしておく。<br/>
 AWSのaccess keyとsecret access keyを用意しておく。</p>
 
-<h1>AWSにChefクライアントをインストール</h1>
+<h1 id="AWSにChefクライアントをインストール">AWSにChefクライアントをインストール</h1>
 
 <p>Ubuntu 12.04.2 LTSの64bitを選択</p>
 
-<h1>必要パッケージとChef クライアントのインストール</h1>
+<h1 id="必要パッケージとChef+クライアントのインストール">必要パッケージとChef クライアントのインストール</h1>
 
 <p>``` bash
 sudo apt-get update
 sudo apt-get upgrade
 curl -L http://www.opscode.com/chef/install.sh | sudo bash</p>
 
-<h1>sudo apt-get install ruby git tree g++</h1>
+<h1 id="sudo+apt-get+install+ruby+git+tree+g++">sudo apt-get install ruby git tree g++</h1>
 
 <p>sudo apt-get install (パッケージたくさん)
 ```
@@ -92,7 +92,7 @@ XXXX-validator
 </code>
 ※ pemファイルをリネームしているとここでエラーが出てしまう。DLしたファイル名をそのまま使う。</p>
 
-<h1>knife-ec2インストール</h1>
+<h1 id="knife-ec2インストール">knife-ec2インストール</h1>
 
 <p>先ほどのgemのPATHを意識すること！！
 <code>bash
@@ -102,14 +102,14 @@ sudo /opt/chef/embedded/bin/gem install knife-ec2 --no-ri --no-rdoc
 <p>knife.rbにAWSアクセスするためのキーを記載する
 ``` bash</p>
 
-<h1>knife for AWS</h1>
+<h1 id="knife+for+AWS">knife for AWS</h1>
 
 <p>knife[:aws_access_key_id]     = "XXXXXXXXXXXXXXX"
 knife[:aws_secret_access_key] = "XXXXXXXXXXXXXXXXXXXXXXXXXX"
 knife[:region] = "ap-northeast-1"
 ```</p>
 
-<h1>cookbookをWorkstationへclone</h1>
+<h1 id="cookbookをWorkstationへclone">cookbookをWorkstationへclone</h1>
 
 <p>``` bash
 cd ~/chef-repo/cookbooks
@@ -147,7 +147,7 @@ tree
 
 <p>```</p>
 
-<h2>手軽なcookbook</h2>
+<h2 id="手軽なcookbook">手軽なcookbook</h2>
 
 <ul>
 <li><a href="http://acrmp.github.io/foodcritic/">Food Critic</a></li>
@@ -155,11 +155,11 @@ tree
 </ul>
 
 
-<h1>Apache2 install</h1>
+<h1 id="Apache2+install">Apache2 install</h1>
 
 <p>※ 以下はスクリプトで実行した場合の例。Chefは使っていない。</p>
 
-<h2>script</h2>
+<h2 id="script">script</h2>
 
 <p><code>bash
 cd ~/chef-repo/cookbooks/apache2-take/example/
@@ -176,7 +176,7 @@ sudo sh ./apache2-take-ubuntu.sh
 </ul>
 
 
-<h1>同様のものをChefで処理</h1>
+<h1 id="同様のものをChefで処理">同様のものをChefで処理</h1>
 
 <p>テスト
 <code>bash
@@ -201,7 +201,7 @@ FC008: Generated cookbook metadata needs updating: cookbooks/apache2-take/metada
 </code>
 <a href="http://www.blogosfera.co.uk/2013/04/eval-is-deprecated-please-use-evaluate-instead/">これはバージョンのWarningっぽい。</a>動くので今はスルー。</p>
 
-<h2>cookbookのアップロード</h2>
+<h2 id="cookbookのアップロード">cookbookのアップロード</h2>
 
 <p><code>bash
 cd ~/chef-repo/cookbooks/apache2-take
@@ -214,7 +214,7 @@ knife ec2 server create -S [key pair] -i [key file (XXX.pem)] -r "recipe[apache2
 </code>
 これで新しいインスタンスが作成され、apacheが立ち上がる。</p>
 
-<h1>メモ書</h1>
+<h1 id="メモ書">メモ書</h1>
 
 <ul>
 <li><p>コンバージョン(収束)させる<br/>

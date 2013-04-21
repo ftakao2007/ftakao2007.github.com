@@ -4,7 +4,7 @@
   <title><![CDATA[Category: about | Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/blog/categories/about/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-04-21T18:55:10+09:00</updated>
+  <updated>2013-04-21T22:56:12+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -32,11 +32,11 @@
     <link href="http://ftakao2007.github.com/blog/2013/04/06/kentou/"/>
     <updated>2013-04-06T18:43:00+09:00</updated>
     <id>http://ftakao2007.github.com/blog/2013/04/06/kentou</id>
-    <content type="html"><![CDATA[<h1>やりたいこと</h1>
+    <content type="html"><![CDATA[<h1 id="やりたいこと">やりたいこと</h1>
 
 <p>いずれできたらいいなぁくらいの温度感</p>
 
-<h2>iSSHで日本語の読み書き</h2>
+<h2 id="iSSHで日本語の読み書き">iSSHで日本語の読み書き</h2>
 
 <ul>
 <li>nkfインストール
@@ -48,13 +48,13 @@ sudo yum localinstall nkf-2.0.8b-6.2.el6.i686.rpm
 </ul>
 
 
-<h2>herokuでRedmineを動かす</h2>
+<h2 id="herokuでRedmineを動かす">herokuでRedmineを動かす</h2>
 
-<h1>やったこと</h1>
+<h1 id="やったこと">やったこと</h1>
 
-<h2><a href="http://ftakao2007.github.io/blog/2013/04/07/ec2/">EC2にDropboxを設定</a></h2>
+<h2 id="[EC2にDropboxを設定](http://ftakao2007.github.io/blog/2013/04/07/ec2/)"><a href="http://ftakao2007.github.io/blog/2013/04/07/ec2/">EC2にDropboxを設定</a></h2>
 
-<h2><a href="http://ftakao2007.github.io/blog/2013/04/06/octpress/">Dropboxに画像を置いてブログで表示</a></h2>
+<h2 id="[Dropboxに画像を置いてブログで表示](http://ftakao2007.github.io/blog/2013/04/06/octpress/)"><a href="http://ftakao2007.github.io/blog/2013/04/06/octpress/">Dropboxに画像を置いてブログで表示</a></h2>
 ]]></content>
   </entry>
   
@@ -63,9 +63,9 @@ sudo yum localinstall nkf-2.0.8b-6.2.el6.i686.rpm
     <link href="http://ftakao2007.github.com/blog/2013/04/06/link/"/>
     <updated>2013-04-06T18:11:00+09:00</updated>
     <id>http://ftakao2007.github.com/blog/2013/04/06/link</id>
-    <content type="html"><![CDATA[<h1>リンク集</h1>
+    <content type="html"><![CDATA[<h1 id="リンク集">リンク集</h1>
 
-<h2>Webサービス(ftakao2007)</h2>
+<h2 id="Webサービス(ftakao2007)">Webサービス(ftakao2007)</h2>
 
 <ul>
 <li><a href="https://github.com/ftakao2007" title="ftakao2007のgithub">github</a></li>
@@ -75,9 +75,9 @@ sudo yum localinstall nkf-2.0.8b-6.2.el6.i686.rpm
 </ul>
 
 
-<h2>勉強会関係</h2>
+<h2 id="勉強会関係">勉強会関係</h2>
 
-<h3>イベントサービス</h3>
+<h3 id="イベントサービス">イベントサービス</h3>
 
 <ul>
 <li><a href="http://atnd.org/beta">ATND</a></li>

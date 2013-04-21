@@ -4,7 +4,7 @@
   <title><![CDATA[Category: google | Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/blog/categories/google/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-04-21T18:55:10+09:00</updated>
+  <updated>2013-04-21T22:56:12+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -18,17 +18,17 @@
     <link href="http://ftakao2007.github.com/blog/2013/04/11/google/"/>
     <updated>2013-04-11T08:06:00+09:00</updated>
     <id>http://ftakao2007.github.com/blog/2013/04/11/google</id>
-    <content type="html"><![CDATA[<h1><a href="http://qiita.com/items/14785a63e064bb1306b9">OctopressでGoogleアナリティクスを使おう！</a></h1>
+    <content type="html"><![CDATA[<h1 id="[OctopressでGoogleアナリティクスを使おう！](http://qiita.com/items/14785a63e064bb1306b9)"><a href="http://qiita.com/items/14785a63e064bb1306b9">OctopressでGoogleアナリティクスを使おう！</a></h1>
 
 <p>上記の設定すれば反映されました。</p>
 
-<h1>Google AdSense</h1>
+<h1 id="Google+AdSense">Google AdSense</h1>
 
 <p>一般的な手順でサイトを申請。</p>
 
 <p><a href="http://gigazine.net/news/20061107_adsense_start/">Google AdSenseの始め方 その1「審査を突破する」</a></p>
 
-<h2>Octopressに設置</h2>
+<h2 id="Octopressに設置">Octopressに設置</h2>
 
 <p><a href="http://qiita.com/items/ac729ec076f477f05ac6">Octopressでサイドバーに簡易プロフィールを表示させよう！</a></p>
 
