@@ -4,7 +4,7 @@
   <title><![CDATA[Category: heroku | Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/blog/categories/heroku/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-04-27T06:19:00+09:00</updated>
+  <updated>2013-04-27T06:21:09+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -32,16 +32,13 @@ heroku open
 
 <h3 id="ruby-sampleに入っているファイル">ruby-sampleに入っているファイル</h3>
 
-<p><code>bash Gemfile
+<p><code>ruby Gemfile
 source :rubygems
 gem 'sinatra', '1.1.0'
 gem 'thin'
 </code></p>
 
-<p>``` bash Gemfile.lock
-source :rubygems
-gem 'sinatra', '1.1.0'
-gem 'thin'fukui-no-MacBook-Air:ruby-sample ftakao2007$ cat Gemfile.lock
+<p>``` ruby Gemfile.lock
 GEM
   remote: http://rubygems.org/
   specs:</p>
