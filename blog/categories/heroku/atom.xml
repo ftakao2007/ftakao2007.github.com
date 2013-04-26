@@ -4,7 +4,7 @@
   <title><![CDATA[Category: heroku | Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/blog/categories/heroku/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-04-27T06:21:09+09:00</updated>
+  <updated>2013-04-27T06:39:25+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -75,6 +75,19 @@ require 'sinatra'</p>
   "Hello, world"
 end
 ```</p>
+
+<h3 id="heroku+create+したあとにheroku上にできたもの">heroku create したあとにheroku上にできたもの</h3>
+
+<p>limitless-hollows-2098のリンク</p>
+
+<h3 id="git+push+heroku+master+したあとにheroku上にできたもの">git push heroku master したあとにheroku上にできたもの</h3>
+
+<p>limitless-hollows-2098のリンク先「Dynos」<code>web bundle exec ruby web.rb -p $PORT</code>の項目</p>
+
+<h2 id="HerokuにRedmineをインストール">HerokuにRedmineをインストール</h2>
+
+<p><a href="http://qiita.com/items/53549e845ccf7a210663">Redmine on Heroku(Qiita)</a>
+この手順を参考に</p>
 ]]></content>
   </entry>
   
