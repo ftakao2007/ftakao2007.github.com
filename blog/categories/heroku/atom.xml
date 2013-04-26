@@ -4,7 +4,7 @@
   <title><![CDATA[Category: heroku | Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/blog/categories/heroku/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-04-27T06:10:36+09:00</updated>
+  <updated>2013-04-27T06:19:00+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -29,6 +29,55 @@ heroku create
 git push heroku master
 heroku open
 </code></p>
+
+<h3 id="ruby-sampleに入っているファイル">ruby-sampleに入っているファイル</h3>
+
+<p><code>bash Gemfile
+source :rubygems
+gem 'sinatra', '1.1.0'
+gem 'thin'
+</code></p>
+
+<p>``` bash Gemfile.lock
+source :rubygems
+gem 'sinatra', '1.1.0'
+gem 'thin'fukui-no-MacBook-Air:ruby-sample ftakao2007$ cat Gemfile.lock
+GEM
+  remote: http://rubygems.org/
+  specs:</p>
+
+<pre><code>daemons (1.1.9)
+eventmachine (0.12.10)
+rack (1.4.1)
+sinatra (1.1.0)
+  rack (~&gt; 1.1)
+  tilt (~&gt; 1.1)
+thin (1.4.1)
+  daemons (&gt;= 1.0.9)
+  eventmachine (&gt;= 0.12.6)
+  rack (&gt;= 1.0.0)
+tilt (1.3.3)
+</code></pre>
+
+<p>PLATFORMS
+  ruby</p>
+
+<p>DEPENDENCIES
+  sinatra (= 1.1.0)
+  thin
+```</p>
+
+<p><code>bash Procfile
+web: bundle exec ruby web.rb -p $PORT
+</code></p>
+
+<p>``` ruby web.rb
+require 'sinatra'</p>
+
+<p>get '/' do
+  "Hello, world"
+end
+```</p>
 ]]></content>
   </entry>
   
