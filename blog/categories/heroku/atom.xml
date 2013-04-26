@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: heroku | Octopress Blog]]></title>
+  <link href="http://ftakao2007.github.com/blog/categories/heroku/atom.xml" rel="self"/>
+  <link href="http://ftakao2007.github.com/"/>
+  <updated>2013-04-27T06:10:36+09:00</updated>
+  <id>http://ftakao2007.github.com/</id>
+  <author>
+    <name><![CDATA[ftakao2007]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[heroku]]></title>
+    <link href="http://ftakao2007.github.com/blog/2013/04/27/heroku/"/>
+    <updated>2013-04-27T06:07:00+09:00</updated>
+    <id>http://ftakao2007.github.com/blog/2013/04/27/heroku</id>
+    <content type="html"><![CDATA[<h2 id="初期設定例">初期設定例</h2>
+
+<p>公式そのまま</p>
+
+<p><code>bash
+git clone git://github.com/heroku/ruby-sample.git
+cd ruby-sample
+heroku create
+git push heroku master
+heroku open
+</code></p>
+]]></content>
+  </entry>
+  
+</feed>
