@@ -220,10 +220,106 @@ heroku open ruby- &hellip;">
 
 <p>limitless-hollows-2098のリンク先「Dynos」<code>web bundle exec ruby web.rb -p $PORT</code>の項目</p>
 
+<hr />
+
 <h2 id="HerokuにRedmineをインストール">HerokuにRedmineをインストール</h2>
 
-<p><a href="http://qiita.com/items/53549e845ccf7a210663">Redmine on Heroku(Qiita)</a>
+<p><a href="http://rochefort.hatenablog.com/entry/20130107/p1">Redmineをherokuにデプロイする</a>
 この手順を参考に</p>
+
+<h3 id="手順以外にやったこと">手順以外にやったこと</h3>
+
+<ul>
+<li>パッケージをインストール(CentOS6.4)</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo yum install mysql-devel ImageMagick ImageMagick-devel postgresql
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>これをやらないと<code>bundle install</code>でエラーになる<br/>
+その他エラーが出る場合は、メッセージをググって適宜必要なパッケージをyumで入れればいいと思う。</p>
+
+<ul>
+<li>以下のエラーがでたのでknown_hostsをリセット</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'> ! <span class="o">[</span>remote rejected<span class="o">]</span> 2.1-stable -&gt; master <span class="o">(</span>pre-receive hook declined<span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>~/.ssh 配下のknown_hostsを適当にリネームしました。</p>
+
+<p>ここでインストールは終了</p>
+
+<ul>
+<li>パスワード変更
+デフォルトはadmin:adminなのでパスワードを変更<br/>
+言語を日本語にしてタイムゾーンをTokyoに変更</li>
+</ul>
+
+
+<!--
+## HerokuにRedmineをインストール
+[Redmine on Heroku(Qiita)](http://qiita.com/items/53549e845ccf7a210663)
+この手順を参考に
+
+### 手順以外にやったこと
+* 使うバージョンは`2.3-stable`  
+
+* パッケージをインストール(CentOS6.4)
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo yum install mysql-devel ImageMagick ImageMagick-devel
+</span></code></pre></td></tr></table></div></figure>
+これをやらないと`bundle install`でエラーになる  
+
+* redmineディレクトリ中で`heroku create`  
+これをやらないとリモートリポジトリherokuが無い  
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>fukui-no-MacBook-Air:redmine ftakao2007<span class="nv">$ </span>git remote -v
+</span><span class='line'>origin    https://github.com/redmine/redmine.git <span class="o">(</span>fetch<span class="o">)</span>
+</span><span class='line'>origin    https://github.com/redmine/redmine.git <span class="o">(</span>push<span class="o">)</span>
+</span><span class='line'>
+</span><span class='line'>fukui-no-MacBook-Air:redmine ftakao2007<span class="nv">$ </span>heroku create
+</span><span class='line'>Please configure your config/database.yml first
+</span><span class='line'>Creating agile-sands-2174... <span class="k">done</span>, region is us
+</span><span class='line'>http://agile-sands-2174.herokuapp.com/ | git@heroku.com:agile-sands-2174.git
+</span><span class='line'>Git remote heroku added
+</span><span class='line'>
+</span><span class='line'>fukui-no-MacBook-Air:redmine ftakao2007<span class="nv">$ </span>git remote -v
+</span><span class='line'>heroku    git@heroku.com:agile-sands-2174.git <span class="o">(</span>fetch<span class="o">)</span>
+</span><span class='line'>heroku    git@heroku.com:agile-sands-2174.git <span class="o">(</span>push<span class="o">)</span>
+</span><span class='line'>origin    https://github.com/redmine/redmine.git <span class="o">(</span>fetch<span class="o">)</span>
+</span><span class='line'>origin    https://github.com/redmine/redmine.git <span class="o">(</span>push<span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+* `git checkout 2.3-stable`で2.3-stableを利用
+* `bundle exec rake generate_secret_token`で`Please configure your config/database.yml first`が出たので以下作業
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>cp -ip config/database.yml.example config/database.yml
+</span></code></pre></td></tr></table></div></figure>
+&#8211;>
+
 </div>
 
 
@@ -272,6 +368,8 @@ heroku open ruby- &hellip;">
         <a class="basic-alignment left" href="/blog/2013/04/21/vim/" title="Previous Post: vim">&laquo; vim</a>
       
       
+        <a class="basic-alignment right" href="/blog/2013/04/29/python/" title="Next Post: Python">Python &raquo;</a>
+      
     </p>
   </footer>
 </article>
@@ -283,6 +381,10 @@ heroku open ruby- &hellip;">
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/04/29/python/">Python</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/04/27/heroku/">heroku</a>
@@ -300,15 +402,11 @@ heroku open ruby- &hellip;">
         <a href="/blog/2013/04/16/chef-handson/">シェフハンズオンセミナー</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/04/15/ec2-api-tools/">ec2-api-tools</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/about/'>about (3)</a></li><li><a href='/blog/categories/aws/'>aws (3)</a></li><li><a href='/blog/categories/bash/'>bash (2)</a></li><li><a href='/blog/categories/chef/'>chef (1)</a></li><li><a href='/blog/categories/command/'>command (5)</a></li><li><a href='/blog/categories/construct/'>construct (2)</a></li><li><a href='/blog/categories/diary/'>diary (3)</a></li><li><a href='/blog/categories/ec2/'>ec2 (1)</a></li><li><a href='/blog/categories/git/'>git (1)</a></li><li><a href='/blog/categories/google/'>google (1)</a></li><li><a href='/blog/categories/heroku/'>heroku (1)</a></li><li><a href='/blog/categories/monitor/'>monitor (4)</a></li><li><a href='/blog/categories/network/'>network (2)</a></li><li><a href='/blog/categories/octopress/'>octopress (1)</a></li><li><a href='/blog/categories/os/'>OS (3)</a></li><li><a href='/blog/categories/vim/'>vim (1)</a></li><li><a href='/blog/categories/mian-qiang-hui/'>勉強会 (3)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/about/'>about (3)</a></li><li><a href='/blog/categories/aws/'>aws (3)</a></li><li><a href='/blog/categories/bash/'>bash (2)</a></li><li><a href='/blog/categories/chef/'>chef (1)</a></li><li><a href='/blog/categories/command/'>command (5)</a></li><li><a href='/blog/categories/construct/'>construct (2)</a></li><li><a href='/blog/categories/diary/'>diary (3)</a></li><li><a href='/blog/categories/ec2/'>ec2 (1)</a></li><li><a href='/blog/categories/git/'>git (1)</a></li><li><a href='/blog/categories/google/'>google (1)</a></li><li><a href='/blog/categories/heroku/'>heroku (1)</a></li><li><a href='/blog/categories/monitor/'>monitor (4)</a></li><li><a href='/blog/categories/network/'>network (2)</a></li><li><a href='/blog/categories/octopress/'>octopress (1)</a></li><li><a href='/blog/categories/os/'>OS (3)</a></li><li><a href='/blog/categories/python/'>Python (1)</a></li><li><a href='/blog/categories/vim/'>vim (1)</a></li><li><a href='/blog/categories/mian-qiang-hui/'>勉強会 (3)</a></li></ul>
 </section>
 <section>
 <script type="text/javascript"><!--

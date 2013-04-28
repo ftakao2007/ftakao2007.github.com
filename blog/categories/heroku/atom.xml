@@ -4,7 +4,7 @@
   <title><![CDATA[Category: heroku | Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/blog/categories/heroku/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-04-27T06:39:25+09:00</updated>
+  <updated>2013-04-29T05:04:29+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -84,10 +84,82 @@ end
 
 <p>limitless-hollows-2098のリンク先「Dynos」<code>web bundle exec ruby web.rb -p $PORT</code>の項目</p>
 
+<hr />
+
 <h2 id="HerokuにRedmineをインストール">HerokuにRedmineをインストール</h2>
 
-<p><a href="http://qiita.com/items/53549e845ccf7a210663">Redmine on Heroku(Qiita)</a>
+<p><a href="http://rochefort.hatenablog.com/entry/20130107/p1">Redmineをherokuにデプロイする</a>
 この手順を参考に</p>
+
+<h3 id="手順以外にやったこと">手順以外にやったこと</h3>
+
+<ul>
+<li><p>パッケージをインストール(CentOS6.4)
+<code>bash
+sudo yum install mysql-devel ImageMagick ImageMagick-devel postgresql
+</code>
+これをやらないと<code>bundle install</code>でエラーになる<br/>
+その他エラーが出る場合は、メッセージをググって適宜必要なパッケージをyumで入れればいいと思う。</p></li>
+<li><p>以下のエラーがでたのでknown_hostsをリセット<br/>
+<code>bash
+! [remote rejected] 2.1-stable -&gt; master (pre-receive hook declined)
+</code>
+~/.ssh 配下のknown_hostsを適当にリネームしました。</p></li>
+</ul>
+
+
+<p>ここでインストールは終了</p>
+
+<ul>
+<li>パスワード変更
+デフォルトはadmin:adminなのでパスワードを変更<br/>
+言語を日本語にしてタイムゾーンをTokyoに変更</li>
+</ul>
+
+
+<!--
+## HerokuにRedmineをインストール
+[Redmine on Heroku(Qiita)](http://qiita.com/items/53549e845ccf7a210663)
+この手順を参考に
+
+### 手順以外にやったこと
+* 使うバージョンは`2.3-stable`  
+
+* パッケージをインストール(CentOS6.4)
+``` bash
+sudo yum install mysql-devel ImageMagick ImageMagick-devel
+```
+これをやらないと`bundle install`でエラーになる  
+
+* redmineディレクトリ中で`heroku create`  
+これをやらないとリモートリポジトリherokuが無い  
+
+``` bash
+fukui-no-MacBook-Air:redmine ftakao2007$ git remote -v
+origin  https://github.com/redmine/redmine.git (fetch)
+origin  https://github.com/redmine/redmine.git (push)
+
+fukui-no-MacBook-Air:redmine ftakao2007$ heroku create
+Please configure your config/database.yml first
+Creating agile-sands-2174... done, region is us
+http://agile-sands-2174.herokuapp.com/ | git@heroku.com:agile-sands-2174.git
+Git remote heroku added
+
+fukui-no-MacBook-Air:redmine ftakao2007$ git remote -v
+heroku  git@heroku.com:agile-sands-2174.git (fetch)
+heroku  git@heroku.com:agile-sands-2174.git (push)
+origin  https://github.com/redmine/redmine.git (fetch)
+origin  https://github.com/redmine/redmine.git (push)
+```
+
+* `git checkout 2.3-stable`で2.3-stableを利用
+* `bundle exec rake generate_secret_token`で`Please configure your config/database.yml first`が出たので以下作業
+
+``` bash
+cp -ip config/database.yml.example config/database.yml
+```
+-->
+
 ]]></content>
   </entry>
   
