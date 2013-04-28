@@ -4,7 +4,7 @@
   <title><![CDATA[Category: heroku | Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/blog/categories/heroku/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-04-29T05:04:29+09:00</updated>
+  <updated>2013-04-29T05:07:52+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -158,7 +158,7 @@ origin  https://github.com/redmine/redmine.git (push)
 ``` bash
 cp -ip config/database.yml.example config/database.yml
 ```
--->
+--->
 
 ]]></content>
   </entry>
