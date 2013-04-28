@@ -262,64 +262,6 @@ heroku open ruby- &hellip;">
 言語を日本語にしてタイムゾーンをTokyoに変更</li>
 </ul>
 
-
-<!--
-## HerokuにRedmineをインストール
-[Redmine on Heroku(Qiita)](http://qiita.com/items/53549e845ccf7a210663)
-この手順を参考に
-
-### 手順以外にやったこと
-* 使うバージョンは`2.3-stable`  
-
-* パッケージをインストール(CentOS6.4)
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo yum install mysql-devel ImageMagick ImageMagick-devel
-</span></code></pre></td></tr></table></div></figure>
-これをやらないと`bundle install`でエラーになる  
-
-* redmineディレクトリ中で`heroku create`  
-これをやらないとリモートリポジトリherokuが無い  
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>fukui-no-MacBook-Air:redmine ftakao2007<span class="nv">$ </span>git remote -v
-</span><span class='line'>origin    https://github.com/redmine/redmine.git <span class="o">(</span>fetch<span class="o">)</span>
-</span><span class='line'>origin    https://github.com/redmine/redmine.git <span class="o">(</span>push<span class="o">)</span>
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:redmine ftakao2007<span class="nv">$ </span>heroku create
-</span><span class='line'>Please configure your config/database.yml first
-</span><span class='line'>Creating agile-sands-2174... <span class="k">done</span>, region is us
-</span><span class='line'>http://agile-sands-2174.herokuapp.com/ | git@heroku.com:agile-sands-2174.git
-</span><span class='line'>Git remote heroku added
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:redmine ftakao2007<span class="nv">$ </span>git remote -v
-</span><span class='line'>heroku    git@heroku.com:agile-sands-2174.git <span class="o">(</span>fetch<span class="o">)</span>
-</span><span class='line'>heroku    git@heroku.com:agile-sands-2174.git <span class="o">(</span>push<span class="o">)</span>
-</span><span class='line'>origin    https://github.com/redmine/redmine.git <span class="o">(</span>fetch<span class="o">)</span>
-</span><span class='line'>origin    https://github.com/redmine/redmine.git <span class="o">(</span>push<span class="o">)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-* `git checkout 2.3-stable`で2.3-stableを利用
-* `bundle exec rake generate_secret_token`で`Please configure your config/database.yml first`が出たので以下作業
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>cp -ip config/database.yml.example config/database.yml
-</span></code></pre></td></tr></table></div></figure>
-&#8212;>
-
 </div>
 
 
