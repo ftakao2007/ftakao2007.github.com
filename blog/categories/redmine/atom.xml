@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: heroku | Octopress Blog]]></title>
-  <link href="http://ftakao2007.github.com/blog/categories/heroku/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Redmine | Octopress Blog]]></title>
+  <link href="http://ftakao2007.github.com/blog/categories/redmine/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
   <updated>2013-04-29T11:43:30+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
