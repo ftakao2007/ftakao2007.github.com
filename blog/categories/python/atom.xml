@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Python | Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/blog/categories/python/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-04-29T10:18:36+09:00</updated>
+  <updated>2013-04-29T13:02:26+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -19,6 +19,12 @@
     <updated>2013-04-29T06:45:00+09:00</updated>
     <id>http://ftakao2007.github.com/blog/2013/04/29/python</id>
     <content type="html"><![CDATA[<h2 id="[Python入門](http://python.keicode.com/)+の勉強"><a href="http://python.keicode.com/">Python入門</a> の勉強</h2>
+
+<h3 id="開発環境の準備">開発環境の準備</h3>
+
+<p>PyDevをインストールして使う</p>
+
+<h4 id="Eclipseのインストール">Eclipseのインストール</h4>
 
 <hr />
 
