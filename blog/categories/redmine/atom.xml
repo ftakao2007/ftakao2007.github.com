@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Redmine | Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/blog/categories/redmine/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-04-29T11:43:30+09:00</updated>
+  <updated>2013-04-29T11:52:53+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -12,6 +12,22 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Redmine]]></title>
+    <link href="http://ftakao2007.github.com/blog/2013/04/29/redmine/"/>
+    <updated>2013-04-29T11:44:00+09:00</updated>
+    <id>http://ftakao2007.github.com/blog/2013/04/29/redmine</id>
+    <content type="html"><![CDATA[<h2 id="メモ書き">メモ書き</h2>
+
+<p>あまりに利用する人数が増えると負荷が問題になってくるみたい。その場合は有償のJIRAとか
+使うことになりそう。ただ想定している利用人数は数名程度なのでRedmineでも十分なはず。</p>
+
+<h2 id="リンク">リンク</h2>
+
+<p>http://daipresents.com/2011/redmineが1000人のエンジニアに使われるまでのこと/</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[heroku]]></title>
