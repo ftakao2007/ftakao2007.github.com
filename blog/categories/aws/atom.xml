@@ -4,7 +4,7 @@
   <title><![CDATA[Category: aws | Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/blog/categories/aws/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-04-29T12:04:36+09:00</updated>
+  <updated>2013-04-29T12:43:42+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -466,6 +466,17 @@ git commit --amend --reset-author
 
 <p>これでgithubに上げられるようになる。<br/>
 <a href="http://ftakao2007.github.io/blog/2013/04/06/octpress/">Octopress まとめ</a></p>
+
+<h2 id="リンク">リンク</h2>
+
+<ul>
+<li><a href="http://d.hatena.ne.jp/okachimachiorz/touch/20130414/1365914031">「オンプレミス・システムの終わり」の始まり～AWSでのミッションクリティカルシステムの稼働29</a></li>
+<li><a href="http://recipe.kc-cloud.jp/archives/628">AWS SDK Rubyを使ってみよう！</a></li>
+<li><a href="http://blog.livedoor.jp/morituri/tag/ec2-register">コマンドラインツールでEBSインスタンスからAMIを作成する【Amazon EC2】</a></li>
+<li><a href="http://blog.serverworks.co.jp/tech/2012/02/23/">インスタンスストアタイプからEBSタイプのAMI作成 Ubuntu編</a></li>
+<li><a href="http://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/Welcome.html">Amazon Elastic Compute Cloud Command Line Reference</a></li>
+</ul>
+
 ]]></content>
   </entry>
   

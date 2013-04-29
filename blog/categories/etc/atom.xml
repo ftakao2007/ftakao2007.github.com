@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: etc | Octopress Blog]]></title>
+  <link href="http://ftakao2007.github.com/blog/categories/etc/atom.xml" rel="self"/>
+  <link href="http://ftakao2007.github.com/"/>
+  <updated>2013-04-29T12:43:42+09:00</updated>
+  <id>http://ftakao2007.github.com/</id>
+  <author>
+    <name><![CDATA[ftakao2007]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[etc]]></title>
+    <link href="http://ftakao2007.github.com/blog/2013/04/29/etc/"/>
+    <updated>2013-04-29T12:20:00+09:00</updated>
+    <id>http://ftakao2007.github.com/blog/2013/04/29/etc</id>
+    <content type="html"><![CDATA[<h2 id="リンク">リンク</h2>
+
+<ul>
+<li><a href="http://www.corporate-legal.jp/houmu_news1223/">ベンチャー企業に朗報？　政府が新たな資金調達の仕組みを検討。</a></li>
+<li><a href="http://www.slideshare.net/zembutsu/qpstudy-2013-04lt">今日から業務で使える17の運用系ツール</a></li>
+<li><a href="http://nhiro.org/langbook/">なにをどう学ぶか</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

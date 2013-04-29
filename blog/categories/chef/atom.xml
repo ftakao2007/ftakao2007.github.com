@@ -4,7 +4,7 @@
   <title><![CDATA[Category: chef | Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/blog/categories/chef/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-04-29T12:04:36+09:00</updated>
+  <updated>2013-04-29T12:43:42+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -221,6 +221,23 @@ knife ec2 server create -S [key pair] -i [key file (XXX.pem)] -r "recipe[apache2
 -> あるべき状態になる、将来ありたい状態と現状を埋める仕組み</p></li>
 <li><p>98%の情報は下記のURLに存在する!<br/>
 http://docs.opscode.com/chef/resources.html</p></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[chef]]></title>
+    <link href="http://ftakao2007.github.com/blog/2013/04/08/chef/"/>
+    <updated>2013-04-08T20:38:00+09:00</updated>
+    <id>http://ftakao2007.github.com/blog/2013/04/08/chef</id>
+    <content type="html"><![CDATA[<h2 id="リンク">リンク</h2>
+
+<ul>
+<li><a href="http://dev.classmethod.jp/server-side/chef-server-install/">Chef を始める #1 – 概要、Chef Server を EC2 上にインストール、Workstation の設定まで</a></li>
+<li><a href="http://shimizukawa.bitbucket.org/chef-casual-talk1/index.html">Pythonな会社でchefしてる例の紹介</a></li>
+<li><a href="http://www.engineyard.co.jp/blog/2013/breaking_changes_chef_11/">Chef11の最新情報</a></li>
+<li><a href="http://d.hatena.ne.jp/dkfj/touch/20130404/1365048462">運用視点でChef ServerかChef Solo + Knife Soloのどちらが良いか考えてみた</a></li>
 </ul>
 
 ]]></content>

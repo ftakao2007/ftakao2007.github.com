@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: vagrant | Octopress Blog]]></title>
+  <link href="http://ftakao2007.github.com/blog/categories/vagrant/atom.xml" rel="self"/>
+  <link href="http://ftakao2007.github.com/"/>
+  <updated>2013-04-29T12:43:42+09:00</updated>
+  <id>http://ftakao2007.github.com/</id>
+  <author>
+    <name><![CDATA[ftakao2007]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[vagrant]]></title>
+    <link href="http://ftakao2007.github.com/blog/2013/04/29/vagrant/"/>
+    <updated>2013-04-29T12:29:00+09:00</updated>
+    <id>http://ftakao2007.github.com/blog/2013/04/29/vagrant</id>
+    <content type="html"><![CDATA[<h2 id="リンク">リンク</h2>
+
+<ul>
+<li><a href="http://d.hatena.ne.jp/naoya/touch/20130205/1360062070">Vagrant</a></li>
+<li><a href="http://d.hatena.ne.jp/thinkAmi/20130407/1365310673">Windows7上で Vagrant + Chef solo + knife-soloを使い、Ubuntu + ubuntu-desktopの環境を構築してみた</a></li>
+<li><a href="http://tily.hatenablog.com/entry/2013/04/06/171335">ニフティクラウドを vagrant のように使える some コマンド</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: network | Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/blog/categories/network/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-04-29T12:04:36+09:00</updated>
+  <updated>2013-04-29T12:43:42+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -390,7 +390,11 @@
 
 <h1 id="リンク">リンク</h1>
 
-<p><a href="http://gvtkne.blogspot.jp/2013/04/14.html">ネットワークパケットを読む会(仮) 14回に参加してきた(otahi さん)</a></p>
+<ul>
+<li><a href="http://gvtkne.blogspot.jp/2013/04/14.html">ネットワークパケットを読む会(仮) 14回に参加してきた(otahi さん)</a></li>
+<li><a href="http://www.slideshare.net/tohakushi/tcpdumptcpreplay">tcpdumpとtcpreplayとtcprewriteと他。</a></li>
+</ul>
+
 ]]></content>
   </entry>
   

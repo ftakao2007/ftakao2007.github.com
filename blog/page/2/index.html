@@ -9,15 +9,8 @@
   <meta name="author" content="ftakao2007">
 
   
-  <meta name="description" content="第4回春爛漫シェル芸人撩乱勉強会&amp;第22回勝手に新歓定例会 事前準備 wget curl w3mの確認 全部入っていた 1
-2
-3
-4
-5
-6
-[mickey@ftakao2007 ~]$ which wget
-/usr/bin/wget
-[mickey@ftakao2007 ~]$ &hellip;">
+  <meta name="description" content="
+Vimで意外に知らなかった10つのこと ">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -88,6 +81,2374 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/04/21/vim/">Vim</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-21T19:11:00+09:00" pubdate data-updated="true">Apr 21<span>st</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><ul>
+<li><a href="http://mathemathiko.hatenablog.com/entry/2013/04/21/162303">Vimで意外に知らなかった10つのこと</a></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/04/20/study-network/">20130419 第14回「ネットワーク パケットを読む会（仮）」</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-20T05:37:00+09:00" pubdate data-updated="true">Apr 20<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://atnd.org/events/38649">第14回「ネットワーク パケットを読む会（仮）」</a>に参加しましたので覚書です。
+ネットワークキャプチャ関連の覚書はここのページに順次追記していきます。</p>
+
+<hr />
+
+<h1 id="[フレッシャーズのためのパケット解析入門+(hebikuzure+さん)](http://www.slideshare.net/hebikuzure/20130419-19149363)"><a href="http://www.slideshare.net/hebikuzure/20130419-19149363">フレッシャーズのためのパケット解析入門 (hebikuzure さん)</a></h1>
+
+<p>なんとなくフワッと使っていた単語をイメージで捉える。</p>
+
+<h3 id="パケット通信方式">パケット通信方式</h3>
+
+<p>連続データを一定量ずつ蓄積して1個の伝送単位にして、伝送路の開いているタイミングで送出、
+受信したデータを元の連続データに復元する方式。</p>
+
+<h3 id="パケット">パケット</h3>
+
+<p>パケット通信方式における情報の伝送単位</p>
+
+<h3 id="イメージ">イメージ</h3>
+
+<table>
+<thead>
+<tr>
+<th align="center">単語</th>
+<th align="center">例え</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">連続データ</td>
+<td align="center">水道から流れ出てている水</td>
+</tr>
+<tr>
+<td align="center">伝送単位(パケット)</td>
+<td align="center">水を入れたペットボトル</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>パケット通信は水道水をペットボトルに入れて運ぶみたいなイメージ</p>
+
+<hr />
+
+<h2 id="パケット解析とは">パケット解析とは</h2>
+
+<ol>
+<li>パケットキャプチャをする</li>
+<li>キャプチャしたパケットを上位のプロトコルごとにその内容を解析する</li>
+</ol>
+
+
+<hr />
+
+<h2 id="パケットキャプチャ">パケットキャプチャ</h2>
+
+<p>パケット一つ一つに含まれるデータを記録する</p>
+
+<h3 id="パケットに含まれているデータ">パケットに含まれているデータ</h3>
+
+<ul>
+<li>送信元</li>
+<li>送信先</li>
+<li>サイズ(パケット長)</li>
+<li>データの種類(上位プロトコル)</li>
+</ul>
+
+
+<h3 id="キャプチャされる場所(〜モデル)">キャプチャされる場所(〜モデル)</h3>
+
+<p><a href="http://en.wikipedia.org/wiki/OSI_model">OSI参照モデル</a></p>
+
+<ul>
+<li>ネットワーク層</li>
+<li>データリンク層</li>
+</ul>
+
+
+<p><a href="http://en.wikipedia.org/wiki/Internet_protocol_suite">TCPモデル(IETF)</a></p>
+
+<ul>
+<li>リンク層</li>
+</ul>
+
+
+<h3 id="パケットをキャプチャする場所(実際の場所)">パケットをキャプチャする場所(実際の場所)</h3>
+
+<ul>
+<li><p>対象デバイス内? or デバイス外?</p>
+
+<ul>
+<li><p>実際の現場ではデバイス外でキャプチャすることが多い<br/>
+→Android、iOS、テレビ、ゲーム機などはそもそもデバイス内でキャプチャを取ることができないことがほとんど</p></li>
+<li><p>学習、研究、トラブルシューティングはデバイス内で行える</p></li>
+</ul>
+</li>
+<li><p>対象デバイス内</p>
+
+<ol>
+<li>オペレーティング・システムに付属するツールを利用する
+
+<ul>
+<li>tcpdump (Linux / Unix環境)</li>
+</ul>
+</li>
+<li>オペレーティング・システムベンダー提供のツール
+
+<ul>
+<li>WinPcap / Network Monitor (Windows環境)</li>
+</ul>
+</li>
+<li>サードパーティのツールを利用する
+
+<ul>
+<li>Wireshark / OmniPeek / NetworkMiner / tshark</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>対象デバイス外</p>
+
+<ol>
+<li><a href="http://e-words.jp/w/E3839DE383BCE38388E3839FE383A9E383BCE383AAE383B3E382B0.html">ミラーポート</a>
+
+<ul>
+<li>あるポートが送受信するデータを、同時に別のポートから送出する機能</li>
+<li><a href="http://e-words.jp/w/E382B9E382A4E38383E38381E383B3E382B0E3838FE38396.html">スイッチングハブ</a>やルータはMACアドレスを覚えて特定のPCのみとデータ通信をするようになっているのでミラーポートを利用してパケットキャプチャする</li>
+<li><a href="http://e-words.jp/w/E383AAE38394E383BCE382BFE3838FE38396.html">リピーターハブ</a>は接続しているPC全部にデータが送られているのでミラーポートを利用しなくてもデータを拾うことができる。</li>
+</ul>
+</li>
+<li>タップ
+
+<ul>
+<li><a href="http://www.bitrieve.co.jp/products/lan_tap/">タップ</a>を挟んでデータの通信を分岐させる</li>
+</ul>
+</li>
+<li>プロキシやゲートウェイ
+
+<ul>
+<li>プロキシやゲートウェイ配下のサーバの通信が取得できる</li>
+</ul>
+</li>
+<li>通信対向側(サーバ側)でのキャプチャ
+
+<ul>
+<li>サーバ側で取得できているデータは、本当に目的のクライアントからの通信なのか確認する必要がある<br/>
+→<a href="http://e-words.jp/w/SSLE382A2E382AFE382BBE383A9E383ACE383BCE382BF.html">SSLアクセラレータ</a>、プロキシ、ロードバランサなどの通信である可能性がある</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+
+
+<p>＊ どこでキャプチャするのが適切なのか検討し、複数の場所でキャプチャするなど工夫が必要</p>
+
+<h3 id="パケットをキャプチャする方法">パケットをキャプチャする方法</h3>
+
+<ul>
+<li><p>ハードウェア<br/>
+最近はソフトウェアでキャプチャすることがほとんど。キャプチャ用のハード機器はものすごく高価らしい。</p></li>
+<li><p>ソフトウェア</p>
+
+<ol>
+<li><p>GUI</p>
+
+<ul>
+<li>Wireshark / NetworkMiner / OmniPeek / Network Monitor
+
+<ul>
+<li>設定がわかりやすい</li>
+<li>結果がすぐに確認できる</li>
+<li>その場で解析が可能</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>CUI</p>
+
+<ul>
+<li>tcpdump / WinPcap / tshark
+
+<ul>
+<li>動作が軽快</li>
+<li>バッチ処理向き</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+
+
+<h3 id="ソフトウェアによるパケットキャプチャまとめ">ソフトウェアによるパケットキャプチャまとめ</h3>
+
+<table>
+<thead>
+<tr>
+<th align="center">ソフト</th>
+<th align="center">OS</th>
+<th align="center">CUI/GUI</th>
+<th align="center">特徴</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><a href="http://ja.wikipedia.org/wiki/Tcpdump">tcpdump</a></td>
+<td align="center">Unix</td>
+<td align="center">CUI</td>
+<td align="center">Unix系のCUIでよく利用される。libpcapに含まれている。</td>
+</tr>
+<tr>
+<td align="center"><a href="http://ja.wikipedia.org/wiki/Netcat">netcat</a></td>
+<td align="center">Unix</td>
+<td align="center">CUI</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="center"><a href="http://ja.wikipedia.org/wiki/Pcap">WinPcap</a></td>
+<td align="center">Windows</td>
+<td align="center">CUI</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="center"><a href="http://www.wireshark.org/docs/man-pages/tshark.html">tshark</a></td>
+<td align="center">Unix/Windows</td>
+<td align="center">CUI</td>
+<td align="center">WiresharkのCUI版</td>
+</tr>
+<tr>
+<td align="center"><a href="http://ja.wikipedia.org/wiki/Wireshark">Wireshark</a></td>
+<td align="center">Unix/Windows</td>
+<td align="center">GUI</td>
+<td align="center">FreeのGUIツールでは一番有名</td>
+</tr>
+<tr>
+<td align="center"><a href="http://support.microsoft.com/kb/933741/ja">Network Monitor</a></td>
+<td align="center">Windows</td>
+<td align="center">GUI</td>
+<td align="center">プロセス単位で通信状態を確認できる</td>
+</tr>
+<tr>
+<td align="center"><a href="http://www.dit.co.jp/products/omni_peek/omnipeek.html">OmniPeek</a></td>
+<td align="center">Unix/Windows</td>
+<td align="center">GUI</td>
+<td align="center">商用ツール</td>
+</tr>
+<tr>
+<td align="center"><a href="http://www.netresec.com/?page=NetworkMiner">NetworkMiner</a></td>
+<td align="center">Unix/Windows</td>
+<td align="center">GUI</td>
+<td align="center">画像やcookieなど、アプリケーションレベルの確認がしやすい</td>
+</tr>
+</tbody>
+</table>
+
+
+<h3 id="データ形式">データ形式</h3>
+
+<table>
+<thead>
+<tr>
+<th align="center">形式</th>
+<th align="center">拡張子</th>
+<th align="center">特徴</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">libpcap形式</td>
+<td align="center">pcap</td>
+<td align="center">一番汎用的な形式</td>
+</tr>
+<tr>
+<td align="center">Wireshark新形式</td>
+<td align="center">pcapng</td>
+<td align="center">pcapより詳細な情報が取れる。ngはNextGenerationの略</td>
+</tr>
+<tr>
+<td align="center">Network Monitor形式</td>
+<td align="center">cap</td>
+<td align="center">Windowsで使う場合</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>※ とりあえずpcap形式にしておけば大概のソフトで読める</p>
+
+<h3 id="どんなデータが記録されるか">どんなデータが記録されるか</h3>
+
+<ul>
+<li>パケット全体のバイナリデータ</li>
+<li>記録した時刻</li>
+<li>キャプチャしたインターフェイス</li>
+<li>トラフィックを発生させたプロセス</li>
+</ul>
+
+
+<hr />
+
+<h2 id="パケット解析">パケット解析</h2>
+
+<h3 id="基本的にはツールを利用する">基本的にはツールを利用する</h3>
+
+<p>Wireshark / NetworkMiner / OmniPeek / Network Monitor</p>
+
+<h3 id="力技で独自解析">力技で独自解析</h3>
+
+<p>pcap形式などのフォーマットは公開されているので独自にバイナリ解析をする</p>
+
+<hr />
+
+<h1 id="tcpdumpから始まるネットワークエンジニアの朝+(twovs+さん)">tcpdumpから始まるネットワークエンジニアの朝 (twovs さん)</h1>
+
+<h2 id="tcpdumpとWireshark">tcpdumpとWireshark</h2>
+
+<ul>
+<li><p>tcpdump<br/>
+軽い、低機能、とりあえず見る、サーバ側でキャプチャ、感じ取る、気づく</p></li>
+<li><p>Wireshark<br/>
+重い、高機能、じっくり見る、ローカルのPCで結果を見る、探しだす、確認する</p></li>
+</ul>
+
+
+<h2 id="パケット解析で大切なこと">パケット解析で大切なこと</h2>
+
+<h3 id="正常系を知っておくこと">正常系を知っておくこと</h3>
+
+<p>異常な状態を察知するには正常な状態を知っておくことが大切</p>
+
+<h2 id="何もしてないのに壊れましたー">何もしてないのに壊れましたー</h2>
+
+<h3 id="IPv4だと問題なかったのにIPv6だとつながらない">IPv4だと問題なかったのにIPv6だとつながらない</h3>
+
+<p>IPv6アドレスにpingを打ってみたが反応がなかった<br/>
+→IPv4はARPでMACアドレスを取得しているが<strong>IPv6はICMPでMACアドレスを取得している</strong><br/>
+→IPv6ではICMPをフィルタしちゃダメ!!</p>
+
+<h3 id="IPv6の通信で送り元と送り先でサイズが違う">IPv6の通信で送り元と送り先でサイズが違う</h3>
+
+<p>送り先でパケットを見たら「padding」というのがひっついていた<br/>
+→小さいデータを送るときは「0」を付加して64byteにしてから投げるようになっている設定があるらしい</p>
+
+<h3 id="MTU=1500にもかかわらずものすごい大きなデータを送ろうとしていた">MTU=1500にもかかわらずものすごい大きなデータを送ろうとしていた</h3>
+
+<p>送信元でものすごいでかいデータを送信先に投げている。でも送信先のキャプチャは正常<br/>
+→ VMwareのGuestOSでキャプチャするとき、Virtual Switchに行く前のデータをキャプチャしていた<br/>
+→ Virtual Switchを通過すると通常のサイズになるらしい。</p>
+
+<h2 id="まとめ">まとめ</h2>
+
+<h3 id="LANケーブルは刺さってる？">LANケーブルは刺さってる？</h3>
+
+<p>意外と多いらしい。お客様には「ケーブル刺さってるか確認してください」と言うと「馬鹿にしてるのか！」とお叱りを受けるので
+「LANケーブルの抜き差しで直ることがありますので試してください」と言うと、双方ハッピー。</p>
+
+<h3 id="FireWallの設定とか大丈夫？">FireWallの設定とか大丈夫？</h3>
+
+<h3 id="IPv6つかってるのにICMPをフィルタしてない？">IPv6つかってるのにICMPをフィルタしてない？</h3>
+
+<h3 id="どこのキャプチャを撮ってる？">どこのキャプチャを撮ってる？</h3>
+
+<p>内部？外部？内部でもどこ？VMwareだとVirtual Switchの前？後？</p>
+
+<h1 id="とある環境(3G回線)であるアプリのパケットを見てみた(totoromasaki+さん)">とある環境(3G回線)であるアプリのパケットを見てみた(totoromasaki さん)</h1>
+
+<p>私は何も聞いてないです。。</p>
+
+<h1 id="リンク">リンク</h1>
+
+<ul>
+<li><a href="http://gvtkne.blogspot.jp/2013/04/14.html">ネットワークパケットを読む会(仮) 14回に参加してきた(otahi さん)</a></li>
+<li><a href="http://www.slideshare.net/tohakushi/tcpdumptcpreplay">tcpdumpとtcpreplayとtcprewriteと他。</a></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/04/16/chef-handson/">シェフハンズオンセミナー</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-16T18:52:00+09:00" pubdate data-updated="true">Apr 16<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h1 id="AWSのUbuntuでChefを動かす">AWSのUbuntuでChefを動かす</h1>
+
+<p>デフォルトのAWSで用意されているUbuntuにChefをインストールする。<br/>
+ハンズオンのインスタンスは必要なパッケージがすでにいくらかインストールされていたみたいなので
+トライアンドエラーで設定。</p>
+
+<h1 id="事前準備">事前準備</h1>
+
+<p>Opscodeでアカウントを作成して鍵ファイルとknife.rbを事前にDLしておく。<br/>
+AWSのインスタンスを利用できる状態にしておく。<br/>
+AWSのaccess keyとsecret access keyを用意しておく。</p>
+
+<h1 id="AWSにChefクライアントをインストール">AWSにChefクライアントをインストール</h1>
+
+<p>Ubuntu 12.04.2 LTSの64bitを選択</p>
+
+<h1 id="必要パッケージとChef+クライアントのインストール">必要パッケージとChef クライアントのインストール</h1>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo apt-get update
+</span><span class='line'>sudo apt-get upgrade
+</span><span class='line'>curl -L http://www.opscode.com/chef/install.sh | sudo bash
+</span><span class='line'><span class="c">#sudo apt-get install ruby git tree g++</span>
+</span><span class='line'>sudo apt-get install <span class="o">(</span>パッケージたくさん<span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>※ パッケージはハンズオンで入っていたパッケージを根こそぎ入れた。必要なパッケージは現在精査中。</p>
+
+<p>Chefのgemは以下に入っていることを意識すること<br/>
+-> デフォルトのgemを使うと残念なことになるらしい。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>ls -ld /opt/chef/embedded/bin/gem
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">cd</span> ~
+</span><span class='line'>git clone https://github.com/opscode/chef-repo.git
+</span><span class='line'><span class="nb">cd </span>chef-repo
+</span><span class='line'>tree
+</span><span class='line'>.
+</span><span class='line'>├── chef-repo
+</span><span class='line'>│   ├── certificates
+</span><span class='line'>│   │   └── README.md
+</span><span class='line'>│   ├── chefignore
+</span><span class='line'>│   ├── config
+</span><span class='line'>│   │   └── rake.rb
+</span><span class='line'>│   ├── cookbooks
+</span><span class='line'>│   │   └── README.md
+</span><span class='line'>│   ├── data_bags
+</span><span class='line'>│   │   └── README.md
+</span><span class='line'>│   ├── environments
+</span><span class='line'>│   │   └── README.md
+</span><span class='line'>│   ├── LICENSE
+</span><span class='line'>│   ├── Rakefile
+</span><span class='line'>│   ├── README.md
+</span><span class='line'>│   └── roles
+</span><span class='line'>│       └── README.md
+</span><span class='line'>└── credentials.tgz
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>WorkstationとしてChef serverと通信するための環境ファイル用のディレクトリ作成</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>mkdir .chef
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>この後、.chefにOpscodeからダウンロードした鍵とknife.rbをscpする。その後chef-repoディレクトリに移動して</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>knife client list
+</span><span class='line'>XXXX-validator
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>※ pemファイルをリネームしているとここでエラーが出てしまう。DLしたファイル名をそのまま使う。</p>
+
+<h1 id="knife-ec2インストール">knife-ec2インストール</h1>
+
+<p>先ほどのgemのPATHを意識すること！！</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo /opt/chef/embedded/bin/gem install knife-ec2 --no-ri --no-rdoc
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>knife.rbにAWSアクセスするためのキーを記載する</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c"># knife for AWS</span>
+</span><span class='line'>knife<span class="o">[</span>:aws_access_key_id<span class="o">]</span>     <span class="o">=</span> <span class="s2">&quot;XXXXXXXXXXXXXXX&quot;</span>
+</span><span class='line'>knife<span class="o">[</span>:aws_secret_access_key<span class="o">]</span> <span class="o">=</span> <span class="s2">&quot;XXXXXXXXXXXXXXXXXXXXXXXXXX&quot;</span>
+</span><span class='line'>knife<span class="o">[</span>:region<span class="o">]</span> <span class="o">=</span> <span class="s2">&quot;ap-northeast-1&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h1 id="cookbookをWorkstationへclone">cookbookをWorkstationへclone</h1>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">cd</span> ~/chef-repo/cookbooks
+</span><span class='line'>git clone https://github.com/cl-lab-k/apache2-take.git
+</span><span class='line'><span class="nb">cd </span>apache2-take
+</span><span class='line'>tree
+</span><span class='line'>.
+</span><span class='line'>├── attributes
+</span><span class='line'>│   └── default.rb     *重要
+</span><span class='line'>├── CHANGELOG.md
+</span><span class='line'>├── example
+</span><span class='line'>│   └── apache2-take-ubuntu.sh
+</span><span class='line'>├── files
+</span><span class='line'>│   └── default
+</span><span class='line'>│       └── tests
+</span><span class='line'>│           └── minitest
+</span><span class='line'>│               ├── default_test.rb
+</span><span class='line'>│               └── support
+</span><span class='line'>│                   └── helpers.rb
+</span><span class='line'>├── Gemfile
+</span><span class='line'>├── metadata.rb
+</span><span class='line'>├── README.md
+</span><span class='line'>├── recipes
+</span><span class='line'>│   └── default.rb     *重要
+</span><span class='line'>├── templates
+</span><span class='line'>│   └── default        *重要
+</span><span class='line'>│       ├── default.erb
+</span><span class='line'>│       ├── ports.conf.erb
+</span><span class='line'>│       └── twitter-search.html.erb
+</span><span class='line'>└── <span class="nb">test</span>
+</span><span class='line'>    └── kitchen
+</span><span class='line'>        └── Kitchenfile
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2 id="手軽なcookbook">手軽なcookbook</h2>
+
+<ul>
+<li><a href="http://acrmp.github.io/foodcritic/">Food Critic</a></li>
+<li><a href="http://docs.opscode.com/knife_cookbook.html">knife cookbook test</a></li>
+</ul>
+
+
+<h1 id="Apache2+install">Apache2 install</h1>
+
+<p>※ 以下はスクリプトで実行した場合の例。Chefは使っていない。</p>
+
+<h2 id="script">script</h2>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">cd</span> ~/chef-repo/cookbooks/apache2-take/example/
+</span><span class='line'>sudo sh ./apache2-take-ubuntu.sh
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>スクリプトの内容は以下</p>
+
+<ul>
+<li>Apache2のインストール&amp;起動</li>
+<li>Apache2のリクエスト待ち受けポートの変更</li>
+<li>Apache2で”default”サイトを有効化</li>
+<li>githubからサイト用コンテンツをclone</li>
+<li>githubからサイト用コンテンツをダウンロード</li>
+</ul>
+
+
+<h1 id="同様のものをChefで処理">同様のものをChefで処理</h1>
+
+<p>テスト</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">cd</span> ~/chef-repo
+</span><span class='line'>knife cookbook <span class="nb">test </span>apache2-take
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>FoodCriticを使ったテスト</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo /opt/chef/embedded/bin/gem install foodcritic --no-ri --no-rdoc
+</span><span class='line'>/opt/chef/embedded/bin/foodcritic cookbooks/apache2-take
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>このままだと以下の様なエラーが出る</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>FC008: Generated cookbook metadata needs updating: cookbooks/apache2-take/metadata.rb:2
+</span><span class='line'>FC008: Generated cookbook metadata needs updating: cookbooks/apache2-take/metadata.rb:3
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><a href="http://acrmp.github.io/foodcritic/">ここ</a>でコードの内容を確認し、スタイルを修正する。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="o">[</span>DEPRECATION<span class="o">]</span> <span class="s2">&quot;eval&quot;</span> is deprecated. Please use <span class="s2">&quot;evaluate&quot;</span> instead
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><a href="http://www.blogosfera.co.uk/2013/04/eval-is-deprecated-please-use-evaluate-instead/">これはバージョンのWarningっぽい。</a>動くので今はスルー。</p>
+
+<h2 id="cookbookのアップロード">cookbookのアップロード</h2>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">cd</span> ~/chef-repo/cookbooks/apache2-take
+</span><span class='line'>knife cookbook upload apache2-take
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>EC2インスタンス起動</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>knife ec2 server create -S <span class="o">[</span>key pair<span class="o">]</span> -i <span class="o">[</span>key file <span class="o">(</span>XXX.pem<span class="o">)]</span> -r <span class="s2">&quot;recipe[apache2-take]&quot;</span> -I ami-77cf4976 --flavor t1.micro -Z ap-northeast-1a -G <span class="o">[</span>Security Group<span class="o">]</span> -x ubuntu -N aws-handson -VV
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>これで新しいインスタンスが作成され、apacheが立ち上がる。</p>
+
+<h1 id="メモ書">メモ書</h1>
+
+<ul>
+<li><p>コンバージョン(収束)させる<br/>
+-> あるべき状態になる、将来ありたい状態と現状を埋める仕組み</p></li>
+<li><p>98%の情報は下記のURLに存在する!<br/>
+http://docs.opscode.com/chef/resources.html</p></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/04/15/ec2-api-tools/">Ec2-api-tools</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-15T19:45:00+09:00" pubdate data-updated="true">Apr 15<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h1 id="初期設定">初期設定</h1>
+
+<ul>
+<li><p><a href="http://engineer.blog.lancers.jp/2012/12/ec2-api-tools/">AWSのEC2 API Toolsをインストールなしで利用する方法</a><br/>
+➡基本的にこの設定でOK。
+AWSのログインとかがあるメニューから証明書取得の画面を開き、証明書と秘密鍵を取得する。</p></li>
+<li><p>2013/03/31<br/>
+こちらのアクセスキーとシークレットキーでアクセスする方法に変更<br/>
+<a href="http://blog.serverworks.co.jp/tech/2013/03/29/accesskeyid_secretkey_on_ec2-api-tools/">EC2 API ToolsでアクセスキーIDとシークレットアクセスキーを使う</a></p></li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c"># cp pk-xxxxxxxxxxxx.pem /opt/aws/apitools/ec2/</span>
+</span><span class='line'><span class="c"># cp cert-xxxxxxxxxxxx.pem /opt/aws/apitools/ec2/</span>
+</span><span class='line'>
+</span><span class='line'>vi ~/.bashrc
+</span><span class='line'>
+</span><span class='line'><span class="nb">export </span><span class="nv">EC2_HOME</span><span class="o">=</span>/opt/aws/apitools/ec2
+</span><span class='line'><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$EC2_HOME</span>/bin
+</span><span class='line'><span class="c"># export EC2_PRIVATE_KEY=$EC2_HOME/pk-xxxxxxxxxxxx.pem</span>
+</span><span class='line'><span class="c"># export EC2_CERT=$EC2_HOME/cert-xxxxxxxxxxxx.pem</span>
+</span><span class='line'><span class="nb">export </span><span class="nv">AWS_ACCESS_KEY</span><span class="o">=</span>xxxxxxxxxxxxxxxxxxec2-api-tools
+</span><span class='line'><span class="nb">export </span><span class="nv">AWS_SECRET_KEY</span><span class="o">=</span>yyyyyyyyyyyyyyyyyyyyyyyyyyy
+</span><span class='line'><span class="nb">export </span><span class="nv">EC2_URL</span><span class="o">=</span>http://ec2.ap-northeast-1.amazonaws.com
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h1 id="諸情報">諸情報</h1>
+
+<h2 id="実行ファイルのPATH">実行ファイルのPATH</h2>
+
+<p>/opt/aws/bin</p>
+
+<h2 id="環境変数">環境変数</h2>
+
+<h3 id="EC2_HOME">EC2_HOME</h3>
+
+<p>ec2-api-toolsのHOME
+* 例<br/>
+export EC2_HOME=/opt/aws/apitools/ec2</p>
+
+<h3 id="EC2_PRIVATE_KEY">EC2_PRIVATE_KEY</h3>
+
+<p>秘密鍵のPATH。今は使ってない</p>
+
+<ul>
+<li>例<br/>
+export EC2_PRIVATE_KEY=$EC2_HOME/pk-XXXXXXXXXXXXXXXXXXXXX.pem</li>
+</ul>
+
+
+<h3 id="EC2_CERT">EC2_CERT</h3>
+
+<p>証明書のPATH。今は使ってない。</p>
+
+<ul>
+<li>例<br/>
+export EC2_CERT=$EC2_HOME/cert-XXXXXXXXXXXXXXXXXXXXXXX.pem</li>
+</ul>
+
+
+<h3 id="AWS_ACCESS_KEY">AWS_ACCESS_KEY</h3>
+
+<p>AWSアクセスキー</p>
+
+<ul>
+<li>例<br/>
+export AWS_ACCESS_KEY=xxxxxxxxxxxxxxxxxx</li>
+</ul>
+
+
+<h3 id="AWS_SECRET_KEY">AWS_SECRET_KEY</h3>
+
+<p>AWSシークレットキー</p>
+
+<ul>
+<li>例<br/>
+export AWS_SECRET_KEY=yyyyyyyyyyyyyyyyyyyyyyyyyyy</li>
+</ul>
+
+
+<h3 id="EC2_URL">EC2_URL</h3>
+
+<p>リージョンの指定</p>
+
+<ul>
+<li>例<br/>
+export EC2_URL=http://ec2.ap-northeast-1.amazonaws.com</li>
+</ul>
+
+
+<h1 id="コマンド">コマンド</h1>
+
+<h2 id="確認">確認</h2>
+
+<h3 id="ec2ver">ec2ver</h3>
+
+<p>バージョンの表示</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="o">[</span>ec2-user@ip-10-146-39-194 ~<span class="o">]</span><span class="nv">$ </span>ec2ver
+</span><span class='line'>1.6.6.0 2012-12-01
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3 id="ec2-describe-images">ec2-describe-images</h3>
+
+<p>AMIの表示</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="o">[</span>ec2-user@ip-10-146-39-194 ~<span class="o">]</span><span class="nv">$ </span> ec2-describe-images -x all
+</span><span class='line'>IMAGE   ami-1fd85d1e    001108612011/CentOS-63-40T-EBS-PhilChen 001108612011    available       public          x86_64  machine aki-44992845                    ebs     paravirtual     xen
+</span><span class='line'>BLOCKDEVICEMAPPING      EBS     /dev/sda1               snap-af93b78f   40      <span class="nb">true    </span>standard
+</span><span class='line'>IMAGE   ami-e802b5e9    014836023992/ProxySnifferGUI-46-Z-win64-04      014836023992    available       public          x86_64  machine                 windows ebs     hvm     xen
+</span><span class='line'>BLOCKDEVICEMAPPING      EBS     /dev/sda1               snap-339edc59   35      <span class="nb">true    </span>standard
+</span><span class='line'>IMAGE   ami-a4ea50a5    014836023992/ProxySnifferGUI-50-K-win64-03      014836023992    available       public          x86_64  machine                 windows ebs     hvm     xen
+</span><span class='line'>BLOCKDEVICEMAPPING      EBS     /dev/sda1               snap-9b2e46bb   35      <span class="nb">true    </span>standard
+</span><span class='line'>...
+</span><span class='line'>
+</span><span class='line'>※AMIの一覧が表示される
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2 id="インスタンス操作関連">インスタンス操作関連</h2>
+
+<h3 id="ec2-describe-instances">ec2-describe-instances</h3>
+
+<p>インスタンスの一覧の情報が表示される</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>RESERVATION  r-a16fc3a2  492323174246    magento_sg
+</span><span class='line'>INSTANCE  i-1f433f1c  ami-87932986            stopped magento_key 0       t1.micro    2013-01-06T00:53:08+0000    ap-northeast-1a aki-44992845            monitoring-disabled                 ebs     paravirtual xen hXdxF1357433587195  sg-17a3c816 default <span class="nb">false  </span>
+</span><span class='line'>BLOCKDEVICE   /dev/sdf    vol-5bb81c79    2013-02-11T07:14:32.000Z    <span class="nb">false      </span>
+</span><span class='line'>TAG   instance    i-1f433f1c  Name    magento_amazon
+</span><span class='line'>
+</span><span class='line'>RESERVATION   r-9dfb469e  492323174246    nfs_test_sg,stg_sg
+</span><span class='line'>INSTANCE  i-7b470978  ami-4e6cd34f    ec2-54-249-240-55.ap-northeast-1.compute.amazonaws.com  ip-10-146-39-194.ap-northeast-1.compute.internal    running wordpress_key   0       t1.micro    2013-01-19T23:50:01+0000    ap-northeast-1b aki-44992845            monitoring-disabled 54.249.240.55   10.146.39.194           ebs                 paravirtual xen xuoXb1358639400459  sg-86076187, sg-3f58323e    default <span class="nb">false  </span>
+</span><span class='line'>BLOCKDEVICE   /dev/sda1   vol-42cf7b60    2013-01-19T23:50:05.000Z    <span class="nb">true       </span>
+</span><span class='line'>TAG   instance    i-7b470978  Name    Redmine
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>※ 引数にインスタンスIDを指定数と、そのインスタンスの情報のみ表示される</p>
+
+<h3 id="ec2-start-instances">ec2-start-instances</h3>
+
+<p>インスタンスを起動</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="o">[</span>ec2-user@ip-10-146-39-194 ~<span class="o">]</span><span class="nv">$ </span>ec2-start-instances --region ap-northeast-1 i-1f433f1c
+</span><span class='line'>INSTANCE  i-1f433f1c  stopped pending
+</span><span class='line'>
+</span><span class='line'><span class="o">[</span>ec2-user@ip-10-146-39-194 ~<span class="o">]</span><span class="nv">$ </span>ec2-describe-instance-status
+</span><span class='line'>INSTANCE  i-1f433f1c  ap-northeast-1a running 16  ok  ok  active  
+</span><span class='line'>SYSTEMSTATUS  reachability    passed  
+</span><span class='line'>INSTANCESTATUS    reachability    passed  
+</span><span class='line'>INSTANCE  i-7b470978  ap-northeast-1b running 16  ok  ok  active  
+</span><span class='line'>SYSTEMSTATUS  reachability    passed  
+</span><span class='line'>INSTANCESTATUS    reachability    passed
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3 id="ec2-stop-instances">ec2-stop-instances</h3>
+
+<p>インスタンスを停止</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="o">[</span>ec2-user@ip-10-146-39-194 ~<span class="o">]</span><span class="nv">$ </span>ec2-stop-instances i-1f433f1c
+</span><span class='line'>INSTANCE  i-1f433f1c  running stopping
+</span><span class='line'>
+</span><span class='line'><span class="o">[</span>ec2-user@ip-10-146-39-194 ~<span class="o">]</span><span class="nv">$ </span>ec2-describe-instances
+</span><span class='line'>RESERVATION   r-a16fc3a2  492323174246    magento_sg
+</span><span class='line'>INSTANCE  i-1f433f1c  ami-87932986            stopped magento_key 0       t1.micro    2013-02-20T15:34:21+0000    ap-northeast-1a aki-44992845            monitoring-disabled                 ebs     paravirtual xen hXdxF1357433587195  sg-17a3c816 default <span class="nb">false  </span>
+</span><span class='line'>BLOCKDEVICE   /dev/sda1   vol-5bb81c79    2013-02-20T15:34:02.000Z    <span class="nb">false      </span>
+</span><span class='line'>TAG   instance    i-1f433f1c  Name    magento_amazon
+</span><span class='line'>
+</span><span class='line'>➡ stoppedになっている
+</span><span class='line'>
+</span><span class='line'>RESERVATION   r-9dfb469e  492323174246    nfs_test_sg,stg_sg
+</span><span class='line'>INSTANCE  i-7b470978  ami-4e6cd34f    ec2-54-249-240-55.ap-northeast-1.compute.amazonaws.com  ip-10-146-39-194.ap-northeast-1.compute.internal    running wordpress_key   0       t1.micro    2013-01-19T23:50:01+0000    ap-northeast-1b aki-44992845            monitoring-disabled 54.249.240.55   10.146.39.194           ebs                 paravirtual xen xuoXb1358639400459  sg-86076187, sg-3f58323e    default <span class="nb">false  </span>
+</span><span class='line'>BLOCKDEVICE   /dev/sda1   vol-42cf7b60    2013-01-19T23:50:05.000Z    <span class="nb">true       </span>
+</span><span class='line'>TAG   instance    i-7b470978  Name    Redmine
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>起動しているインスタンスのみ確認する場合は以下</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="o">[</span>ec2-user@ip-10-146-39-194 ~<span class="o">]</span><span class="nv">$ </span>ec2-stop-instances i-1f433f1c
+</span><span class='line'>INSTANCE  i-1f433f1c  running stopping
+</span><span class='line'>
+</span><span class='line'><span class="o">[</span>ec2-user@ip-10-146-39-194 ~<span class="o">]</span><span class="nv">$ </span>ec2-describe-instance-status
+</span><span class='line'>INSTANCE  i-7b470978  ap-northeast-1b running 16  ok  ok  active  
+</span><span class='line'>SYSTEMSTATUS  reachability    passed  
+</span><span class='line'>INSTANCESTATUS    reachability    passed
+</span><span class='line'>
+</span><span class='line'>※ i-1f433f1cが表示されなくなっている
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2 id="snapshot関連">snapshot関連</h2>
+
+<h3 id="ec2-describe-snapshots">ec2-describe-snapshots</h3>
+
+<p>snapshot一覧の表示</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="o">[</span>ec2-user@ip-10-157-54-96 bin<span class="o">]</span><span class="nv">$ </span>ec2-describe-snapshots --region ap-northeast-1
+</span><span class='line'>SNAPSHOT  snap-a22a9d81   vol-42cf7b60    completed   2013-03-03T07:55:57+0000    100%    492323174246    8   Redmine
+</span><span class='line'>TAG   snapshot    snap-a22a9d81   Name    Redmine
+</span><span class='line'>SNAPSHOT  snap-f363ddd0   vol-42cf7b60    completed   2013-03-05T22:55:59+0000    100%    492323174246    8   Redmine 20130306
+</span><span class='line'>TAG   snapshot    snap-f363ddd0   Name    Redmine
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3 id="ec2-copy-snapshot">ec2-copy-snapshot</h3>
+
+<p>snapshotのコピー</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>ec2-copy-snapshot --region ap-southeast-1 -r ap-northeast-1 -s snap-a22a9d81
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>※東京からシンガポールのリージョンへコピー</p>
+
+<h3 id="ec2-describe-snapshot">ec2-describe-snapshot</h3>
+
+<p>snapshotのアクセス権限確認</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="o">[</span>ec2-user@ip-10-157-54-96 bin<span class="o">]</span><span class="nv">$ </span>ec2-describe-snapshot-attribute snap-a22a9d81 --create-volume-permission
+</span><span class='line'><span class="o">[</span>ec2-user@ip-10-157-54-96 bin<span class="o">]</span><span class="err">$</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>権限が設定されていない場合(非公開設定)は何も出力されない</p>
+
+<h3 id="ec2-modify-snapshot-attribute">ec2-modify-snapshot-attribute</h3>
+
+<p>snapshotのアクセス権限を変更する</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>ec2-modify-snapshot-attribute <span class="o">(</span>snap_id<span class="o">)</span> -c --add all
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>※すべてのユーザに公開される設定</p>
+
+<h3 id="ec2-reset-snapshot-attribute">ec2-reset-snapshot-attribute</h3>
+
+<p>権限をリセットする</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>ec2-reset-snapshot-attribute <span class="o">(</span>snapshot_id<span class="o">)</span> -c
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2 id="volume関連">volume関連</h2>
+
+<h3 id="ec2-detach-volume">ec2-detach-volume</h3>
+
+<p>ボリュームをデタッチする</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="o">[</span>ec2-user@ip-10-156-119-74 ~<span class="o">]</span><span class="nv">$ </span>ec2-detach-volume vol-5bb81c79
+</span><span class='line'>ATTACHMENT    vol-5bb81c79    i-1f433f1c  /dev/sda1   detaching   2013-03-26T14:50:06+0000
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3 id="ec2-attach-volume">ec2-attach-volume</h3>
+
+<p>ボリュームをアタッチする</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="o">[</span>ec2-user@ip-10-156-119-74 ~<span class="o">]</span><span class="nv">$ </span>ec2-attach-volume vol-5bb81c79 -i i-1f433f1c -d /dev/sda1
+</span><span class='line'>ATTACHMENT    vol-5bb81c79    i-1f433f1c  /dev/sda1   attaching   2013-03-31T14:55:34+0000
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3 id="ec2-create-volume">ec2-create-volume</h3>
+
+<p>ボリュームを作成する</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="o">[</span>ec2-user@ip-10-156-119-74 ~<span class="o">]</span><span class="nv">$ </span>ec2-create-volume --snapshot snap-7971395a -z ap-northeast-1a
+</span><span class='line'>VOLUME    vol-45531e67    8   snap-7971395a   ap-northeast-1a creating    2013-03-31T15:02:11+0000    standard
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2 id="Elastic+IP関連">Elastic IP関連</h2>
+
+<h3 id="ec2-describe-addresses">ec2-describe-addresses</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="o">[</span>ec2-user@ip-10-158-203-131 tmp<span class="o">]</span><span class="nv">$ </span>ec2-describe-addresses
+</span><span class='line'>ADDRESS   54.249.240.55   i-7b470978  standard
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h1 id="トラブルシューティング">トラブルシューティング</h1>
+
+<p><a href="https://forums.aws.amazon.com/message.jspa?messageID=342081">Instance does not have a volume attached at root (/dev/sda1)</a></p>
+
+<p>/dev/sdfになっていたのを/dev/sda1でアタッチし直したらOK</p>
+
+<h1 id="リンク">リンク</h1>
+
+<ul>
+<li><a href="http://d.hatena.ne.jp/studio-m/20091104/1257297074">CentOSでec2-api-tools, ec2-ami-toolsを使えるようにする</a></li>
+<li><a href="http://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/command-reference.html">API Tools Reference</a></li>
+<li><a href="http://nkjmkzk.net/?p=1814">EC2においてEBS Snapshotでバックアップを取得しそれをリカバリする方法</a></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/04/14/sed-gyakubiki/">逆引きコマンド</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-14T00:20:00+09:00" pubdate data-updated="true">Apr 14<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2 id="■改行を">■改行を</h2>
+
+<h3 id="入れたい">入れたい</h3>
+
+<p>「=」で改行</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>fukui-no-MacBook-Air:tmp ftakao2007<span class="nv">$ </span>cat vimrc
+</span><span class='line'><span class="nb">set </span><span class="nv">fileencoding</span><span class="o">=</span>utf-8
+</span><span class='line'><span class="nb">set </span><span class="nv">fileencodings</span><span class="o">=</span>iso-2022-jp,utf-8,euc-jp
+</span><span class='line'>
+</span><span class='line'>fukui-no-MacBook-Air:tmp ftakao2007<span class="nv">$ </span>cat vimrc | gsed -e <span class="s1">&#39;s/=/=\n/g&#39;</span>
+</span><span class='line'><span class="nb">set </span><span class="nv">fileencoding</span><span class="o">=</span>
+</span><span class='line'>utf-8
+</span><span class='line'><span class="nb">set </span><span class="nv">fileencodings</span><span class="o">=</span>
+</span><span class='line'>iso-2022-jp,utf-8,euc-jp
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3 id="消したい">消したい</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>fukui-no-MacBook-Air:tmp ftakao2007<span class="nv">$ </span>cat vimrc
+</span><span class='line'><span class="nb">set </span><span class="nv">fileencoding</span><span class="o">=</span>utf-8
+</span><span class='line'><span class="nb">set </span><span class="nv">fileencodings</span><span class="o">=</span>iso-2022-jp,utf-8,euc-jp
+</span><span class='line'>
+</span><span class='line'>fukui-no-MacBook-Air:tmp ftakao2007<span class="nv">$ </span>cat vimrc | tr -d <span class="s1">&#39;\n&#39;</span>
+</span><span class='line'><span class="nb">set </span><span class="nv">fileencoding</span><span class="o">=</span>utf-8set <span class="nv">fileencodings</span><span class="o">=</span>iso-2022-jp,utf-8,euc-jpfukui-no-MacBook-Air:tmp ftakao2007<span class="err">$</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2 id="■空行を">■空行を</h2>
+
+<h3 id="消したい">消したい</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>fukui-no-MacBook-Air:tmp ftakao2007<span class="nv">$ </span>cat aaa.log
+</span><span class='line'>a
+</span><span class='line'>
+</span><span class='line'>gsfe
+</span><span class='line'>
+</span><span class='line'>wefa
+</span><span class='line'>awefa
+</span><span class='line'>
+</span><span class='line'>w
+</span><span class='line'>fukui-no-MacBook-Air:tmp ftakao2007<span class="nv">$ </span>sed -e <span class="s1">&#39;/^$/d&#39;</span> aaa.log
+</span><span class='line'>a
+</span><span class='line'>gsfe
+</span><span class='line'>wefa
+</span><span class='line'>awefa
+</span><span class='line'>w
+</span><span class='line'>fukui-no-MacBook-Air:tmp ftakao2007<span class="nv">$ </span>sed -ne <span class="s1">&#39;/./p&#39;</span> aaa.log
+</span><span class='line'>a
+</span><span class='line'>gsfe
+</span><span class='line'>wefa
+</span><span class='line'>awefa
+</span><span class='line'>w
+</span><span class='line'>fukui-no-MacBook-Air:tmp ftakao2007<span class="err">$</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2 id="■Webページを">■Webページを</h2>
+
+<h3 id="保存したい">保存したい</h3>
+
+<h4 id="htmlのみ">htmlのみ</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>curl http://www.example.com &gt; example.com.html
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4 id="[ページを丸ごとローカルに保存](https://sites.google.com/site/hymd3a/google-site/wget)"><a href="https://sites.google.com/site/hymd3a/google-site/wget">ページを丸ごとローカルに保存</a></h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>wget -r -np -k -l 0 example.com
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4 id="データを送る">データを送る</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>fukui-no-MacBook-Air:DATA ftakao2007<span class="nv">$ </span>curl --data-urlencode <span class="nv">a</span><span class="o">=</span>太郎 http://www.example.com/TOMONOKAI_CMS/CGI/hoge.cgi
+</span><span class='line'>あなたのポストしたデータは、
+</span><span class='line'><span class="nv">a</span><span class="o">=</span>%E5%A4%AA%E9%83%8E
+</span><span class='line'>です。
+</span><span class='line'>
+</span><span class='line'>fukui-no-MacBook-Air:DATA ftakao2007<span class="nv">$ </span>curl --data <span class="nv">a</span><span class="o">=</span>太郎 http://www.example.com/TOMONOKAI_CMS/CGI/hoge.cgi
+</span><span class='line'>あなたのポストしたデータは、
+</span><span class='line'><span class="nv">a</span><span class="o">=</span>太郎
+</span><span class='line'>です。
+</span><span class='line'>
+</span><span class='line'>fukui-no-MacBook-Air:DATA ftakao2007<span class="nv">$ </span>wget --data <span class="nv">a</span><span class="o">=</span>太郎 http://www.example.com/TOMONOKAI_CMS/CGI/hoge.cgi
+</span><span class='line'>
+</span><span class='line'>* URLはexample.comに変更してあります
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2 id="■文字コードを">■文字コードを</h2>
+
+<h3 id="変換する">変換する</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>fukui-no-MacBook-Air:DATA ftakao2007<span class="nv">$ </span>cat numref
+</span><span class='line'>&amp;#25105;&amp;#12293;&amp;#12399;&amp;#12471;&amp;#12455;&amp;#12523;&amp;#33464;&amp;#20154;&amp;#12384;&amp;#12290;
+</span><span class='line'>fukui-no-MacBook-Air:DATA ftakao2007<span class="nv">$ </span>cat numref | w3m -T text/html -dump
+</span><span class='line'>我々はシェル芸人だ。
+</span><span class='line'>
+</span><span class='line'>fukui-no-MacBook-Air:DATA ftakao2007<span class="nv">$ </span>cat numref | nkf --numchar-input
+</span><span class='line'>我々はシェル芸人だ。
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2 id="■文字列を">■文字列を</h2>
+
+<h3 id="抽出">抽出</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>bash-3.2<span class="nv">$ </span>cat a.log
+</span><span class='line'>1
+</span><span class='line'>2
+</span><span class='line'>3
+</span><span class='line'>4
+</span><span class='line'>5
+</span><span class='line'>6
+</span><span class='line'>7
+</span><span class='line'>8
+</span><span class='line'>9
+</span><span class='line'>
+</span><span class='line'>bash-3.2<span class="nv">$ </span>cat a.log | grep 5
+</span><span class='line'>5
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3 id="マッチした前後を抽出">マッチした前後を抽出</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>bash-3.2<span class="nv">$ </span>cat a.log | grep 5 -A 2
+</span><span class='line'>5
+</span><span class='line'>6
+</span><span class='line'>7
+</span><span class='line'>bash-3.2<span class="nv">$ </span>cat a.log | grep 5 -B 2
+</span><span class='line'>3
+</span><span class='line'>4
+</span><span class='line'>5
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/04/13/sed/">Sed</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-13T23:54:00+09:00" pubdate data-updated="true">Apr 13<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h1 id="sed+(ストリーミングエディタ)">sed (ストリーミングエディタ)</h1>
+
+<h2 id="Option">Option</h2>
+
+<h3 id="n">n</h3>
+
+<p>標準出力を制御</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>cat test_sed.txt
+</span><span class='line'>aaa
+</span><span class='line'>bbb123
+</span><span class='line'>ccc
+</span><span class='line'>
+</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed <span class="s1">&#39;/bbb/p&#39;</span> test_sed.txt
+</span><span class='line'>aaa
+</span><span class='line'>bbb123
+</span><span class='line'>bbb123
+</span><span class='line'>ccc
+</span><span class='line'>
+</span><span class='line'>* bbbが含まれている行があればその行を出力するという処理。
+</span><span class='line'>   nオプション無しだと、「テキストの内容＋処理結果」となっている
+</span><span class='line'>
+</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed -n <span class="s1">&#39;/bbb/p&#39;</span> test_sed.txt
+</span><span class='line'>bbb123
+</span><span class='line'>
+</span><span class='line'>* nオプションをつけると処理結果のみ出力
+</span><span class='line'>
+</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed -n <span class="s1">&#39;/bbb/d&#39;</span> test_sed.txt
+</span><span class='line'>
+</span><span class='line'>* bbbが含まれる行を削除する処理。
+</span><span class='line'>   nオプションをつけている場合は処理結果は何も表示されず、よくわからない。
+</span><span class='line'>
+</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed <span class="s1">&#39;/bbb/d&#39;</span> test_sed.txt
+</span><span class='line'>aaa
+</span><span class='line'>ccc
+</span><span class='line'>
+</span><span class='line'>* nオプション無しで実行すると、bbbの行が削除されている事が分かる。
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>pで表示する場合はnをつけると目的の部分だけ出力できる</li>
+<li>dで削除する場合はnを付けなければ削除された行以外を出力できる</li>
+</ul>
+
+
+<!--
+* sで置換する場合はnを付けなければ目的の語句が置換された状態で全ファイル分出力される  
+➡d,sはnを付けると出力結果は何も表示されない
+-->
+
+
+<h3 id="e">e</h3>
+
+<p>次にくる値はコマンドとみなす</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>cat test_sed.txt
+</span><span class='line'>aaa
+</span><span class='line'>bbb123
+</span><span class='line'>ccc
+</span><span class='line'>
+</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed <span class="s1">&#39;/bbb/d&#39;</span> test_sed.txt
+</span><span class='line'>aaa
+</span><span class='line'>ccc
+</span><span class='line'>
+</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed -e <span class="s1">&#39;/bbb/d&#39;</span> -e <span class="s1">&#39;/ccc/d&#39;</span> test_sed.txt
+</span><span class='line'>aaa
+</span><span class='line'>
+</span><span class='line'>* bbbが含まれる行を削除し、cccが含まれる行も削除する
+</span><span class='line'>
+</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed <span class="s1">&#39;/bbb/d&#39;</span> -e <span class="s1">&#39;/ccc/d&#39;</span> test_sed.txt
+</span><span class='line'>sed: -e: No such file or directory
+</span><span class='line'>sed: /ccc/d: No such file or directory
+</span><span class='line'>aaa
+</span><span class='line'>ccc
+</span><span class='line'>
+</span><span class='line'>* eオプションを使う場合はコマンドごとに明示的にeオプションを指定する必要がある
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3 id="f">f</h3>
+
+<p>次にくる値はスクリプトとみなす</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>cat test_sed.txt
+</span><span class='line'>aaa
+</span><span class='line'>bbb123
+</span><span class='line'>ccc
+</span><span class='line'>
+</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>cat sed_test.sed
+</span><span class='line'>/bbb/p
+</span><span class='line'>
+</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed -n -f sed_test.sed test_sed.txt
+</span><span class='line'>bbb123
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3 id="i">i</h3>
+
+<p>標準出力に出力せず、直接ファイルを書き換える</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>cat test_sed.txt
+</span><span class='line'>aaa
+</span><span class='line'>bbb123
+</span><span class='line'>ccc
+</span><span class='line'>
+</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed -i.bak <span class="s1">&#39;/bbb/d&#39;</span> test_sed.txt
+</span><span class='line'>
+</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>cat test_sed.txt
+</span><span class='line'>aaa
+</span><span class='line'>ccc
+</span><span class='line'>
+</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>cat test_sed.txt.bak
+</span><span class='line'>aaa
+</span><span class='line'>bbb123
+</span><span class='line'>ccc
+</span><span class='line'>
+</span><span class='line'>* .bakにバックアップをとって元ファイルはbbbを含む行が削除されている
+</span><span class='line'>
+</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed -i <span class="s1">&#39;/bbb/d&#39;</span> test_sed.txt
+</span><span class='line'>sed: 1: <span class="s2">&quot;test_sed2.txt&quot;</span>: undefined label <span class="s1">&#39;est_sed.txt&#39;</span>
+</span><span class='line'>
+</span><span class='line'>* 拡張子を指定しない場合はエラーになる
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2 id="Command">Command</h2>
+
+<h3 id="p">p</h3>
+
+<p>出力する</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>cat test_sed.txt
+</span><span class='line'>aaa
+</span><span class='line'>bbb123
+</span><span class='line'>ccc
+</span><span class='line'>
+</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed -n <span class="s1">&#39;1,2p&#39;</span> test_sed.txt
+</span><span class='line'>aaa
+</span><span class='line'>bbb123
+</span><span class='line'>
+</span><span class='line'>* 1-2行目を出力
+</span><span class='line'>
+</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed -n <span class="s1">&#39;3p&#39;</span> test_sed.txt
+</span><span class='line'>ccc
+</span><span class='line'>
+</span><span class='line'>* 3行目を出力
+</span><span class='line'>
+</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed -n <span class="s1">&#39;/bbb/p&#39;</span> test_sed.txt
+</span><span class='line'>bbb123
+</span><span class='line'>
+</span><span class='line'>* bbbが含まれる行を出力
+</span><span class='line'>
+</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed -n <span class="s1">&#39;$p&#39;</span> test_sed.txt
+</span><span class='line'>ccc
+</span><span class='line'>
+</span><span class='line'>* 最後の行を出力
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3 id="d">d</h3>
+
+<p>削除する</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>cat test_sed.txt
+</span><span class='line'>aaa
+</span><span class='line'>bbb123
+</span><span class='line'>ccc
+</span><span class='line'>
+</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed <span class="s1">&#39;1,2d&#39;</span> test_sed.txt
+</span><span class='line'>ccc
+</span><span class='line'>
+</span><span class='line'>* 1-2行目を削除
+</span><span class='line'>
+</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed <span class="s1">&#39;3d&#39;</span> test_sed.txt
+</span><span class='line'>aaa
+</span><span class='line'>bbb123
+</span><span class='line'>
+</span><span class='line'>* 3行目を削除
+</span><span class='line'>
+</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed <span class="s1">&#39;/bbb/d&#39;</span> test_sed.txt
+</span><span class='line'>aaa
+</span><span class='line'>ccc
+</span><span class='line'>
+</span><span class='line'>* bbbが含まれる行を削除
+</span><span class='line'>
+</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed <span class="s1">&#39;$d&#39;</span> test_sed.txt
+</span><span class='line'>aaa
+</span><span class='line'>bbb123
+</span><span class='line'>
+</span><span class='line'>* 最後の行を削除
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3 id="q">q</h3>
+
+<p>特定の文字列が含まれる行まで表示</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>cat test_sed3.txt
+</span><span class='line'>aaa
+</span><span class='line'>bbbb123bbb456bbb
+</span><span class='line'>ccc
+</span><span class='line'>bbb789bbb
+</span><span class='line'>
+</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed <span class="s1">&#39;/ccc/q&#39;</span> test_sed3.txt
+</span><span class='line'>aaa
+</span><span class='line'>bbbb123bbb456bbb
+</span><span class='line'>ccc
+</span><span class='line'>
+</span><span class='line'>* cccが含まれる行まで表示
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3 id="s">s</h3>
+
+<p>置換する</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>cat test_sed.txt
+</span><span class='line'>aaa
+</span><span class='line'>bbb123
+</span><span class='line'>ccc
+</span><span class='line'>
+</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed <span class="s1">&#39;s/bbb/xxx/&#39;</span> test_sed.txt
+</span><span class='line'>aaa
+</span><span class='line'>xxx123
+</span><span class='line'>ccc
+</span><span class='line'>
+</span><span class='line'>* bbbをxxxに置換
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>g
+すべてのパターンに対して処理を実行する</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>cat test_sed3.txt
+</span><span class='line'>aaa
+</span><span class='line'>bbb123bbb456bbb
+</span><span class='line'>ccc
+</span><span class='line'>bbb789bbb
+</span><span class='line'>
+</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed <span class="s1">&#39;s/bbb/xxx/&#39;</span> test_sed3.txt
+</span><span class='line'>aaa
+</span><span class='line'>xxx123bbb456bbb
+</span><span class='line'>ccc
+</span><span class='line'>xxx789bbb
+</span><span class='line'>
+</span><span class='line'>* gオプションが無い場合は最初のみ置換される
+</span><span class='line'>
+</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed <span class="s1">&#39;s/bbb/xxx/g&#39;</span> test_sed3.txt
+</span><span class='line'>aaa
+</span><span class='line'>xxx123xxx456xxx
+</span><span class='line'>ccc
+</span><span class='line'>xxx789xxx
+</span><span class='line'>
+</span><span class='line'>* gオプションをつけると全てが置換される
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>n(整数)
+n番目の発生を置換</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>cat test_sed3.txt
+</span><span class='line'>aaa
+</span><span class='line'>bbbb123bbb456bbb
+</span><span class='line'>ccc
+</span><span class='line'>bbb789bbb
+</span><span class='line'>
+</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed <span class="s1">&#39;s/bbb/ddd/1&#39;</span> test_sed3.txt
+</span><span class='line'>aaa
+</span><span class='line'>dddb123bbb456bbb
+</span><span class='line'>ccc
+</span><span class='line'>ddd789bbb
+</span><span class='line'>
+</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed <span class="s1">&#39;s/bbb/ddd/2&#39;</span> test_sed3.txt
+</span><span class='line'>aaa
+</span><span class='line'>bbbb123ddd456bbb
+</span><span class='line'>ccc
+</span><span class='line'>bbb789ddd
+</span><span class='line'>
+</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed <span class="s1">&#39;s/bbb/ddd/3&#39;</span> test_sed3.txt
+</span><span class='line'>aaa
+</span><span class='line'>bbbb123bbb456ddd
+</span><span class='line'>ccc
+</span><span class='line'>bbb789bbb
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>p
+パターンスペースの先頭セグメントから最初の復帰改行までを標準出力に出力する</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>cat test_sed3.txt
+</span><span class='line'>aaa
+</span><span class='line'>bbbb123bbb456bbb
+</span><span class='line'>ccc
+</span><span class='line'>bbb789bbb
+</span><span class='line'>
+</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed -n <span class="s1">&#39;s/bbb/ddd/p1&#39;</span> test_sed3.txt
+</span><span class='line'>dddb123bbb456bbb
+</span><span class='line'>ddd789bbb
+</span><span class='line'>
+</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed -n <span class="s1">&#39;s/bbb/ddd/p2&#39;</span> test_sed3.txt
+</span><span class='line'>bbbb123ddd456bbb
+</span><span class='line'>bbb789ddd
+</span><span class='line'>
+</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed -n <span class="s1">&#39;s/bbb/ddd/p3&#39;</span> test_sed3.txt
+</span><span class='line'>bbbb123bbb456ddd
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>w
+ファイルへ書き出す</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>cat test_sed3.txt
+</span><span class='line'>aaa
+</span><span class='line'>bbbb123bbb456bbb
+</span><span class='line'>ccc
+</span><span class='line'>bbb789bbb
+</span><span class='line'>
+</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed -n <span class="s1">&#39;/bbb/w bbb.txt     &lt;-ここで一度改行されている</span>
+</span><span class='line'><span class="s1">/bbb/!w aaa.txt&#39;</span> test_sed3.txt
+</span><span class='line'>
+</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>cat bbb.txt
+</span><span class='line'>bbbb123bbb456bbb
+</span><span class='line'>bbb789bbb
+</span><span class='line'>
+</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>cat aaa.txt
+</span><span class='line'>aaa
+</span><span class='line'>ccc
+</span><span class='line'>
+</span><span class='line'>* bbbにマッチした行をbbb.txtへ、マッチしなかった行をaaa.txtへ書き出す
+</span><span class='line'>
+</span><span class='line'><span class="o">========================</span>
+</span><span class='line'>
+</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>cat test_sed3.txt
+</span><span class='line'>aaa
+</span><span class='line'>bbbb123bbb456bbb
+</span><span class='line'>ccc
+</span><span class='line'>bbb789bbb
+</span><span class='line'>
+</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed <span class="s1">&#39;s/bbb/ddd/gw ddd.txt&#39;</span> test_sed3.txt &gt; change.txt
+</span><span class='line'>
+</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>cat ddd.txt
+</span><span class='line'>dddb123ddd456ddd
+</span><span class='line'>ddd789ddd
+</span><span class='line'>
+</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>cat change.txt
+</span><span class='line'>aaa
+</span><span class='line'>dddb123ddd456ddd
+</span><span class='line'>ccc
+</span><span class='line'>ddd789ddd
+</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="err">$</span>
+</span><span class='line'>
+</span><span class='line'>* 変換された行のみddd.txtに保存、変換後の全行をchange.txtに出力
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2 id="Match">Match</h2>
+
+<h3 id="空行以外を出力">空行以外を出力</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>cat test_sed4.txt
+</span><span class='line'>aaa
+</span><span class='line'>
+</span><span class='line'>bbbb123bbb456bbb
+</span><span class='line'>ccc
+</span><span class='line'>
+</span><span class='line'> bbb789bbb
+</span><span class='line'>
+</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed -n <span class="s1">&#39;/./p&#39;</span> test_sed4.txt
+</span><span class='line'>aaa
+</span><span class='line'>bbbb123bbb456bbb
+</span><span class='line'>ccc
+</span><span class='line'> bbb789bbb
+</span><span class='line'>
+</span><span class='line'>* 空行以外の行を出力
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3 id="空行を出力">空行を出力</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>cat test_sed4.txt
+</span><span class='line'>aaa
+</span><span class='line'>
+</span><span class='line'>bbbb123bbb456bbb
+</span><span class='line'>ccc
+</span><span class='line'>
+</span><span class='line'> bbb789bbb
+</span><span class='line'>
+</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed -n <span class="s1">&#39;/^$/p&#39;</span> test_sed4.txt
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>* 空行を出力
+</span><span class='line'>  <span class="o">(</span>例は空行2行分が出力されている<span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3 id="最初の空行から次の空行までを出力">最初の空行から次の空行までを出力</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>cat test_sed4.txt
+</span><span class='line'>aaa
+</span><span class='line'>
+</span><span class='line'>bbbb123bbb456bbb
+</span><span class='line'>ccc
+</span><span class='line'>
+</span><span class='line'> bbb789bbb
+</span><span class='line'>
+</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed -ne <span class="s1">&#39;/^$/,/^$/p&#39;</span> test_sed4.txt
+</span><span class='line'>
+</span><span class='line'>bbbb123bbb456bbb
+</span><span class='line'>ccc
+</span><span class='line'>
+</span><span class='line'>* 最初の空行から次の空行までが出力されている
+</span><span class='line'>
+</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed -ne <span class="s1">&#39;/^$/,/^$/p&#39;</span> test_sed4.txt | sed -e <span class="s1">&#39;/^$/d&#39;</span>
+</span><span class='line'>bbbb123bbb456bbb
+</span><span class='line'>ccc
+</span><span class='line'>
+</span><span class='line'>* マッチした最初と最後の空行自体は削除して表示
+</span><span class='line'>
+</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed -ne <span class="s1">&#39;/^$/,/^$/p&#39;</span> test_sed4.txt | sed -ne <span class="s1">&#39;/./p&#39;</span>
+</span><span class='line'>bbbb123bbb456bbb
+</span><span class='line'>ccc
+</span><span class='line'>
+</span><span class='line'>* 上と同じ結果
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3 id="最初の空行から次の空行までの行を削除">最初の空行から次の空行までの行を削除</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>cat test_sed4.txt
+</span><span class='line'>aaa
+</span><span class='line'>
+</span><span class='line'>bbbb123bbb456bbb
+</span><span class='line'>ccc
+</span><span class='line'>
+</span><span class='line'> bbb789bbb
+</span><span class='line'>
+</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed -e <span class="s1">&#39;/^$/,/^$/d&#39;</span> test_sed4.txt
+</span><span class='line'>aaa
+</span><span class='line'> bbb789bbb
+</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="err">$</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2 id="Advance">Advance</h2>
+
+<h3 id="正規表現(?)">正規表現(?)</h3>
+
+<h4 id="+">&amp;</h4>
+
+<p>置換のときに省略して記載できる</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>cat test_sed.txt
+</span><span class='line'>aaa
+</span><span class='line'>bbb123
+</span><span class='line'>ccc
+</span><span class='line'>
+</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed <span class="s1">&#39;s/bbb/bbb_add_/&#39;</span> test_sed.txt
+</span><span class='line'>aaa
+</span><span class='line'>bbb_add_123
+</span><span class='line'>ccc
+</span><span class='line'>
+</span><span class='line'>* bbbの直後に_add_を追加する
+</span><span class='line'>
+</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed <span class="s1">&#39;s/bbb/&amp;_add_/&#39;</span> test_sed.txt
+</span><span class='line'>aaa
+</span><span class='line'>bbb_add_123
+</span><span class='line'>ccc
+</span><span class='line'>
+</span><span class='line'>* 先ほどと同じ結果。「bbb」のかわりに「&amp;」で指定
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3 id="区切り位置">区切り位置</h3>
+
+<p>区切り位置を<code>/</code>の代わりに<code>;</code>にすると、<code>/</code>をエスケープしなくても良くなる</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>fukui-no-MacBook-Air:DATA ftakao2007<span class="nv">$ </span>cat 3.html | gsed -e <span class="s1">&#39;s/&lt;\/td&gt;/&amp;\n/g&#39;</span>
+</span><span class='line'>&lt;table&gt;
+</span><span class='line'>  &lt;tr&gt;
+</span><span class='line'>&lt;td&gt;a&lt;/td&gt;
+</span><span class='line'>&lt;td&gt;b&lt;/td&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;td&gt;c&lt;/td&gt;
+</span><span class='line'>
+</span><span class='line'>  &lt;/tr&gt;
+</span><span class='line'>&lt;/table&gt;
+</span><span class='line'>fukui-no-MacBook-Air:DATA ftakao2007<span class="nv">$ </span>cat 3.html | gsed -e <span class="s1">&#39;s;&lt;/td&gt;;&amp;\n;g&#39;</span>
+</span><span class='line'>&lt;table&gt;
+</span><span class='line'>  &lt;tr&gt;
+</span><span class='line'>&lt;td&gt;a&lt;/td&gt;
+</span><span class='line'>&lt;td&gt;b&lt;/td&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;td&gt;c&lt;/td&gt;
+</span><span class='line'>
+</span><span class='line'>  &lt;/tr&gt;
+</span><span class='line'>&lt;/table&gt;
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2 id="参考">参考</h2>
+
+<ul>
+<li><a href="http://www.ksknet.net/linuxrz/sed.html">sed - ストリーミングエディタ</a></li>
+<li><a href="http://www.ishilab.net/~ishihara/tips/sed.txt">sed に関するメモ</a></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -188,7 +2549,9 @@
 <li><a href="http://www.slideshare.net/ryuichiueda/20130406-18763665">第4回春爛漫シェル芸人撩乱勉強会(上田隆一さん)</a></li>
 <li><a href="http://www.slideshare.net/HirofumiSaito/usp-lt-20130413">wgetとcurlで並列ダウンロード (hi_saito さん)</a></li>
 <li><a href="http://laugh-labo.blogspot.jp/2013/04/4.html?spref=tw">「第4回春爛漫シェル芸人撩乱勉強会&amp;第22回勝手に新歓定例会」に参加してきたよー！ (laugh_K さん)</a></li>
-<li><p><a href="http://kunst1080.hatenablog.com/entry/2013/04/15/004801">「第4回春爛漫シェル芸人撩乱勉強会&amp;第22回勝手に新歓定例会」あそびきにました (kunst1080 さん)</a></p></li>
+<li><a href="http://kunst1080.hatenablog.com/entry/2013/04/15/004801">「第4回春爛漫シェル芸人撩乱勉強会&amp;第22回勝手に新歓定例会」あそびきにました (kunst1080 さん)</a></li>
+<li><a href="http://rsooo.blogspot.jp/2013/04/">家に帰ってブログ書くまでがシェル芸(rsoooさん</a></li>
+<li><p><a href="http://www.ustream.tv/recorded/31380919?utm_campaign=ustre-am&amp;amp;amp;amp;amp;utm_source=31380919&amp;amp;amp;amp;amp;utm_medium=social">USTREAM</a></p></li>
 <li><p><a href="https://twitter.com/usptomo/status/323068045532737536/photo/1">本日一番の訳わからない写真</a></p></li>
 </ul>
 
@@ -332,278 +2695,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/04/11/wireshark/">Wireshark</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-04-11T00:02:00+09:00" pubdate data-updated="true">Apr 11<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>これを入れるとネットワークセミナーが楽しくなるということなので
-とりあえず入れてみました。</p>
-
-<h3 id="あわせて勉強してみたい">あわせて勉強してみたい</h3>
-
-<p><a href="http://www.slideshare.net/tohakushi/tcpdumptcpreplay">tcpdumpとtcpreplayとtcprewrite</a></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/04/10/git-command/">Git-command</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-04-10T20:13:00+09:00" pubdate data-updated="true">Apr 10<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h1 id="git+init">git init</h1>
-
-<p>リポジトリの作成を行うコマンド</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/04/10/ec2-windows/">Ec2-windows</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-04-10T00:13:00+09:00" pubdate data-updated="true">Apr 10<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h1 id="iPad(iSSH)でec2のWindowsインスタンスにリモートデスクトップで接続">iPad(iSSH)でec2のWindowsインスタンスにリモートデスクトップで接続</h1>
-
-<p><img src="https://dl.dropbox.com/u/37468049/ec2_windows01.jpg" alt="Windows接続の図" /></p>
-
-<p>わぁい</p>
-
-<h1 id="設定方法">設定方法</h1>
-
-<h2 id="EC2設定">EC2設定</h2>
-
-<p><a href="http://www.amodova.com/jp/blog/article/azec202.html">AmazonEC2でリモートデスクトップ:接続編</a></p>
-
-<p>ec2側の設定は上記のサイト通り進めれば問題ないです。</p>
-
-<h2 id="iPad側設定">iPad側設定</h2>
-
-<p>iSSHという有償のソフトを使って接続しました。<br/>
-設定は以下の様な感じ。</p>
-
-<p><img src="https://dl.dropbox.com/u/37468049/ec2_windows02.jpg" alt="Windows接続の図" /></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/04/08/chef/">Chef</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-04-08T20:38:00+09:00" pubdate data-updated="true">Apr 8<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content">
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/04/08/fluentd/">Fluentd</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-04-08T20:32:00+09:00" pubdate data-updated="true">Apr 8<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://d.hatena.ne.jp/dkfj/touch/20130407/1365330503">何故、fluentdなのか？</a></p>
-
-<h1 id="概要">概要</h1>
-
-<ul>
-<li>それぞれのサーバからログを収集し集約する為のアプリケーション</li>
-<li>全てのログをJSON形式で扱う</li>
-<li>ログを見るのに直接サーバにログインしなくても良い</li>
-<li>複数のサーバのログが一箇所に集約される<br/>
-→ AutoScalingのサーバの台数増減に対応できる</li>
-</ul>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/04/08/diary/">一人ハッカソン</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-04-08T00:46:00+09:00" pubdate data-updated="true">Apr 8<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>この土日は嵐だったので予定をキャンセルして家で一人ハッカソンやってました。<br/>
-厳密には一人での開発はハッカソンとは言わないみたいですが。。</p>
-
-<p>以下今回の成果です。</p>
-
-<ul>
-<li>ec2にDropboxをインストール</li>
-<li>ec2にOctopressにdeployできる環境を構築</li>
-<li>herokuでハロワを表示</li>
-<li>MacにOctopressにdeployできる環境を構築</li>
-<li>Macにfabricをインストール</li>
-<li>munin, Nagios, Zabbixの調査開始</li>
-<li>Octopressにcategory表示のプラグイン追加</li>
-<li>githubにmunin自動構築スクリプトをアップ</li>
-<li>Dropboxに置いてある画像をOctopressで表示できるようにした</li>
-</ul>
-
-
-<p>色んなジャンルをつまみ食いしながらいろいろできました:-)<br/>
-画像はbox.comが使えれば、50Gまで無料で使えるんですよね。次はこれをやってみようかな。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/3/">&larr; Older</a>
@@ -621,30 +2712,30 @@
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2013/04/29/ec-cube/">ec-cube</a>
+        <a href="/blog/2013/04/29/raspberrypi/">RaspberryPi</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2013/04/29/redmine/">Redmine</a>
+        <a href="/blog/2013/04/29/vagrant/">vagrant</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2013/04/29/python/">Python</a>
+        <a href="/blog/2013/04/29/php/">php</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2013/04/27/heroku/">heroku</a>
+        <a href="/blog/2013/04/29/etc/">etc</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2013/04/21/vim/">vim</a>
+        <a href="/blog/2013/04/29/splunk/">splunk</a>
       </li>
     
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/about/'>about (3)</a></li><li><a href='/blog/categories/aws/'>aws (3)</a></li><li><a href='/blog/categories/bash/'>bash (2)</a></li><li><a href='/blog/categories/chef/'>chef (1)</a></li><li><a href='/blog/categories/command/'>command (5)</a></li><li><a href='/blog/categories/construct/'>construct (2)</a></li><li><a href='/blog/categories/diary/'>diary (3)</a></li><li><a href='/blog/categories/ec-cube/'>EC-CUBE (1)</a></li><li><a href='/blog/categories/ec2/'>ec2 (1)</a></li><li><a href='/blog/categories/git/'>git (1)</a></li><li><a href='/blog/categories/google/'>google (1)</a></li><li><a href='/blog/categories/heroku/'>heroku (1)</a></li><li><a href='/blog/categories/monitor/'>monitor (4)</a></li><li><a href='/blog/categories/network/'>network (2)</a></li><li><a href='/blog/categories/octopress/'>octopress (1)</a></li><li><a href='/blog/categories/os/'>OS (3)</a></li><li><a href='/blog/categories/python/'>Python (1)</a></li><li><a href='/blog/categories/redmine/'>Redmine (2)</a></li><li><a href='/blog/categories/vim/'>vim (1)</a></li><li><a href='/blog/categories/mian-qiang-hui/'>勉強会 (3)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/about/'>about (3)</a></li><li><a href='/blog/categories/aws/'>aws (3)</a></li><li><a href='/blog/categories/bash/'>bash (2)</a></li><li><a href='/blog/categories/chef/'>chef (2)</a></li><li><a href='/blog/categories/command/'>command (5)</a></li><li><a href='/blog/categories/construct/'>construct (2)</a></li><li><a href='/blog/categories/diary/'>diary (3)</a></li><li><a href='/blog/categories/ec-cube/'>EC-CUBE (1)</a></li><li><a href='/blog/categories/ec2/'>ec2 (1)</a></li><li><a href='/blog/categories/etc/'>etc (1)</a></li><li><a href='/blog/categories/fluentd/'>fluentd (1)</a></li><li><a href='/blog/categories/git/'>git (1)</a></li><li><a href='/blog/categories/google/'>google (1)</a></li><li><a href='/blog/categories/heroku/'>heroku (1)</a></li><li><a href='/blog/categories/monitor/'>monitor (5)</a></li><li><a href='/blog/categories/munin/'>munin (1)</a></li><li><a href='/blog/categories/network/'>network (2)</a></li><li><a href='/blog/categories/octopress/'>octopress (1)</a></li><li><a href='/blog/categories/os/'>OS (3)</a></li><li><a href='/blog/categories/php/'>PHP (1)</a></li><li><a href='/blog/categories/python/'>Python (1)</a></li><li><a href='/blog/categories/raspberrypi/'>RaspberryPi (1)</a></li><li><a href='/blog/categories/redmine/'>Redmine (2)</a></li><li><a href='/blog/categories/seo/'>SEO (1)</a></li><li><a href='/blog/categories/splunk/'>splunk (1)</a></li><li><a href='/blog/categories/vagrant/'>vagrant (1)</a></li><li><a href='/blog/categories/vim/'>vim (1)</a></li><li><a href='/blog/categories/mian-qiang-hui/'>勉強会 (3)</a></li></ul>
 </section>
 <section>
 <script type="text/javascript"><!--

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: PHP | Octopress Blog]]></title>
+  <link href="http://ftakao2007.github.com/blog/categories/php/atom.xml" rel="self"/>
+  <link href="http://ftakao2007.github.com/"/>
+  <updated>2013-04-29T12:43:42+09:00</updated>
+  <id>http://ftakao2007.github.com/</id>
+  <author>
+    <name><![CDATA[ftakao2007]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[php]]></title>
+    <link href="http://ftakao2007.github.com/blog/2013/04/29/php/"/>
+    <updated>2013-04-29T12:24:00+09:00</updated>
+    <id>http://ftakao2007.github.com/blog/2013/04/29/php</id>
+    <content type="html"><![CDATA[<h2 id="リンク">リンク</h2>
+
+<ul>
+<li><a href="http://wp.yat-net.com/?p=3662">Apache+PHP+MySQLっていう環境が必要だったのでAWSで構築しました。忘れないように備忘録として書いておきます。</a><br/>
+php.iniの詳細な解説アリ</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

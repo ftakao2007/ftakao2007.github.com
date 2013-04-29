@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: RaspberryPi | Octopress Blog]]></title>
+  <link href="http://ftakao2007.github.com/blog/categories/raspberrypi/atom.xml" rel="self"/>
+  <link href="http://ftakao2007.github.com/"/>
+  <updated>2013-04-29T12:43:42+09:00</updated>
+  <id>http://ftakao2007.github.com/</id>
+  <author>
+    <name><![CDATA[ftakao2007]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[RaspberryPi]]></title>
+    <link href="http://ftakao2007.github.com/blog/2013/04/29/raspberrypi/"/>
+    <updated>2013-04-29T12:42:00+09:00</updated>
+    <id>http://ftakao2007.github.com/blog/2013/04/29/raspberrypi</id>
+    <content type="html"><![CDATA[<h2 id="リンク">リンク</h2>
+
+<ul>
+<li><a href="http://www.demoscene.jp/?p=1604">メガデモプラットフォームとしてのRaspberryPi</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

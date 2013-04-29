@@ -4,7 +4,7 @@
   <title><![CDATA[Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-04-29T12:04:36+09:00</updated>
+  <updated>2013-04-29T12:43:42+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -12,6 +12,98 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[RaspberryPi]]></title>
+    <link href="http://ftakao2007.github.com/blog/2013/04/29/raspberrypi/"/>
+    <updated>2013-04-29T12:42:00+09:00</updated>
+    <id>http://ftakao2007.github.com/blog/2013/04/29/raspberrypi</id>
+    <content type="html"><![CDATA[<h2 id="リンク">リンク</h2>
+
+<ul>
+<li><a href="http://www.demoscene.jp/?p=1604">メガデモプラットフォームとしてのRaspberryPi</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[vagrant]]></title>
+    <link href="http://ftakao2007.github.com/blog/2013/04/29/vagrant/"/>
+    <updated>2013-04-29T12:29:00+09:00</updated>
+    <id>http://ftakao2007.github.com/blog/2013/04/29/vagrant</id>
+    <content type="html"><![CDATA[<h2 id="リンク">リンク</h2>
+
+<ul>
+<li><a href="http://d.hatena.ne.jp/naoya/touch/20130205/1360062070">Vagrant</a></li>
+<li><a href="http://d.hatena.ne.jp/thinkAmi/20130407/1365310673">Windows7上で Vagrant + Chef solo + knife-soloを使い、Ubuntu + ubuntu-desktopの環境を構築してみた</a></li>
+<li><a href="http://tily.hatenablog.com/entry/2013/04/06/171335">ニフティクラウドを vagrant のように使える some コマンド</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[php]]></title>
+    <link href="http://ftakao2007.github.com/blog/2013/04/29/php/"/>
+    <updated>2013-04-29T12:24:00+09:00</updated>
+    <id>http://ftakao2007.github.com/blog/2013/04/29/php</id>
+    <content type="html"><![CDATA[<h2 id="リンク">リンク</h2>
+
+<ul>
+<li><a href="http://wp.yat-net.com/?p=3662">Apache+PHP+MySQLっていう環境が必要だったのでAWSで構築しました。忘れないように備忘録として書いておきます。</a><br/>
+php.iniの詳細な解説アリ</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[etc]]></title>
+    <link href="http://ftakao2007.github.com/blog/2013/04/29/etc/"/>
+    <updated>2013-04-29T12:20:00+09:00</updated>
+    <id>http://ftakao2007.github.com/blog/2013/04/29/etc</id>
+    <content type="html"><![CDATA[<h2 id="リンク">リンク</h2>
+
+<ul>
+<li><a href="http://www.corporate-legal.jp/houmu_news1223/">ベンチャー企業に朗報？　政府が新たな資金調達の仕組みを検討。</a></li>
+<li><a href="http://www.slideshare.net/zembutsu/qpstudy-2013-04lt">今日から業務で使える17の運用系ツール</a></li>
+<li><a href="http://nhiro.org/langbook/">なにをどう学ぶか</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[splunk]]></title>
+    <link href="http://ftakao2007.github.com/blog/2013/04/29/splunk/"/>
+    <updated>2013-04-29T12:15:00+09:00</updated>
+    <id>http://ftakao2007.github.com/blog/2013/04/29/splunk</id>
+    <content type="html"><![CDATA[<h2 id="リンク">リンク</h2>
+
+<ul>
+<li><a href="http://memocra.blogspot.jp/2013/04/splunksplunk-enterprise.html">splunkってなんじゃ？（splunk enterpriseを使ってみる）</a></li>
+<li><a href="http://blog.masudak.net/blog/2013/04/16/201304160030/">ログ解析ツール「Splunk」を使ってみた</a></li>
+<li><a href="http://debiancdn.wordpress.com/2013/04/14/">ログ解析で楽をする話 #qpstudy でしてきました。</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[SEO]]></title>
+    <link href="http://ftakao2007.github.com/blog/2013/04/29/seo/"/>
+    <updated>2013-04-29T12:09:00+09:00</updated>
+    <id>http://ftakao2007.github.com/blog/2013/04/29/seo</id>
+    <content type="html"><![CDATA[<h2 id="概要">概要</h2>
+
+<p>SEOについて</p>
+
+<h2 id="リンク">リンク</h2>
+
+<p><a href="http://rentalhomepage.com/wordpress/post-1050/?utm_source=dlvr.it&amp;amp;amp;amp;utm_medium=twitter">WordPressでブログのSEO対策を考える人へ</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[ec-cube]]></title>
@@ -613,7 +705,11 @@
 
 <h1 id="リンク">リンク</h1>
 
-<p><a href="http://gvtkne.blogspot.jp/2013/04/14.html">ネットワークパケットを読む会(仮) 14回に参加してきた(otahi さん)</a></p>
+<ul>
+<li><a href="http://gvtkne.blogspot.jp/2013/04/14.html">ネットワークパケットを読む会(仮) 14回に参加してきた(otahi さん)</a></li>
+<li><a href="http://www.slideshare.net/tohakushi/tcpdumptcpreplay">tcpdumpとtcpreplayとtcprewriteと他。</a></li>
+</ul>
+
 ]]></content>
   </entry>
   
@@ -2502,7 +2598,9 @@ n番目の発生を置換</li>
 <li><a href="http://www.slideshare.net/ryuichiueda/20130406-18763665">第4回春爛漫シェル芸人撩乱勉強会(上田隆一さん)</a></li>
 <li><a href="http://www.slideshare.net/HirofumiSaito/usp-lt-20130413">wgetとcurlで並列ダウンロード (hi_saito さん)</a></li>
 <li><a href="http://laugh-labo.blogspot.jp/2013/04/4.html?spref=tw">「第4回春爛漫シェル芸人撩乱勉強会&amp;第22回勝手に新歓定例会」に参加してきたよー！ (laugh_K さん)</a></li>
-<li><p><a href="http://kunst1080.hatenablog.com/entry/2013/04/15/004801">「第4回春爛漫シェル芸人撩乱勉強会&amp;第22回勝手に新歓定例会」あそびきにました (kunst1080 さん)</a></p></li>
+<li><a href="http://kunst1080.hatenablog.com/entry/2013/04/15/004801">「第4回春爛漫シェル芸人撩乱勉強会&amp;第22回勝手に新歓定例会」あそびきにました (kunst1080 さん)</a></li>
+<li><a href="http://rsooo.blogspot.jp/2013/04/">家に帰ってブログ書くまでがシェル芸(rsoooさん</a></li>
+<li><p><a href="http://www.ustream.tv/recorded/31380919?utm_campaign=ustre-am&amp;amp;amp;amp;amp;utm_source=31380919&amp;amp;amp;amp;amp;utm_medium=social">USTREAM</a></p></li>
 <li><p><a href="https://twitter.com/usptomo/status/323068045532737536/photo/1">本日一番の訳わからない写真</a></p></li>
 </ul>
 
@@ -2558,116 +2656,6 @@ n番目の発生を置換</li>
 リスクの無いことはやってみてから考えた方がスムーズですよね。
 仕事は石橋を叩くような作業が多いので、こういう趣味でやりたい放題するのって
 すごく気持ちいいです。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Wireshark]]></title>
-    <link href="http://ftakao2007.github.com/blog/2013/04/11/wireshark/"/>
-    <updated>2013-04-11T00:02:00+09:00</updated>
-    <id>http://ftakao2007.github.com/blog/2013/04/11/wireshark</id>
-    <content type="html"><![CDATA[<p>これを入れるとネットワークセミナーが楽しくなるということなので
-とりあえず入れてみました。</p>
-
-<h3 id="あわせて勉強してみたい">あわせて勉強してみたい</h3>
-
-<p><a href="http://www.slideshare.net/tohakushi/tcpdumptcpreplay">tcpdumpとtcpreplayとtcprewrite</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[git-command]]></title>
-    <link href="http://ftakao2007.github.com/blog/2013/04/10/git-command/"/>
-    <updated>2013-04-10T20:13:00+09:00</updated>
-    <id>http://ftakao2007.github.com/blog/2013/04/10/git-command</id>
-    <content type="html"><![CDATA[<h1 id="git+init">git init</h1>
-
-<p>リポジトリの作成を行うコマンド</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[ec2-windows]]></title>
-    <link href="http://ftakao2007.github.com/blog/2013/04/10/ec2-windows/"/>
-    <updated>2013-04-10T00:13:00+09:00</updated>
-    <id>http://ftakao2007.github.com/blog/2013/04/10/ec2-windows</id>
-    <content type="html"><![CDATA[<h1 id="iPad(iSSH)でec2のWindowsインスタンスにリモートデスクトップで接続">iPad(iSSH)でec2のWindowsインスタンスにリモートデスクトップで接続</h1>
-
-<p><img src="https://dl.dropbox.com/u/37468049/ec2_windows01.jpg" alt="Windows接続の図" /></p>
-
-<p>わぁい</p>
-
-<h1 id="設定方法">設定方法</h1>
-
-<h2 id="EC2設定">EC2設定</h2>
-
-<p><a href="http://www.amodova.com/jp/blog/article/azec202.html">AmazonEC2でリモートデスクトップ:接続編</a></p>
-
-<p>ec2側の設定は上記のサイト通り進めれば問題ないです。</p>
-
-<h2 id="iPad側設定">iPad側設定</h2>
-
-<p>iSSHという有償のソフトを使って接続しました。<br/>
-設定は以下の様な感じ。</p>
-
-<p><img src="https://dl.dropbox.com/u/37468049/ec2_windows02.jpg" alt="Windows接続の図" /></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[chef]]></title>
-    <link href="http://ftakao2007.github.com/blog/2013/04/08/chef/"/>
-    <updated>2013-04-08T20:38:00+09:00</updated>
-    <id>http://ftakao2007.github.com/blog/2013/04/08/chef</id>
-    <content type="html"><![CDATA[
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[fluentd]]></title>
-    <link href="http://ftakao2007.github.com/blog/2013/04/08/fluentd/"/>
-    <updated>2013-04-08T20:32:00+09:00</updated>
-    <id>http://ftakao2007.github.com/blog/2013/04/08/fluentd</id>
-    <content type="html"><![CDATA[<p><a href="http://d.hatena.ne.jp/dkfj/touch/20130407/1365330503">何故、fluentdなのか？</a></p>
-
-<h1 id="概要">概要</h1>
-
-<ul>
-<li>それぞれのサーバからログを収集し集約する為のアプリケーション</li>
-<li>全てのログをJSON形式で扱う</li>
-<li>ログを見るのに直接サーバにログインしなくても良い</li>
-<li>複数のサーバのログが一箇所に集約される<br/>
-→ AutoScalingのサーバの台数増減に対応できる</li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[一人ハッカソン]]></title>
-    <link href="http://ftakao2007.github.com/blog/2013/04/08/diary/"/>
-    <updated>2013-04-08T00:46:00+09:00</updated>
-    <id>http://ftakao2007.github.com/blog/2013/04/08/diary</id>
-    <content type="html"><![CDATA[<p>この土日は嵐だったので予定をキャンセルして家で一人ハッカソンやってました。<br/>
-厳密には一人での開発はハッカソンとは言わないみたいですが。。</p>
-
-<p>以下今回の成果です。</p>
-
-<ul>
-<li>ec2にDropboxをインストール</li>
-<li>ec2にOctopressにdeployできる環境を構築</li>
-<li>herokuでハロワを表示</li>
-<li>MacにOctopressにdeployできる環境を構築</li>
-<li>Macにfabricをインストール</li>
-<li>munin, Nagios, Zabbixの調査開始</li>
-<li>Octopressにcategory表示のプラグイン追加</li>
-<li>githubにmunin自動構築スクリプトをアップ</li>
-<li>Dropboxに置いてある画像をOctopressで表示できるようにした</li>
-</ul>
-
-
-<p>色んなジャンルをつまみ食いしながらいろいろできました:-)<br/>
-画像はbox.comが使えれば、50Gまで無料で使えるんですよね。次はこれをやってみようかな。</p>
 ]]></content>
   </entry>
   

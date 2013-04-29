@@ -4,7 +4,7 @@
   <title><![CDATA[Category: monitor | Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/blog/categories/monitor/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-04-29T12:04:36+09:00</updated>
+  <updated>2013-04-29T12:43:42+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -14,13 +14,27 @@
 
   
   <entry>
+    <title type="html"><![CDATA[splunk]]></title>
+    <link href="http://ftakao2007.github.com/blog/2013/04/29/splunk/"/>
+    <updated>2013-04-29T12:15:00+09:00</updated>
+    <id>http://ftakao2007.github.com/blog/2013/04/29/splunk</id>
+    <content type="html"><![CDATA[<h2 id="リンク">リンク</h2>
+
+<ul>
+<li><a href="http://memocra.blogspot.jp/2013/04/splunksplunk-enterprise.html">splunkってなんじゃ？（splunk enterpriseを使ってみる）</a></li>
+<li><a href="http://blog.masudak.net/blog/2013/04/16/201304160030/">ログ解析ツール「Splunk」を使ってみた</a></li>
+<li><a href="http://debiancdn.wordpress.com/2013/04/14/">ログ解析で楽をする話 #qpstudy でしてきました。</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[fluentd]]></title>
     <link href="http://ftakao2007.github.com/blog/2013/04/08/fluentd/"/>
     <updated>2013-04-08T20:32:00+09:00</updated>
     <id>http://ftakao2007.github.com/blog/2013/04/08/fluentd</id>
-    <content type="html"><![CDATA[<p><a href="http://d.hatena.ne.jp/dkfj/touch/20130407/1365330503">何故、fluentdなのか？</a></p>
-
-<h1 id="概要">概要</h1>
+    <content type="html"><![CDATA[<h2 id="概要">概要</h2>
 
 <ul>
 <li>それぞれのサーバからログを収集し集約する為のアプリケーション</li>
@@ -28,6 +42,14 @@
 <li>ログを見るのに直接サーバにログインしなくても良い</li>
 <li>複数のサーバのログが一箇所に集約される<br/>
 → AutoScalingのサーバの台数増減に対応できる</li>
+</ul>
+
+
+<h2 id="リンク">リンク</h2>
+
+<ul>
+<li><a href="http://d.hatena.ne.jp/dkfj/touch/20130407/1365330503">何故、fluentdなのか？</a></li>
+<li><a href="http://chopl.in/blog/2013/04/27/fluentd_internal_log.html">fluentd自身のログにまつわるノウハウ</a></li>
 </ul>
 
 ]]></content>
@@ -76,9 +98,7 @@
     <link href="http://ftakao2007.github.com/blog/2013/04/08/munin/"/>
     <updated>2013-04-08T00:07:00+09:00</updated>
     <id>http://ftakao2007.github.com/blog/2013/04/08/munin</id>
-    <content type="html"><![CDATA[<p><a href="http://tech.lexues.co.jp/archives/1052">ちょっとMuninいれてみました。</a></p>
-
-<h1 id="特徴">特徴</h1>
+    <content type="html"><![CDATA[<h2 id="特徴">特徴</h2>
 
 <ul>
 <li>リソース監視<br/>
@@ -86,9 +106,9 @@
 </ul>
 
 
-<h1 id="長所、短所">長所、短所</h1>
+<h2 id="長所、短所">長所、短所</h2>
 
-<h2 id="長所">長所</h2>
+<h3 id="長所">長所</h3>
 
 <ul>
 <li>手軽</li>
@@ -97,7 +117,7 @@
 </ul>
 
 
-<h2 id="短所">短所</h2>
+<h3 id="短所">短所</h3>
 
 <ul>
 <li>設定はCUIのみ</li>
@@ -106,9 +126,17 @@
 </ul>
 
 
-<h1 id="構築">構築</h1>
+<h2 id="構築">構築</h2>
 
 <p><a href="http://guide.flexserver.jp/help/flexs/guide/grp49/guide581">複数台構成のMunin監視設定</a></p>
+
+<h2 id="リンク">リンク</h2>
+
+<ul>
+<li><a href="http://tech.lexues.co.jp/archives/1052">ちょっとMuninいれてみました。</a></li>
+<li><a href="http://pocketstudio.jp/log3/2013/04/23/plugin_basis_and_load_plugi/">【Munin】プラグイン解説(1) プラグインの基礎と load プラグイン</a></li>
+</ul>
+
 ]]></content>
   </entry>
   
