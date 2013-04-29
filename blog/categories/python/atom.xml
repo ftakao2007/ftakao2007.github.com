@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Python | Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/blog/categories/python/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-04-29T11:52:53+09:00</updated>
+  <updated>2013-04-29T12:04:36+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -22,7 +22,15 @@
 
 <hr />
 
-<h2 id="参考">参考</h2>
+<h2 id="リンク">リンク</h2>
+
+<ul>
+<li><a href="http://python.keicode.com/">Python入門</a></li>
+<li><a href="http://d.hatena.ne.jp/oneshotlife_tom/20121026/1351255211">Pythonで楽天ウェブサービスを使う。サンプルコード。</a></li>
+<li><a href="https://sites.google.com/site/kuraitlab/programing-language/python/python-oop1">Pythonでオブジェクト指向①</a></li>
+<li><a href="http://kuenishi.hatenadiary.jp/entry/2013/04/23/162205">メモリリークとは何か</a></li>
+</ul>
+
 ]]></content>
   </entry>
   
