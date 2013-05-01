@@ -9,8 +9,16 @@
   <meta name="author" content="ftakao2007">
 
   
-  <meta name="description" content="
-Vimで意外に知らなかった10つのこと ">
+  <meta name="description" content="初期設定例 公式そのまま 1
+2
+3
+4
+5
+git clone git://github.com/heroku/ruby-sample.git
+cd ruby-sample
+heroku create
+git push heroku master
+heroku open ruby- &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -81,6 +89,188 @@ Vimで意外に知らなかった10つのこと ">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/04/27/heroku/">Heroku</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-27T06:07:00+09:00" pubdate data-updated="true">Apr 27<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2 id="初期設定例">初期設定例</h2>
+
+<p>公式そのまま</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>git clone git://github.com/heroku/ruby-sample.git
+</span><span class='line'><span class="nb">cd </span>ruby-sample
+</span><span class='line'>heroku create
+</span><span class='line'>git push heroku master
+</span><span class='line'>heroku open
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3 id="ruby-sampleに入っているファイル">ruby-sampleに入っているファイル</h3>
+
+<figure class='code'><figcaption><span>Gemfile</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">source</span> <span class="ss">:rubygems</span>
+</span><span class='line'><span class="n">gem</span> <span class="s1">&#39;sinatra&#39;</span><span class="p">,</span> <span class="s1">&#39;1.1.0&#39;</span>
+</span><span class='line'><span class="n">gem</span> <span class="s1">&#39;thin&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>Gemfile.lock</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="no">GEM</span>
+</span><span class='line'>  <span class="ss">remote</span><span class="p">:</span> <span class="ss">http</span><span class="p">:</span><span class="sr">//</span><span class="n">rubygems</span><span class="o">.</span><span class="n">org</span><span class="o">/</span>
+</span><span class='line'>  <span class="ss">specs</span><span class="p">:</span>
+</span><span class='line'>    <span class="n">daemons</span> <span class="p">(</span><span class="mi">1</span><span class="o">.</span><span class="mi">1</span><span class="o">.</span><span class="mi">9</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">eventmachine</span> <span class="p">(</span><span class="mi">0</span><span class="o">.</span><span class="mi">12</span><span class="o">.</span><span class="mi">10</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">rack</span> <span class="p">(</span><span class="mi">1</span><span class="o">.</span><span class="mi">4</span><span class="o">.</span><span class="mi">1</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">sinatra</span> <span class="p">(</span><span class="mi">1</span><span class="o">.</span><span class="mi">1</span><span class="o">.</span><span class="mi">0</span><span class="p">)</span>
+</span><span class='line'>      <span class="n">rack</span> <span class="p">(</span><span class="o">~&gt;</span> <span class="mi">1</span><span class="o">.</span><span class="mi">1</span><span class="p">)</span>
+</span><span class='line'>      <span class="n">tilt</span> <span class="p">(</span><span class="o">~&gt;</span> <span class="mi">1</span><span class="o">.</span><span class="mi">1</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">thin</span> <span class="p">(</span><span class="mi">1</span><span class="o">.</span><span class="mi">4</span><span class="o">.</span><span class="mi">1</span><span class="p">)</span>
+</span><span class='line'>      <span class="n">daemons</span> <span class="p">(</span><span class="o">&gt;=</span> <span class="mi">1</span><span class="o">.</span><span class="mi">0</span><span class="o">.</span><span class="mi">9</span><span class="p">)</span>
+</span><span class='line'>      <span class="n">eventmachine</span> <span class="p">(</span><span class="o">&gt;=</span> <span class="mi">0</span><span class="o">.</span><span class="mi">12</span><span class="o">.</span><span class="mi">6</span><span class="p">)</span>
+</span><span class='line'>      <span class="n">rack</span> <span class="p">(</span><span class="o">&gt;=</span> <span class="mi">1</span><span class="o">.</span><span class="mi">0</span><span class="o">.</span><span class="mi">0</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">tilt</span> <span class="p">(</span><span class="mi">1</span><span class="o">.</span><span class="mi">3</span><span class="o">.</span><span class="mi">3</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="no">PLATFORMS</span>
+</span><span class='line'>  <span class="n">ruby</span>
+</span><span class='line'>
+</span><span class='line'><span class="no">DEPENDENCIES</span>
+</span><span class='line'>  <span class="n">sinatra</span> <span class="p">(</span><span class="o">=</span> <span class="mi">1</span><span class="o">.</span><span class="mi">1</span><span class="o">.</span><span class="mi">0</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">thin</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>Procfile</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>web: bundle <span class="nb">exec </span>ruby web.rb -p <span class="nv">$PORT</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>web.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">require</span> <span class="s1">&#39;sinatra&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">get</span> <span class="s1">&#39;/&#39;</span> <span class="k">do</span>
+</span><span class='line'>  <span class="s2">&quot;Hello, world&quot;</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3 id="heroku+create+したあとにheroku上にできたもの">heroku create したあとにheroku上にできたもの</h3>
+
+<p>limitless-hollows-2098のリンク</p>
+
+<h3 id="git+push+heroku+master+したあとにheroku上にできたもの">git push heroku master したあとにheroku上にできたもの</h3>
+
+<p>limitless-hollows-2098のリンク先「Dynos」<code>web bundle exec ruby web.rb -p $PORT</code>の項目</p>
+
+<hr />
+
+<h2 id="HerokuにRedmineをインストール">HerokuにRedmineをインストール</h2>
+
+<p><a href="http://rochefort.hatenablog.com/entry/20130107/p1">Redmineをherokuにデプロイする</a>
+この手順を参考に</p>
+
+<h3 id="手順以外にやったこと">手順以外にやったこと</h3>
+
+<ul>
+<li>パッケージをインストール(CentOS6.4)</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo yum install mysql-devel ImageMagick ImageMagick-devel postgresql
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>これをやらないと<code>bundle install</code>でエラーになる<br/>
+その他エラーが出る場合は、メッセージをググって適宜必要なパッケージをyumで入れればいいと思う。</p>
+
+<ul>
+<li>以下のエラーがでたのでknown_hostsをリセット</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'> ! <span class="o">[</span>remote rejected<span class="o">]</span> 2.1-stable -&gt; master <span class="o">(</span>pre-receive hook declined<span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>~/.ssh 配下のknown_hostsを適当にリネームしました。</p>
+
+<p>ここでインストールは終了</p>
+
+<ul>
+<li>パスワード変更
+デフォルトはadmin:adminなのでパスワードを変更<br/>
+言語を日本語にしてタイムゾーンをTokyoに変更</li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -2653,48 +2843,6 @@ n番目の発生を置換</li>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/04/11/diary/">Diary</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-04-11T00:16:00+09:00" pubdate data-updated="true">Apr 11<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>今日はgitについてまとめました。今までCVSというSubversionより
-さらに前のバージョン管理ソフトを使っていました。リビジョンの概念とか
-コミットの単位とか異なっていて違和感があります。みんなgitが
-良いって言っているのでいずれその良さが分る日が来るはず。。
-リスクの無いことはやってみてから考えた方がスムーズですよね。
-仕事は石橋を叩くような作業が多いので、こういう趣味でやりたい放題するのって
-すごく気持ちいいです。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/3/">&larr; Older</a>
@@ -2712,6 +2860,10 @@ n番目の発生を置換</li>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/05/02/python-professional-programing/">Pythonプロフェッショナルプログラミング</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/04/29/raspberrypi/">RaspberryPi</a>
       </li>
     
@@ -2727,15 +2879,11 @@ n番目の発生を置換</li>
         <a href="/blog/2013/04/29/etc/">etc</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/04/29/splunk/">splunk</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/about/'>about (3)</a></li><li><a href='/blog/categories/aws/'>aws (3)</a></li><li><a href='/blog/categories/bash/'>bash (2)</a></li><li><a href='/blog/categories/chef/'>chef (2)</a></li><li><a href='/blog/categories/command/'>command (5)</a></li><li><a href='/blog/categories/construct/'>construct (2)</a></li><li><a href='/blog/categories/diary/'>diary (3)</a></li><li><a href='/blog/categories/ec-cube/'>EC-CUBE (1)</a></li><li><a href='/blog/categories/ec2/'>ec2 (1)</a></li><li><a href='/blog/categories/etc/'>etc (1)</a></li><li><a href='/blog/categories/fluentd/'>fluentd (1)</a></li><li><a href='/blog/categories/git/'>git (1)</a></li><li><a href='/blog/categories/google/'>google (1)</a></li><li><a href='/blog/categories/heroku/'>heroku (1)</a></li><li><a href='/blog/categories/monitor/'>monitor (5)</a></li><li><a href='/blog/categories/munin/'>munin (1)</a></li><li><a href='/blog/categories/network/'>network (2)</a></li><li><a href='/blog/categories/octopress/'>octopress (1)</a></li><li><a href='/blog/categories/os/'>OS (3)</a></li><li><a href='/blog/categories/php/'>PHP (1)</a></li><li><a href='/blog/categories/python/'>Python (1)</a></li><li><a href='/blog/categories/raspberrypi/'>RaspberryPi (1)</a></li><li><a href='/blog/categories/redmine/'>Redmine (2)</a></li><li><a href='/blog/categories/seo/'>SEO (1)</a></li><li><a href='/blog/categories/splunk/'>splunk (1)</a></li><li><a href='/blog/categories/vagrant/'>vagrant (1)</a></li><li><a href='/blog/categories/vim/'>vim (1)</a></li><li><a href='/blog/categories/mian-qiang-hui/'>勉強会 (3)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/about/'>about (3)</a></li><li><a href='/blog/categories/aws/'>aws (3)</a></li><li><a href='/blog/categories/bash/'>bash (2)</a></li><li><a href='/blog/categories/book/'>book (1)</a></li><li><a href='/blog/categories/chef/'>chef (2)</a></li><li><a href='/blog/categories/command/'>command (5)</a></li><li><a href='/blog/categories/construct/'>construct (2)</a></li><li><a href='/blog/categories/diary/'>diary (3)</a></li><li><a href='/blog/categories/ec-cube/'>EC-CUBE (1)</a></li><li><a href='/blog/categories/ec2/'>ec2 (1)</a></li><li><a href='/blog/categories/etc/'>etc (1)</a></li><li><a href='/blog/categories/fluentd/'>fluentd (1)</a></li><li><a href='/blog/categories/git/'>git (1)</a></li><li><a href='/blog/categories/google/'>google (1)</a></li><li><a href='/blog/categories/heroku/'>heroku (1)</a></li><li><a href='/blog/categories/monitor/'>monitor (5)</a></li><li><a href='/blog/categories/munin/'>munin (1)</a></li><li><a href='/blog/categories/network/'>network (2)</a></li><li><a href='/blog/categories/octopress/'>octopress (1)</a></li><li><a href='/blog/categories/os/'>OS (3)</a></li><li><a href='/blog/categories/php/'>PHP (1)</a></li><li><a href='/blog/categories/python/'>Python (2)</a></li><li><a href='/blog/categories/raspberrypi/'>RaspberryPi (1)</a></li><li><a href='/blog/categories/redmine/'>Redmine (2)</a></li><li><a href='/blog/categories/seo/'>SEO (1)</a></li><li><a href='/blog/categories/splunk/'>splunk (1)</a></li><li><a href='/blog/categories/vagrant/'>vagrant (1)</a></li><li><a href='/blog/categories/vim/'>vim (1)</a></li><li><a href='/blog/categories/mian-qiang-hui/'>勉強会 (3)</a></li></ul>
 </section>
 <section>
 <script type="text/javascript"><!--

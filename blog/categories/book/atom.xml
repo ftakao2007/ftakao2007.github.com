@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Python | Octopress Blog]]></title>
-  <link href="http://ftakao2007.github.com/blog/categories/python/atom.xml" rel="self"/>
+  <title><![CDATA[Category: book | Octopress Blog]]></title>
+  <link href="http://ftakao2007.github.com/blog/categories/book/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
   <updated>2013-05-02T05:54:34+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
@@ -22,45 +22,6 @@
 まとめようと思います。OSなど本書と私の環境は異なっています。</p>
 
 <table border="0" cellpadding="0" cellspacing="0"><tr><td valign="top"><div style="border:1px solid;margin:0px;padding:6px 0px;width:160px;text-align:center;float:left"><a href="http://hb.afl.rakuten.co.jp/hgc/0855d2c2.97054871.0855d2c3.c2844246/?pc=http%3a%2f%2fitem.rakuten.co.jp%2fbook%2f11631269%2f%3fscid%3daf_link_tbl&amp;m=http%3a%2f%2fm.rakuten.co.jp%2fbook%2fi%2f15825336%2f" target="_blank"><img src="http://hbb.afl.rakuten.co.jp/hgb/?pc=http%3a%2f%2fthumbnail.image.rakuten.co.jp%2f%400_mall%2fbook%2fcabinet%2f2948%2f9784798032948.jpg%3f_ex%3d128x128&amp;m=http%3a%2f%2fthumbnail.image.rakuten.co.jp%2f%400_mall%2fbook%2fcabinet%2f2948%2f9784798032948.jpg%3f_ex%3d80x80" alt="【送料無料】Pythonプロフェッショナルプログラミング [ ビープラウド ]" border="0" style="margin:0px;padding:0px"></a><p style="font-size:12px;line-height:1.4em;text-align:left;margin:0px;padding:2px 6px"><a href="http://hb.afl.rakuten.co.jp/hgc/0855d2c2.97054871.0855d2c3.c2844246/?pc=http%3a%2f%2fitem.rakuten.co.jp%2fbook%2f11631269%2f%3fscid%3daf_link_tbl&amp;m=http%3a%2f%2fm.rakuten.co.jp%2fbook%2fi%2f15825336%2f" target="_blank">【送料無料】Pythonプロフェッショナルプログラミング [ ビープラウド ]</a><br></p></div></td></tr></table>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Python]]></title>
-    <link href="http://ftakao2007.github.com/blog/2013/04/29/python/"/>
-    <updated>2013-04-29T06:45:00+09:00</updated>
-    <id>http://ftakao2007.github.com/blog/2013/04/29/python</id>
-    <content type="html"><![CDATA[<h2 id="[Python入門](http://python.keicode.com/)+の勉強"><a href="http://python.keicode.com/">Python入門</a> の勉強</h2>
-
-<h3 id="開発環境の準備">開発環境の準備</h3>
-
-<p>PyDevをインストールして使う</p>
-
-<h4 id="Eclipseのインストール">Eclipseのインストール</h4>
-
-<ul>
-<li><a href="http://www.eclipse.org/downloads/">公式ページ</a> からEclipseをDL<br/>
-Eclipse IDE for Java EE Developers<br/>
-→ 解凍してeclipseを実行したら起動した</li>
-</ul>
-
-
-<h4 id="[PyDevのインストール](http://python.keicode.com/devenv/install-pydev.php)"><a href="http://python.keicode.com/devenv/install-pydev.php">PyDevのインストール</a></h4>
-
-<h4 id="[ハロワを表示](http://www.mwsoft.jp/programming/python/hello_world.html)"><a href="http://www.mwsoft.jp/programming/python/hello_world.html">ハロワを表示</a></h4>
-
-<h4 id="[PyDev+を用いてデバッグ+-+ブレークポイントの設定とステップ実行](http://python.keicode.com/devenv/pydev-debug.php)"><a href="http://python.keicode.com/devenv/pydev-debug.php">PyDev を用いてデバッグ - ブレークポイントの設定とステップ実行</a></h4>
-
-<hr />
-
-<h2 id="リンク">リンク</h2>
-
-<ul>
-<li><a href="http://d.hatena.ne.jp/oneshotlife_tom/20121026/1351255211">Pythonで楽天ウェブサービスを使う。サンプルコード。</a></li>
-<li><a href="https://sites.google.com/site/kuraitlab/programing-language/python/python-oop1">Pythonでオブジェクト指向①</a></li>
-<li><a href="http://kuenishi.hatenadiary.jp/entry/2013/04/23/162205">メモリリークとは何か</a></li>
-</ul>
 
 ]]></content>
   </entry>
