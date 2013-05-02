@@ -9,9 +9,12 @@
   <meta name="author" content="ftakao2007">
 
   
-  <meta name="description" content="メモ書き コンセプトは、曖昧に覚えていることをとりあえず書き出し、修正しながら身につける。 リモートリポジトリ gitサーバ側に作成されるリポジトリ。クライアント側から作成することはできない。
-このリポジトリが無いとpushできない master masterのブランチ
-git commit -m &hellip;">
+  <meta name="description" content="特徴 リソース監視
+→ クリティカルな問題ではないが、何か重い時のボトルネック発見 長所、短所 長所 手軽
+yumで入る
+DBが必要なく、httpdが動いていればOK 短所 設定はCUIのみ
+ユーザー管理の概念が無い
+サーバクライアント方式で、被監視サーバにはクライアント(munin-node) &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -82,6 +85,80 @@ git commit -m &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/04/08/munin/">Munin</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-08T00:07:00+09:00" pubdate data-updated="true">Apr 8<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2 id="特徴">特徴</h2>
+
+<ul>
+<li>リソース監視<br/>
+→ クリティカルな問題ではないが、何か重い時のボトルネック発見</li>
+</ul>
+
+
+<h2 id="長所、短所">長所、短所</h2>
+
+<h3 id="長所">長所</h3>
+
+<ul>
+<li>手軽</li>
+<li>yumで入る</li>
+<li>DBが必要なく、httpdが動いていればOK</li>
+</ul>
+
+
+<h3 id="短所">短所</h3>
+
+<ul>
+<li>設定はCUIのみ</li>
+<li>ユーザー管理の概念が無い</li>
+<li>サーバクライアント方式で、被監視サーバにはクライアント(munin-node)を入れる必要がある</li>
+</ul>
+
+
+<h2 id="構築">構築</h2>
+
+<p><a href="http://guide.flexserver.jp/help/flexs/guide/grp49/guide581">複数台構成のMunin監視設定</a></p>
+
+<h2 id="リンク">リンク</h2>
+
+<ul>
+<li><a href="http://tech.lexues.co.jp/archives/1052">ちょっとMuninいれてみました。</a></li>
+<li><a href="http://pocketstudio.jp/log3/2013/04/23/plugin_basis_and_load_plugi/">【Munin】プラグイン解説(1) プラグインの基礎と load プラグイン</a></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1320,55 +1397,9 @@ MacBook/MacBook Pro (Intl)</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/04/06/my-first-post/">Githubでブログはじめました</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-04-06T10:25:00+09:00" pubdate data-updated="true">Apr 6<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>githubでブログをはじめました:-)</p>
-
-<ul>
-<li>gitの勉強したい</li>
-<li>すでに利用しているサービスを使いたい</li>
-<li>プログラミングと相性の良さそうなサービスを使いたい</li>
-<li>ドヤりたい</li>
-</ul>
-
-
-<p>などが動機です。
-今までブログやwebサイトを個人ではじめて半年以上継続したことがないのですが、
-いっぱい動機があるので一年は続けられる、、はず。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
+    
+      <a class="prev" href="/blog/page/5/">&larr; Older</a>
     
     <a href="/blog/archives">Blog Archives</a>
     
@@ -1387,6 +1418,10 @@ MacBook/MacBook Pro (Intl)</p>
       </li>
     
       <li class="post">
+        <a href="/blog/2013/04/29/zaim/">zaim</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/04/29/raspberrypi/">RaspberryPi</a>
       </li>
     
@@ -1398,15 +1433,11 @@ MacBook/MacBook Pro (Intl)</p>
         <a href="/blog/2013/04/29/php/">PHP</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/04/29/etc/">etc</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/about/'>about (3)</a></li><li><a href='/blog/categories/aws/'>aws (3)</a></li><li><a href='/blog/categories/bash/'>bash (2)</a></li><li><a href='/blog/categories/book/'>book (1)</a></li><li><a href='/blog/categories/chef/'>chef (2)</a></li><li><a href='/blog/categories/command/'>command (5)</a></li><li><a href='/blog/categories/construct/'>construct (2)</a></li><li><a href='/blog/categories/diary/'>diary (3)</a></li><li><a href='/blog/categories/ec-cube/'>EC-CUBE (1)</a></li><li><a href='/blog/categories/ec2/'>ec2 (1)</a></li><li><a href='/blog/categories/etc/'>etc (1)</a></li><li><a href='/blog/categories/fluentd/'>fluentd (1)</a></li><li><a href='/blog/categories/git/'>git (1)</a></li><li><a href='/blog/categories/google/'>google (1)</a></li><li><a href='/blog/categories/heroku/'>heroku (1)</a></li><li><a href='/blog/categories/monitor/'>monitor (5)</a></li><li><a href='/blog/categories/munin/'>munin (1)</a></li><li><a href='/blog/categories/network/'>network (2)</a></li><li><a href='/blog/categories/octopress/'>octopress (1)</a></li><li><a href='/blog/categories/os/'>OS (3)</a></li><li><a href='/blog/categories/php/'>PHP (1)</a></li><li><a href='/blog/categories/python/'>Python (2)</a></li><li><a href='/blog/categories/raspberrypi/'>RaspberryPi (1)</a></li><li><a href='/blog/categories/redmine/'>Redmine (2)</a></li><li><a href='/blog/categories/seo/'>SEO (1)</a></li><li><a href='/blog/categories/splunk/'>splunk (1)</a></li><li><a href='/blog/categories/vagrant/'>vagrant (1)</a></li><li><a href='/blog/categories/vim/'>vim (1)</a></li><li><a href='/blog/categories/mian-qiang-hui/'>勉強会 (3)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/about/'>about (3)</a></li><li><a href='/blog/categories/aws/'>aws (3)</a></li><li><a href='/blog/categories/bash/'>bash (2)</a></li><li><a href='/blog/categories/book/'>book (1)</a></li><li><a href='/blog/categories/chef/'>chef (2)</a></li><li><a href='/blog/categories/command/'>command (5)</a></li><li><a href='/blog/categories/construct/'>construct (2)</a></li><li><a href='/blog/categories/diary/'>diary (3)</a></li><li><a href='/blog/categories/ec-cube/'>EC-CUBE (1)</a></li><li><a href='/blog/categories/ec2/'>ec2 (1)</a></li><li><a href='/blog/categories/etc/'>etc (1)</a></li><li><a href='/blog/categories/fluentd/'>fluentd (1)</a></li><li><a href='/blog/categories/git/'>git (1)</a></li><li><a href='/blog/categories/google/'>google (1)</a></li><li><a href='/blog/categories/heroku/'>heroku (1)</a></li><li><a href='/blog/categories/monitor/'>monitor (5)</a></li><li><a href='/blog/categories/munin/'>munin (1)</a></li><li><a href='/blog/categories/network/'>network (2)</a></li><li><a href='/blog/categories/octopress/'>octopress (1)</a></li><li><a href='/blog/categories/os/'>OS (3)</a></li><li><a href='/blog/categories/php/'>PHP (1)</a></li><li><a href='/blog/categories/python/'>python (1)</a></li><li><a href='/blog/categories/python/'>Python (2)</a></li><li><a href='/blog/categories/raspberrypi/'>RaspberryPi (1)</a></li><li><a href='/blog/categories/redmine/'>Redmine (2)</a></li><li><a href='/blog/categories/seo/'>SEO (1)</a></li><li><a href='/blog/categories/splunk/'>splunk (1)</a></li><li><a href='/blog/categories/vagrant/'>vagrant (1)</a></li><li><a href='/blog/categories/vim/'>vim (1)</a></li><li><a href='/blog/categories/zaim/'>zaim (1)</a></li><li><a href='/blog/categories/mian-qiang-hui/'>勉強会 (3)</a></li></ul>
 </section>
 <section>
 <script type="text/javascript"><!--

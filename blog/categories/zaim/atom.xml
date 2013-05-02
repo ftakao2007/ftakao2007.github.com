@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: zaim | Octopress Blog]]></title>
+  <link href="http://ftakao2007.github.com/blog/categories/zaim/atom.xml" rel="self"/>
+  <link href="http://ftakao2007.github.com/"/>
+  <updated>2013-05-03T08:55:55+09:00</updated>
+  <id>http://ftakao2007.github.com/</id>
+  <author>
+    <name><![CDATA[ftakao2007]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[zaim]]></title>
+    <link href="http://ftakao2007.github.com/blog/2013/04/29/zaim/"/>
+    <updated>2013-04-29T16:50:00+09:00</updated>
+    <id>http://ftakao2007.github.com/blog/2013/04/29/zaim</id>
+    <content type="html"><![CDATA[<p><a href="http://zaim.net/">zaim</a>は無料の家計簿サービス。家で一日の収支を家計簿にまとめるのは大変な作業ですが、このサービスを利用すると買った時にスマートフォンやタブレットで家計簿をつけることができます。その場その場で収支を書き込めるので面倒くさがりの私でも継続的に家計簿をつけることができています。この様なサービスをつくれればつくりたいなと思っていたのですが、zaimという素晴らしいサービスがありましたので利用させていただいています。</p>
+
+<p>h2. 固定費入力の自動化</p>
+
+<p>この固定費の入力というのが毎月あるのですが、こちらについては正直できていません。細かい税金や給料など毎月確認したいなあとは思っているのですが、なかなか腰を据えて入力する気がどうしてもおこらないのです。</p>
+
+<p>そこで、最近勉強し始めたPythonを利用して入力を自動化できないか検討してます。
+カード会社や銀行のデータをなんらかのテキストで落としてきて、それを処理してzaimのAPIを利用して入力する方法を考えようと思います。</p>
+
+<p>他によい解決方法やよいソフトがあったらそちらを利用してこの開発はストップする可能性もあります</p>
+]]></content>
+  </entry>
+  
+</feed>
