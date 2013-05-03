@@ -4,7 +4,7 @@
   <title><![CDATA[Category: zaim | Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/blog/categories/zaim/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-05-03T09:30:47+09:00</updated>
+  <updated>2013-05-03T19:43:19+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -28,6 +28,38 @@
 カード会社や銀行のデータをテキストで落としてきて、それを処理してzaimのAPIを利用して入力する方法を考えようと思います。他によい解決方法やよいソフトがあればらそちらを利用してこの開発はストップする可能性もあります。</p>
 
 <h2 id="[Zaim+developers+β](https://dev.zaim.net/)"><a href="https://dev.zaim.net/">Zaim developers β</a></h2>
+
+<p>ここにアプリケーションを登録するとConsumer KeyやConsumer Secretなどを得られる</p>
+
+<h2 id="Pythonで操作">Pythonで操作</h2>
+
+<ul>
+<li><a href="http://d.hatena.ne.jp/wwwcfe/20120511/python_requests_oauth">超便利な Python モジュール requests を使って OAuth 認証し、Zaim と連携する方法</a></li>
+</ul>
+
+
+<p>ここがすごく参考になりそう。</p>
+
+<!--
+アプリケーションの追加をすると以下の項目が表示される
+
+* Consumer Key
+
+* Consumer Secret
+
+* Request token URL
+
+* Authorize URL
+
+* Access token URL
+
+* Explain about allow
+
+* Access Level
+-->
+
+
+
 ]]></content>
   </entry>
   
