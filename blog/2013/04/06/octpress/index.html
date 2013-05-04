@@ -10,12 +10,12 @@
 
   
   <meta name="description" content="初期設定 Octopress 使う
-GitHub+Octopressでブログ構築 1
+GitHub+Octopressでブログ構築 rake deploy実行時のエラー 1
 2
 3
 ## Pushing generated _deploy website
 ERROR: Repository not found.
-fatal: The remote end hung up &hellip;">
+fatal: The remote &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -120,6 +120,8 @@ fatal: The remote end hung up &hellip;">
 </ul>
 
 
+<h2 id="rake+deploy実行時のエラー">rake deploy実行時のエラー</h2>
+
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -129,22 +131,16 @@ fatal: The remote end hung up &hellip;">
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>rsa鍵を登録し、.gitを削除して再度作りなおした</p>
+<p><code>~/.ssh/config</code> を利用している場合は設定の問題の可能性がある。configファイルの上の鍵から順番に使われていくみたい。
+同一ホスト(github.com)で2つのアカウントを使っている場合、現在pushしようとしているアカウントの鍵ファイルが
+もう一方の鍵ファイルより下に記載されている場合。別アカウントの鍵でアクセスしようとして失敗する。
+現在アクセスしようとする方の鍵を上位に記載すれば成功する。</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>mv .git git.bak
-</span><span class='line'>rake setup_github_pages
-</span><span class='line'>git config user.name <span class="s2">&quot;investment&quot;</span>
-</span><span class='line'>git config user.email siomizu2007@gmail.com
-</span><span class='line'>
-</span><span class='line'>※ git configで「--global」を付けないとそのリポジトリ用の設定になる
-</span></code></pre></td></tr></table></div></figure>
-
+<p>別アカウントのブログを更新するごとにリストの順番を入れ替えないといけないけど
+もっとスマートな方法無いのかな。。<br/>
+* <a href="http://nauthiz.hatenablog.com/entry/20100919/1284892108">.ssh/configの書き方</a>
+* <a href="http://www.unixuser.org/~euske/doc/openssh/jman/ssh_config.html">SSH_CONFIG (5)</a><br/>
+このへんで何かできそう。ホスト名が同一でなんらかしの条件分岐ってできるのかな。</p>
 
 <h1 id="記法など">記法など</h1>
 
