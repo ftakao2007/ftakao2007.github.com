@@ -4,7 +4,7 @@
   <title><![CDATA[Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-05-03T11:10:43+09:00</updated>
+  <updated>2013-05-04T16:33:13+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -52,6 +52,53 @@
 
 
 <p>ここがすごく参考になりそう。</p>
+
+<h3 id="やったこと">やったこと</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="o">[</span>mickey@ftakao2007 zaim<span class="o">]</span><span class="nv">$ </span>./get_access_token.py
+</span><span class='line'>Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
+</span><span class='line'>  File <span class="s2">&quot;./get_access_token.py&quot;</span>, line 7, in &lt;module&gt;
+</span><span class='line'>    from requests.auth import OAuth1
+</span><span class='line'>ImportError: cannot import name OAuth1
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>このエラーがでていたのでrequestsのバージョンを指定してインストール</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo pip uninstall requests
+</span><span class='line'>sudo pip install <span class="nv">requests</span><span class="o">==</span>0.14.0
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="o">[</span>mickey@ftakao2007 zaim<span class="o">]</span><span class="nv">$ </span>./get_access_token.py
+</span><span class='line'>Auth link:
+</span><span class='line'>Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
+</span><span class='line'>  File <span class="s2">&quot;./get_access_token.py&quot;</span>, line 40, in &lt;module&gt;
+</span><span class='line'>    print oauth_requests<span class="o">()</span>
+</span><span class='line'>  File <span class="s2">&quot;./get_access_token.py&quot;</span>, line 28, in oauth_requests
+</span><span class='line'>    print <span class="s2">&quot;%s?oauth_token=%s&quot;</span> % <span class="o">(</span>authorize_url, request_token<span class="o">[</span><span class="s2">&quot;oauth_token&quot;</span><span class="o">])</span>
+</span><span class='line'>KeyError: <span class="s1">&#39;oauth_token&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
 
 <!--
 アプリケーションの追加をすると以下の項目が表示される

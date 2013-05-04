@@ -4,7 +4,7 @@
   <title><![CDATA[Category: octopress | Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-05-03T11:10:43+09:00</updated>
+  <updated>2013-05-04T16:33:13+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -25,6 +25,23 @@
 <li><a href="http://atijust.github.io/">GitHub+Octopressでブログ構築</a></li>
 </ul>
 
+
+<p>``` bash</p>
+
+<h2 id="Pushing+generated+_deploy+website">Pushing generated _deploy website</h2>
+
+<p>ERROR: Repository not found.
+fatal: The remote end hung up unexpectedly
+<code>
+rsa鍵を登録し、.gitを削除して再度作りなおした
+</code> bash
+mv .git git.bak
+rake setup_github_pages
+git config user.name "investment"
+git config user.email siomizu2007@gmail.com</p>
+
+<p>※ git configで「--global」を付けないとそのリポジトリ用の設定になる
+```</p>
 
 <h1 id="記法など">記法など</h1>
 

@@ -1218,6 +1218,32 @@ MacBook/MacBook Pro (Intl)</p>
 </ul>
 
 
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c">## Pushing generated _deploy website</span>
+</span><span class='line'>ERROR: Repository not found.
+</span><span class='line'>fatal: The remote end hung up unexpectedly
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>rsa鍵を登録し、.gitを削除して再度作りなおした</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>mv .git git.bak
+</span><span class='line'>rake setup_github_pages
+</span><span class='line'>git config user.name <span class="s2">&quot;investment&quot;</span>
+</span><span class='line'>git config user.email siomizu2007@gmail.com
+</span><span class='line'>
+</span><span class='line'>※ git configで「--global」を付けないとそのリポジトリ用の設定になる
+</span></code></pre></td></tr></table></div></figure>
+
+
 <h1 id="記法など">記法など</h1>
 
 <ul>

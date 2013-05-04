@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Python | Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/blog/categories/python/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-05-03T11:10:43+09:00</updated>
+  <updated>2013-05-04T16:33:13+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -52,6 +52,42 @@
 
 
 <p>ここがすごく参考になりそう。</p>
+
+<h3 id="やったこと">やったこと</h3>
+
+<p>``` bash
+[mickey@ftakao2007 zaim]$ ./get_access_token.py
+Traceback (most recent call last):
+  File "./get_access_token.py", line 7, in <module></p>
+
+<pre><code>from requests.auth import OAuth1
+</code></pre>
+
+<p>ImportError: cannot import name OAuth1
+```</p>
+
+<p>このエラーがでていたのでrequestsのバージョンを指定してインストール
+<code>bash
+sudo pip uninstall requests
+sudo pip install requests==0.14.0
+</code></p>
+
+<p>``` bash
+[mickey@ftakao2007 zaim]$ ./get_access_token.py
+Auth link:
+Traceback (most recent call last):
+  File "./get_access_token.py", line 40, in <module></p>
+
+<pre><code>print oauth_requests()
+</code></pre>
+
+<p>  File "./get_access_token.py", line 28, in oauth_requests</p>
+
+<pre><code>print "%s?oauth_token=%s" % (authorize_url, request_token["oauth_token"])
+</code></pre>
+
+<p>KeyError: 'oauth_token'
+```</p>
 
 <!--
 アプリケーションの追加をすると以下の項目が表示される
