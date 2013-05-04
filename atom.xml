@@ -4,7 +4,7 @@
   <title><![CDATA[Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-05-04T17:23:11+09:00</updated>
+  <updated>2013-05-04T17:34:12+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -96,27 +96,6 @@
 </span><span class='line'>    print <span class="s2">&quot;%s?oauth_token=%s&quot;</span> % <span class="o">(</span>authorize_url, request_token<span class="o">[</span><span class="s2">&quot;oauth_token&quot;</span><span class="o">])</span>
 </span><span class='line'>KeyError: <span class="s1">&#39;oauth_token&#39;</span>
 </span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<!--
-アプリケーションの追加をすると以下の項目が表示される
-
-* Consumer Key
-
-* Consumer Secret
-
-* Request token URL
-
-* Authorize URL
-
-* Access token URL
-
-* Explain about allow
-
-* Access Level
--->
 
 
 

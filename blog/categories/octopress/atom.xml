@@ -4,7 +4,7 @@
   <title><![CDATA[Category: octopress | Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-05-04T17:23:11+09:00</updated>
+  <updated>2013-05-04T17:34:12+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -20,11 +20,8 @@
     <id>http://ftakao2007.github.com/blog/2013/04/06/octpress</id>
     <content type="html"><![CDATA[<h1 id="初期設定">初期設定</h1>
 
-<ul>
-<li><a href="http://k-ui.jp/blog/2011/08/30/try-to-octopress/">Octopress 使う</a></li>
-<li><a href="http://atijust.github.io/">GitHub+Octopressでブログ構築</a></li>
-</ul>
-
+<p><a href="http://k-ui.jp/blog/2011/08/30/try-to-octopress/">Octopress 使う</a><br/>
+<a href="http://atijust.github.io/">GitHub+Octopressでブログ構築</a></p>
 
 <h2 id="rake+deploy実行時のエラー">rake deploy実行時のエラー</h2>
 
@@ -32,7 +29,7 @@
 
 <h2 id="Pushing+generated+_deploy+website">Pushing generated _deploy website</h2>
 
-<p>ERROR: Repository not found.
+<p>ERROR: Permission to ftakao2007/ftakao2007.github.com.git denied to hoge.
 fatal: The remote end hung up unexpectedly
 <code>``
 </code>~/.ssh/config` を利用している場合は設定の問題の可能性がある。configファイルの上の鍵から順番に使われていくみたい。
@@ -42,8 +39,8 @@ fatal: The remote end hung up unexpectedly
 
 <p>別アカウントのブログを更新するごとにリストの順番を入れ替えないといけないけど
 もっとスマートな方法無いのかな。。<br/>
-* <a href="http://nauthiz.hatenablog.com/entry/20100919/1284892108">.ssh/configの書き方</a>
-* <a href="http://www.unixuser.org/~euske/doc/openssh/jman/ssh_config.html">SSH_CONFIG (5)</a><br/>
+<a href="http://nauthiz.hatenablog.com/entry/20100919/1284892108">.ssh/configの書き方</a><br/>
+<a href="http://www.unixuser.org/~euske/doc/openssh/jman/ssh_config.html">SSH_CONFIG (5)</a><br/>
 このへんで何かできそう。ホスト名が同一でなんらかしの条件分岐ってできるのかな。</p>
 
 <h1 id="記法など">記法など</h1>
