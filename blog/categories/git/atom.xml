@@ -4,7 +4,7 @@
   <title><![CDATA[Category: git | Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/blog/categories/git/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-05-04T17:34:12+09:00</updated>
+  <updated>2013-05-06T18:00:50+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -124,9 +124,29 @@ sudo yum install mysql-devel ImageMagick ImageMagick-devel postgresql
     <link href="http://ftakao2007.github.com/blog/2013/04/10/git-command/"/>
     <updated>2013-04-10T20:13:00+09:00</updated>
     <id>http://ftakao2007.github.com/blog/2013/04/10/git-command</id>
-    <content type="html"><![CDATA[<h1 id="git+init">git init</h1>
+    <content type="html"><![CDATA[<h2 id="git+init">git init</h2>
 
-<p>リポジトリの作成を行うコマンド</p>
+<h1 id="リポジトリとのやりとり関連コマンド">リポジトリとのやりとり関連コマンド</h1>
+
+<h2 id="fetch,+marge,+push">fetch, marge, push</h2>
+
+<p><a href="http://dqn.sakusakutto.jp/2012/11/git_pull.html">Git pullを使うべきでない３つの理由</a>によると
+リモートリポジトリとやり取りするときは以下のコマンドを使えれば問題ないみたい。</p>
+
+<p>:--|:--
+fetch|ダウンロード
+marge|2つのブランチを統合
+push|アップロード</p>
+
+<p>pullを使うのはfetchした後margeするのがめんどくさく感じるようになった時。</p>
+
+<h3 id="fetch,+marge">fetch, marge</h3>
+
+<p><a href="http://qiita.com/items/e082d64f3f8b424e9b7d">fetch と pullの違い</a></p>
+
+<h3 id="push">push</h3>
+
+<h1 id="戻し、削除関連">戻し、削除関連</h1>
 ]]></content>
   </entry>
   
@@ -279,14 +299,14 @@ To https://github.com/ftakao2007/test2.git
 <p>``` bash
 fukui-no-MacBook-Air:test2 ftakao2007$ git log
 commit f56ca7da10d119fd91fb5f7d1c4799d94f525a91
-Author: ftakao2007 <a href="&#x6d;&#97;&#x69;&#108;&#x74;&#x6f;&#58;&#x66;&#x74;&#x61;&#x6b;&#x61;&#x6f;&#50;&#48;&#x30;&#55;&#x40;&#x67;&#109;&#97;&#105;&#108;&#46;&#x63;&#x6f;&#109;">&#x66;&#116;&#x61;&#107;&#x61;&#x6f;&#x32;&#x30;&#48;&#55;&#64;&#x67;&#x6d;&#x61;&#105;&#x6c;&#46;&#99;&#x6f;&#x6d;</a>
+Author: ftakao2007 <a href="&#x6d;&#x61;&#x69;&#108;&#x74;&#x6f;&#x3a;&#x66;&#116;&#x61;&#x6b;&#x61;&#x6f;&#x32;&#48;&#48;&#x37;&#64;&#103;&#x6d;&#x61;&#x69;&#108;&#x2e;&#99;&#x6f;&#x6d;">&#102;&#116;&#x61;&#107;&#97;&#111;&#50;&#48;&#x30;&#x37;&#64;&#103;&#x6d;&#x61;&#105;&#108;&#46;&#x63;&#111;&#109;</a>
 Date:   Wed Apr 10 22:41:52 2013 +0900</p>
 
 <pre><code>a
 </code></pre>
 
 <p>commit 3c63dc839b68e5753da4ab69330e465b31dd17c2
-Author: ftakao2007 <a href="&#x6d;&#x61;&#105;&#x6c;&#x74;&#x6f;&#58;&#102;&#116;&#x61;&#107;&#x61;&#x6f;&#50;&#x30;&#x30;&#x37;&#64;&#103;&#109;&#x61;&#105;&#x6c;&#46;&#x63;&#111;&#x6d;">&#102;&#116;&#x61;&#x6b;&#x61;&#111;&#50;&#x30;&#x30;&#x37;&#x40;&#x67;&#x6d;&#97;&#105;&#108;&#46;&#99;&#111;&#x6d;</a>
+Author: ftakao2007 <a href="&#x6d;&#x61;&#105;&#108;&#116;&#x6f;&#58;&#x66;&#116;&#x61;&#107;&#97;&#111;&#x32;&#48;&#48;&#55;&#64;&#103;&#x6d;&#x61;&#105;&#108;&#x2e;&#x63;&#111;&#x6d;">&#x66;&#x74;&#97;&#x6b;&#97;&#x6f;&#x32;&#48;&#x30;&#x37;&#x40;&#103;&#x6d;&#97;&#x69;&#x6c;&#46;&#99;&#x6f;&#109;</a>
 Date:   Wed Apr 10 22:37:36 2013 +0900</p>
 
 <pre><code>hoge
@@ -296,7 +316,7 @@ Date:   Wed Apr 10 22:37:36 2013 +0900</p>
 
 <p>fukui-no-MacBook-Air:test2 ftakao2007$ git log
 commit 3c63dc839b68e5753da4ab69330e465b31dd17c2
-Author: ftakao2007 <a href="&#x6d;&#97;&#x69;&#x6c;&#x74;&#111;&#x3a;&#102;&#x74;&#x61;&#x6b;&#x61;&#x6f;&#50;&#x30;&#x30;&#55;&#x40;&#103;&#109;&#97;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;">&#x66;&#x74;&#x61;&#107;&#x61;&#111;&#50;&#48;&#x30;&#55;&#x40;&#x67;&#x6d;&#97;&#x69;&#x6c;&#46;&#x63;&#111;&#x6d;</a>
+Author: ftakao2007 <a href="&#109;&#97;&#x69;&#108;&#x74;&#x6f;&#58;&#102;&#x74;&#97;&#107;&#97;&#x6f;&#50;&#48;&#48;&#x37;&#x40;&#103;&#109;&#97;&#x69;&#108;&#x2e;&#99;&#x6f;&#109;">&#102;&#116;&#97;&#x6b;&#97;&#111;&#50;&#48;&#x30;&#x37;&#64;&#103;&#109;&#97;&#105;&#x6c;&#46;&#99;&#x6f;&#109;</a>
 Date:   Wed Apr 10 22:37:36 2013 +0900</p>
 
 <pre><code>hoge
@@ -304,6 +324,10 @@ Date:   Wed Apr 10 22:37:36 2013 +0900</p>
 
 <p><code>``
 </code>git reset --hard HEAD<sup>`</sup> にすると、コミットの取り消しと同時にファイルの内容もコミット前に戻る。</p>
+
+<h3 id="[originのurlを変更する](http://d.hatena.ne.jp/wats/20100915/1284478558)"><a href="http://d.hatena.ne.jp/wats/20100915/1284478558">originのurlを変更する</a></h3>
+
+<p><code>git remote set-url origin &lt;新しいリポジトリURL&gt;</code></p>
 
 <h2 id="今後確認すること">今後確認すること</h2>
 
