@@ -10,8 +10,10 @@
 
   
   <meta name="description" content="git init リポジトリとのやりとり関連コマンド fetch, marge, push Git pullを使うべきでない３つの理由によると
-リモートリポジトリとやり取りするときは以下のコマンドを使えれば問題ないみたい。 :&#8211;:|:&#8211;:
-fetch|ダウンロード &hellip;">
+リモートリポジトリとやり取りするときは以下のコマンドを使えれば問題ないみたい。 コマンド
+意味 fetch
+ダウンロード marge
+2つのブランチを統合 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -117,10 +119,29 @@ fetch|ダウンロード &hellip;">
 <p><a href="http://dqn.sakusakutto.jp/2012/11/git_pull.html">Git pullを使うべきでない３つの理由</a>によると
 リモートリポジトリとやり取りするときは以下のコマンドを使えれば問題ないみたい。</p>
 
-<p>:&#8211;:|:&#8211;:
-fetch|ダウンロード
-marge|2つのブランチを統合
-push|アップロード</p>
+<table>
+<thead>
+<tr>
+<th align="center">コマンド</th>
+<th align="center">意味</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">fetch</td>
+<td align="center">ダウンロード</td>
+</tr>
+<tr>
+<td align="center">marge</td>
+<td align="center">2つのブランチを統合</td>
+</tr>
+<tr>
+<td align="center">push</td>
+<td align="center">アップロード</td>
+</tr>
+</tbody>
+</table>
+
 
 <p>pullを使うのはfetchした後margeするのがめんどくさく感じるようになった時。</p>
 
