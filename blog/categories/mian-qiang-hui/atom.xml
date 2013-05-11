@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 勉強会 | Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/blog/categories/mian-qiang-hui/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-05-11T14:18:27+09:00</updated>
+  <updated>2013-05-11T14:21:57+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -24,10 +24,10 @@
 
 <p>```</p>
 
-<blockquote><p>c &lt;- 5
+<blockquote><p>a &lt;- 5
 d &lt;- "abc"</p>
 
-<p>c
+<p>a
 [1] 5</p>
 
 <p>d
@@ -251,7 +251,7 @@ system.time(res &lt;-exp(x))
 ifやループは使わない事に喜びをおぼえてきたら立派なR使い。<br/>
 使うべきところは使ってもよい。</p></li>
 <li><p>エクセルより大きなデータを扱える</p></li>
-<li>拡張パッケージが色いろある</li>
+<li>拡張パッケージがいろいろある</li>
 <li>メモリー容量内の範囲で使える</li>
 <li>「R」は検索しにくい(Rubyとかのほうがヒットする)</li>
 <li><p>メガ、ギガクラスの処理はRでよい
