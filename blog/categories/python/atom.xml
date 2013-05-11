@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Python | Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/blog/categories/python/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-05-06T18:04:57+09:00</updated>
+  <updated>2013-05-11T13:19:54+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -423,6 +423,14 @@ set(['l', 'o'])</p>
 set(['e', 'd', 'H', 'r', 'W'])  * AとBそれぞれに存在しているものを表示
 → lとoはAとB両方に含まれているので表示しない。それ以外は表示
 ```</p></blockquote></blockquote></blockquote>
+
+<h1 id="JSONファイルの利用">JSONファイルの利用</h1>
+
+<ul>
+<li><a href="http://tmlife.net/programming/python/python-json-module.html">Python : json モジュールで json 読み込み</a></li>
+<li><a href="http://jsonlint.com/">The JSON Validator</a></li>
+</ul>
+
 
 <hr />
 

@@ -4,7 +4,7 @@
   <title><![CDATA[Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-05-06T18:04:57+09:00</updated>
+  <updated>2013-05-11T13:19:54+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -12,6 +12,301 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[granpark-17th]]></title>
+    <link href="http://ftakao2007.github.com/blog/2013/05/11/granpark-17th/"/>
+    <updated>2013-05-11T12:52:00+09:00</updated>
+    <id>http://ftakao2007.github.com/blog/2013/05/11/granpark-17th</id>
+    <content type="html"><![CDATA[<p><a href="http://www.zusaar.com/event/670003">第17回 granpark.rb 「データ解析技術入門(R言語編)」</a></p>
+
+<h2 id="値代入">値代入</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&gt; c &lt;- 5
+</span><span class='line'>&gt; d &lt;- "abc"
+</span><span class='line'>
+</span><span class='line'>&gt; c
+</span><span class='line'>[1] 5
+</span><span class='line'>
+</span><span class='line'>&gt; d
+</span><span class='line'>[1] "abc"</span></code></pre></td></tr></table></div></figure>
+
+
+<h2 id="ベクトル計算">ベクトル計算</h2>
+
+<p>「c」を使う</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&gt; a &lt;- c(1,2,3)
+</span><span class='line'>&gt; a
+</span><span class='line'>[1] 1 2 3
+</span><span class='line'>&gt; b &lt;- c(4,5,6)
+</span><span class='line'>&gt; a+b
+</span><span class='line'>[1] 5 7 9
+</span><span class='line'>``
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>## 行列計算
+</span><span class='line'>「matrix」を使う</span></code></pre></td></tr></table></div></figure>
+
+
+<blockquote><p>matrix(1:12,3,4)</p>
+
+<pre><code> [,1] [,2] [,3] [,4]
+</code></pre>
+
+<p>[1,]    1    4    7   10
+[2,]    2    5    8   11
+[3,]    3    6    9   12</p>
+
+<p>a &lt;- matrix(1:12,3,4)
+a</p>
+
+<pre><code> [,1] [,2] [,3] [,4]
+</code></pre>
+
+<p>[1,]    1    4    7   10
+[2,]    2    5    8   11
+[3,]    3    6    9   12</p>
+
+<p>a[1,]
+[1]  1  4  7 10</p>
+
+<p>a[,1]
+[1] 1 2 3</p>
+
+<p>a[1,1]
+[1] 1</p>
+
+<p>a[1,1] * a[1,2]
+[1] 4</p>
+
+<p>a[3,1] * a[1,2]
+[1] 12</p></blockquote>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>## irisを使ったRの基本的利用方法
+</span><span class='line'>
+</span><span class='line'>アヤメのガクヘン(蕚片)と花びらに関するデータ
+</span></code></pre></td></tr></table></div></figure>
+
+
+<blockquote><p>iris</p>
+
+<pre><code>Sepal.Length Sepal.Width Petal.Length Petal.Width    Species
+</code></pre>
+
+<p>1            5.1         3.5          1.4         0.2     setosa
+2            4.9         3.0          1.4         0.2     setosa
+&#8230;</p>
+
+<p>summary(iris)
+  Sepal.Length    Sepal.Width     Petal.Length    Petal.Width<br/>
+ Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100
+ 1st Qu.:5.100   1st Qu.:2.800   1st Qu.:1.600   1st Qu.:0.300
+ Median :5.800   Median :3.000   Median :4.350   Median :1.300
+ Mean   :5.843   Mean   :3.057   Mean   :3.758   Mean   :1.199
+ 3rd Qu.:6.400   3rd Qu.:3.300   3rd Qu.:5.100   3rd Qu.:1.800
+ Max.   :7.900   Max.   :4.400   Max.   :6.900   Max.   :2.500</p>
+
+<pre><code>   Species 
+</code></pre>
+
+<p> setosa    :50
+ versicolor:50
+ virginica :50</p>
+
+<p>sum(iris[,1])  合計
+[1] 876.5</p>
+
+<p>mean(iris[,1])　平均
+[1] 5.843333</p>
+
+<p>sd(iris[,1])　　標準偏差
+[1] 0.8280661</p>
+
+<p>max(iris[,1])　最大
+[1] 7.9</p>
+
+<p>min(iris[,1])　最小
+[1] 4.3</p>
+
+<p>str(iris[,1])
+ num [1:150] 5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 &#8230;</p>
+
+<p>str(iris)　データに関する情報
+&#8216;data.frame&#8217;:     150 obs. of  5 variables:
+ $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 &#8230;
+ $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 &#8230;
+ $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 &#8230;
+ $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 &#8230;
+ $ Species     : Factor w/ 3 levels &#8220;setosa&#8221;,&#8221;versicolor&#8221;,..: 1 1 1 1 1 1 1 1 1 1 …</p></blockquote>
+
+<p>data.frame…変数の型</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>## 図形描画
+</span></code></pre></td></tr></table></div></figure>
+
+
+<blockquote><p>plot(iris[,1],iris[,3])</p>
+
+<p>plot(iris)</p>
+
+<p>pairs(iris[1:4], pch=21, bg=c(&#8220;red&#8221;, &#8220;green3&#8221;,&#8221;blue&#8221;))</p></blockquote>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>## 相関を見る
+</span></code></pre></td></tr></table></div></figure>
+
+
+<blockquote><p>cor(iris[,1:4])</p>
+
+<pre><code>         Sepal.Length Sepal.Width Petal.Length Petal.Width
+</code></pre>
+
+<p>Sepal.Length    1.0000000  -0.1175698    0.8717538   0.8179411
+Sepal.Width    -0.1175698   1.0000000   -0.4284401  -0.3661259
+Petal.Length    0.8717538  -0.4284401    1.0000000   0.9628654
+Petal.Width     0.8179411  -0.3661259    0.9628654   1.0000000</p></blockquote>
+
+<p>同じ値は1になる</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>## 単回帰分析
+</span></code></pre></td></tr></table></div></figure>
+
+
+<blockquote><p>kaiki &lt;- lm(iris$Petal.Length ~ iris$Sepal.Length)
+kaiki</p></blockquote>
+
+<p>Call:
+lm(formula = iris$Petal.Length ~ iris$Sepal.Length)</p>
+
+<p>Coefficients:</p>
+
+<pre><code>  (Intercept)  iris$Sepal.Length 
+       -7.101              1.858 
+</code></pre>
+
+<p>単回帰直線が
+y=1.858, x=-7.101
+という意味</p>
+
+<blockquote><p>plot(iris$Petal.Length ~ iris$Sepal.Length)</p></blockquote>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>## Rの掟
+</span><span class='line'>* for, if, while, repeat, 添字操作はやらない  
+</span><span class='line'>→遅くなる  
+</span><span class='line'>※逐次処理はベクトル処理をする  
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>* 添字操作は添字集合による論理判断させる  
+</span><span class='line'>添字一つではなく、ある条件の集合体として操作させる  
+</span><span class='line'>→それによってできた添字集合は逐次の論理判断と等価  
+</span><span class='line'>
+</span><span class='line'>### 問題</span></code></pre></td></tr></table></div></figure>
+
+
+<blockquote><p>x &lt;- runif(1000000)</p>
+
+<p>test1 &lt;- function() {
++ res &lt;- numeric(1000000)
++ for (i in 1:1000000) res[i] &lt;- exp(x[i])
++ return(res)}
+system.time(test1())
+   ユーザ   システム       経過</p>
+
+<pre><code> 2.089      0.013      2.102 
+</code></pre></blockquote>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>これを速くする
+</span><span class='line'>
+</span><span class='line'>### 答え</span></code></pre></td></tr></table></div></figure>
+
+
+<blockquote><p>x &lt;- runif(1000000)
+system.time(res &lt;-exp(x))
+   ユーザ   システム       経過</p>
+
+<pre><code> 0.013      0.002      0.016
+</code></pre>
+
+<p>&#8220;`
+できるだけコードを書かずに計算する方法を考えるとだいたい正解</p></blockquote>
+
+<h2 id="Rメモ">Rメモ</h2>
+
+<ul>
+<li>C++で実装されている</li>
+<li><p>ifやforを使うとRubyやPerlより遅くなるが、ちゃんとやるとC++くらい速い<br/>
+ifやループは使わない事に喜びをおぼえてきたらR使い。<br/>
+使うべきところは使ってもよい。</p></li>
+<li><p>エクセルより大きなデータを扱える</p></li>
+<li>拡張パッケージが色いろある</li>
+<li>メモリー容量内の範囲で使える</li>
+<li>「R」は検索しにくい(Rubyとかのほうがヒットする)</li>
+<li><p>メガ、ギガクラスの処理はRでよい
+→それより大きくなるとHive</p></li>
+<li><p>Rstudioをというものを入れると、WebブラウザでRができるようになる<br/>
+→エディタや描画や関数など別窓で表示させられる<br/>
+→iPadでRが使えるらしい</p></li>
+</ul>
+
+
+<h2 id="その他">その他</h2>
+
+<ul>
+<li>何かを計算する場合、テールの部分の情報は必要なのかを考えると良い<br/>
+データが全部必要なのか、一部あればよいのか考慮することで計算量を少なくすることができる</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Pythonプロフェッショナルプログラミング]]></title>
@@ -755,6 +1050,14 @@ Eclipse IDE for Java EE Developers<br/>
 </span><span class='line'><span class="nb">set</span><span class="p">([</span><span class="s">&#39;e&#39;</span><span class="p">,</span> <span class="s">&#39;d&#39;</span><span class="p">,</span> <span class="s">&#39;H&#39;</span><span class="p">,</span> <span class="s">&#39;r&#39;</span><span class="p">,</span> <span class="s">&#39;W&#39;</span><span class="p">])</span>  <span class="o">*</span> <span class="n">A</span><span class="err">と</span><span class="n">B</span><span class="err">それぞれに存在しているものを表示</span>
 </span><span class='line'><span class="err">→</span> <span class="n">l</span><span class="err">と</span><span class="n">o</span><span class="err">は</span><span class="n">A</span><span class="err">と</span><span class="n">B</span><span class="err">両方に含まれているので表示しない。それ以外は表示</span>
 </span></code></pre></td></tr></table></div></figure>
+
+
+<h1 id="JSONファイルの利用">JSONファイルの利用</h1>
+
+<ul>
+<li><a href="http://tmlife.net/programming/python/python-json-module.html">Python : json モジュールで json 読み込み</a></li>
+<li><a href="http://jsonlint.com/">The JSON Validator</a></li>
+</ul>
 
 
 <hr />
@@ -3214,20 +3517,6 @@ n番目の発生を置換</li>
 <li><p><a href="https://twitter.com/usptomo/status/323068045532737536/photo/1">本日一番の訳わからない写真</a></p></li>
 </ul>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[このブログについて]]></title>
-    <link href="http://ftakao2007.github.com/blog/2013/04/13/about/"/>
-    <updated>2013-04-13T10:40:00+09:00</updated>
-    <id>http://ftakao2007.github.com/blog/2013/04/13/about</id>
-    <content type="html"><![CDATA[<p>githubの勉強の一環で立ち上げました。日記や調べたことのまとめとして利用しています。
-コンセプトは「とりあえず書き出して、適宜修正しながらみにつける」ですので、ブログの内容は
-間違っている内容や不必要な内容も多いということを前提でご覧いただければと思います。適宜内容は
-改変、修正されます。</p>
-
-<p>何かありましたら<a href="https://github.com/ftakao2007/ftakao2007.github.com">githubのissue</a>にお願いしますm(<em> </em>)m</p>
 ]]></content>
   </entry>
   
