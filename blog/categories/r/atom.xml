@@ -4,7 +4,7 @@
   <title><![CDATA[Category: R | Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/blog/categories/r/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-05-11T13:22:12+09:00</updated>
+  <updated>2013-05-11T13:33:35+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -32,7 +32,8 @@ d &lt;- "abc"</p>
 
 <p>d
 [1] "abc"
-```</p></blockquote>
+```
+代入には「=」も使えるが、Rは慣例的に「&lt;-」を使う。</p></blockquote>
 
 <h2 id="ベクトル計算">ベクトル計算</h2>
 
@@ -49,7 +50,8 @@ a+b
 
 <h2 id="行列計算">行列計算</h2>
 
-<p>「matrix」を使う
+<p>「matrix」を使う<br/>
+3行4列の行列に1から12までの数値が入っている例
 ```</p>
 
 <blockquote><p>matrix(1:12,3,4)</p>
@@ -172,8 +174,8 @@ Sepal.Width    -0.1175698   1.0000000   -0.4284401  -0.3661259
 Petal.Length    0.8717538  -0.4284401    1.0000000   0.9628654
 Petal.Width     0.8179411  -0.3661259    0.9628654   1.0000000</p></blockquote>
 
-<p>同じ値は1になる
-```</p>
+<p>```
+同じ値は1になる</p>
 
 <h2 id="単回帰分析">単回帰分析</h2>
 
@@ -201,9 +203,7 @@ y=1.858, x=-7.101
 <h2 id="Rの掟">Rの掟</h2>
 
 <ul>
-<li><p>for, if, while, repeat, 添字操作はやらない<br/>
-→遅くなる<br/>
-※逐次処理はベクトル処理をする</p></li>
+<li><p>for, if, while, repeat, 添字操作は遅くなるのでなるべくやらない</p></li>
 <li><p>添字操作は添字集合による論理判断させる<br/>
 添字一つではなく、ある条件の集合体として操作させる<br/>
 →それによってできた添字集合は逐次の論理判断と等価</p></li>
