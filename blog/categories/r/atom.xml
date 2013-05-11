@@ -4,7 +4,7 @@
   <title><![CDATA[Category: R | Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/blog/categories/r/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-05-11T13:33:35+09:00</updated>
+  <updated>2013-05-11T14:18:27+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[granpark-17th]]></title>
+    <title type="html"><![CDATA[第17回 granpark.rb 「データ解析技術入門(R言語編)」]]></title>
     <link href="http://ftakao2007.github.com/blog/2013/05/11/granpark-17th/"/>
     <updated>2013-05-11T12:52:00+09:00</updated>
     <id>http://ftakao2007.github.com/blog/2013/05/11/granpark-17th</id>
@@ -247,8 +247,8 @@ system.time(res &lt;-exp(x))
 
 <ul>
 <li>C++で実装されている</li>
-<li><p>ifやforを使うとRubyやPerlより遅くなるが、ちゃんとやるとC++くらい速い<br/>
-ifやループは使わない事に喜びをおぼえてきたらR使い。<br/>
+<li><p>ifやforを使いすぎるとRubyやPerlより遅くなるが、ちゃんとやるとC++くらい速い<br/>
+ifやループは使わない事に喜びをおぼえてきたら立派なR使い。<br/>
 使うべきところは使ってもよい。</p></li>
 <li><p>エクセルより大きなデータを扱える</p></li>
 <li>拡張パッケージが色いろある</li>
@@ -256,7 +256,7 @@ ifやループは使わない事に喜びをおぼえてきたらR使い。<br/>
 <li>「R」は検索しにくい(Rubyとかのほうがヒットする)</li>
 <li><p>メガ、ギガクラスの処理はRでよい
 →それより大きくなるとHive</p></li>
-<li><p>Rstudioをというものを入れると、WebブラウザでRができるようになる<br/>
+<li><p>Rstudioを入れると、WebブラウザでRが使える
 →エディタや描画や関数など別窓で表示させられる<br/>
 →iPadでRが使えるらしい</p></li>
 </ul>
@@ -266,7 +266,7 @@ ifやループは使わない事に喜びをおぼえてきたらR使い。<br/>
 
 <ul>
 <li>何かを計算する場合、テールの部分の情報は必要なのかを考えると良い<br/>
-データが全部必要なのか、一部あればよいのか考慮することで計算量を少なくすることができる</li>
+データが全部必要なのか、一部あればよいのか考慮することで計算量を少なくすることができる可能性がある</li>
 </ul>
 
 ]]></content>
