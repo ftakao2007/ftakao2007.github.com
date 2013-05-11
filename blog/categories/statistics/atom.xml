@@ -4,7 +4,7 @@
   <title><![CDATA[Category: statistics | Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/blog/categories/statistics/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-05-11T13:19:54+09:00</updated>
+  <updated>2013-05-11T13:22:12+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -45,7 +45,7 @@ a
 b &lt;- c(4,5,6)
 a+b
 [1] 5 7 9
-``</p></blockquote>
+```</p></blockquote>
 
 <h2 id="行列計算">行列計算</h2>
 
