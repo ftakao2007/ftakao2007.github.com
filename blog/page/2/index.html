@@ -9,8 +9,8 @@
   <meta name="author" content="ftakao2007">
 
   
-  <meta name="description" content="メモ書き あまりに利用する人数が増えると負荷が問題になってくるみたい。その場合は有償のJIRAとか
-使うことになりそう。ただ想定している利用人数は数名程度なのでRedmineでも十分なはず。 リンク http://daipresents.com/2011/ &hellip;">
+  <meta name="description" content="概要 SEOについて リンク WordPressでブログのSEO対策を考える人へ
+">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -81,6 +81,94 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/04/29/seo/">SEO</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-29T12:09:00+09:00" pubdate data-updated="true">Apr 29<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2 id="概要">概要</h2>
+
+<p>SEOについて</p>
+
+<h2 id="リンク">リンク</h2>
+
+<p><a href="http://rentalhomepage.com/wordpress/post-1050/?utm_source=dlvr.it&amp;amp;amp;amp;utm_medium=twitter">WordPressでブログのSEO対策を考える人へ</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/04/29/ec-cube/">EC-CUBE</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-29T12:01:00+09:00" pubdate data-updated="true">Apr 29<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2 id="概要">概要</h2>
+
+<p>日本のOSSのECオープンプラットフォーム</p>
+
+<h2 id="リンク">リンク</h2>
+
+<ul>
+<li><a href="http://www.ec-cube.net/">公式サイト</a></li>
+<li><a href="http://blog.serverworks.co.jp/tech/2013/04/23/ec-cube-on-aws-s3/">EC-CUBE on AWS (S3で共有編)</a></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -2336,1034 +2424,6 @@ export EC2_URL=http://ec2.ap-northeast-1.amazonaws.com</li>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/04/13/sed/">Sed</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-04-13T23:54:00+09:00" pubdate data-updated="true">Apr 13<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h1 id="sed+(ストリーミングエディタ)">sed (ストリーミングエディタ)</h1>
-
-<h2 id="Option">Option</h2>
-
-<h3 id="n">n</h3>
-
-<p>標準出力を制御</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>cat test_sed.txt
-</span><span class='line'>aaa
-</span><span class='line'>bbb123
-</span><span class='line'>ccc
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed <span class="s1">&#39;/bbb/p&#39;</span> test_sed.txt
-</span><span class='line'>aaa
-</span><span class='line'>bbb123
-</span><span class='line'>bbb123
-</span><span class='line'>ccc
-</span><span class='line'>
-</span><span class='line'>* bbbが含まれている行があればその行を出力するという処理。
-</span><span class='line'>   nオプション無しだと、「テキストの内容＋処理結果」となっている
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed -n <span class="s1">&#39;/bbb/p&#39;</span> test_sed.txt
-</span><span class='line'>bbb123
-</span><span class='line'>
-</span><span class='line'>* nオプションをつけると処理結果のみ出力
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed -n <span class="s1">&#39;/bbb/d&#39;</span> test_sed.txt
-</span><span class='line'>
-</span><span class='line'>* bbbが含まれる行を削除する処理。
-</span><span class='line'>   nオプションをつけている場合は処理結果は何も表示されず、よくわからない。
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed <span class="s1">&#39;/bbb/d&#39;</span> test_sed.txt
-</span><span class='line'>aaa
-</span><span class='line'>ccc
-</span><span class='line'>
-</span><span class='line'>* nオプション無しで実行すると、bbbの行が削除されている事が分かる。
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>pで表示する場合はnをつけると目的の部分だけ出力できる</li>
-<li>dで削除する場合はnを付けなければ削除された行以外を出力できる</li>
-</ul>
-
-
-<!--
-* sで置換する場合はnを付けなければ目的の語句が置換された状態で全ファイル分出力される  
-➡d,sはnを付けると出力結果は何も表示されない
--->
-
-
-<h3 id="e">e</h3>
-
-<p>次にくる値はコマンドとみなす</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>cat test_sed.txt
-</span><span class='line'>aaa
-</span><span class='line'>bbb123
-</span><span class='line'>ccc
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed <span class="s1">&#39;/bbb/d&#39;</span> test_sed.txt
-</span><span class='line'>aaa
-</span><span class='line'>ccc
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed -e <span class="s1">&#39;/bbb/d&#39;</span> -e <span class="s1">&#39;/ccc/d&#39;</span> test_sed.txt
-</span><span class='line'>aaa
-</span><span class='line'>
-</span><span class='line'>* bbbが含まれる行を削除し、cccが含まれる行も削除する
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed <span class="s1">&#39;/bbb/d&#39;</span> -e <span class="s1">&#39;/ccc/d&#39;</span> test_sed.txt
-</span><span class='line'>sed: -e: No such file or directory
-</span><span class='line'>sed: /ccc/d: No such file or directory
-</span><span class='line'>aaa
-</span><span class='line'>ccc
-</span><span class='line'>
-</span><span class='line'>* eオプションを使う場合はコマンドごとに明示的にeオプションを指定する必要がある
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3 id="f">f</h3>
-
-<p>次にくる値はスクリプトとみなす</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>cat test_sed.txt
-</span><span class='line'>aaa
-</span><span class='line'>bbb123
-</span><span class='line'>ccc
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>cat sed_test.sed
-</span><span class='line'>/bbb/p
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed -n -f sed_test.sed test_sed.txt
-</span><span class='line'>bbb123
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3 id="i">i</h3>
-
-<p>標準出力に出力せず、直接ファイルを書き換える</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>cat test_sed.txt
-</span><span class='line'>aaa
-</span><span class='line'>bbb123
-</span><span class='line'>ccc
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed -i.bak <span class="s1">&#39;/bbb/d&#39;</span> test_sed.txt
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>cat test_sed.txt
-</span><span class='line'>aaa
-</span><span class='line'>ccc
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>cat test_sed.txt.bak
-</span><span class='line'>aaa
-</span><span class='line'>bbb123
-</span><span class='line'>ccc
-</span><span class='line'>
-</span><span class='line'>* .bakにバックアップをとって元ファイルはbbbを含む行が削除されている
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed -i <span class="s1">&#39;/bbb/d&#39;</span> test_sed.txt
-</span><span class='line'>sed: 1: <span class="s2">&quot;test_sed2.txt&quot;</span>: undefined label <span class="s1">&#39;est_sed.txt&#39;</span>
-</span><span class='line'>
-</span><span class='line'>* 拡張子を指定しない場合はエラーになる
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2 id="Command">Command</h2>
-
-<h3 id="p">p</h3>
-
-<p>出力する</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>cat test_sed.txt
-</span><span class='line'>aaa
-</span><span class='line'>bbb123
-</span><span class='line'>ccc
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed -n <span class="s1">&#39;1,2p&#39;</span> test_sed.txt
-</span><span class='line'>aaa
-</span><span class='line'>bbb123
-</span><span class='line'>
-</span><span class='line'>* 1-2行目を出力
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed -n <span class="s1">&#39;3p&#39;</span> test_sed.txt
-</span><span class='line'>ccc
-</span><span class='line'>
-</span><span class='line'>* 3行目を出力
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed -n <span class="s1">&#39;/bbb/p&#39;</span> test_sed.txt
-</span><span class='line'>bbb123
-</span><span class='line'>
-</span><span class='line'>* bbbが含まれる行を出力
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed -n <span class="s1">&#39;$p&#39;</span> test_sed.txt
-</span><span class='line'>ccc
-</span><span class='line'>
-</span><span class='line'>* 最後の行を出力
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3 id="d">d</h3>
-
-<p>削除する</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>cat test_sed.txt
-</span><span class='line'>aaa
-</span><span class='line'>bbb123
-</span><span class='line'>ccc
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed <span class="s1">&#39;1,2d&#39;</span> test_sed.txt
-</span><span class='line'>ccc
-</span><span class='line'>
-</span><span class='line'>* 1-2行目を削除
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed <span class="s1">&#39;3d&#39;</span> test_sed.txt
-</span><span class='line'>aaa
-</span><span class='line'>bbb123
-</span><span class='line'>
-</span><span class='line'>* 3行目を削除
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed <span class="s1">&#39;/bbb/d&#39;</span> test_sed.txt
-</span><span class='line'>aaa
-</span><span class='line'>ccc
-</span><span class='line'>
-</span><span class='line'>* bbbが含まれる行を削除
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed <span class="s1">&#39;$d&#39;</span> test_sed.txt
-</span><span class='line'>aaa
-</span><span class='line'>bbb123
-</span><span class='line'>
-</span><span class='line'>* 最後の行を削除
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3 id="q">q</h3>
-
-<p>特定の文字列が含まれる行まで表示</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>cat test_sed3.txt
-</span><span class='line'>aaa
-</span><span class='line'>bbbb123bbb456bbb
-</span><span class='line'>ccc
-</span><span class='line'>bbb789bbb
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed <span class="s1">&#39;/ccc/q&#39;</span> test_sed3.txt
-</span><span class='line'>aaa
-</span><span class='line'>bbbb123bbb456bbb
-</span><span class='line'>ccc
-</span><span class='line'>
-</span><span class='line'>* cccが含まれる行まで表示
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3 id="s">s</h3>
-
-<p>置換する</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>cat test_sed.txt
-</span><span class='line'>aaa
-</span><span class='line'>bbb123
-</span><span class='line'>ccc
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed <span class="s1">&#39;s/bbb/xxx/&#39;</span> test_sed.txt
-</span><span class='line'>aaa
-</span><span class='line'>xxx123
-</span><span class='line'>ccc
-</span><span class='line'>
-</span><span class='line'>* bbbをxxxに置換
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>g
-すべてのパターンに対して処理を実行する</li>
-</ul>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>cat test_sed3.txt
-</span><span class='line'>aaa
-</span><span class='line'>bbb123bbb456bbb
-</span><span class='line'>ccc
-</span><span class='line'>bbb789bbb
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed <span class="s1">&#39;s/bbb/xxx/&#39;</span> test_sed3.txt
-</span><span class='line'>aaa
-</span><span class='line'>xxx123bbb456bbb
-</span><span class='line'>ccc
-</span><span class='line'>xxx789bbb
-</span><span class='line'>
-</span><span class='line'>* gオプションが無い場合は最初のみ置換される
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed <span class="s1">&#39;s/bbb/xxx/g&#39;</span> test_sed3.txt
-</span><span class='line'>aaa
-</span><span class='line'>xxx123xxx456xxx
-</span><span class='line'>ccc
-</span><span class='line'>xxx789xxx
-</span><span class='line'>
-</span><span class='line'>* gオプションをつけると全てが置換される
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>n(整数)
-n番目の発生を置換</li>
-</ul>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>cat test_sed3.txt
-</span><span class='line'>aaa
-</span><span class='line'>bbbb123bbb456bbb
-</span><span class='line'>ccc
-</span><span class='line'>bbb789bbb
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed <span class="s1">&#39;s/bbb/ddd/1&#39;</span> test_sed3.txt
-</span><span class='line'>aaa
-</span><span class='line'>dddb123bbb456bbb
-</span><span class='line'>ccc
-</span><span class='line'>ddd789bbb
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed <span class="s1">&#39;s/bbb/ddd/2&#39;</span> test_sed3.txt
-</span><span class='line'>aaa
-</span><span class='line'>bbbb123ddd456bbb
-</span><span class='line'>ccc
-</span><span class='line'>bbb789ddd
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed <span class="s1">&#39;s/bbb/ddd/3&#39;</span> test_sed3.txt
-</span><span class='line'>aaa
-</span><span class='line'>bbbb123bbb456ddd
-</span><span class='line'>ccc
-</span><span class='line'>bbb789bbb
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>p
-パターンスペースの先頭セグメントから最初の復帰改行までを標準出力に出力する</li>
-</ul>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>cat test_sed3.txt
-</span><span class='line'>aaa
-</span><span class='line'>bbbb123bbb456bbb
-</span><span class='line'>ccc
-</span><span class='line'>bbb789bbb
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed -n <span class="s1">&#39;s/bbb/ddd/p1&#39;</span> test_sed3.txt
-</span><span class='line'>dddb123bbb456bbb
-</span><span class='line'>ddd789bbb
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed -n <span class="s1">&#39;s/bbb/ddd/p2&#39;</span> test_sed3.txt
-</span><span class='line'>bbbb123ddd456bbb
-</span><span class='line'>bbb789ddd
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed -n <span class="s1">&#39;s/bbb/ddd/p3&#39;</span> test_sed3.txt
-</span><span class='line'>bbbb123bbb456ddd
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>w
-ファイルへ書き出す</li>
-</ul>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>cat test_sed3.txt
-</span><span class='line'>aaa
-</span><span class='line'>bbbb123bbb456bbb
-</span><span class='line'>ccc
-</span><span class='line'>bbb789bbb
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed -n <span class="s1">&#39;/bbb/w bbb.txt     &lt;-ここで一度改行されている</span>
-</span><span class='line'><span class="s1">/bbb/!w aaa.txt&#39;</span> test_sed3.txt
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>cat bbb.txt
-</span><span class='line'>bbbb123bbb456bbb
-</span><span class='line'>bbb789bbb
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>cat aaa.txt
-</span><span class='line'>aaa
-</span><span class='line'>ccc
-</span><span class='line'>
-</span><span class='line'>* bbbにマッチした行をbbb.txtへ、マッチしなかった行をaaa.txtへ書き出す
-</span><span class='line'>
-</span><span class='line'><span class="o">========================</span>
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>cat test_sed3.txt
-</span><span class='line'>aaa
-</span><span class='line'>bbbb123bbb456bbb
-</span><span class='line'>ccc
-</span><span class='line'>bbb789bbb
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed <span class="s1">&#39;s/bbb/ddd/gw ddd.txt&#39;</span> test_sed3.txt &gt; change.txt
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>cat ddd.txt
-</span><span class='line'>dddb123ddd456ddd
-</span><span class='line'>ddd789ddd
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>cat change.txt
-</span><span class='line'>aaa
-</span><span class='line'>dddb123ddd456ddd
-</span><span class='line'>ccc
-</span><span class='line'>ddd789ddd
-</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="err">$</span>
-</span><span class='line'>
-</span><span class='line'>* 変換された行のみddd.txtに保存、変換後の全行をchange.txtに出力
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2 id="Match">Match</h2>
-
-<h3 id="空行以外を出力">空行以外を出力</h3>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>cat test_sed4.txt
-</span><span class='line'>aaa
-</span><span class='line'>
-</span><span class='line'>bbbb123bbb456bbb
-</span><span class='line'>ccc
-</span><span class='line'>
-</span><span class='line'> bbb789bbb
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed -n <span class="s1">&#39;/./p&#39;</span> test_sed4.txt
-</span><span class='line'>aaa
-</span><span class='line'>bbbb123bbb456bbb
-</span><span class='line'>ccc
-</span><span class='line'> bbb789bbb
-</span><span class='line'>
-</span><span class='line'>* 空行以外の行を出力
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3 id="空行を出力">空行を出力</h3>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>cat test_sed4.txt
-</span><span class='line'>aaa
-</span><span class='line'>
-</span><span class='line'>bbbb123bbb456bbb
-</span><span class='line'>ccc
-</span><span class='line'>
-</span><span class='line'> bbb789bbb
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed -n <span class="s1">&#39;/^$/p&#39;</span> test_sed4.txt
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'>* 空行を出力
-</span><span class='line'>  <span class="o">(</span>例は空行2行分が出力されている<span class="o">)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3 id="最初の空行から次の空行までを出力">最初の空行から次の空行までを出力</h3>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>cat test_sed4.txt
-</span><span class='line'>aaa
-</span><span class='line'>
-</span><span class='line'>bbbb123bbb456bbb
-</span><span class='line'>ccc
-</span><span class='line'>
-</span><span class='line'> bbb789bbb
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed -ne <span class="s1">&#39;/^$/,/^$/p&#39;</span> test_sed4.txt
-</span><span class='line'>
-</span><span class='line'>bbbb123bbb456bbb
-</span><span class='line'>ccc
-</span><span class='line'>
-</span><span class='line'>* 最初の空行から次の空行までが出力されている
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed -ne <span class="s1">&#39;/^$/,/^$/p&#39;</span> test_sed4.txt | sed -e <span class="s1">&#39;/^$/d&#39;</span>
-</span><span class='line'>bbbb123bbb456bbb
-</span><span class='line'>ccc
-</span><span class='line'>
-</span><span class='line'>* マッチした最初と最後の空行自体は削除して表示
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed -ne <span class="s1">&#39;/^$/,/^$/p&#39;</span> test_sed4.txt | sed -ne <span class="s1">&#39;/./p&#39;</span>
-</span><span class='line'>bbbb123bbb456bbb
-</span><span class='line'>ccc
-</span><span class='line'>
-</span><span class='line'>* 上と同じ結果
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3 id="最初の空行から次の空行までの行を削除">最初の空行から次の空行までの行を削除</h3>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>cat test_sed4.txt
-</span><span class='line'>aaa
-</span><span class='line'>
-</span><span class='line'>bbbb123bbb456bbb
-</span><span class='line'>ccc
-</span><span class='line'>
-</span><span class='line'> bbb789bbb
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed -e <span class="s1">&#39;/^$/,/^$/d&#39;</span> test_sed4.txt
-</span><span class='line'>aaa
-</span><span class='line'> bbb789bbb
-</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="err">$</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2 id="Advance">Advance</h2>
-
-<h3 id="正規表現(?)">正規表現(?)</h3>
-
-<h4 id="+">&amp;</h4>
-
-<p>置換のときに省略して記載できる</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>cat test_sed.txt
-</span><span class='line'>aaa
-</span><span class='line'>bbb123
-</span><span class='line'>ccc
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed <span class="s1">&#39;s/bbb/bbb_add_/&#39;</span> test_sed.txt
-</span><span class='line'>aaa
-</span><span class='line'>bbb_add_123
-</span><span class='line'>ccc
-</span><span class='line'>
-</span><span class='line'>* bbbの直後に_add_を追加する
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:sed ftakao2007<span class="nv">$ </span>sed <span class="s1">&#39;s/bbb/&amp;_add_/&#39;</span> test_sed.txt
-</span><span class='line'>aaa
-</span><span class='line'>bbb_add_123
-</span><span class='line'>ccc
-</span><span class='line'>
-</span><span class='line'>* 先ほどと同じ結果。「bbb」のかわりに「&amp;」で指定
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3 id="区切り位置">区切り位置</h3>
-
-<p>区切り位置を<code>/</code>の代わりに<code>;</code>にすると、<code>/</code>をエスケープしなくても良くなる</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>fukui-no-MacBook-Air:DATA ftakao2007<span class="nv">$ </span>cat 3.html | gsed -e <span class="s1">&#39;s/&lt;\/td&gt;/&amp;\n/g&#39;</span>
-</span><span class='line'>&lt;table&gt;
-</span><span class='line'>  &lt;tr&gt;
-</span><span class='line'>&lt;td&gt;a&lt;/td&gt;
-</span><span class='line'>&lt;td&gt;b&lt;/td&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;td&gt;c&lt;/td&gt;
-</span><span class='line'>
-</span><span class='line'>  &lt;/tr&gt;
-</span><span class='line'>&lt;/table&gt;
-</span><span class='line'>fukui-no-MacBook-Air:DATA ftakao2007<span class="nv">$ </span>cat 3.html | gsed -e <span class="s1">&#39;s;&lt;/td&gt;;&amp;\n;g&#39;</span>
-</span><span class='line'>&lt;table&gt;
-</span><span class='line'>  &lt;tr&gt;
-</span><span class='line'>&lt;td&gt;a&lt;/td&gt;
-</span><span class='line'>&lt;td&gt;b&lt;/td&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;td&gt;c&lt;/td&gt;
-</span><span class='line'>
-</span><span class='line'>  &lt;/tr&gt;
-</span><span class='line'>&lt;/table&gt;
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2 id="参考">参考</h2>
-
-<ul>
-<li><a href="http://www.ksknet.net/linuxrz/sed.html">sed - ストリーミングエディタ</a></li>
-<li><a href="http://www.ishilab.net/~ishihara/tips/sed.txt">sed に関するメモ</a></li>
-</ul>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/04/13/shellgei/">シェル芸 20130413</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-04-13T11:30:00+09:00" pubdate data-updated="true">Apr 13<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://kokucheese.com/event/index/78710/">第4回春爛漫シェル芸人撩乱勉強会&amp;第22回勝手に新歓定例会</a></p>
-
-<h1 id="事前準備">事前準備</h1>
-
-<h2 id="wget+curl+w3mの確認">wget curl w3mの確認</h2>
-
-<p>全部入っていた</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="o">[</span>mickey@ftakao2007 ~<span class="o">]</span><span class="nv">$ </span>which wget
-</span><span class='line'>/usr/bin/wget
-</span><span class='line'><span class="o">[</span>mickey@ftakao2007 ~<span class="o">]</span><span class="nv">$ </span>which curl
-</span><span class='line'>/usr/bin/curl
-</span><span class='line'><span class="o">[</span>mickey@ftakao2007 ~<span class="o">]</span><span class="nv">$ </span>which w3m
-</span><span class='line'>/usr/bin/w3m
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2 id="[open+usp+Tukubai+のインストール(CentOS+6.4)](https://github.com/usp-engineers-community/Open-usp-Tukubai)"><a href="https://github.com/usp-engineers-community/Open-usp-Tukubai">open usp Tukubai のインストール(CentOS 6.4)</a></h2>
-
-<p>gitでインストールしてみる</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>git clone https://github.com/usp-engineers-community/Open-usp-Tukubai.git
-</span><span class='line'><span class="nb">cd </span>Open-usp-Tukubai
-</span><span class='line'>su -
-</span><span class='line'>make install
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>※ なぜかgitでは入らなかったのでhttpsで</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">cd</span> ~/work
-</span><span class='line'>wget http://www.usptomo.com/TOMONOKAI_CMS/HTML/DATA.zip
-</span><span class='line'>unzip DATA.zip
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2 id="勉強会のまとめについて">勉強会のまとめについて</h2>
-
-<p>正確な情報や丁寧な解説はきっと他の方にまとめていただけると思うので、自分は勉強会で学んだことを端的に
-逆引きでまとめていくというコンセプトにしようと思います。</p>
-
-<ul>
-<li><a href="http://ftakao2007.github.io/blog/2013/04/14/sed-gyakubiki/">逆引きコマンド</a></li>
-</ul>
-
-
-<p>「正確な情報の汎用的な一般解よりも、とりあえずやりたいことができる」<br/>
-「一箇所に情報を集約する」</p>
-
-<p>を目的とします。勉強会でその時スゲーって思ってまとめても、あのコマンドどこだったっけとなることが多かったので
-今後勉強会で学んだことは逆引き的に上記のページに集約しようと思います。</p>
-
-<h2 id="リンク">リンク</h2>
-
-<ul>
-<li><a href="http://www.slideshare.net/ryuichiueda/20130406-18763665">第4回春爛漫シェル芸人撩乱勉強会(上田隆一さん)</a></li>
-<li><a href="http://www.slideshare.net/HirofumiSaito/usp-lt-20130413">wgetとcurlで並列ダウンロード (hi_saito さん)</a></li>
-<li><a href="http://laugh-labo.blogspot.jp/2013/04/4.html?spref=tw">「第4回春爛漫シェル芸人撩乱勉強会&amp;第22回勝手に新歓定例会」に参加してきたよー！ (laugh_K さん)</a></li>
-<li><a href="http://kunst1080.hatenablog.com/entry/2013/04/15/004801">「第4回春爛漫シェル芸人撩乱勉強会&amp;第22回勝手に新歓定例会」あそびきにました (kunst1080 さん)</a></li>
-<li><a href="http://rsooo.blogspot.jp/2013/04/">家に帰ってブログ書くまでがシェル芸(rsoooさん</a></li>
-<li><p><a href="http://www.ustream.tv/recorded/31380919?utm_campaign=ustre-am&amp;amp;amp;amp;amp;utm_source=31380919&amp;amp;amp;amp;amp;utm_medium=social">USTREAM</a></p></li>
-<li><p><a href="https://twitter.com/usptomo/status/323068045532737536/photo/1">本日一番の訳わからない写真</a></p></li>
-</ul>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/3/">&larr; Older</a>
@@ -3381,6 +2441,14 @@ n番目の発生を置換</li>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/05/18/python-mini-hack-a-thon/">(第31回)Python mini Hack-a-thon</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/05/15/iphone-app-study/">第4回 iphoneアプリ開発超初心者講習会</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/05/11/granpark-17th/">第17回 granpark.rb 「データ解析技術入門(R言語編)」</a>
       </li>
     
@@ -3392,19 +2460,11 @@ n番目の発生を置換</li>
         <a href="/blog/2013/04/29/zaim/">zaim</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/04/29/raspberrypi/">RaspberryPi</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/04/29/vagrant/">vagrant</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/about/'>about (3)</a></li><li><a href='/blog/categories/aws/'>aws (3)</a></li><li><a href='/blog/categories/bash/'>bash (2)</a></li><li><a href='/blog/categories/book/'>book (1)</a></li><li><a href='/blog/categories/chef/'>chef (2)</a></li><li><a href='/blog/categories/command/'>command (5)</a></li><li><a href='/blog/categories/construct/'>construct (1)</a></li><li><a href='/blog/categories/diary/'>diary (3)</a></li><li><a href='/blog/categories/ec-cube/'>EC-CUBE (1)</a></li><li><a href='/blog/categories/ec2/'>ec2 (1)</a></li><li><a href='/blog/categories/etc/'>etc (1)</a></li><li><a href='/blog/categories/fabric/'>fabric (1)</a></li><li><a href='/blog/categories/fluentd/'>fluentd (1)</a></li><li><a href='/blog/categories/git/'>git (3)</a></li><li><a href='/blog/categories/google/'>google (1)</a></li><li><a href='/blog/categories/heroku/'>heroku (1)</a></li><li><a href='/blog/categories/monitor/'>monitor (5)</a></li><li><a href='/blog/categories/munin/'>munin (1)</a></li><li><a href='/blog/categories/network/'>network (2)</a></li><li><a href='/blog/categories/octopress/'>octopress (1)</a></li><li><a href='/blog/categories/os/'>OS (3)</a></li><li><a href='/blog/categories/php/'>PHP (1)</a></li><li><a href='/blog/categories/python/'>Python (4)</a></li><li><a href='/blog/categories/r/'>R (1)</a></li><li><a href='/blog/categories/raspberrypi/'>RaspberryPi (1)</a></li><li><a href='/blog/categories/redmine/'>Redmine (2)</a></li><li><a href='/blog/categories/seo/'>SEO (1)</a></li><li><a href='/blog/categories/splunk/'>splunk (1)</a></li><li><a href='/blog/categories/statistics/'>statistics (1)</a></li><li><a href='/blog/categories/vagrant/'>vagrant (1)</a></li><li><a href='/blog/categories/vim/'>vim (1)</a></li><li><a href='/blog/categories/zaim/'>zaim (1)</a></li><li><a href='/blog/categories/mian-qiang-hui/'>勉強会 (4)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/about/'>about (3)</a></li><li><a href='/blog/categories/aws/'>aws (3)</a></li><li><a href='/blog/categories/bash/'>bash (2)</a></li><li><a href='/blog/categories/book/'>book (1)</a></li><li><a href='/blog/categories/chef/'>chef (2)</a></li><li><a href='/blog/categories/command/'>command (5)</a></li><li><a href='/blog/categories/construct/'>construct (1)</a></li><li><a href='/blog/categories/diary/'>diary (3)</a></li><li><a href='/blog/categories/ec-cube/'>EC-CUBE (1)</a></li><li><a href='/blog/categories/ec2/'>ec2 (1)</a></li><li><a href='/blog/categories/etc/'>etc (1)</a></li><li><a href='/blog/categories/fabric/'>fabric (1)</a></li><li><a href='/blog/categories/fluentd/'>fluentd (1)</a></li><li><a href='/blog/categories/git/'>git (3)</a></li><li><a href='/blog/categories/google/'>google (1)</a></li><li><a href='/blog/categories/heroku/'>heroku (1)</a></li><li><a href='/blog/categories/ios/'>iOS (1)</a></li><li><a href='/blog/categories/monitor/'>monitor (5)</a></li><li><a href='/blog/categories/munin/'>munin (1)</a></li><li><a href='/blog/categories/network/'>network (2)</a></li><li><a href='/blog/categories/octopress/'>octopress (1)</a></li><li><a href='/blog/categories/os/'>OS (3)</a></li><li><a href='/blog/categories/php/'>PHP (1)</a></li><li><a href='/blog/categories/python/'>Python (5)</a></li><li><a href='/blog/categories/r/'>R (1)</a></li><li><a href='/blog/categories/raspberrypi/'>RaspberryPi (1)</a></li><li><a href='/blog/categories/redmine/'>Redmine (2)</a></li><li><a href='/blog/categories/seo/'>SEO (1)</a></li><li><a href='/blog/categories/splunk/'>splunk (1)</a></li><li><a href='/blog/categories/statistics/'>statistics (1)</a></li><li><a href='/blog/categories/vagrant/'>vagrant (1)</a></li><li><a href='/blog/categories/vim/'>vim (1)</a></li><li><a href='/blog/categories/xcode/'>Xcode (1)</a></li><li><a href='/blog/categories/zaim/'>zaim (1)</a></li><li><a href='/blog/categories/mian-qiang-hui/'>勉強会 (6)</a></li></ul>
 </section>
 <section>
 <script type="text/javascript"><!--

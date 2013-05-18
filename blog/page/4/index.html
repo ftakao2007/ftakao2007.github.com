@@ -9,8 +9,10 @@
   <meta name="author" content="ftakao2007">
 
   
-  <meta name="description" content="Nagios(株式会社アイビス) 特徴 オープンソースの統合監視ソフト 長所、短所 長所 短所
-">
+  <meta name="description" content="この土日は嵐だったので予定をキャンセルして家で一人ハッカソンやってました。
+厳密には一人での開発はハッカソンとは言わないみたいですが。。 以下今回の成果です。 ec2にDropboxをインストール
+ec2にOctopressにdeployできる環境を構築
+herokuでハロワを表示 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -81,6 +83,107 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/04/08/diary/">一人ハッカソン</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-08T00:46:00+09:00" pubdate data-updated="true">Apr 8<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>この土日は嵐だったので予定をキャンセルして家で一人ハッカソンやってました。<br/>
+厳密には一人での開発はハッカソンとは言わないみたいですが。。</p>
+
+<p>以下今回の成果です。</p>
+
+<ul>
+<li>ec2にDropboxをインストール</li>
+<li>ec2にOctopressにdeployできる環境を構築</li>
+<li>herokuでハロワを表示</li>
+<li>MacにOctopressにdeployできる環境を構築</li>
+<li>Macにfabricをインストール</li>
+<li>munin, Nagios, Zabbixの調査開始</li>
+<li>Octopressにcategory表示のプラグイン追加</li>
+<li>githubにmunin自動構築スクリプトをアップ</li>
+<li>Dropboxに置いてある画像をOctopressで表示できるようにした</li>
+</ul>
+
+
+<p>色んなジャンルをつまみ食いしながらいろいろできました:-)<br/>
+画像はbox.comが使えれば、50Gまで無料で使えるんですよね。次はこれをやってみようかな。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/04/08/zabix/">Zabix</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-08T00:20:00+09:00" pubdate data-updated="true">Apr 8<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://www.zabbix.jp/documents/what_is_zabbix">Zabbixとは</a></p>
+
+<h1 id="特徴">特徴</h1>
+
+<p>オープンソースの統合監視ソフト</p>
+
+<h1 id="長所、短所">長所、短所</h1>
+
+<h2 id="長所">長所</h2>
+
+<h2 id="短所">短所</h2>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1228,181 +1331,6 @@ MacBook/MacBook Pro (Intl)</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/04/06/octpress/">Octopress まとめ</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-04-06T19:28:00+09:00" pubdate data-updated="true">Apr 6<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h1 id="初期設定">初期設定</h1>
-
-<p><a href="http://k-ui.jp/blog/2011/08/30/try-to-octopress/">Octopress 使う</a><br/>
-<a href="http://atijust.github.io/">GitHub+Octopressでブログ構築</a></p>
-
-<h2 id="rake+deploy実行時のエラー">rake deploy実行時のエラー</h2>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c">## Pushing generated _deploy website</span>
-</span><span class='line'>ERROR: Permission to ftakao2007/ftakao2007.github.com.git denied to hoge.
-</span><span class='line'>fatal: The remote end hung up unexpectedly
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p><code>~/.ssh/config</code> を利用している場合は設定の問題の可能性がある。configファイルの上の鍵から順番に使われていくみたい。
-同一ホスト(github.com)で2つのアカウントを使っている場合、現在pushしようとしているアカウントの鍵ファイルが
-もう一方の鍵ファイルより下に記載されている場合。別アカウントの鍵でアクセスしようとして失敗する。
-現在アクセスしようとする方の鍵を上位に記載すれば成功する。</p>
-
-<p>別アカウントのブログを更新するごとにリストの順番を入れ替えないといけないけど
-もっとスマートな方法無いのかな。。<br/>
-<a href="http://nauthiz.hatenablog.com/entry/20100919/1284892108">.ssh/configの書き方</a><br/>
-<a href="http://www.unixuser.org/~euske/doc/openssh/jman/ssh_config.html">SSH_CONFIG (5)</a><br/>
-このへんで何かできそう。ホスト名が同一でなんらかしの条件分岐ってできるのかな。</p>
-
-<h1 id="記法など">記法など</h1>
-
-<ul>
-<li><a href="http://sesame.github.io/blog/2012/12/09/how-to-use-octopress/">Octopressの使い方</a></li>
-<li>記事の作成</li>
-<li>記事の反映</li>
-<li>記事のアップ</li>
-<li>記事のプレビュー</li>
-<li>記法</li>
-</ul>
-
-
-<p>コマンド覚書</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>rake preview
-</span><span class='line'>http://localhost:4000
-</span><span class='line'>
-</span><span class='line'>rake new_post<span class="o">[</span><span class="s2">&quot;TITLE&quot;</span><span class="o">]</span>
-</span><span class='line'>vi <span class="nb">source</span>/_posts/2013-04-06-TITLE.markdown
-</span><span class='line'>rake generate
-</span><span class='line'>rake deploy
-</span><span class='line'>http://ftakao2007.github.io
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li><a href="http://www.mk-mode.com/octopress/2013/01/10/octopress-table-tag/">Octopress - 容易に Table タグ！</a></li>
-</ul>
-
-
-<h1 id="画像テスト">画像テスト</h1>
-
-<p>Dropboxのpublicフォルダを利用</p>
-
-<p><img src="https://dl.dropbox.com/u/37468049/20130406_onesan.jpg" alt="画像テスト" /></p>
-
-<p>わぁい</p>
-
-<h1 id="[Octopress+-+カテゴリリストの追加！](http://www.mk-mode.com/octopress/2012/12/18/octopress-add-category-list/)"><a href="http://www.mk-mode.com/octopress/2012/12/18/octopress-add-category-list/">Octopress - カテゴリリストの追加！</a></h1>
-
-<h1 id="[見出し目次の追加](http://rcmdnk.github.io/blog/2013/03/23/octopress/)"><a href="http://rcmdnk.github.io/blog/2013/03/23/octopress/">見出し目次の追加</a></h1>
-
-<h1 id="[Octopressはじめました](http://www.miukoba.net/blog/2013/01/05/start-octopress/)"><a href="http://www.miukoba.net/blog/2013/01/05/start-octopress/">Octopressはじめました</a></h1>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/04/06/kentou/">やりたいこと、やったこと</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-04-06T18:43:00+09:00" pubdate data-updated="true">Apr 6<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h1 id="やりたいこと">やりたいこと</h1>
-
-<p>いずれできたらいいなぁくらいの温度感</p>
-
-<h2 id="iSSHで日本語の読み書き">iSSHで日本語の読み書き</h2>
-
-<ul>
-<li>nkfインストール</li>
-</ul>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>wget http://mirror.centos.org/centos/6/os/i386/Packages/nkf-2.0.8b-6.2.el6.i686.rpm
-</span><span class='line'>sudo yum localinstall nkf-2.0.8b-6.2.el6.i686.rpm
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>→ iSSHはUTF-8があるので設定はできるのかなぁ</p>
-
-<h2 id="herokuでRedmineを動かす">herokuでRedmineを動かす</h2>
-
-<h1 id="やったこと">やったこと</h1>
-
-<h2 id="[EC2にDropboxを設定](http://ftakao2007.github.io/blog/2013/04/07/ec2/)"><a href="http://ftakao2007.github.io/blog/2013/04/07/ec2/">EC2にDropboxを設定</a></h2>
-
-<h2 id="[Dropboxに画像を置いてブログで表示](http://ftakao2007.github.io/blog/2013/04/06/octpress/)"><a href="http://ftakao2007.github.io/blog/2013/04/06/octpress/">Dropboxに画像を置いてブログで表示</a></h2>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/5/">&larr; Older</a>
@@ -1420,6 +1348,14 @@ MacBook/MacBook Pro (Intl)</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/05/18/python-mini-hack-a-thon/">(第31回)Python mini Hack-a-thon</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/05/15/iphone-app-study/">第4回 iphoneアプリ開発超初心者講習会</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/05/11/granpark-17th/">第17回 granpark.rb 「データ解析技術入門(R言語編)」</a>
       </li>
     
@@ -1431,19 +1367,11 @@ MacBook/MacBook Pro (Intl)</p>
         <a href="/blog/2013/04/29/zaim/">zaim</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/04/29/raspberrypi/">RaspberryPi</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/04/29/vagrant/">vagrant</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/about/'>about (3)</a></li><li><a href='/blog/categories/aws/'>aws (3)</a></li><li><a href='/blog/categories/bash/'>bash (2)</a></li><li><a href='/blog/categories/book/'>book (1)</a></li><li><a href='/blog/categories/chef/'>chef (2)</a></li><li><a href='/blog/categories/command/'>command (5)</a></li><li><a href='/blog/categories/construct/'>construct (1)</a></li><li><a href='/blog/categories/diary/'>diary (3)</a></li><li><a href='/blog/categories/ec-cube/'>EC-CUBE (1)</a></li><li><a href='/blog/categories/ec2/'>ec2 (1)</a></li><li><a href='/blog/categories/etc/'>etc (1)</a></li><li><a href='/blog/categories/fabric/'>fabric (1)</a></li><li><a href='/blog/categories/fluentd/'>fluentd (1)</a></li><li><a href='/blog/categories/git/'>git (3)</a></li><li><a href='/blog/categories/google/'>google (1)</a></li><li><a href='/blog/categories/heroku/'>heroku (1)</a></li><li><a href='/blog/categories/monitor/'>monitor (5)</a></li><li><a href='/blog/categories/munin/'>munin (1)</a></li><li><a href='/blog/categories/network/'>network (2)</a></li><li><a href='/blog/categories/octopress/'>octopress (1)</a></li><li><a href='/blog/categories/os/'>OS (3)</a></li><li><a href='/blog/categories/php/'>PHP (1)</a></li><li><a href='/blog/categories/python/'>Python (4)</a></li><li><a href='/blog/categories/r/'>R (1)</a></li><li><a href='/blog/categories/raspberrypi/'>RaspberryPi (1)</a></li><li><a href='/blog/categories/redmine/'>Redmine (2)</a></li><li><a href='/blog/categories/seo/'>SEO (1)</a></li><li><a href='/blog/categories/splunk/'>splunk (1)</a></li><li><a href='/blog/categories/statistics/'>statistics (1)</a></li><li><a href='/blog/categories/vagrant/'>vagrant (1)</a></li><li><a href='/blog/categories/vim/'>vim (1)</a></li><li><a href='/blog/categories/zaim/'>zaim (1)</a></li><li><a href='/blog/categories/mian-qiang-hui/'>勉強会 (4)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/about/'>about (3)</a></li><li><a href='/blog/categories/aws/'>aws (3)</a></li><li><a href='/blog/categories/bash/'>bash (2)</a></li><li><a href='/blog/categories/book/'>book (1)</a></li><li><a href='/blog/categories/chef/'>chef (2)</a></li><li><a href='/blog/categories/command/'>command (5)</a></li><li><a href='/blog/categories/construct/'>construct (1)</a></li><li><a href='/blog/categories/diary/'>diary (3)</a></li><li><a href='/blog/categories/ec-cube/'>EC-CUBE (1)</a></li><li><a href='/blog/categories/ec2/'>ec2 (1)</a></li><li><a href='/blog/categories/etc/'>etc (1)</a></li><li><a href='/blog/categories/fabric/'>fabric (1)</a></li><li><a href='/blog/categories/fluentd/'>fluentd (1)</a></li><li><a href='/blog/categories/git/'>git (3)</a></li><li><a href='/blog/categories/google/'>google (1)</a></li><li><a href='/blog/categories/heroku/'>heroku (1)</a></li><li><a href='/blog/categories/ios/'>iOS (1)</a></li><li><a href='/blog/categories/monitor/'>monitor (5)</a></li><li><a href='/blog/categories/munin/'>munin (1)</a></li><li><a href='/blog/categories/network/'>network (2)</a></li><li><a href='/blog/categories/octopress/'>octopress (1)</a></li><li><a href='/blog/categories/os/'>OS (3)</a></li><li><a href='/blog/categories/php/'>PHP (1)</a></li><li><a href='/blog/categories/python/'>Python (5)</a></li><li><a href='/blog/categories/r/'>R (1)</a></li><li><a href='/blog/categories/raspberrypi/'>RaspberryPi (1)</a></li><li><a href='/blog/categories/redmine/'>Redmine (2)</a></li><li><a href='/blog/categories/seo/'>SEO (1)</a></li><li><a href='/blog/categories/splunk/'>splunk (1)</a></li><li><a href='/blog/categories/statistics/'>statistics (1)</a></li><li><a href='/blog/categories/vagrant/'>vagrant (1)</a></li><li><a href='/blog/categories/vim/'>vim (1)</a></li><li><a href='/blog/categories/xcode/'>Xcode (1)</a></li><li><a href='/blog/categories/zaim/'>zaim (1)</a></li><li><a href='/blog/categories/mian-qiang-hui/'>勉強会 (6)</a></li></ul>
 </section>
 <section>
 <script type="text/javascript"><!--

@@ -9,18 +9,9 @@
   <meta name="author" content="ftakao2007">
 
   
-  <meta name="description" content="第17回 granpark.rb 「データ解析技術入門(R言語編)」 値代入 1
-2
-3
-4
-5
-6
-7
-8
-&gt; a &lt;- 5
-&gt; d &lt;- "abc" &gt; a
-[1] 5 &gt; d
-[1] "abc" 代入には「=」も使えるが、Rは慣例的に「&lt;-」を使う &hellip;">
+  <meta name="description" content="おのおのが好きな事を好きなようにやるハッカソン。
+実際に自分の手を動かすのは楽しいですね。 ストレージ拡張自動化システム検討 日本人のみ相手に仕事をしている場合は、わからないことがあれば話をしながら進めることができるが、
+海外も視野に入れると時差も休日も言語も違い、 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -91,6 +82,379 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/05/18/python-mini-hack-a-thon/">(第31回)Python Mini Hack-a-thon</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-18T11:37:00+09:00" pubdate data-updated="true">May 18<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>おのおのが好きな事を好きなようにやるハッカソン。
+実際に自分の手を動かすのは楽しいですね。</p>
+
+<h2 id="ストレージ拡張自動化システム検討">ストレージ拡張自動化システム検討</h2>
+
+<p>日本人のみ相手に仕事をしている場合は、わからないことがあれば話をしながら進めることができるが、
+海外も視野に入れると時差も休日も言語も違い、これを話しながら進めるのは現実的ではない。</p>
+
+<p>Webフォームから値を入力するとバッチ処理で自動的にストレージ(NAS)の拡張ができるシステム構築を目指す。</p>
+
+<p><img class="center" src="https://dl.dropboxusercontent.com/u/37468049/PythonSystem.png"></p>
+
+<ul>
+<li><p>Webサーバ<br/>
+Pythonのフレームワークを利用してWebの入力フォームを作成。
+NAS名やボリューム名、拡張サイズを入力する。</p></li>
+<li><p>バッチサーバ<br/>
+cronなどジョブスケジューラーを利用してWebフォームで入力された値に従ってバッチ処理を行う。<br/>
+fabricを利用予定。</p></li>
+<li><p>NAS管理サーバ<br/>
+既存のNASを管理しているサーバ。こちらには新たに設定を追加せず、fabricを利用して
+バッチサーバからssh経由で送られてきたコマンドを自動で実行するようにしたい。</p></li>
+<li><p>NASサーバ<br/>
+拡張対象のNASサーバ</p></li>
+</ul>
+
+
+<h2 id="バッチサーバ">バッチサーバ</h2>
+
+<h3 id="[fabricインストール](http://ftakao2007.github.io/blog//2013/04/06/fabric/)"><a href="http://ftakao2007.github.io/blog//2013/04/06/fabric/">fabricインストール</a></h3>
+
+<p>Amazon Linuxは以下でインストール可能</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo su
+</span><span class='line'>yum -y install python python-devel gcc
+</span><span class='line'>curl http://python-distribute.org/distribute_setup.py | python
+</span><span class='line'>curl https://raw.github.com/pypa/pip/master/contrib/get-pip.py | python
+</span><span class='line'>pip install fabric fexpect
+</span><span class='line'><span class="nb">exit</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3 id="Python自動実行スクリプト作成">Python自動実行スクリプト作成</h3>
+
+<ul>
+<li><a href="https://github.com/ftakao2007/python_json">python_json (github)</a></li>
+</ul>
+
+
+<p>まだfabricは絡んでおらず、printでコマンドを書き出しているのみ。</p>
+
+<p>jsonファイル中身</p>
+
+<figure class='code'><figcaption><span>NAS_param.json</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="o">[</span>
+</span><span class='line'>    <span class="o">{</span>
+</span><span class='line'>        <span class="s2">&quot;nas&quot;</span>: <span class="s2">&quot;(NAS Name)&quot;</span>,
+</span><span class='line'>        <span class="s2">&quot;volume&quot;</span>: <span class="s2">&quot;(Volume Name)&quot;</span>,
+</span><span class='line'>        <span class="s2">&quot;size&quot;</span>: <span class="s2">&quot;(Volume size)&quot;</span>
+</span><span class='line'>    <span class="o">}</span>,
+</span><span class='line'>    <span class="o">{</span>
+</span><span class='line'>        <span class="s2">&quot;nas&quot;</span>: <span class="s2">&quot;nas_backup01&quot;</span>,
+</span><span class='line'>        <span class="s2">&quot;volume&quot;</span>: <span class="s2">&quot;apache_log&quot;</span>,
+</span><span class='line'>        <span class="s2">&quot;size&quot;</span>: <span class="s2">&quot;5g&quot;</span>
+</span><span class='line'>    <span class="o">}</span>,
+</span><span class='line'>    <span class="o">{</span>
+</span><span class='line'>        <span class="s2">&quot;nas&quot;</span>: <span class="s2">&quot;nas_backup02&quot;</span>,
+</span><span class='line'>        <span class="s2">&quot;volume&quot;</span>: <span class="s2">&quot;tomcat_log&quot;</span>,
+</span><span class='line'>        <span class="s2">&quot;size&quot;</span>: <span class="s2">&quot;500m&quot;</span>
+</span><span class='line'>    <span class="o">}</span>,
+</span><span class='line'>    <span class="o">{</span>
+</span><span class='line'>        <span class="s2">&quot;nas&quot;</span>: <span class="s2">&quot;nas_ecsite01&quot;</span>,
+</span><span class='line'>        <span class="s2">&quot;volume&quot;</span>: <span class="s2">&quot;item_image&quot;</span>,
+</span><span class='line'>        <span class="s2">&quot;size&quot;</span>: <span class="s2">&quot;10g&quot;</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'><span class="o">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>これを読み込んで処理する。</p>
+
+<figure class='code'><figcaption><span>read_NAS_param.py</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="c">#!/usr/bin/python</span>
+</span><span class='line'><span class="c"># coding: utf-8</span>
+</span><span class='line'>
+</span><span class='line'><span class="kn">import</span> <span class="nn">json</span> <span class="c"># jsonを扱うため</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">sys</span>  <span class="c"># モジュール属性 argv を取得するため</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">argvs</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span>  <span class="c"># コマンドライン引数を格納したリストの取得</span>
+</span><span class='line'><span class="n">argc</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">argvs</span><span class="p">)</span> <span class="c"># 引数の個数</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">&quot;NAS_param.json&quot;</span><span class="p">)</span>  <span class="c"># jsonファイルを読み込む</span>
+</span><span class='line'><span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>         <span class="c"># jsonデータを読み込んだファイルオブジェクトからPythonデータを作成</span>
+</span><span class='line'><span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>                   <span class="c"># ファイルを閉じる</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">num</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>             <span class="c">#ファイル数をカウント</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">if</span> <span class="n">argc</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">argvs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s">&quot;--help&quot;</span><span class="p">:</span>
+</span><span class='line'>  <span class="k">print</span><span class="p">(</span> <span class="s">&quot;sudo ssh {obj[nas]} vol create {obj[volume]} {obj[size]}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">obj</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="p">)</span>    <span class="c"># ヘルプを表示</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">if</span> <span class="n">argc</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+</span><span class='line'>  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num</span><span class="p">)[</span><span class="mi">1</span><span class="p">:]:</span>     <span class="c"># 配列の2列目から実行</span>
+</span><span class='line'>      <span class="k">print</span><span class="p">(</span> <span class="s">&quot;sudo ssh {obj[nas]} vol create {obj[volume]} {obj[size]}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">obj</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">※</span> <span class="err">デバッグ等コメントは削除</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>ハッカソン中は引数が無いとエラーになっていたが、上記のように<code>argc == 2 and</code>を追加するとうまく実行できるようになった。</p>
+
+<p>以下実行結果</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>fukui-no-MacBook-Air:python_json ftakao2007<span class="nv">$ </span>./read_NAS_param.py --help
+</span><span class='line'>sudo ssh <span class="o">(</span>NAS Name<span class="o">)</span> vol create <span class="o">(</span>Volume Name<span class="o">)</span> <span class="o">(</span>Volume size<span class="o">)</span>
+</span><span class='line'>
+</span><span class='line'>fukui-no-MacBook-Air:python_json ftakao2007<span class="nv">$ </span>./read_NAS_param.py
+</span><span class='line'>sudo ssh nas_backup01 vol create apache_log 5g
+</span><span class='line'>sudo ssh nas_backup02 vol create tomcat_log 500m
+</span><span class='line'>sudo ssh nas_ecsite01 vol create item_image 10g
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Helpも実行結果も問題なく表示された。</p>
+
+<h2 id="Webサーバ">Webサーバ</h2>
+
+<h3 id="w3mインストール">w3mインストール</h3>
+
+<p>動作確認用</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>yum install w3m
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3 id="Bottle+インストール">Bottle インストール</h3>
+
+<p>Djangoが難しかったのでこっちを使ってみた</p>
+
+<ul>
+<li><a href="http://mojix.org/2013/01/04/python-bottle">Pythonを始めるなら、１ファイルの軽量Webフレームワーク「Bottle」がおすすめ</a></li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>wget https://pypi.python.org/packages/source/b/bottle/bottle-0.11.4.tar.gz
+</span><span class='line'>tar zxvf <span class="nb">cd </span>bottle-0.11.4.tar.gz
+</span><span class='line'><span class="nb">cd </span>bottle-0.11.4
+</span><span class='line'>vi hello.py
+</span><span class='line'><span class="o">==============================</span>
+</span><span class='line'>from bottle import route, run
+</span><span class='line'>
+</span><span class='line'>@route<span class="o">(</span><span class="s1">&#39;/hello&#39;</span><span class="o">)</span>
+</span><span class='line'>def hello<span class="o">()</span>:
+</span><span class='line'>  <span class="k">return</span> <span class="s2">&quot;Hello World!&quot;</span>
+</span><span class='line'>
+</span><span class='line'>run<span class="o">(</span><span class="nv">host</span><span class="o">=</span><span class="s1">&#39;localhost&#39;</span>, <span class="nv">port</span><span class="o">=</span>8080, <span class="nv">debug</span><span class="o">=</span>True<span class="o">)</span>
+</span><span class='line'><span class="o">==============================</span>
+</span><span class='line'>python hello.py &amp;
+</span><span class='line'>w3m http://localhost:8080/hello
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>以下のようにするとPCのWebブラウザからリモートアクセスできた。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>run<span class="o">(</span><span class="nv">host</span><span class="o">=</span><span class="s1">&#39;ec2-XXX-XXX-XXX-XXX.ap-northeast-1.compute.amazonaws.com&#39;</span>, <span class="nv">port</span><span class="o">=</span>80, <span class="nv">debug</span><span class="o">=</span>True<span class="o">)</span>
+</span><span class='line'>sudo python hello.py  <span class="c">#この場合はsudoで実行</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<hr />
+
+<p>※ 以下挫折中 ※</p>
+
+<h2 id="httpdインストール">httpdインストール</h2>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo yum -y update
+</span><span class='line'>sudo yum -y install httpd
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2 id="Django+インストール">Django インストール</h2>
+
+<ul>
+<li><a href="http://d.hatena.ne.jp/CortYuming/20120503/p1">Django1.4 + mod_wsgi 環境構築とりあえずのメモ</a></li>
+<li><a href="http://hima-j.in/django/django-setup/">Django のインストールからプロジェクトの作成まで</a></li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo yum install mod_wsgi
+</span><span class='line'>sudo pip install django
+</span><span class='line'>sudo mkdir /var/www/html/django
+</span><span class='line'><span class="nb">cd</span> /var/www/html/django
+</span><span class='line'>sudo django-admin.py startproject mysite
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3 id="開発用サーバの起動と確認">開発用サーバの起動と確認</h3>
+
+<p>SGの設定で8080ポートを開けておく</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">cd </span>mysite
+</span><span class='line'>python manage.py runserver 8080 &amp;
+</span><span class='line'>w3m http://127.0.0.1:8080
+</span><span class='line'>
+</span><span class='line'>※ 「It worked!」が出れば成功
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>〜つづく〜</p>
+
+<h2 id="その他">その他</h2>
+
+<p>Zaimの家計簿自動入力スクリプトの作成もやりたかった。現在は認証のとろころで詰まってます。ググって自力でできるかなぁ。
+できなかったら、次回はその辺やってみて有識者の知恵を拝借できればと思います。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/05/15/iphone-app-study/">第4回 Iphoneアプリ開発超初心者講習会</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-15T19:56:00+09:00" pubdate data-updated="true">May 15<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2 id="[第4回+iphoneアプリ開発超初心者講習会](http://atnd.org/event/E0015173)"><a href="http://atnd.org/event/E0015173">第4回 iphoneアプリ開発超初心者講習会</a></h2>
+
+<p>この講習会ではじめてXcodeでiOS用プログラミングをしました。
+概要のまとめです。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -827,94 +1191,6 @@ php.iniの詳細な解説アリ</li>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/04/29/seo/">SEO</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-04-29T12:09:00+09:00" pubdate data-updated="true">Apr 29<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2 id="概要">概要</h2>
-
-<p>SEOについて</p>
-
-<h2 id="リンク">リンク</h2>
-
-<p><a href="http://rentalhomepage.com/wordpress/post-1050/?utm_source=dlvr.it&amp;amp;amp;amp;utm_medium=twitter">WordPressでブログのSEO対策を考える人へ</a></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/04/29/ec-cube/">EC-CUBE</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-04-29T12:01:00+09:00" pubdate data-updated="true">Apr 29<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2 id="概要">概要</h2>
-
-<p>日本のOSSのECオープンプラットフォーム</p>
-
-<h2 id="リンク">リンク</h2>
-
-<ul>
-<li><a href="http://www.ec-cube.net/">公式サイト</a></li>
-<li><a href="http://blog.serverworks.co.jp/tech/2013/04/23/ec-cube-on-aws-s3/">EC-CUBE on AWS (S3で共有編)</a></li>
-</ul>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -930,6 +1206,14 @@ php.iniの詳細な解説アリ</li>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/05/18/python-mini-hack-a-thon/">(第31回)Python mini Hack-a-thon</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/05/15/iphone-app-study/">第4回 iphoneアプリ開発超初心者講習会</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/05/11/granpark-17th/">第17回 granpark.rb 「データ解析技術入門(R言語編)」</a>
       </li>
     
@@ -941,19 +1225,11 @@ php.iniの詳細な解説アリ</li>
         <a href="/blog/2013/04/29/zaim/">zaim</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/04/29/raspberrypi/">RaspberryPi</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/04/29/vagrant/">vagrant</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/about/'>about (3)</a></li><li><a href='/blog/categories/aws/'>aws (3)</a></li><li><a href='/blog/categories/bash/'>bash (2)</a></li><li><a href='/blog/categories/book/'>book (1)</a></li><li><a href='/blog/categories/chef/'>chef (2)</a></li><li><a href='/blog/categories/command/'>command (5)</a></li><li><a href='/blog/categories/construct/'>construct (1)</a></li><li><a href='/blog/categories/diary/'>diary (3)</a></li><li><a href='/blog/categories/ec-cube/'>EC-CUBE (1)</a></li><li><a href='/blog/categories/ec2/'>ec2 (1)</a></li><li><a href='/blog/categories/etc/'>etc (1)</a></li><li><a href='/blog/categories/fabric/'>fabric (1)</a></li><li><a href='/blog/categories/fluentd/'>fluentd (1)</a></li><li><a href='/blog/categories/git/'>git (3)</a></li><li><a href='/blog/categories/google/'>google (1)</a></li><li><a href='/blog/categories/heroku/'>heroku (1)</a></li><li><a href='/blog/categories/monitor/'>monitor (5)</a></li><li><a href='/blog/categories/munin/'>munin (1)</a></li><li><a href='/blog/categories/network/'>network (2)</a></li><li><a href='/blog/categories/octopress/'>octopress (1)</a></li><li><a href='/blog/categories/os/'>OS (3)</a></li><li><a href='/blog/categories/php/'>PHP (1)</a></li><li><a href='/blog/categories/python/'>Python (4)</a></li><li><a href='/blog/categories/r/'>R (1)</a></li><li><a href='/blog/categories/raspberrypi/'>RaspberryPi (1)</a></li><li><a href='/blog/categories/redmine/'>Redmine (2)</a></li><li><a href='/blog/categories/seo/'>SEO (1)</a></li><li><a href='/blog/categories/splunk/'>splunk (1)</a></li><li><a href='/blog/categories/statistics/'>statistics (1)</a></li><li><a href='/blog/categories/vagrant/'>vagrant (1)</a></li><li><a href='/blog/categories/vim/'>vim (1)</a></li><li><a href='/blog/categories/zaim/'>zaim (1)</a></li><li><a href='/blog/categories/mian-qiang-hui/'>勉強会 (4)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/about/'>about (3)</a></li><li><a href='/blog/categories/aws/'>aws (3)</a></li><li><a href='/blog/categories/bash/'>bash (2)</a></li><li><a href='/blog/categories/book/'>book (1)</a></li><li><a href='/blog/categories/chef/'>chef (2)</a></li><li><a href='/blog/categories/command/'>command (5)</a></li><li><a href='/blog/categories/construct/'>construct (1)</a></li><li><a href='/blog/categories/diary/'>diary (3)</a></li><li><a href='/blog/categories/ec-cube/'>EC-CUBE (1)</a></li><li><a href='/blog/categories/ec2/'>ec2 (1)</a></li><li><a href='/blog/categories/etc/'>etc (1)</a></li><li><a href='/blog/categories/fabric/'>fabric (1)</a></li><li><a href='/blog/categories/fluentd/'>fluentd (1)</a></li><li><a href='/blog/categories/git/'>git (3)</a></li><li><a href='/blog/categories/google/'>google (1)</a></li><li><a href='/blog/categories/heroku/'>heroku (1)</a></li><li><a href='/blog/categories/ios/'>iOS (1)</a></li><li><a href='/blog/categories/monitor/'>monitor (5)</a></li><li><a href='/blog/categories/munin/'>munin (1)</a></li><li><a href='/blog/categories/network/'>network (2)</a></li><li><a href='/blog/categories/octopress/'>octopress (1)</a></li><li><a href='/blog/categories/os/'>OS (3)</a></li><li><a href='/blog/categories/php/'>PHP (1)</a></li><li><a href='/blog/categories/python/'>Python (5)</a></li><li><a href='/blog/categories/r/'>R (1)</a></li><li><a href='/blog/categories/raspberrypi/'>RaspberryPi (1)</a></li><li><a href='/blog/categories/redmine/'>Redmine (2)</a></li><li><a href='/blog/categories/seo/'>SEO (1)</a></li><li><a href='/blog/categories/splunk/'>splunk (1)</a></li><li><a href='/blog/categories/statistics/'>statistics (1)</a></li><li><a href='/blog/categories/vagrant/'>vagrant (1)</a></li><li><a href='/blog/categories/vim/'>vim (1)</a></li><li><a href='/blog/categories/xcode/'>Xcode (1)</a></li><li><a href='/blog/categories/zaim/'>zaim (1)</a></li><li><a href='/blog/categories/mian-qiang-hui/'>勉強会 (6)</a></li></ul>
 </section>
 <section>
 <script type="text/javascript"><!--

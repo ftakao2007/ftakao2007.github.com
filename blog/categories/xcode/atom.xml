@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Xcode | Octopress Blog]]></title>
+  <link href="http://ftakao2007.github.com/blog/categories/xcode/atom.xml" rel="self"/>
+  <link href="http://ftakao2007.github.com/"/>
+  <updated>2013-05-18T20:53:35+09:00</updated>
+  <id>http://ftakao2007.github.com/</id>
+  <author>
+    <name><![CDATA[ftakao2007]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[第4回 iphoneアプリ開発超初心者講習会]]></title>
+    <link href="http://ftakao2007.github.com/blog/2013/05/15/iphone-app-study/"/>
+    <updated>2013-05-15T19:56:00+09:00</updated>
+    <id>http://ftakao2007.github.com/blog/2013/05/15/iphone-app-study</id>
+    <content type="html"><![CDATA[<h2 id="[第4回+iphoneアプリ開発超初心者講習会](http://atnd.org/event/E0015173)"><a href="http://atnd.org/event/E0015173">第4回 iphoneアプリ開発超初心者講習会</a></h2>
+
+<p>この講習会ではじめてXcodeでiOS用プログラミングをしました。
+概要のまとめです。</p>
+]]></content>
+  </entry>
+  
+</feed>

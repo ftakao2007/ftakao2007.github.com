@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Python | Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/blog/categories/python/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-05-11T14:21:57+09:00</updated>
+  <updated>2013-05-18T20:53:35+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -12,6 +12,228 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[(第31回)Python mini Hack-a-thon]]></title>
+    <link href="http://ftakao2007.github.com/blog/2013/05/18/python-mini-hack-a-thon/"/>
+    <updated>2013-05-18T11:37:00+09:00</updated>
+    <id>http://ftakao2007.github.com/blog/2013/05/18/python-mini-hack-a-thon</id>
+    <content type="html"><![CDATA[<p>おのおのが好きな事を好きなようにやるハッカソン。
+実際に自分の手を動かすのは楽しいですね。</p>
+
+<h2 id="ストレージ拡張自動化システム検討">ストレージ拡張自動化システム検討</h2>
+
+<p>日本人のみ相手に仕事をしている場合は、わからないことがあれば話をしながら進めることができるが、
+海外も視野に入れると時差も休日も言語も違い、これを話しながら進めるのは現実的ではない。</p>
+
+<p>Webフォームから値を入力するとバッチ処理で自動的にストレージ(NAS)の拡張ができるシステム構築を目指す。</p>
+
+<p><img class="center" src="https://dl.dropboxusercontent.com/u/37468049/PythonSystem.png"></p>
+
+<ul>
+<li><p>Webサーバ<br/>
+Pythonのフレームワークを利用してWebの入力フォームを作成。
+NAS名やボリューム名、拡張サイズを入力する。</p></li>
+<li><p>バッチサーバ<br/>
+cronなどジョブスケジューラーを利用してWebフォームで入力された値に従ってバッチ処理を行う。<br/>
+fabricを利用予定。</p></li>
+<li><p>NAS管理サーバ<br/>
+既存のNASを管理しているサーバ。こちらには新たに設定を追加せず、fabricを利用して
+バッチサーバからssh経由で送られてきたコマンドを自動で実行するようにしたい。</p></li>
+<li><p>NASサーバ<br/>
+拡張対象のNASサーバ</p></li>
+</ul>
+
+
+<h2 id="バッチサーバ">バッチサーバ</h2>
+
+<h3 id="[fabricインストール](http://ftakao2007.github.io/blog//2013/04/06/fabric/)"><a href="http://ftakao2007.github.io/blog//2013/04/06/fabric/">fabricインストール</a></h3>
+
+<p>Amazon Linuxは以下でインストール可能</p>
+
+<p><code>bash
+sudo su
+yum -y install python python-devel gcc
+curl http://python-distribute.org/distribute_setup.py | python
+curl https://raw.github.com/pypa/pip/master/contrib/get-pip.py | python
+pip install fabric fexpect
+exit
+</code></p>
+
+<h3 id="Python自動実行スクリプト作成">Python自動実行スクリプト作成</h3>
+
+<ul>
+<li><a href="https://github.com/ftakao2007/python_json">python_json (github)</a></li>
+</ul>
+
+
+<p>まだfabricは絡んでおらず、printでコマンドを書き出しているのみ。</p>
+
+<p>jsonファイル中身
+``` bash NAS_param.json
+[</p>
+
+<pre><code>{
+    "nas": "(NAS Name)",
+    "volume": "(Volume Name)",
+    "size": "(Volume size)"
+},
+{
+    "nas": "nas_backup01",
+    "volume": "apache_log",
+    "size": "5g"
+},
+{
+    "nas": "nas_backup02",
+    "volume": "tomcat_log",
+    "size": "500m"
+},
+{
+    "nas": "nas_ecsite01",
+    "volume": "item_image",
+    "size": "10g"
+}
+</code></pre>
+
+<p>]
+```</p>
+
+<p>これを読み込んで処理する。</p>
+
+<p>``` python read_NAS_param.py</p>
+
+<h1 id="!/usr/bin/python">!/usr/bin/python</h1>
+
+<h1 id="coding:+utf-8">coding: utf-8</h1>
+
+<p>import json # jsonを扱うため
+import sys  # モジュール属性 argv を取得するため</p>
+
+<p>argvs = sys.argv  # コマンドライン引数を格納したリストの取得
+argc = len(argvs) # 引数の個数</p>
+
+<p>f = open("NAS_param.json")  # jsonファイルを読み込む
+data = json.load(f)         # jsonデータを読み込んだファイルオブジェクトからPythonデータを作成
+f.close()                   # ファイルを閉じる</p>
+
+<p>num = len(data)             #ファイル数をカウント</p>
+
+<p>if argc == 2 and argvs[1] == "--help":</p>
+
+<pre><code>print( "sudo ssh {obj[nas]} vol create {obj[volume]} {obj[size]}".format(obj = data[0]) )    # ヘルプを表示
+</code></pre>
+
+<p>if argc == 1:</p>
+
+<pre><code>for i in range(num)[1:]:     # 配列の2列目から実行
+    print( "sudo ssh {obj[nas]} vol create {obj[volume]} {obj[size]}".format(obj = data[i]) )
+</code></pre>
+
+<p>※ デバッグ等コメントは削除
+<code>``
+ハッカソン中は引数が無いとエラーになっていたが、上記のように</code>argc == 2 and`を追加するとうまく実行できるようになった。</p>
+
+<p>以下実行結果
+``` bash
+fukui-no-MacBook-Air:python_json ftakao2007$ ./read_NAS_param.py --help
+sudo ssh (NAS Name) vol create (Volume Name) (Volume size)</p>
+
+<p>fukui-no-MacBook-Air:python_json ftakao2007$ ./read_NAS_param.py
+sudo ssh nas_backup01 vol create apache_log 5g
+sudo ssh nas_backup02 vol create tomcat_log 500m
+sudo ssh nas_ecsite01 vol create item_image 10g
+```
+Helpも実行結果も問題なく表示された。</p>
+
+<h2 id="Webサーバ">Webサーバ</h2>
+
+<h3 id="w3mインストール">w3mインストール</h3>
+
+<p>動作確認用
+<code>bash
+yum install w3m
+</code></p>
+
+<h3 id="Bottle+インストール">Bottle インストール</h3>
+
+<p>Djangoが難しかったのでこっちを使ってみた</p>
+
+<ul>
+<li><a href="http://mojix.org/2013/01/04/python-bottle">Pythonを始めるなら、１ファイルの軽量Webフレームワーク「Bottle」がおすすめ</a></li>
+</ul>
+
+
+<p>```bash
+wget https://pypi.python.org/packages/source/b/bottle/bottle-0.11.4.tar.gz
+tar zxvf cd bottle-0.11.4.tar.gz
+cd bottle-0.11.4</p>
+
+<h1 id="vi+hello.py">vi hello.py</h1>
+
+<p>from bottle import route, run</p>
+
+<p>@route('/hello')
+def hello():
+  return "Hello World!"</p>
+
+<h1 id="run(host='localhost',+port=8080,+debug=True)">run(host='localhost', port=8080, debug=True)</h1>
+
+<p>python hello.py &amp;
+w3m http://localhost:8080/hello
+```
+以下のようにするとPCのWebブラウザからリモートアクセスできた。</p>
+
+<p><code>bash
+run(host='ec2-XXX-XXX-XXX-XXX.ap-northeast-1.compute.amazonaws.com', port=80, debug=True)
+sudo python hello.py  #この場合はsudoで実行
+</code></p>
+
+<hr />
+
+<p>※ 以下挫折中 ※</p>
+
+<h2 id="httpdインストール">httpdインストール</h2>
+
+<p><code>bash
+sudo yum -y update
+sudo yum -y install httpd
+</code></p>
+
+<h2 id="Django+インストール">Django インストール</h2>
+
+<ul>
+<li><a href="http://d.hatena.ne.jp/CortYuming/20120503/p1">Django1.4 + mod_wsgi 環境構築とりあえずのメモ</a></li>
+<li><a href="http://hima-j.in/django/django-setup/">Django のインストールからプロジェクトの作成まで</a>
+<code>bash
+sudo yum install mod_wsgi
+sudo pip install django
+sudo mkdir /var/www/html/django
+cd /var/www/html/django
+sudo django-admin.py startproject mysite
+</code></li>
+</ul>
+
+
+<h3 id="開発用サーバの起動と確認">開発用サーバの起動と確認</h3>
+
+<p>SGの設定で8080ポートを開けておく</p>
+
+<p>``` bash
+cd mysite
+python manage.py runserver 8080 &amp;
+w3m http://127.0.0.1:8080</p>
+
+<p>※ 「It worked!」が出れば成功
+```</p>
+
+<p>〜つづく〜</p>
+
+<h2 id="その他">その他</h2>
+
+<p>Zaimの家計簿自動入力スクリプトの作成もやりたかった。現在は認証のとろころで詰まってます。ググって自力でできるかなぁ。
+できなかったら、次回はその辺やってみて有識者の知恵を拝借できればと思います。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Pythonプロフェッショナルプログラミング]]></title>
