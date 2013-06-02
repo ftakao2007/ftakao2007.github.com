@@ -4,7 +4,7 @@
   <title><![CDATA[Category: eclipse | Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/blog/categories/eclipse/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-06-02T10:32:31+09:00</updated>
+  <updated>2013-06-02T10:52:40+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -365,6 +365,8 @@ set(['e', 'd', 'H', 'r', 'W'])  * AとBそれぞれに存在しているもの�
 
 <h2 id="roles">roles</h2>
 
+<p>権限を設定できる。実行時にホスト名やユーザ名などの引数指定を無くすことが目的。</p>
+
 <h3 id="1環境1サーバ">1環境1サーバ</h3>
 
 <p>``` python</p>
@@ -698,7 +700,7 @@ Disconnecting from devserver1... done.
 ```</p>
 
 <p>メインのファイルがものすごくシンプルになりました。<br/>
-いずれはモジュールじゃなくてパッケージにしたほうがいいのかな。</p>
+いずれはモジュールからパッケージにしたほうがいいのかな。</p>
 
 <h2 id="リンク">リンク</h2>
 

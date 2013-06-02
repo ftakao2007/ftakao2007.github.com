@@ -4,7 +4,7 @@
   <title><![CDATA[Category: fabric | Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/blog/categories/fabric/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-06-02T10:32:31+09:00</updated>
+  <updated>2013-06-02T10:52:40+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -256,6 +256,715 @@ w3m http://127.0.0.1:8080</p>
 
 <p>Zaimの家計簿自動入力スクリプトの作成もやりたかった。現在は認証のとろころで詰まってます。ググって自力でできるかなぁ。
 できなかったら、次回はその辺やってみて有識者の知恵を拝借できればと思います。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Python]]></title>
+    <link href="http://ftakao2007.github.com/blog/2013/04/29/python/"/>
+    <updated>2013-04-29T06:45:00+09:00</updated>
+    <id>http://ftakao2007.github.com/blog/2013/04/29/python</id>
+    <content type="html"><![CDATA[<h1 id="[Python入門](http://python.keicode.com/)+の勉強"><a href="http://python.keicode.com/">Python入門</a> の勉強</h1>
+
+<h2 id="開発環境の準備">開発環境の準備</h2>
+
+<p>PyDevをインストールして使う</p>
+
+<h3 id="Eclipseのインストール">Eclipseのインストール</h3>
+
+<ul>
+<li><p><a href="http://www.eclipse.org/downloads/">公式ページ</a> からEclipseをDL<br/>
+Eclipse IDE for Java EE Developers<br/>
+→ 解凍してeclipseを実行したら起動した</p></li>
+<li><p><a href="http://python.keicode.com/devenv/install-pydev.php">PyDevのインストール</a></p></li>
+<li><p><a href="http://www.mwsoft.jp/programming/python/hello_world.html">ハロワを表示</a></p></li>
+<li><p><a href="http://python.keicode.com/devenv/pydev-debug.php">PyDev を用いてデバッグ - ブレークポイントの設定とステップ実行</a></p></li>
+</ul>
+
+
+<hr />
+
+<h2 id="Pythonのタイプとオブジェクト">Pythonのタイプとオブジェクト</h2>
+
+<p>特徴とぱっと分からないものだけ書いていく</p>
+
+<ul>
+<li>オブジェクト -> Pythonのすべてのデータはオブジェクト</li>
+<li>タイプ -> オブジェクトの一種</li>
+</ul>
+
+
+<h3 id="数値">数値</h3>
+
+<p>整数型、浮動小数点型、複素数型などが使える</p>
+
+<ul>
+<li><p>余り
+``` python</p>
+
+<blockquote><blockquote><blockquote><p>10%3
+1
+```</p></blockquote></blockquote></blockquote></li>
+<li><p>複素数
+``` python</p>
+
+<blockquote><blockquote><blockquote><p>(1+2j) + (2+3j)
+(3+5j)
+```</p></blockquote></blockquote></blockquote></li>
+<li><p>乱数
+``` python</p>
+
+<blockquote><blockquote><blockquote><p>import random</p></blockquote></blockquote></blockquote></li>
+</ul>
+
+
+<blockquote><blockquote><blockquote><p>random.random()
+0.89164962407887893     * 0 - 1 の間の浮動小数がランダムに出力される</p>
+
+<p>L=[1,2,3,4,5]       * 1 - 5 の間の整数がランダムに出力される
+random.choice(L)
+1
+random.choice(L)
+1
+random.choice(L)
+4
+random.choice(L)
+5
+```</p></blockquote></blockquote></blockquote>
+
+<ul>
+<li>mathモジュール<br/>
+数学的な演算ができる
+``` python
+
+<blockquote><blockquote><blockquote><p>import math
+math.pi             * 円周率の計算
+3.1415926535897931
+```</p></blockquote></blockquote></blockquote></li>
+</ul>
+
+
+<h3 id="文字列">文字列</h3>
+
+<p>``` python</p>
+
+<blockquote><blockquote><blockquote><p>a = 'ABCdE'
+a
+'ABCdE'</p>
+
+<p>a[0]    * 先頭の文字
+'A'
+a[4]
+'E'
+a[-1]   * 最後尾の文字
+'E'
+a[-5]
+'A'
+a[1:2]  * 2文字目のみ表示
+'B'
+a[1:3]  * 2-3文字目を表示
+'BC'
+len(a)  * 文字数表示
+5
+a.find('C')  * 文字列中にCが出てくるのが何文字目かを出す(出力結果+1文字目に出現する)
+2
+a.upper()  * すべて大文字にする
+'ABCDE'
+```</p></blockquote></blockquote></blockquote>
+
+<ul>
+<li>アトリビュートの取得と関数のhelp表示</li>
+</ul>
+
+
+<p>``` python</p>
+
+<blockquote><blockquote><blockquote><p>dir(a)
+['<strong>add</strong>', '<strong>class</strong>', '<strong>contains</strong>', '<strong>delattr</strong>', '<strong>doc</strong>', '<strong>eq</strong>', '<strong>format</strong>', '<strong>ge</strong>', '<strong>getattribute</strong>', '<strong>getitem</strong>', '<strong>getnewargs</strong>', '<strong>getslice</strong>', '<strong>gt</strong>', '<strong>hash</strong>', '<strong>init</strong>', '<strong>le</strong>', '<strong>len</strong>', '<strong>lt</strong>', '<strong>mod</strong>', '<strong>mul</strong>', '<strong>ne</strong>', '<strong>new</strong>', '<strong>reduce</strong>', '<strong>reduce_ex</strong>', '<strong>repr</strong>', '<strong>rmod</strong>', '<strong>rmul</strong>', '<strong>setattr</strong>', '<strong>sizeof</strong>', '<strong>str</strong>', '<strong>subclasshook</strong>', '<em>formatter_field_name_split', '</em>formatter_parser', 'capitalize', 'center', 'count', 'decode', 'encode', 'endswith', 'expandtabs', 'find', 'format', 'index', 'isalnum', 'isalpha', 'isdigit', 'islower', 'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip', 'partition', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']</p>
+
+<p>help(a.join)
+Help on built-in function join:</p></blockquote></blockquote></blockquote>
+
+<p>join(...)</p>
+
+<pre><code>S.join(iterable) -&gt; string
+
+Return a string which is the concatenation of the strings in the
+iterable.  The separator between elements is S.
+</code></pre>
+
+<p>```</p>
+
+<ul>
+<li>フォーマット
+``` python
+
+<blockquote><blockquote><blockquote><p>'{0} FG'.format(a)
+'ABCdE FG'</p></blockquote></blockquote></blockquote></li>
+</ul>
+
+
+<blockquote><blockquote><blockquote><p>x = 10/3     * 計算結果は整数になる
+x
+3
+x = 10.0/3   * 計算結果は浮動小数になる
+x
+3.3333333333333335</p>
+
+<p>'{0:.3f}'.format(x)
+'3.333'
+'{0:.1f}'.format(x)
+'3.3'
+```</p></blockquote></blockquote></blockquote>
+
+<h3 id="リスト">リスト</h3>
+
+<p>かっこで要素をかこむ。</p>
+
+<p>``` python</p>
+
+<blockquote><blockquote><blockquote><p>L = [2,4,6,8,10]
+L[1:3]
+[4, 6]</p>
+
+<p>M = L + [1,3,5]
+M
+[2, 4, 6, 8, 10, 1, 3, 5]</p>
+
+<p>M.sort()
+M
+[1, 2, 3, 4, 5, 6, 8, 10]</p>
+
+<p>M.append(100)
+M
+[1, 2, 3, 4, 5, 6, 8, 10, 100]</p>
+
+<p>M.pop()
+100
+M
+[1, 2, 3, 4, 5, 6, 8, 10]</p>
+
+<p>len(M)
+8</p>
+
+<p>[1,1,1,2,2,3].count(1)
+3
+[1,1,1,2,2,3].count(2)
+2</p>
+
+<p>L = [ 1, 'Hello', 3.14 ]
+L[1]
+'Hello'
+L[1][1]
+'e'</p>
+
+<p>N = [[1,2,3], 'Hello', {'name':'Keisuke Oyama','age':37}]
+N[1]
+'Hello'</p>
+
+<p>N[2]
+{'age': 37, 'name': 'Keisuke Oyama'}
+N[2]['age']
+37
+```</p></blockquote></blockquote></blockquote>
+
+<ul>
+<li>内包表記(Comprehensions)
+簡単にあるリストから条件に適合するリストを作成できる。</li>
+</ul>
+
+
+<p>``` python</p>
+
+<blockquote><blockquote><blockquote><p>L = [1,2,3,4,5]
+[x for x in L if x > 2]
+[3, 4, 5]
+[3*x for x in L if x > 2]
+[9, 12, 15]</p>
+
+<p>L = ['hello','world']
+[x.upper() for x in L]
+['HELLO', 'WORLD']
+```</p></blockquote></blockquote></blockquote>
+
+<h2 id="タプル(Tuple)">タプル(Tuple)</h2>
+
+<ul>
+<li>複数のオブジェクトをひとつにまとめたもの</li>
+<li>()でくくったものがタプルだが、必須ではない。でもかっこでくくったほうがわかりやすくて親切</li>
+</ul>
+
+
+<p>``` python</p>
+
+<blockquote><blockquote><blockquote><p>A = ('Keisuke', 37)
+A
+('Keisuke', 37)</p>
+
+<p>a, b = A
+a
+'Keisuke'
+b
+37</p>
+
+<p>A = ('Keisuke', )   * オブジェクト1個のタプルも作成可能
+A
+('Keisuke',)</p>
+
+<p>A[0] = 'Shinya'     * 要素への代入ができないこところがリストと違う
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'tuple' object does not support item assignment
+```</p></blockquote></blockquote></blockquote>
+
+<h2 id="ディクショナリ+(dictionary)">ディクショナリ (dictionary)</h2>
+
+<ul>
+<li>マッピングタイプのひとつ</li>
+<li>キーと値のペアを保持するオブジェクト</li>
+</ul>
+
+
+<p>``` python</p>
+
+<blockquote><blockquote><blockquote><p>D = {'name':'Keisuke Oyama', 'age':37}
+D['name']
+'Keisuke Oyama'</p>
+
+<p>E['car'] = 'Sianna'
+E['make'] = 'Toyota'
+E
+{'car': 'Sianna', 'make': 'Toyota'}</p>
+
+<p>dir(D)
+['<strong>class</strong>', '<strong>cmp</strong>', '<strong>contains</strong>', '<strong>delattr</strong>', '<strong>delitem</strong>', '<strong>doc</strong>', '<strong>eq</strong>', '<strong>format</strong>', '<strong>ge</strong>', '<strong>getattribute</strong>', '<strong>getitem</strong>', '<strong>gt</strong>', '<strong>hash</strong>', '<strong>init</strong>', '<strong>iter</strong>', '<strong>le</strong>', '<strong>len</strong>', '<strong>lt</strong>', '<strong>ne</strong>', '<strong>new</strong>', '<strong>reduce</strong>', '<strong>reduce_ex</strong>', '<strong>repr</strong>', '<strong>setattr</strong>', '<strong>setitem</strong>', '<strong>sizeof</strong>', '<strong>str</strong>', '<strong>subclasshook</strong>', 'clear', 'copy', 'fromkeys', 'get', 'has_key', 'items', 'iteritems', 'iterkeys', 'itervalues', 'keys', 'pop', 'popitem', 'setdefault', 'update', 'values']</p>
+
+<p>D.keys()
+['age', 'name']
+D.values()
+[37, 'Keisuke Oyama']</p>
+
+<p>D.has_key('name')
+True
+D.has_key('address')
+False</p>
+
+<p>'name' in D    * 上と同じ
+True
+'address' in D
+False</p>
+
+<p>```</p></blockquote></blockquote></blockquote>
+
+<h2 id="セット(set)">セット(set)</h2>
+
+<p>順序付けされていないユニークな要素で構成された、コレクション</p>
+
+<p>``` python</p>
+
+<blockquote><blockquote><blockquote><p>L = ['a', 'a', 'b', 'c', 'c', 'a']
+S = set(L)
+S
+set(['a', 'c', 'b'])   * 重複がなくなっている</p>
+
+<p>M = set('Hello')
+M
+set(['H', 'e', 'l', 'o'])  * 文字列からセットを作成</p>
+
+<p>A = set('Hello')
+B = set('World')
+A
+set(['H', 'e', 'l', 'o'])
+B
+set(['d', 'r', 'o', 'W', 'l'])</p>
+
+<p>A - B
+set(['H', 'e'])</p>
+
+<p>A | B
+set(['e', 'd', 'H', 'l', 'o', 'r', 'W'])</p>
+
+<p>A &amp; B
+set(['l', 'o'])</p>
+
+<p>A ^ B
+set(['e', 'd', 'H', 'r', 'W'])  * AとBそれぞれに存在しているものを表示
+→ lとoはAとB両方に含まれているので表示しない。それ以外は表示
+```</p></blockquote></blockquote></blockquote>
+
+<h1 id="JSONファイルの利用">JSONファイルの利用</h1>
+
+<ul>
+<li><a href="http://tmlife.net/programming/python/python-json-module.html">Python : json モジュールで json 読み込み</a></li>
+<li><a href="http://jsonlint.com/">The JSON Validator</a></li>
+</ul>
+
+
+<h2 id="リンク">リンク</h2>
+
+<ul>
+<li><a href="http://tmlife.net/programming/python/python-json-module.html">Python : json モジュールで json 読み込み</a></li>
+</ul>
+
+
+<h1 id="デコレータ">デコレータ</h1>
+
+<h2 id="roles">roles</h2>
+
+<p>権限を設定できる。実行時にホスト名やユーザ名などの引数指定を無くすことが目的。</p>
+
+<h3 id="1環境1サーバ">1環境1サーバ</h3>
+
+<p>``` python</p>
+
+<h1 id="!/usr/bin/python">!/usr/bin/python</h1>
+
+<h1 id="coding:+utf-8">coding: utf-8</h1>
+
+<p>from fabric.api import run, env
+from fabric.decorators import roles</p>
+
+<p>env.roledefs['dev'] = ['devserver1']</p>
+
+<p>@roles('dev')
+def host_name():</p>
+
+<pre><code>    run('uname -n')
+</code></pre>
+
+<p><code>
+実行結果
+</code>
+$ fab -f fabfile_roles.py -u ftakao2007 host_name
+[devserver1] Executing task 'host_name'
+[devserver1] run: uname -n
+[devserver1] Login password for 'ftakao2007':
+[devserver1] out: devserver1
+[devserver1] out:</p>
+
+<p>Done.
+Disconnecting from devserver1... done.
+```</p>
+
+<h3 id="1環境複数サーバ">1環境複数サーバ</h3>
+
+<p>``` python</p>
+
+<h1 id="!/usr/bin/python">!/usr/bin/python</h1>
+
+<h1 id="coding:+utf-8">coding: utf-8</h1>
+
+<p>from fabric.api import run, env
+from fabric.decorators import roles</p>
+
+<p>env.roledefs['dev'] = ['devserver1', 'devserver2']</p>
+
+<p>@roles('dev')
+def host_name():</p>
+
+<pre><code>    run('uname -n')
+</code></pre>
+
+<p><code>
+実行結果
+</code>
+$ fab -f fabfile_roles.py -u ftakao2007 host_name
+[devserver1] Executing task 'host_name'
+[devserver1] run: uname -n
+[devserver1] Login password for 'ftakao2007':
+[devserver1] out: devserver1
+[devserver1] out:</p>
+
+<p>[devserver2] Executing task 'host_name'
+[devserver2] run: uname -n
+[devserver2] out: devserver2
+[devserver2] out:</p>
+
+<p>Done.
+Disconnecting from devserver2... done.
+Disconnecting from devserver1... done.
+```</p>
+
+<h3 id="複数環境複数サーバ">複数環境複数サーバ</h3>
+
+<p>``` python</p>
+
+<h1 id="!/usr/bin/python">!/usr/bin/python</h1>
+
+<h1 id="coding:+utf-8">coding: utf-8</h1>
+
+<p>from fabric.api import run, env
+from fabric.decorators import roles</p>
+
+<p>env.roledefs = {</p>
+
+<pre><code>'dev': ['devserver1', 'devserver2'],
+'stg': ['stgserver1', 'stgserver2']
+</code></pre>
+
+<p>}</p>
+
+<p>@roles('dev')
+def host_name():</p>
+
+<pre><code>   run('uname -n')
+</code></pre>
+
+<p>@roles('stg')
+def host_name2():</p>
+
+<pre><code>   run('uname -n')
+</code></pre>
+
+<p><code>
+実行結果
+</code>
+$ fab -f fabfile_roles.py -u ftakao2007 host_name
+[devserver1] Executing task 'host_name'
+[devserver1] run: uname -n
+[devserver1] Login password for 'ftakao2007':
+[devserver1] out: devserver1
+[devserver1] out:</p>
+
+<p>[devserver2] Executing task 'host_name'
+[devserver2] run: uname -n
+[devserver2] out: devserver2
+[devserver2] out:</p>
+
+<p>Done.
+Disconnecting from devserver2... done.
+Disconnecting from devserver1... done.</p>
+
+<p>$ fab -f fabfile_roles.py -u ftakao2007 host_name2
+[stgserver1] Executing task 'host_name2'
+[stgserver1] run: uname -n
+[stgserver1] Login password for 'ftakao2007':
+[stgserver1] out: stgserver1
+[stgserver1] out:</p>
+
+<p>[stgserver2] Executing task 'host_name2'
+[stgserver2] run: uname -n
+[stgserver2] out: stgserver2
+[stgserver2] out:</p>
+
+<p>Done.
+Disconnecting from stgserver1... done.
+Disconnecting from stgserver2... done.
+```</p>
+
+<h2 id="ユーザも設定">ユーザも設定</h2>
+
+<p>``` python</p>
+
+<h1 id="!/usr/bin/python">!/usr/bin/python</h1>
+
+<h1 id="coding:+utf-8">coding: utf-8</h1>
+
+<p>from fabric.api import run, env
+from fabric.decorators import roles</p>
+
+<p>env.roledefs['dev'] = ['devserver1']
+env.user = 'ftakao2007'</p>
+
+<p>@roles('dev')
+def host_name():</p>
+
+<pre><code>    run('uname -n')
+</code></pre>
+
+<p><code>
+実行結果
+</code>
+$ fab -f fabfile_roles.py host_name
+[devserver1] Executing task 'host_name'
+[devserver1] run: uname -n
+[devserver1] Login password for 'ftakao2007':
+[devserver1] out: devserver1
+[devserver1] out:</p>
+
+<p>Done.
+Disconnecting from devserver1... done.
+```</p>
+
+<h3 id="リンク">リンク</h3>
+
+<ul>
+<li><a href="http://docs.fabfile.org/en/1.4.0/usage/execution.html">Execution model</a></li>
+<li><a href="http://www.ianlewis.org/jp/fabric-pythonic">Fabric デプロイツールのPythonicな書き方</a> 環境辞書</li>
+<li><a href="http://iiwake.me/2013/03/26/199">Python Fabricでデプロイしてみた</a> 外部cfgファイル読み込み</li>
+</ul>
+
+
+<hr />
+
+<h2 id="task">task</h2>
+
+<p>fabricが実行できるタスクを色々制御できる</p>
+
+<h3 id="基本">基本</h3>
+
+<p>``` python</p>
+
+<h1 id="!/usr/bin/python">!/usr/bin/python</h1>
+
+<h1 id="coding:+utf-8">coding: utf-8</h1>
+
+<p>from fabric.api import run
+from fabric.decorators import task</p>
+
+<p>@task
+def host_type():</p>
+
+<pre><code>    run('uname -s')
+</code></pre>
+
+<p>```</p>
+
+<h3 id="エイリアス設定">エイリアス設定</h3>
+
+<p>``` python</p>
+
+<h1 id="!/usr/bin/python">!/usr/bin/python</h1>
+
+<h1 id="coding:+utf-8">coding: utf-8</h1>
+
+<p>from fabric.api import run
+from fabric.decorators import task</p>
+
+<p>@task
+def host_type():</p>
+
+<pre><code>    run('uname -s')
+</code></pre>
+
+<p>@task(alias='remote_host_name')
+def host_name():</p>
+
+<pre><code>    run('uname -n')
+</code></pre>
+
+<p><code>
+実行結果
+</code>
+$ fab -f fabfile_task.py --list
+Available commands:</p>
+
+<pre><code>host_name
+host_type
+remote_host_name
+</code></pre>
+
+<p>※ エイリアスで登録したコマンドが実行可能になっている</p>
+
+<p>$ fab -f fabfile_task.py -H devserver1 -u ftakao2007 host_type
+[devserver1] Executing task 'host_type'
+[devserver1] run: uname -s
+[devserver1] Login password for 'ftakao2007':
+[devserver1] out: SunOS
+[devserver1] out:</p>
+
+<p>Done.
+Disconnecting from devserver1... done.</p>
+
+<p>$ fab -f fabfile_task.py -H devserver1 -u ftakao2007 host_name
+[devserver1] Executing task 'host_name'
+[devserver1] run: uname -n
+[devserver1] Login password for 'ftakao2007':
+[devserver1] out: devserver1
+[devserver1] out:</p>
+
+<p>Done.
+Disconnecting from devserver1... done.</p>
+
+<p>$ fab -f fabfile_task.py -H devserver1 -u ftakao2007 remote_host_name
+[devserver1] Executing task 'remote_host_name'
+[devserver1] run: uname -n
+[devserver1] Login password for 'ftakao2007':
+[devserver1] out: devserver1
+[devserver1] out:</p>
+
+<p>Done.
+Disconnecting from devserver1... done.
+※ host_nameと同じ実行結果
+```</p>
+
+<h3 id="リンク">リンク</h3>
+
+<ul>
+<li><a href="http://docs.fabfile.org/en/1.2.2/usage/tasks.html#new-style-tasks">Defining tasks</a></li>
+</ul>
+
+
+<hr />
+
+<h1 id="モジュール分割">モジュール分割</h1>
+
+<p>roleとtaskを組み合わせてモジュール分割</p>
+
+<p>``` python
+[fabfile.py]</p>
+
+<h1 id="!/usr/bin/python">!/usr/bin/python</h1>
+
+<h1 id="coding:+utf-8">coding: utf-8</h1>
+
+<p>import dev_mod</p>
+
+<p>[dev_mod.py]
+from fabric.api import run, env
+from fabric.decorators import task, roles</p>
+
+<p>env.roledefs['dev'] = ['devserver1']
+env.user = 'ftakao2007'</p>
+
+<p>@task
+@roles('dev')
+def host_name():</p>
+
+<pre><code>    run('uname -n')
+</code></pre>
+
+<p><code>
+ファイル名を「fabfile.py」にするとコマンド実行時にファイルを引数として与えなくてもよくなる。  
+実行結果
+</code>
+$ fab --list
+Available commands:</p>
+
+<pre><code>dev_mod.host_name
+</code></pre>
+
+<p>$ fab dev_mod.host_name
+[devserver1] Executing task 'dev_mod.host_name'
+[devserver1] run: uname -n
+[devserver1] Login password for 'ftakao2007':
+[devserver1] out: devserver1
+[devserver1] out:</p>
+
+<p>Done.
+Disconnecting from devserver1... done.
+```</p>
+
+<p>メインのファイルがものすごくシンプルになりました。<br/>
+いずれはモジュールからパッケージにしたほうがいいのかな。</p>
+
+<h2 id="リンク">リンク</h2>
+
+<ul>
+<li><a href="http://d.hatena.ne.jp/feiz/20110915/1316107432">fabfileの構造化</a></li>
+</ul>
+
+
+<hr />
+
+<h2 id="リンクメモ">リンクメモ</h2>
+
+<ul>
+<li><a href="http://d.hatena.ne.jp/oneshotlife_tom/20121026/1351255211">Pythonで楽天ウェブサービスを使う。サンプルコード。</a></li>
+<li><a href="https://sites.google.com/site/kuraitlab/programing-language/python/python-oop1">Pythonでオブジェクト指向①</a></li>
+<li><a href="http://kuenishi.hatenadiary.jp/entry/2013/04/23/162205">メモリリークとは何か</a></li>
+</ul>
+
 ]]></content>
   </entry>
   
