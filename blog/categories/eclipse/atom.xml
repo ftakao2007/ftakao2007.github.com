@@ -4,7 +4,7 @@
   <title><![CDATA[Category: eclipse | Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/blog/categories/eclipse/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-06-02T10:27:30+09:00</updated>
+  <updated>2013-06-02T10:32:31+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -697,7 +697,15 @@ Available commands:</p>
 Disconnecting from devserver1... done.
 ```</p>
 
-<p>メインのファイルがものすごくシンプルになりました。</p>
+<p>メインのファイルがものすごくシンプルになりました。<br/>
+いずれはモジュールじゃなくてパッケージにしたほうがいいのかな。</p>
+
+<h2 id="リンク">リンク</h2>
+
+<ul>
+<li><a href="http://d.hatena.ne.jp/feiz/20110915/1316107432">fabfileの構造化</a></li>
+</ul>
+
 
 <hr />
 
