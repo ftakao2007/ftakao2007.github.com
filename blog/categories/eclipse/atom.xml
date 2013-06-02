@@ -4,7 +4,7 @@
   <title><![CDATA[Category: eclipse | Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/blog/categories/eclipse/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-06-02T15:24:21+09:00</updated>
+  <updated>2013-06-02T15:54:15+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -735,11 +735,11 @@ sys.modules[<strong>name</strong>]=_const()</p>
 <p>from fabric.api import run
 import const</p>
 
-<p>const.dev_ssh_path = "/usr/bin"
-const.dev_sudo_path = "/usr/local/bin"</p>
+<p>const.DEV_SSH_PATH = "/usr/bin"
+const.DEV_SUDO_PATH = "/usr/local/bin"</p>
 
 <p>def check_df():
-  run("{sudo_path}/sudo {ssh_path}/ssh nasserver1 df -h vol_takao".format(ssh_path=const.dev_ssh_path,sudo_path=const.dev_sudo_path))</p>
+  run("{SUDO_PATH}/sudo {SSH_PATH}/ssh nasserver1 df -h vol_takao".format(SSH_PATH=const.DEV_SSH_PATH,SUDO_PATH=const.DEV_SUDO_PATH))</p>
 
 <p><code>
 実行結果
@@ -756,7 +756,7 @@ $ fab -H devserver1 -u ftakao2007 check_df
 <p>Done.
 Disconnecting from devserver1... done.
 ```
-連想配列使えばformatの中身がきっとすっきりする。</p>
+ディクショナリを使えばformatの中身がきっとすっきりする。</p>
 
 <h2 id="リンク">リンク</h2>
 

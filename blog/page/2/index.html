@@ -1492,11 +1492,11 @@ Eclipse IDE for Java EE Developers<br/>
 </span><span class='line'><span class="kn">from</span> <span class="nn">fabric.api</span> <span class="kn">import</span> <span class="n">run</span>
 </span><span class='line'><span class="kn">import</span> <span class="nn">const</span>
 </span><span class='line'>
-</span><span class='line'><span class="n">const</span><span class="o">.</span><span class="n">dev_ssh_path</span> <span class="o">=</span> <span class="s">&quot;/usr/bin&quot;</span>
-</span><span class='line'><span class="n">const</span><span class="o">.</span><span class="n">dev_sudo_path</span> <span class="o">=</span> <span class="s">&quot;/usr/local/bin&quot;</span>
+</span><span class='line'><span class="n">const</span><span class="o">.</span><span class="n">DEV_SSH_PATH</span> <span class="o">=</span> <span class="s">&quot;/usr/bin&quot;</span>
+</span><span class='line'><span class="n">const</span><span class="o">.</span><span class="n">DEV_SUDO_PATH</span> <span class="o">=</span> <span class="s">&quot;/usr/local/bin&quot;</span>
 </span><span class='line'>
 </span><span class='line'><span class="k">def</span> <span class="nf">check_df</span><span class="p">():</span>
-</span><span class='line'>  <span class="n">run</span><span class="p">(</span><span class="s">&quot;{sudo_path}/sudo {ssh_path}/ssh nasserver1 df -h vol_takao&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ssh_path</span><span class="o">=</span><span class="n">const</span><span class="o">.</span><span class="n">dev_ssh_path</span><span class="p">,</span><span class="n">sudo_path</span><span class="o">=</span><span class="n">const</span><span class="o">.</span><span class="n">dev_sudo_path</span><span class="p">))</span>
+</span><span class='line'>  <span class="n">run</span><span class="p">(</span><span class="s">&quot;{SUDO_PATH}/sudo {SSH_PATH}/ssh nasserver1 df -h vol_takao&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">SSH_PATH</span><span class="o">=</span><span class="n">const</span><span class="o">.</span><span class="n">DEV_SSH_PATH</span><span class="p">,</span><span class="n">SUDO_PATH</span><span class="o">=</span><span class="n">const</span><span class="o">.</span><span class="n">DEV_SUDO_PATH</span><span class="p">))</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
@@ -1529,7 +1529,7 @@ Eclipse IDE for Java EE Developers<br/>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>連想配列使えばformatの中身がきっとすっきりする。</p>
+<p>ディクショナリを使えばformatの中身がきっとすっきりする。</p>
 
 <h2 id="リンク">リンク</h2>
 
