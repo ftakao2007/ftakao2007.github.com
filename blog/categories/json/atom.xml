@@ -4,7 +4,7 @@
   <title><![CDATA[Category: JSON | Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/blog/categories/json/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-06-02T15:20:50+09:00</updated>
+  <updated>2013-06-02T15:24:21+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -759,6 +759,8 @@ Disconnecting from devserver1... done.
 連想配列使えばformatの中身がきっとすっきりする。</p>
 
 <h2 id="リンク">リンク</h2>
+
+<p><a href="https://sites.google.com/site/michinobumaeda/programming/pythonconst">Python で定数のようなものを使う</a></p>
 
 <hr />
 
