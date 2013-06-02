@@ -4,7 +4,7 @@
   <title><![CDATA[Category: book | Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/blog/categories/book/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-05-18T20:53:35+09:00</updated>
+  <updated>2013-06-02T10:27:30+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -12,6 +12,30 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[エキスパートPythonプログラミング]]></title>
+    <link href="http://ftakao2007.github.com/blog/2013/06/02/expert-python-programming/"/>
+    <updated>2013-06-02T01:39:00+09:00</updated>
+    <id>http://ftakao2007.github.com/blog/2013/06/02/expert-python-programming</id>
+    <content type="html"><![CDATA[<p>辞書的に使ってしらべたことから覚書。</p>
+
+<table border="0" cellpadding="0" cellspacing="0"><tr><td valign="top"><div style="border:1px solid;margin:0px;padding:6px 0px;width:160px;text-align:center;float:left"><a href="http://hb.afl.rakuten.co.jp/hgc/0855d2c2.97054871.0855d2c3.c2844246/?pc=http%3a%2f%2fitem.rakuten.co.jp%2fbook%2f6497309%2f%3fscid%3daf_link_tbl&amp;m=http%3a%2f%2fm.rakuten.co.jp%2fbook%2fi%2f13678877%2f" target="_blank"><img src="http://hbb.afl.rakuten.co.jp/hgb/?pc=http%3a%2f%2fthumbnail.image.rakuten.co.jp%2f%400_mall%2fbook%2fcabinet%2f0486%2f04868629.jpg%3f_ex%3d128x128&amp;m=http%3a%2f%2fthumbnail.image.rakuten.co.jp%2f%400_mall%2fbook%2fcabinet%2f0486%2f04868629.jpg%3f_ex%3d80x80" alt="【送料無料】エキスパートPythonプログラミング [ タレク・ジアデ ]" border="0" style="margin:0px;padding:0px"></a><p style="font-size:12px;line-height:1.4em;text-align:left;margin:0px;padding:2px 6px"><a href="http://hb.afl.rakuten.co.jp/hgc/0855d2c2.97054871.0855d2c3.c2844246/?pc=http%3a%2f%2fitem.rakuten.co.jp%2fbook%2f6497309%2f%3fscid%3daf_link_tbl&amp;m=http%3a%2f%2fm.rakuten.co.jp%2fbook%2fi%2f13678877%2f" target="_blank">【送料無料】エキスパートPythonプログラミング [ タレク・ジアデ ]</a><br></p></div></td></tr></table>
+
+
+<h2 id="2.3+デコレータ">2.3 デコレータ</h2>
+
+<ul>
+<li>Python2.4で追加された構文</li>
+<li>関数やメソッドのラッピング処理(受け取った関数を拡張して返す)の見た目をわかりやすくする</li>
+<li>クラスメソッドや静的なメソッドを定義する際に、メソッド定義の前の行にすっきりと書く事が目的</li>
+<li>いくつかのコードパターンを実装するときに非常に意図がわかりやすいコードになる</li>
+</ul>
+
+
+<h3 id="2.3.1+デコレータの書き方">2.3.1 デコレータの書き方</h3>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Pythonプロフェッショナルプログラミング]]></title>
@@ -23,6 +47,24 @@
 
 <table border="0" cellpadding="0" cellspacing="0"><tr><td valign="top"><div style="border:1px solid;margin:0px;padding:6px 0px;width:160px;text-align:center;float:left"><a href="http://hb.afl.rakuten.co.jp/hgc/0855d2c2.97054871.0855d2c3.c2844246/?pc=http%3a%2f%2fitem.rakuten.co.jp%2fbook%2f11631269%2f%3fscid%3daf_link_tbl&amp;m=http%3a%2f%2fm.rakuten.co.jp%2fbook%2fi%2f15825336%2f" target="_blank"><img src="http://hbb.afl.rakuten.co.jp/hgb/?pc=http%3a%2f%2fthumbnail.image.rakuten.co.jp%2f%400_mall%2fbook%2fcabinet%2f2948%2f9784798032948.jpg%3f_ex%3d128x128&amp;m=http%3a%2f%2fthumbnail.image.rakuten.co.jp%2f%400_mall%2fbook%2fcabinet%2f2948%2f9784798032948.jpg%3f_ex%3d80x80" alt="【送料無料】Pythonプロフェッショナルプログラミング [ ビープラウド ]" border="0" style="margin:0px;padding:0px"></a><p style="font-size:12px;line-height:1.4em;text-align:left;margin:0px;padding:2px 6px"><a href="http://hb.afl.rakuten.co.jp/hgc/0855d2c2.97054871.0855d2c3.c2844246/?pc=http%3a%2f%2fitem.rakuten.co.jp%2fbook%2f11631269%2f%3fscid%3daf_link_tbl&amp;m=http%3a%2f%2fm.rakuten.co.jp%2fbook%2fi%2f15825336%2f" target="_blank">【送料無料】Pythonプロフェッショナルプログラミング [ ビープラウド ]</a><br></p></div></td></tr></table>
 
+
+<h2 id="Pythonをはじめよう">Pythonをはじめよう</h2>
+
+<p>Pythonの初期設定についての解説。ここではAmazonLinuxで環境を構築する。</p>
+
+<h3 id="必要パッケージのインストール">必要パッケージのインストール</h3>
+
+<p>必要なものがあれば随時追加していく
+``` bash
+sudo yum -y install python27</p>
+
+<p>[ec2-user@ip-10-148-166-193 ~]$ python -V
+Python 2.6.8
+[ec2-user@ip-10-148-166-193 ~]$ python27 -V
+Python 2.7.3</p>
+
+<p>※ デフォルトは2.6系、明示的にインストールすると2.7系も入る
+```</p>
 ]]></content>
   </entry>
   

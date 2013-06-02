@@ -4,7 +4,7 @@
   <title><![CDATA[Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-05-18T20:53:35+09:00</updated>
+  <updated>2013-06-02T10:27:30+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -12,6 +12,212 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[エキスパートPythonプログラミング]]></title>
+    <link href="http://ftakao2007.github.com/blog/2013/06/02/expert-python-programming/"/>
+    <updated>2013-06-02T01:39:00+09:00</updated>
+    <id>http://ftakao2007.github.com/blog/2013/06/02/expert-python-programming</id>
+    <content type="html"><![CDATA[<p>辞書的に使ってしらべたことから覚書。</p>
+
+<table border="0" cellpadding="0" cellspacing="0"><tr><td valign="top"><div style="border:1px solid;margin:0px;padding:6px 0px;width:160px;text-align:center;float:left"><a href="http://hb.afl.rakuten.co.jp/hgc/0855d2c2.97054871.0855d2c3.c2844246/?pc=http%3a%2f%2fitem.rakuten.co.jp%2fbook%2f6497309%2f%3fscid%3daf_link_tbl&amp;m=http%3a%2f%2fm.rakuten.co.jp%2fbook%2fi%2f13678877%2f" target="_blank"><img src="http://hbb.afl.rakuten.co.jp/hgb/?pc=http%3a%2f%2fthumbnail.image.rakuten.co.jp%2f%400_mall%2fbook%2fcabinet%2f0486%2f04868629.jpg%3f_ex%3d128x128&amp;m=http%3a%2f%2fthumbnail.image.rakuten.co.jp%2f%400_mall%2fbook%2fcabinet%2f0486%2f04868629.jpg%3f_ex%3d80x80" alt="【送料無料】エキスパートPythonプログラミング [ タレク・ジアデ ]" border="0" style="margin:0px;padding:0px"></a><p style="font-size:12px;line-height:1.4em;text-align:left;margin:0px;padding:2px 6px"><a href="http://hb.afl.rakuten.co.jp/hgc/0855d2c2.97054871.0855d2c3.c2844246/?pc=http%3a%2f%2fitem.rakuten.co.jp%2fbook%2f6497309%2f%3fscid%3daf_link_tbl&amp;m=http%3a%2f%2fm.rakuten.co.jp%2fbook%2fi%2f13678877%2f" target="_blank">【送料無料】エキスパートPythonプログラミング [ タレク・ジアデ ]</a><br></p></div></td></tr></table>
+
+
+<h2 id="2.3+デコレータ">2.3 デコレータ</h2>
+
+<ul>
+<li>Python2.4で追加された構文</li>
+<li>関数やメソッドのラッピング処理(受け取った関数を拡張して返す)の見た目をわかりやすくする</li>
+<li>クラスメソッドや静的なメソッドを定義する際に、メソッド定義の前の行にすっきりと書く事が目的</li>
+<li>いくつかのコードパターンを実装するときに非常に意図がわかりやすいコードになる</li>
+</ul>
+
+
+<h3 id="2.3.1+デコレータの書き方">2.3.1 デコレータの書き方</h3>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Python単語帳]]></title>
+    <link href="http://ftakao2007.github.com/blog/2013/05/25/python-words/"/>
+    <updated>2013-05-25T14:54:00+09:00</updated>
+    <id>http://ftakao2007.github.com/blog/2013/05/25/python-words</id>
+    <content type="html"><![CDATA[<p>感覚だけのプログラミングでは他人と意思疎通ができないので単語を抑えたい。</p>
+
+<h2 id="[リスト、タプル、ディクショナリ、リスト](http://ftakao2007.github.io/blog/2013/04/29/python/)"><a href="http://ftakao2007.github.io/blog/2013/04/29/python/">リスト、タプル、ディクショナリ、リスト</a></h2>
+
+<h2 id="デコレータ">デコレータ</h2>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[東京渋谷 “初心者向けiPhoneアプリ開発” 勉強会② (5/22)]]></title>
+    <link href="http://ftakao2007.github.com/blog/2013/05/22/iphone-app-study/"/>
+    <updated>2013-05-22T19:47:00+09:00</updated>
+    <id>http://ftakao2007.github.com/blog/2013/05/22/iphone-app-study</id>
+    <content type="html"><![CDATA[<h2 id="[東京渋谷+“初心者向けiPhoneアプリ開発”+勉強会②+(5/22)](http://atnd.org/events/39513)"><a href="http://atnd.org/events/39513">東京渋谷 “初心者向けiPhoneアプリ開発” 勉強会② (5/22)</a></h2>
+
+<p>Xcodeを基本から勉強。前は何も知らずに画面遷移をコピペプログラムしただけだったので基本から勉強します。
+バージョンは4.6.2。</p>
+
+<h3 id="プロジェクト作成">プロジェクト作成</h3>
+
+<p>File -> New -> Project<br/>
+Master-Detail-Application<br/>
+Product Name : nicomoro
+Use Storyboards」「Use Automatic Reference Counting」の二箇所チェック
+createでデスクトップにフォルダを作成</p>
+
+<h3 id="左側のパネル">左側のパネル</h3>
+
+<ul>
+<li><p>ファイルの一覧になっている<br/>
+パネルに表示されるフォルダの構造と実際のフォルダでは構造が違う<br/>
+→Xcode上では違う階層で同じ名前のファイル名も作れるが、コンパイル時にエラーになる。</p></li>
+<li><p>フォルダのルールをできるだけ守る<br/>
+プログラムを入れるフォルダ、設定ファイルを入れるフォルダ等予め決められているフォルダのルールにできるだけ従う<br/>
+→変なところに作られたファイルは適切な場所に移動させる</p></li>
+</ul>
+
+
+<h3 id="左上の方">左上の方</h3>
+
+<p>Runでシミュレーターを実行。横にあるメニューでシミュレーターを選択(iPhone,iPadなど)</p>
+
+<h3 id="右上の方(Editor)">右上の方(Editor)</h3>
+
+<p>左:通常表示<br/>
+中:画面分割(ジェントルマンみたいなアイコン)使いっぱなしにしているとおかしくなるので作業が終わったら通常表示に戻すことを意識する<br/>
+右:差分表示。あまり使わないほうが良い。ストーリーボードを開いている状態で押してしまうと差分が出まくって戻れなくなる</p>
+
+<h3 id="右上の方(View)">右上の方(View)</h3>
+
+<p>左:左側のパネルを出したり引っ込めたり<br/>
+中:下のパネルを出したり引っ込めたり(実行ログが表示されたりするところ)<br/>
+右:右側のパネルを出したり引っ込めたり(Identityとか情報が表示されたりするところ)<br/>
+※ ここは色々いじってもOK</p>
+
+<h3 id="アプリの設定をする画面">アプリの設定をする画面</h3>
+
+<p>左側パネルの一番上の部分をクリックした後、「TARGETS」で目的のアプリを選択<br/>
+アプリのアイコンの設定とかできる。</p>
+
+<h3 id="Xcode特徴">Xcode特徴</h3>
+
+<ul>
+<li>設定したら反映されるが、削除の場合は反映されないことがある</li>
+<li>削除したものを元に戻せるとは限らない(削除対象と関連するものも削除、変更されることがる)</li>
+<li>設定でエディタの色も変えられるが変になることがあるのでできるだけ変えないほうが良い</li>
+</ul>
+
+
+<h3 id="ストーリーボード">ストーリーボード</h3>
+
+<ul>
+<li>ビジュアル的に開発できる</li>
+<li>Xcodeの新しめの機能(参考書などにはまだ載ってないものも多いかも)</li>
+<li>左側のパネルの「MainStoryboard.storyboard」をクリックすると表示される</li>
+</ul>
+
+
+<h3 id="使わないファイルなどを削除">使わないファイルなどを削除</h3>
+
+<ul>
+<li><p>ストーリーボードに表示されているものは選択してDeleteキーで消せる<br/>
+→その後「Command S」で保存する</p></li>
+<li><p>使わないmファイルやhファイルを削除<br/>
+→「Move to Trash」でゴミ箱に移動しないと、表示されなくなるだけでディレクトリ内にはファイルは残ってしまう。エラーの元になるのでちゃんと消す。</p></li>
+</ul>
+
+
+<h3 id="ViewControlerの追加">ViewControlerの追加</h3>
+
+<p>右下の方にあるところのリストにある「View Controler」を真ん中の画面にドラッグアンドドロップ<br/>
+→AWSっぽい立方体のアイコンにチェックが入っている状態で表示される(Object library)</p>
+
+<h3 id="リソースを追加">リソースを追加</h3>
+
+<p>左側のパネルにフォルダやファイルをドラッグアンドドロップ<br/>
+「Choose options for adding these files」の画面の「Add to targets」で対象のプロジェクトにチェックが入っていることを確認する。</p>
+
+<h3 id="ステータスバーを消す">ステータスバーを消す</h3>
+
+<p>iPhoneで電波とか時刻とかバッテリー残量とかが表示されているところ</p>
+
+<ul>
+<li>アプリの設定をする画面「Status bar」のVisibility「Hide during application launch」にチェックを入れる</li>
+<li>ストリートボードで対象のView Controlerを選択し、右側のパネルの「Simulated Metrics」のStatus Barを「None」にする</li>
+</ul>
+
+
+<h2 id="画面を作ってみる">画面を作ってみる</h2>
+
+<h3 id="背景画像を配置">背景画像を配置</h3>
+
+<p>右下の方にあるリストの中にある「Image View」を対象のView Controlerにドラッグアンドドロップ<br/>
+→広い画面で見ていてドラッグアンドドロップができない時は、対象のView Controlerにズームしてからやってみる<br/>
+選択した状態で、右上の「Image View」のImageに、先ほどリソースを追加した中に入っている背景画像のファイル名を入力する(bg.pngなど)<br/>
+サイズはGUIでも変更できるし、右上のパネル「View」でWidth,Heightを数値で指定することもできる</p>
+
+<h3 id="キャラクターなど画像を配置">キャラクターなど画像を配置</h3>
+
+<p>先ほどと同じ要領でキャラクターの画像を配置する</p>
+
+<h3 id="ボタンを配置する">ボタンを配置する</h3>
+
+<p>右下の方にあるリストの中にある「Round Rect Bottun」を対象のView Controlerにドラッグアンドドロップ<br/>
+ダブルクリックするとボタンに表示されている文字を変更できる</p>
+
+<h3 id="もう一つ同じ画面を作ってつないでみる">もう一つ同じ画面を作ってつないでみる</h3>
+
+<p>同じ要領でView Controlerを右側に追加する<br/>
+→吹き出しのImageや「戻る」ボタンを追加しておく</p>
+
+<h3 id="modal(画面の上に新たに画面を重ねていく画面遷移方法)で左の画面と右の画面をつなぐ">modal(画面の上に新たに画面を重ねていく画面遷移方法)で左の画面と右の画面をつなぐ</h3>
+
+<p>左の画面上に配置したボタンをCtrlを押しながらクリックし、右の画面にドラッグアンドドロップする<br/>
+メニューが出るので「modal」を選択する</p>
+
+<p>※ここでシミュレータを実行してボタンを押すと、次の画面に遷移する</p>
+
+<h2 id="クラスを作る">クラスを作る</h2>
+
+<p>戻るボタンを実装するためにクラスを作る</p>
+
+<h3 id="ファイルの作成">ファイルの作成</h3>
+
+<p>File -> New -> File<br/>
+Objective-C class を選択</p>
+
+<ul>
+<li>Class : MainViewControler</li>
+<li>Subclass of : UIViewControler
+Targeted for iPadなどのチェックボックスるが外れていることを確認する<br/>
+対象のフォルダが選択されていること、対象のプロジェクトにチェックが入っていることを確認してCreate<br/>
+同じ要領でClass SubViewControlerを作成する</li>
+</ul>
+
+
+<h4 id="MainViewControler.mの編集">MainViewControler.mの編集</h4>
+
+<p>以下を何処かにコピペ</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>- (IBAction)mainViewReturnActionForSegue:
+</span><span class='line'>(UIStoryboardSegue *)segue{
+</span><span class='line'>NSLog(@"もどってきた！");
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<h4 id="MainStoryboardで設定">MainStoryboardで設定</h4>
+
+<p>後の画面に設置した「戻る」ボタンをCtrlを押しながらMainViewの「exit」にドラッグアンドドロップする<br/>
+→出てきたメニューで先ほど追加した</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[(第31回)Python mini Hack-a-thon]]></title>
@@ -108,17 +314,17 @@ fabricを利用予定。</p></li>
 </span><span class='line'>    <span class="o">{</span>
 </span><span class='line'>        <span class="s2">&quot;nas&quot;</span>: <span class="s2">&quot;nas_backup01&quot;</span>,
 </span><span class='line'>        <span class="s2">&quot;volume&quot;</span>: <span class="s2">&quot;apache_log&quot;</span>,
-</span><span class='line'>        <span class="s2">&quot;size&quot;</span>: <span class="s2">&quot;5g&quot;</span>
+</span><span class='line'>        <span class="s2">&quot;size&quot;</span>: <span class="s2">&quot;+5g&quot;</span>
 </span><span class='line'>    <span class="o">}</span>,
 </span><span class='line'>    <span class="o">{</span>
 </span><span class='line'>        <span class="s2">&quot;nas&quot;</span>: <span class="s2">&quot;nas_backup02&quot;</span>,
 </span><span class='line'>        <span class="s2">&quot;volume&quot;</span>: <span class="s2">&quot;tomcat_log&quot;</span>,
-</span><span class='line'>        <span class="s2">&quot;size&quot;</span>: <span class="s2">&quot;500m&quot;</span>
+</span><span class='line'>        <span class="s2">&quot;size&quot;</span>: <span class="s2">&quot;+500m&quot;</span>
 </span><span class='line'>    <span class="o">}</span>,
 </span><span class='line'>    <span class="o">{</span>
 </span><span class='line'>        <span class="s2">&quot;nas&quot;</span>: <span class="s2">&quot;nas_ecsite01&quot;</span>,
 </span><span class='line'>        <span class="s2">&quot;volume&quot;</span>: <span class="s2">&quot;item_image&quot;</span>,
-</span><span class='line'>        <span class="s2">&quot;size&quot;</span>: <span class="s2">&quot;10g&quot;</span>
+</span><span class='line'>        <span class="s2">&quot;size&quot;</span>: <span class="s2">&quot;+10g&quot;</span>
 </span><span class='line'>    <span class="o">}</span>
 </span><span class='line'><span class="o">]</span>
 </span></code></pre></td></tr></table></div></figure>
@@ -165,11 +371,11 @@ fabricを利用予定。</p></li>
 </span><span class='line'><span class="n">num</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>             <span class="c">#ファイル数をカウント</span>
 </span><span class='line'>
 </span><span class='line'><span class="k">if</span> <span class="n">argc</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">argvs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s">&quot;--help&quot;</span><span class="p">:</span>
-</span><span class='line'>  <span class="k">print</span><span class="p">(</span> <span class="s">&quot;sudo ssh {obj[nas]} vol create {obj[volume]} {obj[size]}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">obj</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="p">)</span>    <span class="c"># ヘルプを表示</span>
+</span><span class='line'>  <span class="k">print</span><span class="p">(</span> <span class="s">&quot;sudo ssh {obj[nas]} vol resize {obj[volume]} {obj[size]}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">obj</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="p">)</span>    <span class="c"># ヘルプを表示</span>
 </span><span class='line'>
 </span><span class='line'><span class="k">if</span> <span class="n">argc</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
 </span><span class='line'>  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num</span><span class="p">)[</span><span class="mi">1</span><span class="p">:]:</span>     <span class="c"># 配列の2列目から実行</span>
-</span><span class='line'>      <span class="k">print</span><span class="p">(</span> <span class="s">&quot;sudo ssh {obj[nas]} vol create {obj[volume]} {obj[size]}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">obj</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="p">)</span>
+</span><span class='line'>      <span class="k">print</span><span class="p">(</span> <span class="s">&quot;sudo ssh {obj[nas]} vol resize {obj[volume]} {obj[size]}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">obj</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="p">)</span>
 </span><span class='line'>
 </span><span class='line'><span class="err">※</span> <span class="err">デバッグ等コメントは削除</span>
 </span></code></pre></td></tr></table></div></figure>
@@ -694,6 +900,35 @@ ifやループは使わない事に喜びをおぼえてきたら立派なR使�
 まとめようと思います。OSなど本書と私の環境は異なっています。</p>
 
 <table border="0" cellpadding="0" cellspacing="0"><tr><td valign="top"><div style="border:1px solid;margin:0px;padding:6px 0px;width:160px;text-align:center;float:left"><a href="http://hb.afl.rakuten.co.jp/hgc/0855d2c2.97054871.0855d2c3.c2844246/?pc=http%3a%2f%2fitem.rakuten.co.jp%2fbook%2f11631269%2f%3fscid%3daf_link_tbl&amp;m=http%3a%2f%2fm.rakuten.co.jp%2fbook%2fi%2f15825336%2f" target="_blank"><img src="http://hbb.afl.rakuten.co.jp/hgb/?pc=http%3a%2f%2fthumbnail.image.rakuten.co.jp%2f%400_mall%2fbook%2fcabinet%2f2948%2f9784798032948.jpg%3f_ex%3d128x128&amp;m=http%3a%2f%2fthumbnail.image.rakuten.co.jp%2f%400_mall%2fbook%2fcabinet%2f2948%2f9784798032948.jpg%3f_ex%3d80x80" alt="【送料無料】Pythonプロフェッショナルプログラミング [ ビープラウド ]" border="0" style="margin:0px;padding:0px"></a><p style="font-size:12px;line-height:1.4em;text-align:left;margin:0px;padding:2px 6px"><a href="http://hb.afl.rakuten.co.jp/hgc/0855d2c2.97054871.0855d2c3.c2844246/?pc=http%3a%2f%2fitem.rakuten.co.jp%2fbook%2f11631269%2f%3fscid%3daf_link_tbl&amp;m=http%3a%2f%2fm.rakuten.co.jp%2fbook%2fi%2f15825336%2f" target="_blank">【送料無料】Pythonプロフェッショナルプログラミング [ ビープラウド ]</a><br></p></div></td></tr></table>
+
+
+<h2 id="Pythonをはじめよう">Pythonをはじめよう</h2>
+
+<p>Pythonの初期設定についての解説。ここではAmazonLinuxで環境を構築する。</p>
+
+<h3 id="必要パッケージのインストール">必要パッケージのインストール</h3>
+
+<p>必要なものがあれば随時追加していく</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo yum -y install python27
+</span><span class='line'>
+</span><span class='line'><span class="o">[</span>ec2-user@ip-10-148-166-193 ~<span class="o">]</span><span class="nv">$ </span>python -V
+</span><span class='line'>Python 2.6.8
+</span><span class='line'><span class="o">[</span>ec2-user@ip-10-148-166-193 ~<span class="o">]</span><span class="nv">$ </span>python27 -V
+</span><span class='line'>Python 2.7.3
+</span><span class='line'>
+</span><span class='line'>※ デフォルトは2.6系、明示的にインストールすると2.7系も入る
+</span></code></pre></td></tr></table></div></figure>
+
+
 
 ]]></content>
   </entry>
@@ -1437,15 +1672,553 @@ Eclipse IDE for Java EE Developers<br/>
 </ul>
 
 
+<h2 id="リンク">リンク</h2>
+
+<ul>
+<li><a href="http://tmlife.net/programming/python/python-json-module.html">Python : json モジュールで json 読み込み</a></li>
+</ul>
+
+
+<h1 id="デコレータ">デコレータ</h1>
+
+<h2 id="roles">roles</h2>
+
+<h3 id="1環境1サーバ">1環境1サーバ</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="c">#!/usr/bin/python</span>
+</span><span class='line'><span class="c"># coding: utf-8</span>
+</span><span class='line'>
+</span><span class='line'><span class="kn">from</span> <span class="nn">fabric.api</span> <span class="kn">import</span> <span class="n">run</span><span class="p">,</span> <span class="n">env</span>
+</span><span class='line'><span class="kn">from</span> <span class="nn">fabric.decorators</span> <span class="kn">import</span> <span class="n">roles</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">env</span><span class="o">.</span><span class="n">roledefs</span><span class="p">[</span><span class="s">&#39;dev&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;devserver1&#39;</span><span class="p">]</span>
+</span><span class='line'>
+</span><span class='line'><span class="nd">@roles</span><span class="p">(</span><span class="s">&#39;dev&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="k">def</span> <span class="nf">host_name</span><span class="p">():</span>
+</span><span class='line'>        <span class="n">run</span><span class="p">(</span><span class="s">&#39;uname -n&#39;</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>実行結果</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="err">$</span> <span class="n">fab</span> <span class="o">-</span><span class="n">f</span> <span class="n">fabfile_roles</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">u</span> <span class="n">ftakao2007</span> <span class="n">host_name</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">Executing</span> <span class="n">task</span> <span class="s">&#39;host_name&#39;</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">run</span><span class="p">:</span> <span class="n">uname</span> <span class="o">-</span><span class="n">n</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">Login</span> <span class="n">password</span> <span class="k">for</span> <span class="s">&#39;ftakao2007&#39;</span><span class="p">:</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">out</span><span class="p">:</span> <span class="n">devserver1</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">out</span><span class="p">:</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="n">Done</span><span class="o">.</span>
+</span><span class='line'><span class="n">Disconnecting</span> <span class="kn">from</span> <span class="nn">devserver1...</span> <span class="nn">done.</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3 id="1環境複数サーバ">1環境複数サーバ</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="c">#!/usr/bin/python</span>
+</span><span class='line'><span class="c"># coding: utf-8</span>
+</span><span class='line'>
+</span><span class='line'><span class="kn">from</span> <span class="nn">fabric.api</span> <span class="kn">import</span> <span class="n">run</span><span class="p">,</span> <span class="n">env</span>
+</span><span class='line'><span class="kn">from</span> <span class="nn">fabric.decorators</span> <span class="kn">import</span> <span class="n">roles</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">env</span><span class="o">.</span><span class="n">roledefs</span><span class="p">[</span><span class="s">&#39;dev&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;devserver1&#39;</span><span class="p">,</span> <span class="s">&#39;devserver2&#39;</span><span class="p">]</span>
+</span><span class='line'>
+</span><span class='line'><span class="nd">@roles</span><span class="p">(</span><span class="s">&#39;dev&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="k">def</span> <span class="nf">host_name</span><span class="p">():</span>
+</span><span class='line'>        <span class="n">run</span><span class="p">(</span><span class="s">&#39;uname -n&#39;</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>実行結果</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="err">$</span> <span class="n">fab</span> <span class="o">-</span><span class="n">f</span> <span class="n">fabfile_roles</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">u</span> <span class="n">ftakao2007</span> <span class="n">host_name</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">Executing</span> <span class="n">task</span> <span class="s">&#39;host_name&#39;</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">run</span><span class="p">:</span> <span class="n">uname</span> <span class="o">-</span><span class="n">n</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">Login</span> <span class="n">password</span> <span class="k">for</span> <span class="s">&#39;ftakao2007&#39;</span><span class="p">:</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">out</span><span class="p">:</span> <span class="n">devserver1</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">out</span><span class="p">:</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">[</span><span class="n">devserver2</span><span class="p">]</span> <span class="n">Executing</span> <span class="n">task</span> <span class="s">&#39;host_name&#39;</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver2</span><span class="p">]</span> <span class="n">run</span><span class="p">:</span> <span class="n">uname</span> <span class="o">-</span><span class="n">n</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver2</span><span class="p">]</span> <span class="n">out</span><span class="p">:</span> <span class="n">devserver2</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver2</span><span class="p">]</span> <span class="n">out</span><span class="p">:</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="n">Done</span><span class="o">.</span>
+</span><span class='line'><span class="n">Disconnecting</span> <span class="kn">from</span> <span class="nn">devserver2...</span> <span class="nn">done.</span>
+</span><span class='line'><span class="n">Disconnecting</span> <span class="kn">from</span> <span class="nn">devserver1...</span> <span class="nn">done.</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3 id="複数環境複数サーバ">複数環境複数サーバ</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="c">#!/usr/bin/python</span>
+</span><span class='line'><span class="c"># coding: utf-8</span>
+</span><span class='line'>
+</span><span class='line'><span class="kn">from</span> <span class="nn">fabric.api</span> <span class="kn">import</span> <span class="n">run</span><span class="p">,</span> <span class="n">env</span>
+</span><span class='line'><span class="kn">from</span> <span class="nn">fabric.decorators</span> <span class="kn">import</span> <span class="n">roles</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">env</span><span class="o">.</span><span class="n">roledefs</span> <span class="o">=</span> <span class="p">{</span>
+</span><span class='line'>    <span class="s">&#39;dev&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;devserver1&#39;</span><span class="p">,</span> <span class="s">&#39;devserver2&#39;</span><span class="p">],</span>
+</span><span class='line'>    <span class="s">&#39;stg&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;stgserver1&#39;</span><span class="p">,</span> <span class="s">&#39;stgserver2&#39;</span><span class="p">]</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="nd">@roles</span><span class="p">(</span><span class="s">&#39;dev&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="k">def</span> <span class="nf">host_name</span><span class="p">():</span>
+</span><span class='line'>       <span class="n">run</span><span class="p">(</span><span class="s">&#39;uname -n&#39;</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="nd">@roles</span><span class="p">(</span><span class="s">&#39;stg&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="k">def</span> <span class="nf">host_name2</span><span class="p">():</span>
+</span><span class='line'>       <span class="n">run</span><span class="p">(</span><span class="s">&#39;uname -n&#39;</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>実行結果</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="err">$</span> <span class="n">fab</span> <span class="o">-</span><span class="n">f</span> <span class="n">fabfile_roles</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">u</span> <span class="n">ftakao2007</span> <span class="n">host_name</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">Executing</span> <span class="n">task</span> <span class="s">&#39;host_name&#39;</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">run</span><span class="p">:</span> <span class="n">uname</span> <span class="o">-</span><span class="n">n</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">Login</span> <span class="n">password</span> <span class="k">for</span> <span class="s">&#39;ftakao2007&#39;</span><span class="p">:</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">out</span><span class="p">:</span> <span class="n">devserver1</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">out</span><span class="p">:</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">[</span><span class="n">devserver2</span><span class="p">]</span> <span class="n">Executing</span> <span class="n">task</span> <span class="s">&#39;host_name&#39;</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver2</span><span class="p">]</span> <span class="n">run</span><span class="p">:</span> <span class="n">uname</span> <span class="o">-</span><span class="n">n</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver2</span><span class="p">]</span> <span class="n">out</span><span class="p">:</span> <span class="n">devserver2</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver2</span><span class="p">]</span> <span class="n">out</span><span class="p">:</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="n">Done</span><span class="o">.</span>
+</span><span class='line'><span class="n">Disconnecting</span> <span class="kn">from</span> <span class="nn">devserver2...</span> <span class="nn">done.</span>
+</span><span class='line'><span class="n">Disconnecting</span> <span class="kn">from</span> <span class="nn">devserver1...</span> <span class="nn">done.</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">$</span> <span class="n">fab</span> <span class="o">-</span><span class="n">f</span> <span class="n">fabfile_roles</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">u</span> <span class="n">ftakao2007</span> <span class="n">host_name2</span>
+</span><span class='line'><span class="p">[</span><span class="n">stgserver1</span><span class="p">]</span> <span class="n">Executing</span> <span class="n">task</span> <span class="s">&#39;host_name2&#39;</span>
+</span><span class='line'><span class="p">[</span><span class="n">stgserver1</span><span class="p">]</span> <span class="n">run</span><span class="p">:</span> <span class="n">uname</span> <span class="o">-</span><span class="n">n</span>
+</span><span class='line'><span class="p">[</span><span class="n">stgserver1</span><span class="p">]</span> <span class="n">Login</span> <span class="n">password</span> <span class="k">for</span> <span class="s">&#39;ftakao2007&#39;</span><span class="p">:</span>
+</span><span class='line'><span class="p">[</span><span class="n">stgserver1</span><span class="p">]</span> <span class="n">out</span><span class="p">:</span> <span class="n">stgserver1</span>
+</span><span class='line'><span class="p">[</span><span class="n">stgserver1</span><span class="p">]</span> <span class="n">out</span><span class="p">:</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">[</span><span class="n">stgserver2</span><span class="p">]</span> <span class="n">Executing</span> <span class="n">task</span> <span class="s">&#39;host_name2&#39;</span>
+</span><span class='line'><span class="p">[</span><span class="n">stgserver2</span><span class="p">]</span> <span class="n">run</span><span class="p">:</span> <span class="n">uname</span> <span class="o">-</span><span class="n">n</span>
+</span><span class='line'><span class="p">[</span><span class="n">stgserver2</span><span class="p">]</span> <span class="n">out</span><span class="p">:</span> <span class="n">stgserver2</span>
+</span><span class='line'><span class="p">[</span><span class="n">stgserver2</span><span class="p">]</span> <span class="n">out</span><span class="p">:</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="n">Done</span><span class="o">.</span>
+</span><span class='line'><span class="n">Disconnecting</span> <span class="kn">from</span> <span class="nn">stgserver1...</span> <span class="nn">done.</span>
+</span><span class='line'><span class="n">Disconnecting</span> <span class="kn">from</span> <span class="nn">stgserver2...</span> <span class="nn">done.</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2 id="ユーザも設定">ユーザも設定</h2>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="c">#!/usr/bin/python</span>
+</span><span class='line'><span class="c"># coding: utf-8</span>
+</span><span class='line'><span class="kn">from</span> <span class="nn">fabric.api</span> <span class="kn">import</span> <span class="n">run</span><span class="p">,</span> <span class="n">env</span>
+</span><span class='line'><span class="kn">from</span> <span class="nn">fabric.decorators</span> <span class="kn">import</span> <span class="n">roles</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">env</span><span class="o">.</span><span class="n">roledefs</span><span class="p">[</span><span class="s">&#39;dev&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;devserver1&#39;</span><span class="p">]</span>
+</span><span class='line'><span class="n">env</span><span class="o">.</span><span class="n">user</span> <span class="o">=</span> <span class="s">&#39;ftakao2007&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nd">@roles</span><span class="p">(</span><span class="s">&#39;dev&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="k">def</span> <span class="nf">host_name</span><span class="p">():</span>
+</span><span class='line'>        <span class="n">run</span><span class="p">(</span><span class="s">&#39;uname -n&#39;</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>実行結果</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="err">$</span> <span class="n">fab</span> <span class="o">-</span><span class="n">f</span> <span class="n">fabfile_roles</span><span class="o">.</span><span class="n">py</span> <span class="n">host_name</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">Executing</span> <span class="n">task</span> <span class="s">&#39;host_name&#39;</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">run</span><span class="p">:</span> <span class="n">uname</span> <span class="o">-</span><span class="n">n</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">Login</span> <span class="n">password</span> <span class="k">for</span> <span class="s">&#39;ftakao2007&#39;</span><span class="p">:</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">out</span><span class="p">:</span> <span class="n">devserver1</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">out</span><span class="p">:</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="n">Done</span><span class="o">.</span>
+</span><span class='line'><span class="n">Disconnecting</span> <span class="kn">from</span> <span class="nn">devserver1...</span> <span class="nn">done.</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3 id="リンク">リンク</h3>
+
+<ul>
+<li><a href="http://docs.fabfile.org/en/1.4.0/usage/execution.html">Execution model</a></li>
+<li><a href="http://www.ianlewis.org/jp/fabric-pythonic">Fabric デプロイツールのPythonicな書き方</a> 環境辞書</li>
+<li><a href="http://iiwake.me/2013/03/26/199">Python Fabricでデプロイしてみた</a> 外部cfgファイル読み込み</li>
+</ul>
+
+
 <hr />
 
-<h2 id="リンク">リンク</h2>
+<h2 id="task">task</h2>
+
+<p>fabricが実行できるタスクを色々制御できる</p>
+
+<h3 id="基本">基本</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="c">#!/usr/bin/python</span>
+</span><span class='line'><span class="c"># coding: utf-8</span>
+</span><span class='line'>
+</span><span class='line'><span class="kn">from</span> <span class="nn">fabric.api</span> <span class="kn">import</span> <span class="n">run</span>
+</span><span class='line'><span class="kn">from</span> <span class="nn">fabric.decorators</span> <span class="kn">import</span> <span class="n">task</span>
+</span><span class='line'>
+</span><span class='line'><span class="nd">@task</span>
+</span><span class='line'><span class="k">def</span> <span class="nf">host_type</span><span class="p">():</span>
+</span><span class='line'>        <span class="n">run</span><span class="p">(</span><span class="s">&#39;uname -s&#39;</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3 id="エイリアス設定">エイリアス設定</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="c">#!/usr/bin/python</span>
+</span><span class='line'><span class="c"># coding: utf-8</span>
+</span><span class='line'>
+</span><span class='line'><span class="kn">from</span> <span class="nn">fabric.api</span> <span class="kn">import</span> <span class="n">run</span>
+</span><span class='line'><span class="kn">from</span> <span class="nn">fabric.decorators</span> <span class="kn">import</span> <span class="n">task</span>
+</span><span class='line'>
+</span><span class='line'><span class="nd">@task</span>
+</span><span class='line'><span class="k">def</span> <span class="nf">host_type</span><span class="p">():</span>
+</span><span class='line'>        <span class="n">run</span><span class="p">(</span><span class="s">&#39;uname -s&#39;</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="nd">@task</span><span class="p">(</span><span class="n">alias</span><span class="o">=</span><span class="s">&#39;remote_host_name&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="k">def</span> <span class="nf">host_name</span><span class="p">():</span>
+</span><span class='line'>        <span class="n">run</span><span class="p">(</span><span class="s">&#39;uname -n&#39;</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>実行結果</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="err">$</span> <span class="n">fab</span> <span class="o">-</span><span class="n">f</span> <span class="n">fabfile_task</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="nb">list</span>
+</span><span class='line'><span class="n">Available</span> <span class="n">commands</span><span class="p">:</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">host_name</span>
+</span><span class='line'>    <span class="n">host_type</span>
+</span><span class='line'>    <span class="n">remote_host_name</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">※</span> <span class="err">エイリアスで登録したコマンドが実行可能になっている</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">$</span> <span class="n">fab</span> <span class="o">-</span><span class="n">f</span> <span class="n">fabfile_task</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">H</span> <span class="n">devserver1</span> <span class="o">-</span><span class="n">u</span> <span class="n">ftakao2007</span> <span class="n">host_type</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">Executing</span> <span class="n">task</span> <span class="s">&#39;host_type&#39;</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">run</span><span class="p">:</span> <span class="n">uname</span> <span class="o">-</span><span class="n">s</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">Login</span> <span class="n">password</span> <span class="k">for</span> <span class="s">&#39;ftakao2007&#39;</span><span class="p">:</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">out</span><span class="p">:</span> <span class="n">SunOS</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">out</span><span class="p">:</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="n">Done</span><span class="o">.</span>
+</span><span class='line'><span class="n">Disconnecting</span> <span class="kn">from</span> <span class="nn">devserver1...</span> <span class="nn">done.</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">$</span> <span class="n">fab</span> <span class="o">-</span><span class="n">f</span> <span class="n">fabfile_task</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">H</span> <span class="n">devserver1</span> <span class="o">-</span><span class="n">u</span> <span class="n">ftakao2007</span> <span class="n">host_name</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">Executing</span> <span class="n">task</span> <span class="s">&#39;host_name&#39;</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">run</span><span class="p">:</span> <span class="n">uname</span> <span class="o">-</span><span class="n">n</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">Login</span> <span class="n">password</span> <span class="k">for</span> <span class="s">&#39;ftakao2007&#39;</span><span class="p">:</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">out</span><span class="p">:</span> <span class="n">devserver1</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">out</span><span class="p">:</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="n">Done</span><span class="o">.</span>
+</span><span class='line'><span class="n">Disconnecting</span> <span class="kn">from</span> <span class="nn">devserver1...</span> <span class="nn">done.</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">$</span> <span class="n">fab</span> <span class="o">-</span><span class="n">f</span> <span class="n">fabfile_task</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">H</span> <span class="n">devserver1</span> <span class="o">-</span><span class="n">u</span> <span class="n">ftakao2007</span> <span class="n">remote_host_name</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">Executing</span> <span class="n">task</span> <span class="s">&#39;remote_host_name&#39;</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">run</span><span class="p">:</span> <span class="n">uname</span> <span class="o">-</span><span class="n">n</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">Login</span> <span class="n">password</span> <span class="k">for</span> <span class="s">&#39;ftakao2007&#39;</span><span class="p">:</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">out</span><span class="p">:</span> <span class="n">devserver1</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">out</span><span class="p">:</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="n">Done</span><span class="o">.</span>
+</span><span class='line'><span class="n">Disconnecting</span> <span class="kn">from</span> <span class="nn">devserver1...</span> <span class="nn">done.</span>
+</span><span class='line'><span class="err">※</span> <span class="n">host_name</span><span class="err">と同じ実行結果</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3 id="リンク">リンク</h3>
+
+<ul>
+<li><a href="http://docs.fabfile.org/en/1.2.2/usage/tasks.html#new-style-tasks">Defining tasks</a></li>
+</ul>
+
+
+<hr />
+
+<h1 id="モジュール分割">モジュール分割</h1>
+
+<p>roleとtaskを組み合わせてモジュール分割</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="p">[</span><span class="n">fabfile</span><span class="o">.</span><span class="n">py</span><span class="p">]</span>
+</span><span class='line'><span class="c">#!/usr/bin/python</span>
+</span><span class='line'><span class="c"># coding: utf-8</span>
+</span><span class='line'>
+</span><span class='line'><span class="kn">import</span> <span class="nn">dev_mod</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="p">[</span><span class="n">dev_mod</span><span class="o">.</span><span class="n">py</span><span class="p">]</span>
+</span><span class='line'><span class="kn">from</span> <span class="nn">fabric.api</span> <span class="kn">import</span> <span class="n">run</span><span class="p">,</span> <span class="n">env</span>
+</span><span class='line'><span class="kn">from</span> <span class="nn">fabric.decorators</span> <span class="kn">import</span> <span class="n">task</span><span class="p">,</span> <span class="n">roles</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">env</span><span class="o">.</span><span class="n">roledefs</span><span class="p">[</span><span class="s">&#39;dev&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;devserver1&#39;</span><span class="p">]</span>
+</span><span class='line'><span class="n">env</span><span class="o">.</span><span class="n">user</span> <span class="o">=</span> <span class="s">&#39;ftakao2007&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nd">@task</span>
+</span><span class='line'><span class="nd">@roles</span><span class="p">(</span><span class="s">&#39;dev&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="k">def</span> <span class="nf">host_name</span><span class="p">():</span>
+</span><span class='line'>        <span class="n">run</span><span class="p">(</span><span class="s">&#39;uname -n&#39;</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>ファイル名を「fabfile.py」にするとコマンド実行時にファイルを引数として与えなくてもよくなる。<br/>
+実行結果</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="err">$</span> <span class="n">fab</span> <span class="o">--</span><span class="nb">list</span>
+</span><span class='line'><span class="n">Available</span> <span class="n">commands</span><span class="p">:</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">dev_mod</span><span class="o">.</span><span class="n">host_name</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">$</span> <span class="n">fab</span> <span class="n">dev_mod</span><span class="o">.</span><span class="n">host_name</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">Executing</span> <span class="n">task</span> <span class="s">&#39;dev_mod.host_name&#39;</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">run</span><span class="p">:</span> <span class="n">uname</span> <span class="o">-</span><span class="n">n</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">Login</span> <span class="n">password</span> <span class="k">for</span> <span class="s">&#39;ftakao2007&#39;</span><span class="p">:</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">out</span><span class="p">:</span> <span class="n">devserver1</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">out</span><span class="p">:</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="n">Done</span><span class="o">.</span>
+</span><span class='line'><span class="n">Disconnecting</span> <span class="kn">from</span> <span class="nn">devserver1...</span> <span class="nn">done.</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>メインのファイルがものすごくシンプルになりました。</p>
+
+<hr />
+
+<h2 id="リンクメモ">リンクメモ</h2>
 
 <ul>
 <li><a href="http://d.hatena.ne.jp/oneshotlife_tom/20121026/1351255211">Pythonで楽天ウェブサービスを使う。サンプルコード。</a></li>
 <li><a href="https://sites.google.com/site/kuraitlab/programing-language/python/python-oop1">Pythonでオブジェクト指向①</a></li>
 <li><a href="http://kuenishi.hatenadiary.jp/entry/2013/04/23/162205">メモリリークとは何か</a></li>
-<li><a href="http://tmlife.net/programming/python/python-json-module.html">Python : json モジュールで json 読み込み</a></li>
 </ul>
 
 ]]></content>
@@ -1999,926 +2772,6 @@ Eclipse IDE for Java EE Developers<br/>
 <li><a href="http://gvtkne.blogspot.jp/2013/04/14.html">ネットワークパケットを読む会(仮) 14回に参加してきた(otahi さん)</a></li>
 <li><a href="http://www.slideshare.net/tohakushi/tcpdumptcpreplay">tcpdumpとtcpreplayとtcprewriteと他。</a></li>
 </ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[シェフハンズオンセミナー]]></title>
-    <link href="http://ftakao2007.github.com/blog/2013/04/16/chef-handson/"/>
-    <updated>2013-04-16T18:52:00+09:00</updated>
-    <id>http://ftakao2007.github.com/blog/2013/04/16/chef-handson</id>
-    <content type="html"><![CDATA[<h1 id="AWSのUbuntuでChefを動かす">AWSのUbuntuでChefを動かす</h1>
-
-<p>デフォルトのAWSで用意されているUbuntuにChefをインストールする。<br/>
-ハンズオンのインスタンスは必要なパッケージがすでにいくらかインストールされていたみたいなので
-トライアンドエラーで設定。</p>
-
-<h1 id="事前準備">事前準備</h1>
-
-<p>Opscodeでアカウントを作成して鍵ファイルとknife.rbを事前にDLしておく。<br/>
-AWSのインスタンスを利用できる状態にしておく。<br/>
-AWSのaccess keyとsecret access keyを用意しておく。</p>
-
-<h1 id="AWSにChefクライアントをインストール">AWSにChefクライアントをインストール</h1>
-
-<p>Ubuntu 12.04.2 LTSの64bitを選択</p>
-
-<h1 id="必要パッケージとChef+クライアントのインストール">必要パッケージとChef クライアントのインストール</h1>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo apt-get update
-</span><span class='line'>sudo apt-get upgrade
-</span><span class='line'>curl -L http://www.opscode.com/chef/install.sh | sudo bash
-</span><span class='line'><span class="c">#sudo apt-get install ruby git tree g++</span>
-</span><span class='line'>sudo apt-get install <span class="o">(</span>パッケージたくさん<span class="o">)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>※ パッケージはハンズオンで入っていたパッケージを根こそぎ入れた。必要なパッケージは現在精査中。</p>
-
-<p>Chefのgemは以下に入っていることを意識すること<br/>
--> デフォルトのgemを使うと残念なことになるらしい。</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>ls -ld /opt/chef/embedded/bin/gem
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">cd</span> ~
-</span><span class='line'>git clone https://github.com/opscode/chef-repo.git
-</span><span class='line'><span class="nb">cd </span>chef-repo
-</span><span class='line'>tree
-</span><span class='line'>.
-</span><span class='line'>├── chef-repo
-</span><span class='line'>│   ├── certificates
-</span><span class='line'>│   │   └── README.md
-</span><span class='line'>│   ├── chefignore
-</span><span class='line'>│   ├── config
-</span><span class='line'>│   │   └── rake.rb
-</span><span class='line'>│   ├── cookbooks
-</span><span class='line'>│   │   └── README.md
-</span><span class='line'>│   ├── data_bags
-</span><span class='line'>│   │   └── README.md
-</span><span class='line'>│   ├── environments
-</span><span class='line'>│   │   └── README.md
-</span><span class='line'>│   ├── LICENSE
-</span><span class='line'>│   ├── Rakefile
-</span><span class='line'>│   ├── README.md
-</span><span class='line'>│   └── roles
-</span><span class='line'>│       └── README.md
-</span><span class='line'>└── credentials.tgz
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>WorkstationとしてChef serverと通信するための環境ファイル用のディレクトリ作成</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>mkdir .chef
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>この後、.chefにOpscodeからダウンロードした鍵とknife.rbをscpする。その後chef-repoディレクトリに移動して</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>knife client list
-</span><span class='line'>XXXX-validator
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>※ pemファイルをリネームしているとここでエラーが出てしまう。DLしたファイル名をそのまま使う。</p>
-
-<h1 id="knife-ec2インストール">knife-ec2インストール</h1>
-
-<p>先ほどのgemのPATHを意識すること！！</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo /opt/chef/embedded/bin/gem install knife-ec2 --no-ri --no-rdoc
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>knife.rbにAWSアクセスするためのキーを記載する</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c"># knife for AWS</span>
-</span><span class='line'>knife<span class="o">[</span>:aws_access_key_id<span class="o">]</span>     <span class="o">=</span> <span class="s2">&quot;XXXXXXXXXXXXXXX&quot;</span>
-</span><span class='line'>knife<span class="o">[</span>:aws_secret_access_key<span class="o">]</span> <span class="o">=</span> <span class="s2">&quot;XXXXXXXXXXXXXXXXXXXXXXXXXX&quot;</span>
-</span><span class='line'>knife<span class="o">[</span>:region<span class="o">]</span> <span class="o">=</span> <span class="s2">&quot;ap-northeast-1&quot;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h1 id="cookbookをWorkstationへclone">cookbookをWorkstationへclone</h1>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">cd</span> ~/chef-repo/cookbooks
-</span><span class='line'>git clone https://github.com/cl-lab-k/apache2-take.git
-</span><span class='line'><span class="nb">cd </span>apache2-take
-</span><span class='line'>tree
-</span><span class='line'>.
-</span><span class='line'>├── attributes
-</span><span class='line'>│   └── default.rb     *重要
-</span><span class='line'>├── CHANGELOG.md
-</span><span class='line'>├── example
-</span><span class='line'>│   └── apache2-take-ubuntu.sh
-</span><span class='line'>├── files
-</span><span class='line'>│   └── default
-</span><span class='line'>│       └── tests
-</span><span class='line'>│           └── minitest
-</span><span class='line'>│               ├── default_test.rb
-</span><span class='line'>│               └── support
-</span><span class='line'>│                   └── helpers.rb
-</span><span class='line'>├── Gemfile
-</span><span class='line'>├── metadata.rb
-</span><span class='line'>├── README.md
-</span><span class='line'>├── recipes
-</span><span class='line'>│   └── default.rb     *重要
-</span><span class='line'>├── templates
-</span><span class='line'>│   └── default        *重要
-</span><span class='line'>│       ├── default.erb
-</span><span class='line'>│       ├── ports.conf.erb
-</span><span class='line'>│       └── twitter-search.html.erb
-</span><span class='line'>└── <span class="nb">test</span>
-</span><span class='line'>    └── kitchen
-</span><span class='line'>        └── Kitchenfile
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2 id="手軽なcookbook">手軽なcookbook</h2>
-
-<ul>
-<li><a href="http://acrmp.github.io/foodcritic/">Food Critic</a></li>
-<li><a href="http://docs.opscode.com/knife_cookbook.html">knife cookbook test</a></li>
-</ul>
-
-
-<h1 id="Apache2+install">Apache2 install</h1>
-
-<p>※ 以下はスクリプトで実行した場合の例。Chefは使っていない。</p>
-
-<h2 id="script">script</h2>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">cd</span> ~/chef-repo/cookbooks/apache2-take/example/
-</span><span class='line'>sudo sh ./apache2-take-ubuntu.sh
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>スクリプトの内容は以下</p>
-
-<ul>
-<li>Apache2のインストール&amp;起動</li>
-<li>Apache2のリクエスト待ち受けポートの変更</li>
-<li>Apache2で”default”サイトを有効化</li>
-<li>githubからサイト用コンテンツをclone</li>
-<li>githubからサイト用コンテンツをダウンロード</li>
-</ul>
-
-
-<h1 id="同様のものをChefで処理">同様のものをChefで処理</h1>
-
-<p>テスト</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">cd</span> ~/chef-repo
-</span><span class='line'>knife cookbook <span class="nb">test </span>apache2-take
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>FoodCriticを使ったテスト</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo /opt/chef/embedded/bin/gem install foodcritic --no-ri --no-rdoc
-</span><span class='line'>/opt/chef/embedded/bin/foodcritic cookbooks/apache2-take
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>このままだと以下の様なエラーが出る</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>FC008: Generated cookbook metadata needs updating: cookbooks/apache2-take/metadata.rb:2
-</span><span class='line'>FC008: Generated cookbook metadata needs updating: cookbooks/apache2-take/metadata.rb:3
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p><a href="http://acrmp.github.io/foodcritic/">ここ</a>でコードの内容を確認し、スタイルを修正する。</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="o">[</span>DEPRECATION<span class="o">]</span> <span class="s2">&quot;eval&quot;</span> is deprecated. Please use <span class="s2">&quot;evaluate&quot;</span> instead
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p><a href="http://www.blogosfera.co.uk/2013/04/eval-is-deprecated-please-use-evaluate-instead/">これはバージョンのWarningっぽい。</a>動くので今はスルー。</p>
-
-<h2 id="cookbookのアップロード">cookbookのアップロード</h2>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">cd</span> ~/chef-repo/cookbooks/apache2-take
-</span><span class='line'>knife cookbook upload apache2-take
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>EC2インスタンス起動</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>knife ec2 server create -S <span class="o">[</span>key pair<span class="o">]</span> -i <span class="o">[</span>key file <span class="o">(</span>XXX.pem<span class="o">)]</span> -r <span class="s2">&quot;recipe[apache2-take]&quot;</span> -I ami-77cf4976 --flavor t1.micro -Z ap-northeast-1a -G <span class="o">[</span>Security Group<span class="o">]</span> -x ubuntu -N aws-handson -VV
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>これで新しいインスタンスが作成され、apacheが立ち上がる。</p>
-
-<h1 id="メモ書">メモ書</h1>
-
-<ul>
-<li><p>コンバージョン(収束)させる<br/>
--> あるべき状態になる、将来ありたい状態と現状を埋める仕組み</p></li>
-<li><p>98%の情報は下記のURLに存在する!<br/>
-http://docs.opscode.com/chef/resources.html</p></li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[ec2-api-tools]]></title>
-    <link href="http://ftakao2007.github.com/blog/2013/04/15/ec2-api-tools/"/>
-    <updated>2013-04-15T19:45:00+09:00</updated>
-    <id>http://ftakao2007.github.com/blog/2013/04/15/ec2-api-tools</id>
-    <content type="html"><![CDATA[<h1 id="初期設定">初期設定</h1>
-
-<ul>
-<li><p><a href="http://engineer.blog.lancers.jp/2012/12/ec2-api-tools/">AWSのEC2 API Toolsをインストールなしで利用する方法</a><br/>
-➡基本的にこの設定でOK。
-AWSのログインとかがあるメニューから証明書取得の画面を開き、証明書と秘密鍵を取得する。</p></li>
-<li><p>2013/03/31<br/>
-こちらのアクセスキーとシークレットキーでアクセスする方法に変更<br/>
-<a href="http://blog.serverworks.co.jp/tech/2013/03/29/accesskeyid_secretkey_on_ec2-api-tools/">EC2 API ToolsでアクセスキーIDとシークレットアクセスキーを使う</a></p></li>
-</ul>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c"># cp pk-xxxxxxxxxxxx.pem /opt/aws/apitools/ec2/</span>
-</span><span class='line'><span class="c"># cp cert-xxxxxxxxxxxx.pem /opt/aws/apitools/ec2/</span>
-</span><span class='line'>
-</span><span class='line'>vi ~/.bashrc
-</span><span class='line'>
-</span><span class='line'><span class="nb">export </span><span class="nv">EC2_HOME</span><span class="o">=</span>/opt/aws/apitools/ec2
-</span><span class='line'><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$EC2_HOME</span>/bin
-</span><span class='line'><span class="c"># export EC2_PRIVATE_KEY=$EC2_HOME/pk-xxxxxxxxxxxx.pem</span>
-</span><span class='line'><span class="c"># export EC2_CERT=$EC2_HOME/cert-xxxxxxxxxxxx.pem</span>
-</span><span class='line'><span class="nb">export </span><span class="nv">AWS_ACCESS_KEY</span><span class="o">=</span>xxxxxxxxxxxxxxxxxxec2-api-tools
-</span><span class='line'><span class="nb">export </span><span class="nv">AWS_SECRET_KEY</span><span class="o">=</span>yyyyyyyyyyyyyyyyyyyyyyyyyyy
-</span><span class='line'><span class="nb">export </span><span class="nv">EC2_URL</span><span class="o">=</span>http://ec2.ap-northeast-1.amazonaws.com
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h1 id="諸情報">諸情報</h1>
-
-<h2 id="実行ファイルのPATH">実行ファイルのPATH</h2>
-
-<p>/opt/aws/bin</p>
-
-<h2 id="環境変数">環境変数</h2>
-
-<h3 id="EC2_HOME">EC2_HOME</h3>
-
-<p>ec2-api-toolsのHOME
-* 例<br/>
-export EC2_HOME=/opt/aws/apitools/ec2</p>
-
-<h3 id="EC2_PRIVATE_KEY">EC2_PRIVATE_KEY</h3>
-
-<p>秘密鍵のPATH。今は使ってない</p>
-
-<ul>
-<li>例<br/>
-export EC2_PRIVATE_KEY=$EC2_HOME/pk-XXXXXXXXXXXXXXXXXXXXX.pem</li>
-</ul>
-
-
-<h3 id="EC2_CERT">EC2_CERT</h3>
-
-<p>証明書のPATH。今は使ってない。</p>
-
-<ul>
-<li>例<br/>
-export EC2_CERT=$EC2_HOME/cert-XXXXXXXXXXXXXXXXXXXXXXX.pem</li>
-</ul>
-
-
-<h3 id="AWS_ACCESS_KEY">AWS_ACCESS_KEY</h3>
-
-<p>AWSアクセスキー</p>
-
-<ul>
-<li>例<br/>
-export AWS_ACCESS_KEY=xxxxxxxxxxxxxxxxxx</li>
-</ul>
-
-
-<h3 id="AWS_SECRET_KEY">AWS_SECRET_KEY</h3>
-
-<p>AWSシークレットキー</p>
-
-<ul>
-<li>例<br/>
-export AWS_SECRET_KEY=yyyyyyyyyyyyyyyyyyyyyyyyyyy</li>
-</ul>
-
-
-<h3 id="EC2_URL">EC2_URL</h3>
-
-<p>リージョンの指定</p>
-
-<ul>
-<li>例<br/>
-export EC2_URL=http://ec2.ap-northeast-1.amazonaws.com</li>
-</ul>
-
-
-<h1 id="コマンド">コマンド</h1>
-
-<h2 id="確認">確認</h2>
-
-<h3 id="ec2ver">ec2ver</h3>
-
-<p>バージョンの表示</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="o">[</span>ec2-user@ip-10-146-39-194 ~<span class="o">]</span><span class="nv">$ </span>ec2ver
-</span><span class='line'>1.6.6.0 2012-12-01
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3 id="ec2-describe-images">ec2-describe-images</h3>
-
-<p>AMIの表示</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="o">[</span>ec2-user@ip-10-146-39-194 ~<span class="o">]</span><span class="nv">$ </span> ec2-describe-images -x all
-</span><span class='line'>IMAGE   ami-1fd85d1e    001108612011/CentOS-63-40T-EBS-PhilChen 001108612011    available       public          x86_64  machine aki-44992845                    ebs     paravirtual     xen
-</span><span class='line'>BLOCKDEVICEMAPPING      EBS     /dev/sda1               snap-af93b78f   40      <span class="nb">true    </span>standard
-</span><span class='line'>IMAGE   ami-e802b5e9    014836023992/ProxySnifferGUI-46-Z-win64-04      014836023992    available       public          x86_64  machine                 windows ebs     hvm     xen
-</span><span class='line'>BLOCKDEVICEMAPPING      EBS     /dev/sda1               snap-339edc59   35      <span class="nb">true    </span>standard
-</span><span class='line'>IMAGE   ami-a4ea50a5    014836023992/ProxySnifferGUI-50-K-win64-03      014836023992    available       public          x86_64  machine                 windows ebs     hvm     xen
-</span><span class='line'>BLOCKDEVICEMAPPING      EBS     /dev/sda1               snap-9b2e46bb   35      <span class="nb">true    </span>standard
-</span><span class='line'>...
-</span><span class='line'>
-</span><span class='line'>※AMIの一覧が表示される
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2 id="インスタンス操作関連">インスタンス操作関連</h2>
-
-<h3 id="ec2-describe-instances">ec2-describe-instances</h3>
-
-<p>インスタンスの一覧の情報が表示される</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>RESERVATION  r-a16fc3a2  492323174246    magento_sg
-</span><span class='line'>INSTANCE  i-1f433f1c  ami-87932986            stopped magento_key 0       t1.micro    2013-01-06T00:53:08+0000    ap-northeast-1a aki-44992845            monitoring-disabled                 ebs     paravirtual xen hXdxF1357433587195  sg-17a3c816 default <span class="nb">false  </span>
-</span><span class='line'>BLOCKDEVICE   /dev/sdf    vol-5bb81c79    2013-02-11T07:14:32.000Z    <span class="nb">false      </span>
-</span><span class='line'>TAG   instance    i-1f433f1c  Name    magento_amazon
-</span><span class='line'>
-</span><span class='line'>RESERVATION   r-9dfb469e  492323174246    nfs_test_sg,stg_sg
-</span><span class='line'>INSTANCE  i-7b470978  ami-4e6cd34f    ec2-54-249-240-55.ap-northeast-1.compute.amazonaws.com  ip-10-146-39-194.ap-northeast-1.compute.internal    running wordpress_key   0       t1.micro    2013-01-19T23:50:01+0000    ap-northeast-1b aki-44992845            monitoring-disabled 54.249.240.55   10.146.39.194           ebs                 paravirtual xen xuoXb1358639400459  sg-86076187, sg-3f58323e    default <span class="nb">false  </span>
-</span><span class='line'>BLOCKDEVICE   /dev/sda1   vol-42cf7b60    2013-01-19T23:50:05.000Z    <span class="nb">true       </span>
-</span><span class='line'>TAG   instance    i-7b470978  Name    Redmine
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>※ 引数にインスタンスIDを指定数と、そのインスタンスの情報のみ表示される</p>
-
-<h3 id="ec2-start-instances">ec2-start-instances</h3>
-
-<p>インスタンスを起動</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="o">[</span>ec2-user@ip-10-146-39-194 ~<span class="o">]</span><span class="nv">$ </span>ec2-start-instances --region ap-northeast-1 i-1f433f1c
-</span><span class='line'>INSTANCE  i-1f433f1c  stopped pending
-</span><span class='line'>
-</span><span class='line'><span class="o">[</span>ec2-user@ip-10-146-39-194 ~<span class="o">]</span><span class="nv">$ </span>ec2-describe-instance-status
-</span><span class='line'>INSTANCE  i-1f433f1c  ap-northeast-1a running 16  ok  ok  active  
-</span><span class='line'>SYSTEMSTATUS  reachability    passed  
-</span><span class='line'>INSTANCESTATUS    reachability    passed  
-</span><span class='line'>INSTANCE  i-7b470978  ap-northeast-1b running 16  ok  ok  active  
-</span><span class='line'>SYSTEMSTATUS  reachability    passed  
-</span><span class='line'>INSTANCESTATUS    reachability    passed
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3 id="ec2-stop-instances">ec2-stop-instances</h3>
-
-<p>インスタンスを停止</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="o">[</span>ec2-user@ip-10-146-39-194 ~<span class="o">]</span><span class="nv">$ </span>ec2-stop-instances i-1f433f1c
-</span><span class='line'>INSTANCE  i-1f433f1c  running stopping
-</span><span class='line'>
-</span><span class='line'><span class="o">[</span>ec2-user@ip-10-146-39-194 ~<span class="o">]</span><span class="nv">$ </span>ec2-describe-instances
-</span><span class='line'>RESERVATION   r-a16fc3a2  492323174246    magento_sg
-</span><span class='line'>INSTANCE  i-1f433f1c  ami-87932986            stopped magento_key 0       t1.micro    2013-02-20T15:34:21+0000    ap-northeast-1a aki-44992845            monitoring-disabled                 ebs     paravirtual xen hXdxF1357433587195  sg-17a3c816 default <span class="nb">false  </span>
-</span><span class='line'>BLOCKDEVICE   /dev/sda1   vol-5bb81c79    2013-02-20T15:34:02.000Z    <span class="nb">false      </span>
-</span><span class='line'>TAG   instance    i-1f433f1c  Name    magento_amazon
-</span><span class='line'>
-</span><span class='line'>➡ stoppedになっている
-</span><span class='line'>
-</span><span class='line'>RESERVATION   r-9dfb469e  492323174246    nfs_test_sg,stg_sg
-</span><span class='line'>INSTANCE  i-7b470978  ami-4e6cd34f    ec2-54-249-240-55.ap-northeast-1.compute.amazonaws.com  ip-10-146-39-194.ap-northeast-1.compute.internal    running wordpress_key   0       t1.micro    2013-01-19T23:50:01+0000    ap-northeast-1b aki-44992845            monitoring-disabled 54.249.240.55   10.146.39.194           ebs                 paravirtual xen xuoXb1358639400459  sg-86076187, sg-3f58323e    default <span class="nb">false  </span>
-</span><span class='line'>BLOCKDEVICE   /dev/sda1   vol-42cf7b60    2013-01-19T23:50:05.000Z    <span class="nb">true       </span>
-</span><span class='line'>TAG   instance    i-7b470978  Name    Redmine
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>起動しているインスタンスのみ確認する場合は以下</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="o">[</span>ec2-user@ip-10-146-39-194 ~<span class="o">]</span><span class="nv">$ </span>ec2-stop-instances i-1f433f1c
-</span><span class='line'>INSTANCE  i-1f433f1c  running stopping
-</span><span class='line'>
-</span><span class='line'><span class="o">[</span>ec2-user@ip-10-146-39-194 ~<span class="o">]</span><span class="nv">$ </span>ec2-describe-instance-status
-</span><span class='line'>INSTANCE  i-7b470978  ap-northeast-1b running 16  ok  ok  active  
-</span><span class='line'>SYSTEMSTATUS  reachability    passed  
-</span><span class='line'>INSTANCESTATUS    reachability    passed
-</span><span class='line'>
-</span><span class='line'>※ i-1f433f1cが表示されなくなっている
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2 id="snapshot関連">snapshot関連</h2>
-
-<h3 id="ec2-describe-snapshots">ec2-describe-snapshots</h3>
-
-<p>snapshot一覧の表示</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="o">[</span>ec2-user@ip-10-157-54-96 bin<span class="o">]</span><span class="nv">$ </span>ec2-describe-snapshots --region ap-northeast-1
-</span><span class='line'>SNAPSHOT  snap-a22a9d81   vol-42cf7b60    completed   2013-03-03T07:55:57+0000    100%    492323174246    8   Redmine
-</span><span class='line'>TAG   snapshot    snap-a22a9d81   Name    Redmine
-</span><span class='line'>SNAPSHOT  snap-f363ddd0   vol-42cf7b60    completed   2013-03-05T22:55:59+0000    100%    492323174246    8   Redmine 20130306
-</span><span class='line'>TAG   snapshot    snap-f363ddd0   Name    Redmine
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3 id="ec2-copy-snapshot">ec2-copy-snapshot</h3>
-
-<p>snapshotのコピー</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>ec2-copy-snapshot --region ap-southeast-1 -r ap-northeast-1 -s snap-a22a9d81
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>※東京からシンガポールのリージョンへコピー</p>
-
-<h3 id="ec2-describe-snapshot">ec2-describe-snapshot</h3>
-
-<p>snapshotのアクセス権限確認</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="o">[</span>ec2-user@ip-10-157-54-96 bin<span class="o">]</span><span class="nv">$ </span>ec2-describe-snapshot-attribute snap-a22a9d81 --create-volume-permission
-</span><span class='line'><span class="o">[</span>ec2-user@ip-10-157-54-96 bin<span class="o">]</span><span class="err">$</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>権限が設定されていない場合(非公開設定)は何も出力されない</p>
-
-<h3 id="ec2-modify-snapshot-attribute">ec2-modify-snapshot-attribute</h3>
-
-<p>snapshotのアクセス権限を変更する</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>ec2-modify-snapshot-attribute <span class="o">(</span>snap_id<span class="o">)</span> -c --add all
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>※すべてのユーザに公開される設定</p>
-
-<h3 id="ec2-reset-snapshot-attribute">ec2-reset-snapshot-attribute</h3>
-
-<p>権限をリセットする</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>ec2-reset-snapshot-attribute <span class="o">(</span>snapshot_id<span class="o">)</span> -c
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2 id="volume関連">volume関連</h2>
-
-<h3 id="ec2-detach-volume">ec2-detach-volume</h3>
-
-<p>ボリュームをデタッチする</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="o">[</span>ec2-user@ip-10-156-119-74 ~<span class="o">]</span><span class="nv">$ </span>ec2-detach-volume vol-5bb81c79
-</span><span class='line'>ATTACHMENT    vol-5bb81c79    i-1f433f1c  /dev/sda1   detaching   2013-03-26T14:50:06+0000
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3 id="ec2-attach-volume">ec2-attach-volume</h3>
-
-<p>ボリュームをアタッチする</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="o">[</span>ec2-user@ip-10-156-119-74 ~<span class="o">]</span><span class="nv">$ </span>ec2-attach-volume vol-5bb81c79 -i i-1f433f1c -d /dev/sda1
-</span><span class='line'>ATTACHMENT    vol-5bb81c79    i-1f433f1c  /dev/sda1   attaching   2013-03-31T14:55:34+0000
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3 id="ec2-create-volume">ec2-create-volume</h3>
-
-<p>ボリュームを作成する</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="o">[</span>ec2-user@ip-10-156-119-74 ~<span class="o">]</span><span class="nv">$ </span>ec2-create-volume --snapshot snap-7971395a -z ap-northeast-1a
-</span><span class='line'>VOLUME    vol-45531e67    8   snap-7971395a   ap-northeast-1a creating    2013-03-31T15:02:11+0000    standard
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2 id="Elastic+IP関連">Elastic IP関連</h2>
-
-<h3 id="ec2-describe-addresses">ec2-describe-addresses</h3>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="o">[</span>ec2-user@ip-10-158-203-131 tmp<span class="o">]</span><span class="nv">$ </span>ec2-describe-addresses
-</span><span class='line'>ADDRESS   54.249.240.55   i-7b470978  standard
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h1 id="トラブルシューティング">トラブルシューティング</h1>
-
-<p><a href="https://forums.aws.amazon.com/message.jspa?messageID=342081">Instance does not have a volume attached at root (/dev/sda1)</a></p>
-
-<p>/dev/sdfになっていたのを/dev/sda1でアタッチし直したらOK</p>
-
-<h1 id="リンク">リンク</h1>
-
-<ul>
-<li><a href="http://d.hatena.ne.jp/studio-m/20091104/1257297074">CentOSでec2-api-tools, ec2-ami-toolsを使えるようにする</a></li>
-<li><a href="http://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/command-reference.html">API Tools Reference</a></li>
-<li><a href="http://nkjmkzk.net/?p=1814">EC2においてEBS Snapshotでバックアップを取得しそれをリカバリする方法</a></li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[逆引きコマンド]]></title>
-    <link href="http://ftakao2007.github.com/blog/2013/04/14/sed-gyakubiki/"/>
-    <updated>2013-04-14T00:20:00+09:00</updated>
-    <id>http://ftakao2007.github.com/blog/2013/04/14/sed-gyakubiki</id>
-    <content type="html"><![CDATA[<h2 id="■改行を">■改行を</h2>
-
-<h3 id="入れたい">入れたい</h3>
-
-<p>「=」で改行</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>fukui-no-MacBook-Air:tmp ftakao2007<span class="nv">$ </span>cat vimrc
-</span><span class='line'><span class="nb">set </span><span class="nv">fileencoding</span><span class="o">=</span>utf-8
-</span><span class='line'><span class="nb">set </span><span class="nv">fileencodings</span><span class="o">=</span>iso-2022-jp,utf-8,euc-jp
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:tmp ftakao2007<span class="nv">$ </span>cat vimrc | gsed -e <span class="s1">&#39;s/=/=\n/g&#39;</span>
-</span><span class='line'><span class="nb">set </span><span class="nv">fileencoding</span><span class="o">=</span>
-</span><span class='line'>utf-8
-</span><span class='line'><span class="nb">set </span><span class="nv">fileencodings</span><span class="o">=</span>
-</span><span class='line'>iso-2022-jp,utf-8,euc-jp
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3 id="消したい">消したい</h3>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>fukui-no-MacBook-Air:tmp ftakao2007<span class="nv">$ </span>cat vimrc
-</span><span class='line'><span class="nb">set </span><span class="nv">fileencoding</span><span class="o">=</span>utf-8
-</span><span class='line'><span class="nb">set </span><span class="nv">fileencodings</span><span class="o">=</span>iso-2022-jp,utf-8,euc-jp
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:tmp ftakao2007<span class="nv">$ </span>cat vimrc | tr -d <span class="s1">&#39;\n&#39;</span>
-</span><span class='line'><span class="nb">set </span><span class="nv">fileencoding</span><span class="o">=</span>utf-8set <span class="nv">fileencodings</span><span class="o">=</span>iso-2022-jp,utf-8,euc-jpfukui-no-MacBook-Air:tmp ftakao2007<span class="err">$</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2 id="■空行を">■空行を</h2>
-
-<h3 id="消したい">消したい</h3>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>fukui-no-MacBook-Air:tmp ftakao2007<span class="nv">$ </span>cat aaa.log
-</span><span class='line'>a
-</span><span class='line'>
-</span><span class='line'>gsfe
-</span><span class='line'>
-</span><span class='line'>wefa
-</span><span class='line'>awefa
-</span><span class='line'>
-</span><span class='line'>w
-</span><span class='line'>fukui-no-MacBook-Air:tmp ftakao2007<span class="nv">$ </span>sed -e <span class="s1">&#39;/^$/d&#39;</span> aaa.log
-</span><span class='line'>a
-</span><span class='line'>gsfe
-</span><span class='line'>wefa
-</span><span class='line'>awefa
-</span><span class='line'>w
-</span><span class='line'>fukui-no-MacBook-Air:tmp ftakao2007<span class="nv">$ </span>sed -ne <span class="s1">&#39;/./p&#39;</span> aaa.log
-</span><span class='line'>a
-</span><span class='line'>gsfe
-</span><span class='line'>wefa
-</span><span class='line'>awefa
-</span><span class='line'>w
-</span><span class='line'>fukui-no-MacBook-Air:tmp ftakao2007<span class="err">$</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2 id="■Webページを">■Webページを</h2>
-
-<h3 id="保存したい">保存したい</h3>
-
-<h4 id="htmlのみ">htmlのみ</h4>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>curl http://www.example.com &gt; example.com.html
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h4 id="[ページを丸ごとローカルに保存](https://sites.google.com/site/hymd3a/google-site/wget)"><a href="https://sites.google.com/site/hymd3a/google-site/wget">ページを丸ごとローカルに保存</a></h4>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>wget -r -np -k -l 0 example.com
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h4 id="データを送る">データを送る</h4>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>fukui-no-MacBook-Air:DATA ftakao2007<span class="nv">$ </span>curl --data-urlencode <span class="nv">a</span><span class="o">=</span>太郎 http://www.example.com/TOMONOKAI_CMS/CGI/hoge.cgi
-</span><span class='line'>あなたのポストしたデータは、
-</span><span class='line'><span class="nv">a</span><span class="o">=</span>%E5%A4%AA%E9%83%8E
-</span><span class='line'>です。
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:DATA ftakao2007<span class="nv">$ </span>curl --data <span class="nv">a</span><span class="o">=</span>太郎 http://www.example.com/TOMONOKAI_CMS/CGI/hoge.cgi
-</span><span class='line'>あなたのポストしたデータは、
-</span><span class='line'><span class="nv">a</span><span class="o">=</span>太郎
-</span><span class='line'>です。
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:DATA ftakao2007<span class="nv">$ </span>wget --data <span class="nv">a</span><span class="o">=</span>太郎 http://www.example.com/TOMONOKAI_CMS/CGI/hoge.cgi
-</span><span class='line'>
-</span><span class='line'>* URLはexample.comに変更してあります
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2 id="■文字コードを">■文字コードを</h2>
-
-<h3 id="変換する">変換する</h3>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>fukui-no-MacBook-Air:DATA ftakao2007<span class="nv">$ </span>cat numref
-</span><span class='line'>&amp;#25105;&amp;#12293;&amp;#12399;&amp;#12471;&amp;#12455;&amp;#12523;&amp;#33464;&amp;#20154;&amp;#12384;&amp;#12290;
-</span><span class='line'>fukui-no-MacBook-Air:DATA ftakao2007<span class="nv">$ </span>cat numref | w3m -T text/html -dump
-</span><span class='line'>我々はシェル芸人だ。
-</span><span class='line'>
-</span><span class='line'>fukui-no-MacBook-Air:DATA ftakao2007<span class="nv">$ </span>cat numref | nkf --numchar-input
-</span><span class='line'>我々はシェル芸人だ。
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2 id="■文字列を">■文字列を</h2>
-
-<h3 id="抽出">抽出</h3>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>bash-3.2<span class="nv">$ </span>cat a.log
-</span><span class='line'>1
-</span><span class='line'>2
-</span><span class='line'>3
-</span><span class='line'>4
-</span><span class='line'>5
-</span><span class='line'>6
-</span><span class='line'>7
-</span><span class='line'>8
-</span><span class='line'>9
-</span><span class='line'>
-</span><span class='line'>bash-3.2<span class="nv">$ </span>cat a.log | grep 5
-</span><span class='line'>5
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3 id="マッチした前後を抽出">マッチした前後を抽出</h3>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>bash-3.2<span class="nv">$ </span>cat a.log | grep 5 -A 2
-</span><span class='line'>5
-</span><span class='line'>6
-</span><span class='line'>7
-</span><span class='line'>bash-3.2<span class="nv">$ </span>cat a.log | grep 5 -B 2
-</span><span class='line'>3
-</span><span class='line'>4
-</span><span class='line'>5
-</span></code></pre></td></tr></table></div></figure>
 
 ]]></content>
   </entry>

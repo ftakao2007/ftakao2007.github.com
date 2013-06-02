@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 勉強会 | Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/blog/categories/mian-qiang-hui/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-05-18T20:53:35+09:00</updated>
+  <updated>2013-06-02T10:27:30+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -12,6 +12,171 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[東京渋谷 “初心者向けiPhoneアプリ開発” 勉強会② (5/22)]]></title>
+    <link href="http://ftakao2007.github.com/blog/2013/05/22/iphone-app-study/"/>
+    <updated>2013-05-22T19:47:00+09:00</updated>
+    <id>http://ftakao2007.github.com/blog/2013/05/22/iphone-app-study</id>
+    <content type="html"><![CDATA[<h2 id="[東京渋谷+“初心者向けiPhoneアプリ開発”+勉強会②+(5/22)](http://atnd.org/events/39513)"><a href="http://atnd.org/events/39513">東京渋谷 “初心者向けiPhoneアプリ開発” 勉強会② (5/22)</a></h2>
+
+<p>Xcodeを基本から勉強。前は何も知らずに画面遷移をコピペプログラムしただけだったので基本から勉強します。
+バージョンは4.6.2。</p>
+
+<h3 id="プロジェクト作成">プロジェクト作成</h3>
+
+<p>File -> New -> Project<br/>
+Master-Detail-Application<br/>
+Product Name : nicomoro
+Use Storyboards」「Use Automatic Reference Counting」の二箇所チェック
+createでデスクトップにフォルダを作成</p>
+
+<h3 id="左側のパネル">左側のパネル</h3>
+
+<ul>
+<li><p>ファイルの一覧になっている<br/>
+パネルに表示されるフォルダの構造と実際のフォルダでは構造が違う<br/>
+→Xcode上では違う階層で同じ名前のファイル名も作れるが、コンパイル時にエラーになる。</p></li>
+<li><p>フォルダのルールをできるだけ守る<br/>
+プログラムを入れるフォルダ、設定ファイルを入れるフォルダ等予め決められているフォルダのルールにできるだけ従う<br/>
+→変なところに作られたファイルは適切な場所に移動させる</p></li>
+</ul>
+
+
+<h3 id="左上の方">左上の方</h3>
+
+<p>Runでシミュレーターを実行。横にあるメニューでシミュレーターを選択(iPhone,iPadなど)</p>
+
+<h3 id="右上の方(Editor)">右上の方(Editor)</h3>
+
+<p>左:通常表示<br/>
+中:画面分割(ジェントルマンみたいなアイコン)使いっぱなしにしているとおかしくなるので作業が終わったら通常表示に戻すことを意識する<br/>
+右:差分表示。あまり使わないほうが良い。ストーリーボードを開いている状態で押してしまうと差分が出まくって戻れなくなる</p>
+
+<h3 id="右上の方(View)">右上の方(View)</h3>
+
+<p>左:左側のパネルを出したり引っ込めたり<br/>
+中:下のパネルを出したり引っ込めたり(実行ログが表示されたりするところ)<br/>
+右:右側のパネルを出したり引っ込めたり(Identityとか情報が表示されたりするところ)<br/>
+※ ここは色々いじってもOK</p>
+
+<h3 id="アプリの設定をする画面">アプリの設定をする画面</h3>
+
+<p>左側パネルの一番上の部分をクリックした後、「TARGETS」で目的のアプリを選択<br/>
+アプリのアイコンの設定とかできる。</p>
+
+<h3 id="Xcode特徴">Xcode特徴</h3>
+
+<ul>
+<li>設定したら反映されるが、削除の場合は反映されないことがある</li>
+<li>削除したものを元に戻せるとは限らない(削除対象と関連するものも削除、変更されることがる)</li>
+<li>設定でエディタの色も変えられるが変になることがあるのでできるだけ変えないほうが良い</li>
+</ul>
+
+
+<h3 id="ストーリーボード">ストーリーボード</h3>
+
+<ul>
+<li>ビジュアル的に開発できる</li>
+<li>Xcodeの新しめの機能(参考書などにはまだ載ってないものも多いかも)</li>
+<li>左側のパネルの「MainStoryboard.storyboard」をクリックすると表示される</li>
+</ul>
+
+
+<h3 id="使わないファイルなどを削除">使わないファイルなどを削除</h3>
+
+<ul>
+<li><p>ストーリーボードに表示されているものは選択してDeleteキーで消せる<br/>
+→その後「Command S」で保存する</p></li>
+<li><p>使わないmファイルやhファイルを削除<br/>
+→「Move to Trash」でゴミ箱に移動しないと、表示されなくなるだけでディレクトリ内にはファイルは残ってしまう。エラーの元になるのでちゃんと消す。</p></li>
+</ul>
+
+
+<h3 id="ViewControlerの追加">ViewControlerの追加</h3>
+
+<p>右下の方にあるところのリストにある「View Controler」を真ん中の画面にドラッグアンドドロップ<br/>
+→AWSっぽい立方体のアイコンにチェックが入っている状態で表示される(Object library)</p>
+
+<h3 id="リソースを追加">リソースを追加</h3>
+
+<p>左側のパネルにフォルダやファイルをドラッグアンドドロップ<br/>
+「Choose options for adding these files」の画面の「Add to targets」で対象のプロジェクトにチェックが入っていることを確認する。</p>
+
+<h3 id="ステータスバーを消す">ステータスバーを消す</h3>
+
+<p>iPhoneで電波とか時刻とかバッテリー残量とかが表示されているところ</p>
+
+<ul>
+<li>アプリの設定をする画面「Status bar」のVisibility「Hide during application launch」にチェックを入れる</li>
+<li>ストリートボードで対象のView Controlerを選択し、右側のパネルの「Simulated Metrics」のStatus Barを「None」にする</li>
+</ul>
+
+
+<h2 id="画面を作ってみる">画面を作ってみる</h2>
+
+<h3 id="背景画像を配置">背景画像を配置</h3>
+
+<p>右下の方にあるリストの中にある「Image View」を対象のView Controlerにドラッグアンドドロップ<br/>
+→広い画面で見ていてドラッグアンドドロップができない時は、対象のView Controlerにズームしてからやってみる<br/>
+選択した状態で、右上の「Image View」のImageに、先ほどリソースを追加した中に入っている背景画像のファイル名を入力する(bg.pngなど)<br/>
+サイズはGUIでも変更できるし、右上のパネル「View」でWidth,Heightを数値で指定することもできる</p>
+
+<h3 id="キャラクターなど画像を配置">キャラクターなど画像を配置</h3>
+
+<p>先ほどと同じ要領でキャラクターの画像を配置する</p>
+
+<h3 id="ボタンを配置する">ボタンを配置する</h3>
+
+<p>右下の方にあるリストの中にある「Round Rect Bottun」を対象のView Controlerにドラッグアンドドロップ<br/>
+ダブルクリックするとボタンに表示されている文字を変更できる</p>
+
+<h3 id="もう一つ同じ画面を作ってつないでみる">もう一つ同じ画面を作ってつないでみる</h3>
+
+<p>同じ要領でView Controlerを右側に追加する<br/>
+→吹き出しのImageや「戻る」ボタンを追加しておく</p>
+
+<h3 id="modal(画面の上に新たに画面を重ねていく画面遷移方法)で左の画面と右の画面をつなぐ">modal(画面の上に新たに画面を重ねていく画面遷移方法)で左の画面と右の画面をつなぐ</h3>
+
+<p>左の画面上に配置したボタンをCtrlを押しながらクリックし、右の画面にドラッグアンドドロップする<br/>
+メニューが出るので「modal」を選択する</p>
+
+<p>※ここでシミュレータを実行してボタンを押すと、次の画面に遷移する</p>
+
+<h2 id="クラスを作る">クラスを作る</h2>
+
+<p>戻るボタンを実装するためにクラスを作る</p>
+
+<h3 id="ファイルの作成">ファイルの作成</h3>
+
+<p>File -> New -> File<br/>
+Objective-C class を選択</p>
+
+<ul>
+<li>Class : MainViewControler</li>
+<li>Subclass of : UIViewControler
+Targeted for iPadなどのチェックボックスるが外れていることを確認する<br/>
+対象のフォルダが選択されていること、対象のプロジェクトにチェックが入っていることを確認してCreate<br/>
+同じ要領でClass SubViewControlerを作成する</li>
+</ul>
+
+
+<h4 id="MainViewControler.mの編集">MainViewControler.mの編集</h4>
+
+<p>以下を何処かにコピペ
+<code>
+- (IBAction)mainViewReturnActionForSegue:
+(UIStoryboardSegue *)segue{
+NSLog(@"もどってきた！");
+}
+</code></p>
+
+<h4 id="MainStoryboardで設定">MainStoryboardで設定</h4>
+
+<p>後の画面に設置した「戻る」ボタンをCtrlを押しながらMainViewの「exit」にドラッグアンドドロップする<br/>
+→出てきたメニューで先ほど追加した</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[(第31回)Python mini Hack-a-thon]]></title>
@@ -81,17 +246,17 @@ exit
 {
     "nas": "nas_backup01",
     "volume": "apache_log",
-    "size": "5g"
+    "size": "+5g"
 },
 {
     "nas": "nas_backup02",
     "volume": "tomcat_log",
-    "size": "500m"
+    "size": "+500m"
 },
 {
     "nas": "nas_ecsite01",
     "volume": "item_image",
-    "size": "10g"
+    "size": "+10g"
 }
 </code></pre>
 
@@ -120,13 +285,13 @@ f.close()                   # ファイルを閉じる</p>
 
 <p>if argc == 2 and argvs[1] == "--help":</p>
 
-<pre><code>print( "sudo ssh {obj[nas]} vol create {obj[volume]} {obj[size]}".format(obj = data[0]) )    # ヘルプを表示
+<pre><code>print( "sudo ssh {obj[nas]} vol resize {obj[volume]} {obj[size]}".format(obj = data[0]) )    # ヘルプを表示
 </code></pre>
 
 <p>if argc == 1:</p>
 
 <pre><code>for i in range(num)[1:]:     # 配列の2列目から実行
-    print( "sudo ssh {obj[nas]} vol create {obj[volume]} {obj[size]}".format(obj = data[i]) )
+    print( "sudo ssh {obj[nas]} vol resize {obj[volume]} {obj[size]}".format(obj = data[i]) )
 </code></pre>
 
 <p>※ デバッグ等コメントは削除
@@ -886,219 +1051,6 @@ ifやループは使わない事に喜びをおぼえてきたら立派なR使�
 <ul>
 <li><a href="http://gvtkne.blogspot.jp/2013/04/14.html">ネットワークパケットを読む会(仮) 14回に参加してきた(otahi さん)</a></li>
 <li><a href="http://www.slideshare.net/tohakushi/tcpdumptcpreplay">tcpdumpとtcpreplayとtcprewriteと他。</a></li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[シェフハンズオンセミナー]]></title>
-    <link href="http://ftakao2007.github.com/blog/2013/04/16/chef-handson/"/>
-    <updated>2013-04-16T18:52:00+09:00</updated>
-    <id>http://ftakao2007.github.com/blog/2013/04/16/chef-handson</id>
-    <content type="html"><![CDATA[<h1 id="AWSのUbuntuでChefを動かす">AWSのUbuntuでChefを動かす</h1>
-
-<p>デフォルトのAWSで用意されているUbuntuにChefをインストールする。<br/>
-ハンズオンのインスタンスは必要なパッケージがすでにいくらかインストールされていたみたいなので
-トライアンドエラーで設定。</p>
-
-<h1 id="事前準備">事前準備</h1>
-
-<p>Opscodeでアカウントを作成して鍵ファイルとknife.rbを事前にDLしておく。<br/>
-AWSのインスタンスを利用できる状態にしておく。<br/>
-AWSのaccess keyとsecret access keyを用意しておく。</p>
-
-<h1 id="AWSにChefクライアントをインストール">AWSにChefクライアントをインストール</h1>
-
-<p>Ubuntu 12.04.2 LTSの64bitを選択</p>
-
-<h1 id="必要パッケージとChef+クライアントのインストール">必要パッケージとChef クライアントのインストール</h1>
-
-<p>``` bash
-sudo apt-get update
-sudo apt-get upgrade
-curl -L http://www.opscode.com/chef/install.sh | sudo bash</p>
-
-<h1 id="sudo+apt-get+install+ruby+git+tree+g++">sudo apt-get install ruby git tree g++</h1>
-
-<p>sudo apt-get install (パッケージたくさん)
-```
-※ パッケージはハンズオンで入っていたパッケージを根こそぎ入れた。必要なパッケージは現在精査中。</p>
-
-<p>Chefのgemは以下に入っていることを意識すること<br/>
--> デフォルトのgemを使うと残念なことになるらしい。
-<code>bash
-ls -ld /opt/chef/embedded/bin/gem
-</code></p>
-
-<p><code>bash
-cd ~
-git clone https://github.com/opscode/chef-repo.git
-cd chef-repo
-tree
-.
-├── chef-repo
-│   ├── certificates
-│   │   └── README.md
-│   ├── chefignore
-│   ├── config
-│   │   └── rake.rb
-│   ├── cookbooks
-│   │   └── README.md
-│   ├── data_bags
-│   │   └── README.md
-│   ├── environments
-│   │   └── README.md
-│   ├── LICENSE
-│   ├── Rakefile
-│   ├── README.md
-│   └── roles
-│       └── README.md
-└── credentials.tgz
-</code></p>
-
-<p>WorkstationとしてChef serverと通信するための環境ファイル用のディレクトリ作成
-<code>bash
-mkdir .chef
-</code></p>
-
-<p>この後、.chefにOpscodeからダウンロードした鍵とknife.rbをscpする。その後chef-repoディレクトリに移動して</p>
-
-<p><code>bash
-knife client list
-XXXX-validator
-</code>
-※ pemファイルをリネームしているとここでエラーが出てしまう。DLしたファイル名をそのまま使う。</p>
-
-<h1 id="knife-ec2インストール">knife-ec2インストール</h1>
-
-<p>先ほどのgemのPATHを意識すること！！
-<code>bash
-sudo /opt/chef/embedded/bin/gem install knife-ec2 --no-ri --no-rdoc
-</code></p>
-
-<p>knife.rbにAWSアクセスするためのキーを記載する
-``` bash</p>
-
-<h1 id="knife+for+AWS">knife for AWS</h1>
-
-<p>knife[:aws_access_key_id]     = "XXXXXXXXXXXXXXX"
-knife[:aws_secret_access_key] = "XXXXXXXXXXXXXXXXXXXXXXXXXX"
-knife[:region] = "ap-northeast-1"
-```</p>
-
-<h1 id="cookbookをWorkstationへclone">cookbookをWorkstationへclone</h1>
-
-<p>``` bash
-cd ~/chef-repo/cookbooks
-git clone https://github.com/cl-lab-k/apache2-take.git
-cd apache2-take
-tree
-.
-├── attributes
-│   └── default.rb     <em>重要
-├── CHANGELOG.md
-├── example
-│   └── apache2-take-ubuntu.sh
-├── files
-│   └── default
-│       └── tests
-│           └── minitest
-│               ├── default_test.rb
-│               └── support
-│                   └── helpers.rb
-├── Gemfile
-├── metadata.rb
-├── README.md
-├── recipes
-│   └── default.rb     </em>重要
-├── templates
-│   └── default        *重要
-│       ├── default.erb
-│       ├── ports.conf.erb
-│       └── twitter-search.html.erb
-└── test</p>
-
-<pre><code>└── kitchen
-    └── Kitchenfile
-</code></pre>
-
-<p>```</p>
-
-<h2 id="手軽なcookbook">手軽なcookbook</h2>
-
-<ul>
-<li><a href="http://acrmp.github.io/foodcritic/">Food Critic</a></li>
-<li><a href="http://docs.opscode.com/knife_cookbook.html">knife cookbook test</a></li>
-</ul>
-
-
-<h1 id="Apache2+install">Apache2 install</h1>
-
-<p>※ 以下はスクリプトで実行した場合の例。Chefは使っていない。</p>
-
-<h2 id="script">script</h2>
-
-<p><code>bash
-cd ~/chef-repo/cookbooks/apache2-take/example/
-sudo sh ./apache2-take-ubuntu.sh
-</code>
-スクリプトの内容は以下</p>
-
-<ul>
-<li>Apache2のインストール&amp;起動</li>
-<li>Apache2のリクエスト待ち受けポートの変更</li>
-<li>Apache2で”default”サイトを有効化</li>
-<li>githubからサイト用コンテンツをclone</li>
-<li>githubからサイト用コンテンツをダウンロード</li>
-</ul>
-
-
-<h1 id="同様のものをChefで処理">同様のものをChefで処理</h1>
-
-<p>テスト
-<code>bash
-cd ~/chef-repo
-knife cookbook test apache2-take
-</code>
-FoodCriticを使ったテスト
-<code>bash
-sudo /opt/chef/embedded/bin/gem install foodcritic --no-ri --no-rdoc
-/opt/chef/embedded/bin/foodcritic cookbooks/apache2-take
-</code></p>
-
-<p>このままだと以下の様なエラーが出る
-<code>bash
-FC008: Generated cookbook metadata needs updating: cookbooks/apache2-take/metadata.rb:2
-FC008: Generated cookbook metadata needs updating: cookbooks/apache2-take/metadata.rb:3
-</code>
-<a href="http://acrmp.github.io/foodcritic/">ここ</a>でコードの内容を確認し、スタイルを修正する。</p>
-
-<p><code>bash
-[DEPRECATION] "eval" is deprecated. Please use "evaluate" instead
-</code>
-<a href="http://www.blogosfera.co.uk/2013/04/eval-is-deprecated-please-use-evaluate-instead/">これはバージョンのWarningっぽい。</a>動くので今はスルー。</p>
-
-<h2 id="cookbookのアップロード">cookbookのアップロード</h2>
-
-<p><code>bash
-cd ~/chef-repo/cookbooks/apache2-take
-knife cookbook upload apache2-take
-</code></p>
-
-<p>EC2インスタンス起動
-<code>bash
-knife ec2 server create -S [key pair] -i [key file (XXX.pem)] -r "recipe[apache2-take]" -I ami-77cf4976 --flavor t1.micro -Z ap-northeast-1a -G [Security Group] -x ubuntu -N aws-handson -VV
-</code>
-これで新しいインスタンスが作成され、apacheが立ち上がる。</p>
-
-<h1 id="メモ書">メモ書</h1>
-
-<ul>
-<li><p>コンバージョン(収束)させる<br/>
--> あるべき状態になる、将来ありたい状態と現状を埋める仕組み</p></li>
-<li><p>98%の情報は下記のURLに存在する!<br/>
-http://docs.opscode.com/chef/resources.html</p></li>
 </ul>
 
 ]]></content>

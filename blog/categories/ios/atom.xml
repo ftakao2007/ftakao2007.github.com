@@ -4,7 +4,7 @@
   <title><![CDATA[Category: iOS | Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/blog/categories/ios/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-05-18T20:53:35+09:00</updated>
+  <updated>2013-06-02T10:27:30+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -12,6 +12,171 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[東京渋谷 “初心者向けiPhoneアプリ開発” 勉強会② (5/22)]]></title>
+    <link href="http://ftakao2007.github.com/blog/2013/05/22/iphone-app-study/"/>
+    <updated>2013-05-22T19:47:00+09:00</updated>
+    <id>http://ftakao2007.github.com/blog/2013/05/22/iphone-app-study</id>
+    <content type="html"><![CDATA[<h2 id="[東京渋谷+“初心者向けiPhoneアプリ開発”+勉強会②+(5/22)](http://atnd.org/events/39513)"><a href="http://atnd.org/events/39513">東京渋谷 “初心者向けiPhoneアプリ開発” 勉強会② (5/22)</a></h2>
+
+<p>Xcodeを基本から勉強。前は何も知らずに画面遷移をコピペプログラムしただけだったので基本から勉強します。
+バージョンは4.6.2。</p>
+
+<h3 id="プロジェクト作成">プロジェクト作成</h3>
+
+<p>File -> New -> Project<br/>
+Master-Detail-Application<br/>
+Product Name : nicomoro
+Use Storyboards」「Use Automatic Reference Counting」の二箇所チェック
+createでデスクトップにフォルダを作成</p>
+
+<h3 id="左側のパネル">左側のパネル</h3>
+
+<ul>
+<li><p>ファイルの一覧になっている<br/>
+パネルに表示されるフォルダの構造と実際のフォルダでは構造が違う<br/>
+→Xcode上では違う階層で同じ名前のファイル名も作れるが、コンパイル時にエラーになる。</p></li>
+<li><p>フォルダのルールをできるだけ守る<br/>
+プログラムを入れるフォルダ、設定ファイルを入れるフォルダ等予め決められているフォルダのルールにできるだけ従う<br/>
+→変なところに作られたファイルは適切な場所に移動させる</p></li>
+</ul>
+
+
+<h3 id="左上の方">左上の方</h3>
+
+<p>Runでシミュレーターを実行。横にあるメニューでシミュレーターを選択(iPhone,iPadなど)</p>
+
+<h3 id="右上の方(Editor)">右上の方(Editor)</h3>
+
+<p>左:通常表示<br/>
+中:画面分割(ジェントルマンみたいなアイコン)使いっぱなしにしているとおかしくなるので作業が終わったら通常表示に戻すことを意識する<br/>
+右:差分表示。あまり使わないほうが良い。ストーリーボードを開いている状態で押してしまうと差分が出まくって戻れなくなる</p>
+
+<h3 id="右上の方(View)">右上の方(View)</h3>
+
+<p>左:左側のパネルを出したり引っ込めたり<br/>
+中:下のパネルを出したり引っ込めたり(実行ログが表示されたりするところ)<br/>
+右:右側のパネルを出したり引っ込めたり(Identityとか情報が表示されたりするところ)<br/>
+※ ここは色々いじってもOK</p>
+
+<h3 id="アプリの設定をする画面">アプリの設定をする画面</h3>
+
+<p>左側パネルの一番上の部分をクリックした後、「TARGETS」で目的のアプリを選択<br/>
+アプリのアイコンの設定とかできる。</p>
+
+<h3 id="Xcode特徴">Xcode特徴</h3>
+
+<ul>
+<li>設定したら反映されるが、削除の場合は反映されないことがある</li>
+<li>削除したものを元に戻せるとは限らない(削除対象と関連するものも削除、変更されることがる)</li>
+<li>設定でエディタの色も変えられるが変になることがあるのでできるだけ変えないほうが良い</li>
+</ul>
+
+
+<h3 id="ストーリーボード">ストーリーボード</h3>
+
+<ul>
+<li>ビジュアル的に開発できる</li>
+<li>Xcodeの新しめの機能(参考書などにはまだ載ってないものも多いかも)</li>
+<li>左側のパネルの「MainStoryboard.storyboard」をクリックすると表示される</li>
+</ul>
+
+
+<h3 id="使わないファイルなどを削除">使わないファイルなどを削除</h3>
+
+<ul>
+<li><p>ストーリーボードに表示されているものは選択してDeleteキーで消せる<br/>
+→その後「Command S」で保存する</p></li>
+<li><p>使わないmファイルやhファイルを削除<br/>
+→「Move to Trash」でゴミ箱に移動しないと、表示されなくなるだけでディレクトリ内にはファイルは残ってしまう。エラーの元になるのでちゃんと消す。</p></li>
+</ul>
+
+
+<h3 id="ViewControlerの追加">ViewControlerの追加</h3>
+
+<p>右下の方にあるところのリストにある「View Controler」を真ん中の画面にドラッグアンドドロップ<br/>
+→AWSっぽい立方体のアイコンにチェックが入っている状態で表示される(Object library)</p>
+
+<h3 id="リソースを追加">リソースを追加</h3>
+
+<p>左側のパネルにフォルダやファイルをドラッグアンドドロップ<br/>
+「Choose options for adding these files」の画面の「Add to targets」で対象のプロジェクトにチェックが入っていることを確認する。</p>
+
+<h3 id="ステータスバーを消す">ステータスバーを消す</h3>
+
+<p>iPhoneで電波とか時刻とかバッテリー残量とかが表示されているところ</p>
+
+<ul>
+<li>アプリの設定をする画面「Status bar」のVisibility「Hide during application launch」にチェックを入れる</li>
+<li>ストリートボードで対象のView Controlerを選択し、右側のパネルの「Simulated Metrics」のStatus Barを「None」にする</li>
+</ul>
+
+
+<h2 id="画面を作ってみる">画面を作ってみる</h2>
+
+<h3 id="背景画像を配置">背景画像を配置</h3>
+
+<p>右下の方にあるリストの中にある「Image View」を対象のView Controlerにドラッグアンドドロップ<br/>
+→広い画面で見ていてドラッグアンドドロップができない時は、対象のView Controlerにズームしてからやってみる<br/>
+選択した状態で、右上の「Image View」のImageに、先ほどリソースを追加した中に入っている背景画像のファイル名を入力する(bg.pngなど)<br/>
+サイズはGUIでも変更できるし、右上のパネル「View」でWidth,Heightを数値で指定することもできる</p>
+
+<h3 id="キャラクターなど画像を配置">キャラクターなど画像を配置</h3>
+
+<p>先ほどと同じ要領でキャラクターの画像を配置する</p>
+
+<h3 id="ボタンを配置する">ボタンを配置する</h3>
+
+<p>右下の方にあるリストの中にある「Round Rect Bottun」を対象のView Controlerにドラッグアンドドロップ<br/>
+ダブルクリックするとボタンに表示されている文字を変更できる</p>
+
+<h3 id="もう一つ同じ画面を作ってつないでみる">もう一つ同じ画面を作ってつないでみる</h3>
+
+<p>同じ要領でView Controlerを右側に追加する<br/>
+→吹き出しのImageや「戻る」ボタンを追加しておく</p>
+
+<h3 id="modal(画面の上に新たに画面を重ねていく画面遷移方法)で左の画面と右の画面をつなぐ">modal(画面の上に新たに画面を重ねていく画面遷移方法)で左の画面と右の画面をつなぐ</h3>
+
+<p>左の画面上に配置したボタンをCtrlを押しながらクリックし、右の画面にドラッグアンドドロップする<br/>
+メニューが出るので「modal」を選択する</p>
+
+<p>※ここでシミュレータを実行してボタンを押すと、次の画面に遷移する</p>
+
+<h2 id="クラスを作る">クラスを作る</h2>
+
+<p>戻るボタンを実装するためにクラスを作る</p>
+
+<h3 id="ファイルの作成">ファイルの作成</h3>
+
+<p>File -> New -> File<br/>
+Objective-C class を選択</p>
+
+<ul>
+<li>Class : MainViewControler</li>
+<li>Subclass of : UIViewControler
+Targeted for iPadなどのチェックボックスるが外れていることを確認する<br/>
+対象のフォルダが選択されていること、対象のプロジェクトにチェックが入っていることを確認してCreate<br/>
+同じ要領でClass SubViewControlerを作成する</li>
+</ul>
+
+
+<h4 id="MainViewControler.mの編集">MainViewControler.mの編集</h4>
+
+<p>以下を何処かにコピペ
+<code>
+- (IBAction)mainViewReturnActionForSegue:
+(UIStoryboardSegue *)segue{
+NSLog(@"もどってきた！");
+}
+</code></p>
+
+<h4 id="MainStoryboardで設定">MainStoryboardで設定</h4>
+
+<p>後の画面に設置した「戻る」ボタンをCtrlを押しながらMainViewの「exit」にドラッグアンドドロップする<br/>
+→出てきたメニューで先ほど追加した</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[第4回 iphoneアプリ開発超初心者講習会]]></title>

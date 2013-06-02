@@ -4,7 +4,7 @@
   <title><![CDATA[Category: octopress | Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-05-18T20:53:35+09:00</updated>
+  <updated>2013-06-02T10:27:30+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -85,6 +85,10 @@ http://ftakao2007.github.io
 <h1 id="[見出し目次の追加](http://rcmdnk.github.io/blog/2013/03/23/octopress/)"><a href="http://rcmdnk.github.io/blog/2013/03/23/octopress/">見出し目次の追加</a></h1>
 
 <h1 id="[Octopressはじめました](http://www.miukoba.net/blog/2013/01/05/start-octopress/)"><a href="http://www.miukoba.net/blog/2013/01/05/start-octopress/">Octopressはじめました</a></h1>
+
+<h1 id="特定の記事をdeployしないようにする">特定の記事をdeployしないようにする</h1>
+
+<p>メタ情報の部分に<code>published: false</code>を追加</p>
 ]]></content>
   </entry>
   

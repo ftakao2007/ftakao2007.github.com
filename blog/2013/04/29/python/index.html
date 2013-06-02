@@ -640,15 +640,553 @@ Eclipse IDE for Java EE Developers<br/>
 </ul>
 
 
+<h2 id="リンク">リンク</h2>
+
+<ul>
+<li><a href="http://tmlife.net/programming/python/python-json-module.html">Python : json モジュールで json 読み込み</a></li>
+</ul>
+
+
+<h1 id="デコレータ">デコレータ</h1>
+
+<h2 id="roles">roles</h2>
+
+<h3 id="1環境1サーバ">1環境1サーバ</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="c">#!/usr/bin/python</span>
+</span><span class='line'><span class="c"># coding: utf-8</span>
+</span><span class='line'>
+</span><span class='line'><span class="kn">from</span> <span class="nn">fabric.api</span> <span class="kn">import</span> <span class="n">run</span><span class="p">,</span> <span class="n">env</span>
+</span><span class='line'><span class="kn">from</span> <span class="nn">fabric.decorators</span> <span class="kn">import</span> <span class="n">roles</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">env</span><span class="o">.</span><span class="n">roledefs</span><span class="p">[</span><span class="s">&#39;dev&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;devserver1&#39;</span><span class="p">]</span>
+</span><span class='line'>
+</span><span class='line'><span class="nd">@roles</span><span class="p">(</span><span class="s">&#39;dev&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="k">def</span> <span class="nf">host_name</span><span class="p">():</span>
+</span><span class='line'>        <span class="n">run</span><span class="p">(</span><span class="s">&#39;uname -n&#39;</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>実行結果</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="err">$</span> <span class="n">fab</span> <span class="o">-</span><span class="n">f</span> <span class="n">fabfile_roles</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">u</span> <span class="n">ftakao2007</span> <span class="n">host_name</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">Executing</span> <span class="n">task</span> <span class="s">&#39;host_name&#39;</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">run</span><span class="p">:</span> <span class="n">uname</span> <span class="o">-</span><span class="n">n</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">Login</span> <span class="n">password</span> <span class="k">for</span> <span class="s">&#39;ftakao2007&#39;</span><span class="p">:</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">out</span><span class="p">:</span> <span class="n">devserver1</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">out</span><span class="p">:</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="n">Done</span><span class="o">.</span>
+</span><span class='line'><span class="n">Disconnecting</span> <span class="kn">from</span> <span class="nn">devserver1...</span> <span class="nn">done.</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3 id="1環境複数サーバ">1環境複数サーバ</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="c">#!/usr/bin/python</span>
+</span><span class='line'><span class="c"># coding: utf-8</span>
+</span><span class='line'>
+</span><span class='line'><span class="kn">from</span> <span class="nn">fabric.api</span> <span class="kn">import</span> <span class="n">run</span><span class="p">,</span> <span class="n">env</span>
+</span><span class='line'><span class="kn">from</span> <span class="nn">fabric.decorators</span> <span class="kn">import</span> <span class="n">roles</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">env</span><span class="o">.</span><span class="n">roledefs</span><span class="p">[</span><span class="s">&#39;dev&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;devserver1&#39;</span><span class="p">,</span> <span class="s">&#39;devserver2&#39;</span><span class="p">]</span>
+</span><span class='line'>
+</span><span class='line'><span class="nd">@roles</span><span class="p">(</span><span class="s">&#39;dev&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="k">def</span> <span class="nf">host_name</span><span class="p">():</span>
+</span><span class='line'>        <span class="n">run</span><span class="p">(</span><span class="s">&#39;uname -n&#39;</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>実行結果</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="err">$</span> <span class="n">fab</span> <span class="o">-</span><span class="n">f</span> <span class="n">fabfile_roles</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">u</span> <span class="n">ftakao2007</span> <span class="n">host_name</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">Executing</span> <span class="n">task</span> <span class="s">&#39;host_name&#39;</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">run</span><span class="p">:</span> <span class="n">uname</span> <span class="o">-</span><span class="n">n</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">Login</span> <span class="n">password</span> <span class="k">for</span> <span class="s">&#39;ftakao2007&#39;</span><span class="p">:</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">out</span><span class="p">:</span> <span class="n">devserver1</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">out</span><span class="p">:</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">[</span><span class="n">devserver2</span><span class="p">]</span> <span class="n">Executing</span> <span class="n">task</span> <span class="s">&#39;host_name&#39;</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver2</span><span class="p">]</span> <span class="n">run</span><span class="p">:</span> <span class="n">uname</span> <span class="o">-</span><span class="n">n</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver2</span><span class="p">]</span> <span class="n">out</span><span class="p">:</span> <span class="n">devserver2</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver2</span><span class="p">]</span> <span class="n">out</span><span class="p">:</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="n">Done</span><span class="o">.</span>
+</span><span class='line'><span class="n">Disconnecting</span> <span class="kn">from</span> <span class="nn">devserver2...</span> <span class="nn">done.</span>
+</span><span class='line'><span class="n">Disconnecting</span> <span class="kn">from</span> <span class="nn">devserver1...</span> <span class="nn">done.</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3 id="複数環境複数サーバ">複数環境複数サーバ</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="c">#!/usr/bin/python</span>
+</span><span class='line'><span class="c"># coding: utf-8</span>
+</span><span class='line'>
+</span><span class='line'><span class="kn">from</span> <span class="nn">fabric.api</span> <span class="kn">import</span> <span class="n">run</span><span class="p">,</span> <span class="n">env</span>
+</span><span class='line'><span class="kn">from</span> <span class="nn">fabric.decorators</span> <span class="kn">import</span> <span class="n">roles</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">env</span><span class="o">.</span><span class="n">roledefs</span> <span class="o">=</span> <span class="p">{</span>
+</span><span class='line'>    <span class="s">&#39;dev&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;devserver1&#39;</span><span class="p">,</span> <span class="s">&#39;devserver2&#39;</span><span class="p">],</span>
+</span><span class='line'>    <span class="s">&#39;stg&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;stgserver1&#39;</span><span class="p">,</span> <span class="s">&#39;stgserver2&#39;</span><span class="p">]</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="nd">@roles</span><span class="p">(</span><span class="s">&#39;dev&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="k">def</span> <span class="nf">host_name</span><span class="p">():</span>
+</span><span class='line'>       <span class="n">run</span><span class="p">(</span><span class="s">&#39;uname -n&#39;</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="nd">@roles</span><span class="p">(</span><span class="s">&#39;stg&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="k">def</span> <span class="nf">host_name2</span><span class="p">():</span>
+</span><span class='line'>       <span class="n">run</span><span class="p">(</span><span class="s">&#39;uname -n&#39;</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>実行結果</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="err">$</span> <span class="n">fab</span> <span class="o">-</span><span class="n">f</span> <span class="n">fabfile_roles</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">u</span> <span class="n">ftakao2007</span> <span class="n">host_name</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">Executing</span> <span class="n">task</span> <span class="s">&#39;host_name&#39;</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">run</span><span class="p">:</span> <span class="n">uname</span> <span class="o">-</span><span class="n">n</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">Login</span> <span class="n">password</span> <span class="k">for</span> <span class="s">&#39;ftakao2007&#39;</span><span class="p">:</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">out</span><span class="p">:</span> <span class="n">devserver1</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">out</span><span class="p">:</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">[</span><span class="n">devserver2</span><span class="p">]</span> <span class="n">Executing</span> <span class="n">task</span> <span class="s">&#39;host_name&#39;</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver2</span><span class="p">]</span> <span class="n">run</span><span class="p">:</span> <span class="n">uname</span> <span class="o">-</span><span class="n">n</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver2</span><span class="p">]</span> <span class="n">out</span><span class="p">:</span> <span class="n">devserver2</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver2</span><span class="p">]</span> <span class="n">out</span><span class="p">:</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="n">Done</span><span class="o">.</span>
+</span><span class='line'><span class="n">Disconnecting</span> <span class="kn">from</span> <span class="nn">devserver2...</span> <span class="nn">done.</span>
+</span><span class='line'><span class="n">Disconnecting</span> <span class="kn">from</span> <span class="nn">devserver1...</span> <span class="nn">done.</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">$</span> <span class="n">fab</span> <span class="o">-</span><span class="n">f</span> <span class="n">fabfile_roles</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">u</span> <span class="n">ftakao2007</span> <span class="n">host_name2</span>
+</span><span class='line'><span class="p">[</span><span class="n">stgserver1</span><span class="p">]</span> <span class="n">Executing</span> <span class="n">task</span> <span class="s">&#39;host_name2&#39;</span>
+</span><span class='line'><span class="p">[</span><span class="n">stgserver1</span><span class="p">]</span> <span class="n">run</span><span class="p">:</span> <span class="n">uname</span> <span class="o">-</span><span class="n">n</span>
+</span><span class='line'><span class="p">[</span><span class="n">stgserver1</span><span class="p">]</span> <span class="n">Login</span> <span class="n">password</span> <span class="k">for</span> <span class="s">&#39;ftakao2007&#39;</span><span class="p">:</span>
+</span><span class='line'><span class="p">[</span><span class="n">stgserver1</span><span class="p">]</span> <span class="n">out</span><span class="p">:</span> <span class="n">stgserver1</span>
+</span><span class='line'><span class="p">[</span><span class="n">stgserver1</span><span class="p">]</span> <span class="n">out</span><span class="p">:</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">[</span><span class="n">stgserver2</span><span class="p">]</span> <span class="n">Executing</span> <span class="n">task</span> <span class="s">&#39;host_name2&#39;</span>
+</span><span class='line'><span class="p">[</span><span class="n">stgserver2</span><span class="p">]</span> <span class="n">run</span><span class="p">:</span> <span class="n">uname</span> <span class="o">-</span><span class="n">n</span>
+</span><span class='line'><span class="p">[</span><span class="n">stgserver2</span><span class="p">]</span> <span class="n">out</span><span class="p">:</span> <span class="n">stgserver2</span>
+</span><span class='line'><span class="p">[</span><span class="n">stgserver2</span><span class="p">]</span> <span class="n">out</span><span class="p">:</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="n">Done</span><span class="o">.</span>
+</span><span class='line'><span class="n">Disconnecting</span> <span class="kn">from</span> <span class="nn">stgserver1...</span> <span class="nn">done.</span>
+</span><span class='line'><span class="n">Disconnecting</span> <span class="kn">from</span> <span class="nn">stgserver2...</span> <span class="nn">done.</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2 id="ユーザも設定">ユーザも設定</h2>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="c">#!/usr/bin/python</span>
+</span><span class='line'><span class="c"># coding: utf-8</span>
+</span><span class='line'><span class="kn">from</span> <span class="nn">fabric.api</span> <span class="kn">import</span> <span class="n">run</span><span class="p">,</span> <span class="n">env</span>
+</span><span class='line'><span class="kn">from</span> <span class="nn">fabric.decorators</span> <span class="kn">import</span> <span class="n">roles</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">env</span><span class="o">.</span><span class="n">roledefs</span><span class="p">[</span><span class="s">&#39;dev&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;devserver1&#39;</span><span class="p">]</span>
+</span><span class='line'><span class="n">env</span><span class="o">.</span><span class="n">user</span> <span class="o">=</span> <span class="s">&#39;ftakao2007&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nd">@roles</span><span class="p">(</span><span class="s">&#39;dev&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="k">def</span> <span class="nf">host_name</span><span class="p">():</span>
+</span><span class='line'>        <span class="n">run</span><span class="p">(</span><span class="s">&#39;uname -n&#39;</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>実行結果</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="err">$</span> <span class="n">fab</span> <span class="o">-</span><span class="n">f</span> <span class="n">fabfile_roles</span><span class="o">.</span><span class="n">py</span> <span class="n">host_name</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">Executing</span> <span class="n">task</span> <span class="s">&#39;host_name&#39;</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">run</span><span class="p">:</span> <span class="n">uname</span> <span class="o">-</span><span class="n">n</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">Login</span> <span class="n">password</span> <span class="k">for</span> <span class="s">&#39;ftakao2007&#39;</span><span class="p">:</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">out</span><span class="p">:</span> <span class="n">devserver1</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">out</span><span class="p">:</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="n">Done</span><span class="o">.</span>
+</span><span class='line'><span class="n">Disconnecting</span> <span class="kn">from</span> <span class="nn">devserver1...</span> <span class="nn">done.</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3 id="リンク">リンク</h3>
+
+<ul>
+<li><a href="http://docs.fabfile.org/en/1.4.0/usage/execution.html">Execution model</a></li>
+<li><a href="http://www.ianlewis.org/jp/fabric-pythonic">Fabric デプロイツールのPythonicな書き方</a> 環境辞書</li>
+<li><a href="http://iiwake.me/2013/03/26/199">Python Fabricでデプロイしてみた</a> 外部cfgファイル読み込み</li>
+</ul>
+
+
 <hr />
 
-<h2 id="リンク">リンク</h2>
+<h2 id="task">task</h2>
+
+<p>fabricが実行できるタスクを色々制御できる</p>
+
+<h3 id="基本">基本</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="c">#!/usr/bin/python</span>
+</span><span class='line'><span class="c"># coding: utf-8</span>
+</span><span class='line'>
+</span><span class='line'><span class="kn">from</span> <span class="nn">fabric.api</span> <span class="kn">import</span> <span class="n">run</span>
+</span><span class='line'><span class="kn">from</span> <span class="nn">fabric.decorators</span> <span class="kn">import</span> <span class="n">task</span>
+</span><span class='line'>
+</span><span class='line'><span class="nd">@task</span>
+</span><span class='line'><span class="k">def</span> <span class="nf">host_type</span><span class="p">():</span>
+</span><span class='line'>        <span class="n">run</span><span class="p">(</span><span class="s">&#39;uname -s&#39;</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3 id="エイリアス設定">エイリアス設定</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="c">#!/usr/bin/python</span>
+</span><span class='line'><span class="c"># coding: utf-8</span>
+</span><span class='line'>
+</span><span class='line'><span class="kn">from</span> <span class="nn">fabric.api</span> <span class="kn">import</span> <span class="n">run</span>
+</span><span class='line'><span class="kn">from</span> <span class="nn">fabric.decorators</span> <span class="kn">import</span> <span class="n">task</span>
+</span><span class='line'>
+</span><span class='line'><span class="nd">@task</span>
+</span><span class='line'><span class="k">def</span> <span class="nf">host_type</span><span class="p">():</span>
+</span><span class='line'>        <span class="n">run</span><span class="p">(</span><span class="s">&#39;uname -s&#39;</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="nd">@task</span><span class="p">(</span><span class="n">alias</span><span class="o">=</span><span class="s">&#39;remote_host_name&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="k">def</span> <span class="nf">host_name</span><span class="p">():</span>
+</span><span class='line'>        <span class="n">run</span><span class="p">(</span><span class="s">&#39;uname -n&#39;</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>実行結果</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="err">$</span> <span class="n">fab</span> <span class="o">-</span><span class="n">f</span> <span class="n">fabfile_task</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="nb">list</span>
+</span><span class='line'><span class="n">Available</span> <span class="n">commands</span><span class="p">:</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">host_name</span>
+</span><span class='line'>    <span class="n">host_type</span>
+</span><span class='line'>    <span class="n">remote_host_name</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">※</span> <span class="err">エイリアスで登録したコマンドが実行可能になっている</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">$</span> <span class="n">fab</span> <span class="o">-</span><span class="n">f</span> <span class="n">fabfile_task</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">H</span> <span class="n">devserver1</span> <span class="o">-</span><span class="n">u</span> <span class="n">ftakao2007</span> <span class="n">host_type</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">Executing</span> <span class="n">task</span> <span class="s">&#39;host_type&#39;</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">run</span><span class="p">:</span> <span class="n">uname</span> <span class="o">-</span><span class="n">s</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">Login</span> <span class="n">password</span> <span class="k">for</span> <span class="s">&#39;ftakao2007&#39;</span><span class="p">:</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">out</span><span class="p">:</span> <span class="n">SunOS</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">out</span><span class="p">:</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="n">Done</span><span class="o">.</span>
+</span><span class='line'><span class="n">Disconnecting</span> <span class="kn">from</span> <span class="nn">devserver1...</span> <span class="nn">done.</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">$</span> <span class="n">fab</span> <span class="o">-</span><span class="n">f</span> <span class="n">fabfile_task</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">H</span> <span class="n">devserver1</span> <span class="o">-</span><span class="n">u</span> <span class="n">ftakao2007</span> <span class="n">host_name</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">Executing</span> <span class="n">task</span> <span class="s">&#39;host_name&#39;</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">run</span><span class="p">:</span> <span class="n">uname</span> <span class="o">-</span><span class="n">n</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">Login</span> <span class="n">password</span> <span class="k">for</span> <span class="s">&#39;ftakao2007&#39;</span><span class="p">:</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">out</span><span class="p">:</span> <span class="n">devserver1</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">out</span><span class="p">:</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="n">Done</span><span class="o">.</span>
+</span><span class='line'><span class="n">Disconnecting</span> <span class="kn">from</span> <span class="nn">devserver1...</span> <span class="nn">done.</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">$</span> <span class="n">fab</span> <span class="o">-</span><span class="n">f</span> <span class="n">fabfile_task</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">H</span> <span class="n">devserver1</span> <span class="o">-</span><span class="n">u</span> <span class="n">ftakao2007</span> <span class="n">remote_host_name</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">Executing</span> <span class="n">task</span> <span class="s">&#39;remote_host_name&#39;</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">run</span><span class="p">:</span> <span class="n">uname</span> <span class="o">-</span><span class="n">n</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">Login</span> <span class="n">password</span> <span class="k">for</span> <span class="s">&#39;ftakao2007&#39;</span><span class="p">:</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">out</span><span class="p">:</span> <span class="n">devserver1</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">out</span><span class="p">:</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="n">Done</span><span class="o">.</span>
+</span><span class='line'><span class="n">Disconnecting</span> <span class="kn">from</span> <span class="nn">devserver1...</span> <span class="nn">done.</span>
+</span><span class='line'><span class="err">※</span> <span class="n">host_name</span><span class="err">と同じ実行結果</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3 id="リンク">リンク</h3>
+
+<ul>
+<li><a href="http://docs.fabfile.org/en/1.2.2/usage/tasks.html#new-style-tasks">Defining tasks</a></li>
+</ul>
+
+
+<hr />
+
+<h1 id="モジュール分割">モジュール分割</h1>
+
+<p>roleとtaskを組み合わせてモジュール分割</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="p">[</span><span class="n">fabfile</span><span class="o">.</span><span class="n">py</span><span class="p">]</span>
+</span><span class='line'><span class="c">#!/usr/bin/python</span>
+</span><span class='line'><span class="c"># coding: utf-8</span>
+</span><span class='line'>
+</span><span class='line'><span class="kn">import</span> <span class="nn">dev_mod</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="p">[</span><span class="n">dev_mod</span><span class="o">.</span><span class="n">py</span><span class="p">]</span>
+</span><span class='line'><span class="kn">from</span> <span class="nn">fabric.api</span> <span class="kn">import</span> <span class="n">run</span><span class="p">,</span> <span class="n">env</span>
+</span><span class='line'><span class="kn">from</span> <span class="nn">fabric.decorators</span> <span class="kn">import</span> <span class="n">task</span><span class="p">,</span> <span class="n">roles</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">env</span><span class="o">.</span><span class="n">roledefs</span><span class="p">[</span><span class="s">&#39;dev&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;devserver1&#39;</span><span class="p">]</span>
+</span><span class='line'><span class="n">env</span><span class="o">.</span><span class="n">user</span> <span class="o">=</span> <span class="s">&#39;ftakao2007&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nd">@task</span>
+</span><span class='line'><span class="nd">@roles</span><span class="p">(</span><span class="s">&#39;dev&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="k">def</span> <span class="nf">host_name</span><span class="p">():</span>
+</span><span class='line'>        <span class="n">run</span><span class="p">(</span><span class="s">&#39;uname -n&#39;</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>ファイル名を「fabfile.py」にするとコマンド実行時にファイルを引数として与えなくてもよくなる。<br/>
+実行結果</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="err">$</span> <span class="n">fab</span> <span class="o">--</span><span class="nb">list</span>
+</span><span class='line'><span class="n">Available</span> <span class="n">commands</span><span class="p">:</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">dev_mod</span><span class="o">.</span><span class="n">host_name</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">$</span> <span class="n">fab</span> <span class="n">dev_mod</span><span class="o">.</span><span class="n">host_name</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">Executing</span> <span class="n">task</span> <span class="s">&#39;dev_mod.host_name&#39;</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">run</span><span class="p">:</span> <span class="n">uname</span> <span class="o">-</span><span class="n">n</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">Login</span> <span class="n">password</span> <span class="k">for</span> <span class="s">&#39;ftakao2007&#39;</span><span class="p">:</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">out</span><span class="p">:</span> <span class="n">devserver1</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">out</span><span class="p">:</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="n">Done</span><span class="o">.</span>
+</span><span class='line'><span class="n">Disconnecting</span> <span class="kn">from</span> <span class="nn">devserver1...</span> <span class="nn">done.</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>メインのファイルがものすごくシンプルになりました。</p>
+
+<hr />
+
+<h2 id="リンクメモ">リンクメモ</h2>
 
 <ul>
 <li><a href="http://d.hatena.ne.jp/oneshotlife_tom/20121026/1351255211">Pythonで楽天ウェブサービスを使う。サンプルコード。</a></li>
 <li><a href="https://sites.google.com/site/kuraitlab/programing-language/python/python-oop1">Pythonでオブジェクト指向①</a></li>
 <li><a href="http://kuenishi.hatenadiary.jp/entry/2013/04/23/162205">メモリリークとは何か</a></li>
-<li><a href="http://tmlife.net/programming/python/python-json-module.html">Python : json モジュールで json 読み込み</a></li>
 </ul>
 
 </div>
@@ -678,7 +1216,7 @@ Eclipse IDE for Java EE Developers<br/>
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/python/'>Python</a>
+    <a class='category' href='/blog/categories/json/'>JSON</a>, <a class='category' href='/blog/categories/python/'>Python</a>, <a class='category' href='/blog/categories/eclipse/'>eclipse</a>
   
 </span>
 
@@ -714,6 +1252,18 @@ Eclipse IDE for Java EE Developers<br/>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/06/02/expert-python-programming/">エキスパートPythonプログラミング</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/05/25/python-words/">Python単語帳</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/05/22/iphone-app-study/">東京渋谷 “初心者向けiPhoneアプリ開発” 勉強会② (5/22)</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/05/18/python-mini-hack-a-thon/">(第31回)Python mini Hack-a-thon</a>
       </li>
     
@@ -721,23 +1271,11 @@ Eclipse IDE for Java EE Developers<br/>
         <a href="/blog/2013/05/15/iphone-app-study/">第4回 iphoneアプリ開発超初心者講習会</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/05/11/granpark-17th/">第17回 granpark.rb 「データ解析技術入門(R言語編)」</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/05/02/python-professional-programing/">Pythonプロフェッショナルプログラミング</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/04/29/zaim/">zaim</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/about/'>about (3)</a></li><li><a href='/blog/categories/aws/'>aws (3)</a></li><li><a href='/blog/categories/bash/'>bash (2)</a></li><li><a href='/blog/categories/book/'>book (1)</a></li><li><a href='/blog/categories/chef/'>chef (2)</a></li><li><a href='/blog/categories/command/'>command (5)</a></li><li><a href='/blog/categories/construct/'>construct (1)</a></li><li><a href='/blog/categories/diary/'>diary (3)</a></li><li><a href='/blog/categories/ec-cube/'>EC-CUBE (1)</a></li><li><a href='/blog/categories/ec2/'>ec2 (1)</a></li><li><a href='/blog/categories/etc/'>etc (1)</a></li><li><a href='/blog/categories/fabric/'>fabric (1)</a></li><li><a href='/blog/categories/fluentd/'>fluentd (1)</a></li><li><a href='/blog/categories/git/'>git (3)</a></li><li><a href='/blog/categories/google/'>google (1)</a></li><li><a href='/blog/categories/heroku/'>heroku (1)</a></li><li><a href='/blog/categories/ios/'>iOS (1)</a></li><li><a href='/blog/categories/monitor/'>monitor (5)</a></li><li><a href='/blog/categories/munin/'>munin (1)</a></li><li><a href='/blog/categories/network/'>network (2)</a></li><li><a href='/blog/categories/octopress/'>octopress (1)</a></li><li><a href='/blog/categories/os/'>OS (3)</a></li><li><a href='/blog/categories/php/'>PHP (1)</a></li><li><a href='/blog/categories/python/'>Python (5)</a></li><li><a href='/blog/categories/r/'>R (1)</a></li><li><a href='/blog/categories/raspberrypi/'>RaspberryPi (1)</a></li><li><a href='/blog/categories/redmine/'>Redmine (2)</a></li><li><a href='/blog/categories/seo/'>SEO (1)</a></li><li><a href='/blog/categories/splunk/'>splunk (1)</a></li><li><a href='/blog/categories/statistics/'>statistics (1)</a></li><li><a href='/blog/categories/vagrant/'>vagrant (1)</a></li><li><a href='/blog/categories/vim/'>vim (1)</a></li><li><a href='/blog/categories/xcode/'>Xcode (1)</a></li><li><a href='/blog/categories/zaim/'>zaim (1)</a></li><li><a href='/blog/categories/mian-qiang-hui/'>勉強会 (6)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/about/'>about (3)</a></li><li><a href='/blog/categories/aws/'>aws (3)</a></li><li><a href='/blog/categories/bash/'>bash (2)</a></li><li><a href='/blog/categories/book/'>book (2)</a></li><li><a href='/blog/categories/chef/'>chef (2)</a></li><li><a href='/blog/categories/command/'>command (5)</a></li><li><a href='/blog/categories/construct/'>construct (1)</a></li><li><a href='/blog/categories/diary/'>diary (3)</a></li><li><a href='/blog/categories/ec-cube/'>EC-CUBE (1)</a></li><li><a href='/blog/categories/ec2/'>ec2 (1)</a></li><li><a href='/blog/categories/eclipse/'>eclipse (1)</a></li><li><a href='/blog/categories/etc/'>etc (1)</a></li><li><a href='/blog/categories/fabric/'>fabric (3)</a></li><li><a href='/blog/categories/fluentd/'>fluentd (1)</a></li><li><a href='/blog/categories/git/'>git (3)</a></li><li><a href='/blog/categories/google/'>google (1)</a></li><li><a href='/blog/categories/heroku/'>heroku (1)</a></li><li><a href='/blog/categories/ios/'>iOS (2)</a></li><li><a href='/blog/categories/json/'>JSON (1)</a></li><li><a href='/blog/categories/monitor/'>monitor (5)</a></li><li><a href='/blog/categories/munin/'>munin (1)</a></li><li><a href='/blog/categories/network/'>network (2)</a></li><li><a href='/blog/categories/octopress/'>octopress (1)</a></li><li><a href='/blog/categories/os/'>OS (3)</a></li><li><a href='/blog/categories/php/'>PHP (1)</a></li><li><a href='/blog/categories/python/'>Python (7)</a></li><li><a href='/blog/categories/r/'>R (1)</a></li><li><a href='/blog/categories/raspberrypi/'>RaspberryPi (1)</a></li><li><a href='/blog/categories/redmine/'>Redmine (2)</a></li><li><a href='/blog/categories/seo/'>SEO (1)</a></li><li><a href='/blog/categories/splunk/'>splunk (1)</a></li><li><a href='/blog/categories/statistics/'>statistics (1)</a></li><li><a href='/blog/categories/vagrant/'>vagrant (1)</a></li><li><a href='/blog/categories/vim/'>vim (1)</a></li><li><a href='/blog/categories/xcode/'>Xcode (2)</a></li><li><a href='/blog/categories/zaim/'>zaim (1)</a></li><li><a href='/blog/categories/mian-qiang-hui/'>勉強会 (7)</a></li><li><a href='/blog/categories/dan-yu-zhang/'>単語帳 (1)</a></li></ul>
 </section>
 <section>
 <script type="text/javascript"><!--

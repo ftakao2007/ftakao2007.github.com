@@ -198,17 +198,17 @@ fabricを利用予定。</p></li>
 </span><span class='line'>    <span class="o">{</span>
 </span><span class='line'>        <span class="s2">&quot;nas&quot;</span>: <span class="s2">&quot;nas_backup01&quot;</span>,
 </span><span class='line'>        <span class="s2">&quot;volume&quot;</span>: <span class="s2">&quot;apache_log&quot;</span>,
-</span><span class='line'>        <span class="s2">&quot;size&quot;</span>: <span class="s2">&quot;5g&quot;</span>
+</span><span class='line'>        <span class="s2">&quot;size&quot;</span>: <span class="s2">&quot;+5g&quot;</span>
 </span><span class='line'>    <span class="o">}</span>,
 </span><span class='line'>    <span class="o">{</span>
 </span><span class='line'>        <span class="s2">&quot;nas&quot;</span>: <span class="s2">&quot;nas_backup02&quot;</span>,
 </span><span class='line'>        <span class="s2">&quot;volume&quot;</span>: <span class="s2">&quot;tomcat_log&quot;</span>,
-</span><span class='line'>        <span class="s2">&quot;size&quot;</span>: <span class="s2">&quot;500m&quot;</span>
+</span><span class='line'>        <span class="s2">&quot;size&quot;</span>: <span class="s2">&quot;+500m&quot;</span>
 </span><span class='line'>    <span class="o">}</span>,
 </span><span class='line'>    <span class="o">{</span>
 </span><span class='line'>        <span class="s2">&quot;nas&quot;</span>: <span class="s2">&quot;nas_ecsite01&quot;</span>,
 </span><span class='line'>        <span class="s2">&quot;volume&quot;</span>: <span class="s2">&quot;item_image&quot;</span>,
-</span><span class='line'>        <span class="s2">&quot;size&quot;</span>: <span class="s2">&quot;10g&quot;</span>
+</span><span class='line'>        <span class="s2">&quot;size&quot;</span>: <span class="s2">&quot;+10g&quot;</span>
 </span><span class='line'>    <span class="o">}</span>
 </span><span class='line'><span class="o">]</span>
 </span></code></pre></td></tr></table></div></figure>
@@ -255,11 +255,11 @@ fabricを利用予定。</p></li>
 </span><span class='line'><span class="n">num</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>             <span class="c">#ファイル数をカウント</span>
 </span><span class='line'>
 </span><span class='line'><span class="k">if</span> <span class="n">argc</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">argvs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s">&quot;--help&quot;</span><span class="p">:</span>
-</span><span class='line'>  <span class="k">print</span><span class="p">(</span> <span class="s">&quot;sudo ssh {obj[nas]} vol create {obj[volume]} {obj[size]}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">obj</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="p">)</span>    <span class="c"># ヘルプを表示</span>
+</span><span class='line'>  <span class="k">print</span><span class="p">(</span> <span class="s">&quot;sudo ssh {obj[nas]} vol resize {obj[volume]} {obj[size]}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">obj</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="p">)</span>    <span class="c"># ヘルプを表示</span>
 </span><span class='line'>
 </span><span class='line'><span class="k">if</span> <span class="n">argc</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
 </span><span class='line'>  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num</span><span class="p">)[</span><span class="mi">1</span><span class="p">:]:</span>     <span class="c"># 配列の2列目から実行</span>
-</span><span class='line'>      <span class="k">print</span><span class="p">(</span> <span class="s">&quot;sudo ssh {obj[nas]} vol create {obj[volume]} {obj[size]}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">obj</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="p">)</span>
+</span><span class='line'>      <span class="k">print</span><span class="p">(</span> <span class="s">&quot;sudo ssh {obj[nas]} vol resize {obj[volume]} {obj[size]}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">obj</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="p">)</span>
 </span><span class='line'>
 </span><span class='line'><span class="err">※</span> <span class="err">デバッグ等コメントは削除</span>
 </span></code></pre></td></tr></table></div></figure>
@@ -434,7 +434,7 @@ fabricを利用予定。</p></li>
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/python/'>Python</a>, <a class='category' href='/blog/categories/mian-qiang-hui/'>勉強会</a>
+    <a class='category' href='/blog/categories/python/'>Python</a>, <a class='category' href='/blog/categories/fabric/'>fabric</a>, <a class='category' href='/blog/categories/mian-qiang-hui/'>勉強会</a>
   
 </span>
 
@@ -455,6 +455,8 @@ fabricを利用予定。</p></li>
         <a class="basic-alignment left" href="/blog/2013/05/15/iphone-app-study/" title="Previous Post: 第4回 iphoneアプリ開発超初心者講習会">&laquo; 第4回 iphoneアプリ開発超初心者講習会</a>
       
       
+        <a class="basic-alignment right" href="/blog/2013/05/22/iphone-app-study/" title="Next Post: 東京渋谷 “初心者向けiPhoneアプリ開発” 勉強会② (5/22)">東京渋谷 “初心者向けiPhoneアプリ開発” 勉強会② (5/22) &raquo;</a>
+      
     </p>
   </footer>
 </article>
@@ -468,6 +470,18 @@ fabricを利用予定。</p></li>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/06/02/expert-python-programming/">エキスパートPythonプログラミング</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/05/25/python-words/">Python単語帳</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/05/22/iphone-app-study/">東京渋谷 “初心者向けiPhoneアプリ開発” 勉強会② (5/22)</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/05/18/python-mini-hack-a-thon/">(第31回)Python mini Hack-a-thon</a>
       </li>
     
@@ -475,23 +489,11 @@ fabricを利用予定。</p></li>
         <a href="/blog/2013/05/15/iphone-app-study/">第4回 iphoneアプリ開発超初心者講習会</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/05/11/granpark-17th/">第17回 granpark.rb 「データ解析技術入門(R言語編)」</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/05/02/python-professional-programing/">Pythonプロフェッショナルプログラミング</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/04/29/zaim/">zaim</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/about/'>about (3)</a></li><li><a href='/blog/categories/aws/'>aws (3)</a></li><li><a href='/blog/categories/bash/'>bash (2)</a></li><li><a href='/blog/categories/book/'>book (1)</a></li><li><a href='/blog/categories/chef/'>chef (2)</a></li><li><a href='/blog/categories/command/'>command (5)</a></li><li><a href='/blog/categories/construct/'>construct (1)</a></li><li><a href='/blog/categories/diary/'>diary (3)</a></li><li><a href='/blog/categories/ec-cube/'>EC-CUBE (1)</a></li><li><a href='/blog/categories/ec2/'>ec2 (1)</a></li><li><a href='/blog/categories/etc/'>etc (1)</a></li><li><a href='/blog/categories/fabric/'>fabric (1)</a></li><li><a href='/blog/categories/fluentd/'>fluentd (1)</a></li><li><a href='/blog/categories/git/'>git (3)</a></li><li><a href='/blog/categories/google/'>google (1)</a></li><li><a href='/blog/categories/heroku/'>heroku (1)</a></li><li><a href='/blog/categories/ios/'>iOS (1)</a></li><li><a href='/blog/categories/monitor/'>monitor (5)</a></li><li><a href='/blog/categories/munin/'>munin (1)</a></li><li><a href='/blog/categories/network/'>network (2)</a></li><li><a href='/blog/categories/octopress/'>octopress (1)</a></li><li><a href='/blog/categories/os/'>OS (3)</a></li><li><a href='/blog/categories/php/'>PHP (1)</a></li><li><a href='/blog/categories/python/'>Python (5)</a></li><li><a href='/blog/categories/r/'>R (1)</a></li><li><a href='/blog/categories/raspberrypi/'>RaspberryPi (1)</a></li><li><a href='/blog/categories/redmine/'>Redmine (2)</a></li><li><a href='/blog/categories/seo/'>SEO (1)</a></li><li><a href='/blog/categories/splunk/'>splunk (1)</a></li><li><a href='/blog/categories/statistics/'>statistics (1)</a></li><li><a href='/blog/categories/vagrant/'>vagrant (1)</a></li><li><a href='/blog/categories/vim/'>vim (1)</a></li><li><a href='/blog/categories/xcode/'>Xcode (1)</a></li><li><a href='/blog/categories/zaim/'>zaim (1)</a></li><li><a href='/blog/categories/mian-qiang-hui/'>勉強会 (6)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/about/'>about (3)</a></li><li><a href='/blog/categories/aws/'>aws (3)</a></li><li><a href='/blog/categories/bash/'>bash (2)</a></li><li><a href='/blog/categories/book/'>book (2)</a></li><li><a href='/blog/categories/chef/'>chef (2)</a></li><li><a href='/blog/categories/command/'>command (5)</a></li><li><a href='/blog/categories/construct/'>construct (1)</a></li><li><a href='/blog/categories/diary/'>diary (3)</a></li><li><a href='/blog/categories/ec-cube/'>EC-CUBE (1)</a></li><li><a href='/blog/categories/ec2/'>ec2 (1)</a></li><li><a href='/blog/categories/eclipse/'>eclipse (1)</a></li><li><a href='/blog/categories/etc/'>etc (1)</a></li><li><a href='/blog/categories/fabric/'>fabric (3)</a></li><li><a href='/blog/categories/fluentd/'>fluentd (1)</a></li><li><a href='/blog/categories/git/'>git (3)</a></li><li><a href='/blog/categories/google/'>google (1)</a></li><li><a href='/blog/categories/heroku/'>heroku (1)</a></li><li><a href='/blog/categories/ios/'>iOS (2)</a></li><li><a href='/blog/categories/json/'>JSON (1)</a></li><li><a href='/blog/categories/monitor/'>monitor (5)</a></li><li><a href='/blog/categories/munin/'>munin (1)</a></li><li><a href='/blog/categories/network/'>network (2)</a></li><li><a href='/blog/categories/octopress/'>octopress (1)</a></li><li><a href='/blog/categories/os/'>OS (3)</a></li><li><a href='/blog/categories/php/'>PHP (1)</a></li><li><a href='/blog/categories/python/'>Python (7)</a></li><li><a href='/blog/categories/r/'>R (1)</a></li><li><a href='/blog/categories/raspberrypi/'>RaspberryPi (1)</a></li><li><a href='/blog/categories/redmine/'>Redmine (2)</a></li><li><a href='/blog/categories/seo/'>SEO (1)</a></li><li><a href='/blog/categories/splunk/'>splunk (1)</a></li><li><a href='/blog/categories/statistics/'>statistics (1)</a></li><li><a href='/blog/categories/vagrant/'>vagrant (1)</a></li><li><a href='/blog/categories/vim/'>vim (1)</a></li><li><a href='/blog/categories/xcode/'>Xcode (2)</a></li><li><a href='/blog/categories/zaim/'>zaim (1)</a></li><li><a href='/blog/categories/mian-qiang-hui/'>勉強会 (7)</a></li><li><a href='/blog/categories/dan-yu-zhang/'>単語帳 (1)</a></li></ul>
 </section>
 <section>
 <script type="text/javascript"><!--

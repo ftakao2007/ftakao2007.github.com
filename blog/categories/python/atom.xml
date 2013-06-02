@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Python | Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/blog/categories/python/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-05-18T20:53:35+09:00</updated>
+  <updated>2013-06-02T10:27:30+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -12,6 +12,43 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[エキスパートPythonプログラミング]]></title>
+    <link href="http://ftakao2007.github.com/blog/2013/06/02/expert-python-programming/"/>
+    <updated>2013-06-02T01:39:00+09:00</updated>
+    <id>http://ftakao2007.github.com/blog/2013/06/02/expert-python-programming</id>
+    <content type="html"><![CDATA[<p>辞書的に使ってしらべたことから覚書。</p>
+
+<table border="0" cellpadding="0" cellspacing="0"><tr><td valign="top"><div style="border:1px solid;margin:0px;padding:6px 0px;width:160px;text-align:center;float:left"><a href="http://hb.afl.rakuten.co.jp/hgc/0855d2c2.97054871.0855d2c3.c2844246/?pc=http%3a%2f%2fitem.rakuten.co.jp%2fbook%2f6497309%2f%3fscid%3daf_link_tbl&amp;m=http%3a%2f%2fm.rakuten.co.jp%2fbook%2fi%2f13678877%2f" target="_blank"><img src="http://hbb.afl.rakuten.co.jp/hgb/?pc=http%3a%2f%2fthumbnail.image.rakuten.co.jp%2f%400_mall%2fbook%2fcabinet%2f0486%2f04868629.jpg%3f_ex%3d128x128&amp;m=http%3a%2f%2fthumbnail.image.rakuten.co.jp%2f%400_mall%2fbook%2fcabinet%2f0486%2f04868629.jpg%3f_ex%3d80x80" alt="【送料無料】エキスパートPythonプログラミング [ タレク・ジアデ ]" border="0" style="margin:0px;padding:0px"></a><p style="font-size:12px;line-height:1.4em;text-align:left;margin:0px;padding:2px 6px"><a href="http://hb.afl.rakuten.co.jp/hgc/0855d2c2.97054871.0855d2c3.c2844246/?pc=http%3a%2f%2fitem.rakuten.co.jp%2fbook%2f6497309%2f%3fscid%3daf_link_tbl&amp;m=http%3a%2f%2fm.rakuten.co.jp%2fbook%2fi%2f13678877%2f" target="_blank">【送料無料】エキスパートPythonプログラミング [ タレク・ジアデ ]</a><br></p></div></td></tr></table>
+
+
+<h2 id="2.3+デコレータ">2.3 デコレータ</h2>
+
+<ul>
+<li>Python2.4で追加された構文</li>
+<li>関数やメソッドのラッピング処理(受け取った関数を拡張して返す)の見た目をわかりやすくする</li>
+<li>クラスメソッドや静的なメソッドを定義する際に、メソッド定義の前の行にすっきりと書く事が目的</li>
+<li>いくつかのコードパターンを実装するときに非常に意図がわかりやすいコードになる</li>
+</ul>
+
+
+<h3 id="2.3.1+デコレータの書き方">2.3.1 デコレータの書き方</h3>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Python単語帳]]></title>
+    <link href="http://ftakao2007.github.com/blog/2013/05/25/python-words/"/>
+    <updated>2013-05-25T14:54:00+09:00</updated>
+    <id>http://ftakao2007.github.com/blog/2013/05/25/python-words</id>
+    <content type="html"><![CDATA[<p>感覚だけのプログラミングでは他人と意思疎通ができないので単語を抑えたい。</p>
+
+<h2 id="[リスト、タプル、ディクショナリ、リスト](http://ftakao2007.github.io/blog/2013/04/29/python/)"><a href="http://ftakao2007.github.io/blog/2013/04/29/python/">リスト、タプル、ディクショナリ、リスト</a></h2>
+
+<h2 id="デコレータ">デコレータ</h2>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[(第31回)Python mini Hack-a-thon]]></title>
@@ -81,17 +118,17 @@ exit
 {
     "nas": "nas_backup01",
     "volume": "apache_log",
-    "size": "5g"
+    "size": "+5g"
 },
 {
     "nas": "nas_backup02",
     "volume": "tomcat_log",
-    "size": "500m"
+    "size": "+500m"
 },
 {
     "nas": "nas_ecsite01",
     "volume": "item_image",
-    "size": "10g"
+    "size": "+10g"
 }
 </code></pre>
 
@@ -120,13 +157,13 @@ f.close()                   # ファイルを閉じる</p>
 
 <p>if argc == 2 and argvs[1] == "--help":</p>
 
-<pre><code>print( "sudo ssh {obj[nas]} vol create {obj[volume]} {obj[size]}".format(obj = data[0]) )    # ヘルプを表示
+<pre><code>print( "sudo ssh {obj[nas]} vol resize {obj[volume]} {obj[size]}".format(obj = data[0]) )    # ヘルプを表示
 </code></pre>
 
 <p>if argc == 1:</p>
 
 <pre><code>for i in range(num)[1:]:     # 配列の2列目から実行
-    print( "sudo ssh {obj[nas]} vol create {obj[volume]} {obj[size]}".format(obj = data[i]) )
+    print( "sudo ssh {obj[nas]} vol resize {obj[volume]} {obj[size]}".format(obj = data[i]) )
 </code></pre>
 
 <p>※ デバッグ等コメントは削除
@@ -245,6 +282,24 @@ w3m http://127.0.0.1:8080</p>
 
 <table border="0" cellpadding="0" cellspacing="0"><tr><td valign="top"><div style="border:1px solid;margin:0px;padding:6px 0px;width:160px;text-align:center;float:left"><a href="http://hb.afl.rakuten.co.jp/hgc/0855d2c2.97054871.0855d2c3.c2844246/?pc=http%3a%2f%2fitem.rakuten.co.jp%2fbook%2f11631269%2f%3fscid%3daf_link_tbl&amp;m=http%3a%2f%2fm.rakuten.co.jp%2fbook%2fi%2f15825336%2f" target="_blank"><img src="http://hbb.afl.rakuten.co.jp/hgb/?pc=http%3a%2f%2fthumbnail.image.rakuten.co.jp%2f%400_mall%2fbook%2fcabinet%2f2948%2f9784798032948.jpg%3f_ex%3d128x128&amp;m=http%3a%2f%2fthumbnail.image.rakuten.co.jp%2f%400_mall%2fbook%2fcabinet%2f2948%2f9784798032948.jpg%3f_ex%3d80x80" alt="【送料無料】Pythonプロフェッショナルプログラミング [ ビープラウド ]" border="0" style="margin:0px;padding:0px"></a><p style="font-size:12px;line-height:1.4em;text-align:left;margin:0px;padding:2px 6px"><a href="http://hb.afl.rakuten.co.jp/hgc/0855d2c2.97054871.0855d2c3.c2844246/?pc=http%3a%2f%2fitem.rakuten.co.jp%2fbook%2f11631269%2f%3fscid%3daf_link_tbl&amp;m=http%3a%2f%2fm.rakuten.co.jp%2fbook%2fi%2f15825336%2f" target="_blank">【送料無料】Pythonプロフェッショナルプログラミング [ ビープラウド ]</a><br></p></div></td></tr></table>
 
+
+<h2 id="Pythonをはじめよう">Pythonをはじめよう</h2>
+
+<p>Pythonの初期設定についての解説。ここではAmazonLinuxで環境を構築する。</p>
+
+<h3 id="必要パッケージのインストール">必要パッケージのインストール</h3>
+
+<p>必要なものがあれば随時追加していく
+``` bash
+sudo yum -y install python27</p>
+
+<p>[ec2-user@ip-10-148-166-193 ~]$ python -V
+Python 2.6.8
+[ec2-user@ip-10-148-166-193 ~]$ python27 -V
+Python 2.7.3</p>
+
+<p>※ デフォルトは2.6系、明示的にインストールすると2.7系も入る
+```</p>
 ]]></content>
   </entry>
   
@@ -310,517 +365,6 @@ Traceback (most recent call last):
 
 <p>KeyError: 'oauth_token'
 ```</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Python]]></title>
-    <link href="http://ftakao2007.github.com/blog/2013/04/29/python/"/>
-    <updated>2013-04-29T06:45:00+09:00</updated>
-    <id>http://ftakao2007.github.com/blog/2013/04/29/python</id>
-    <content type="html"><![CDATA[<h1 id="[Python入門](http://python.keicode.com/)+の勉強"><a href="http://python.keicode.com/">Python入門</a> の勉強</h1>
-
-<h2 id="開発環境の準備">開発環境の準備</h2>
-
-<p>PyDevをインストールして使う</p>
-
-<h3 id="Eclipseのインストール">Eclipseのインストール</h3>
-
-<ul>
-<li><p><a href="http://www.eclipse.org/downloads/">公式ページ</a> からEclipseをDL<br/>
-Eclipse IDE for Java EE Developers<br/>
-→ 解凍してeclipseを実行したら起動した</p></li>
-<li><p><a href="http://python.keicode.com/devenv/install-pydev.php">PyDevのインストール</a></p></li>
-<li><p><a href="http://www.mwsoft.jp/programming/python/hello_world.html">ハロワを表示</a></p></li>
-<li><p><a href="http://python.keicode.com/devenv/pydev-debug.php">PyDev を用いてデバッグ - ブレークポイントの設定とステップ実行</a></p></li>
-</ul>
-
-
-<hr />
-
-<h2 id="Pythonのタイプとオブジェクト">Pythonのタイプとオブジェクト</h2>
-
-<p>特徴とぱっと分からないものだけ書いていく</p>
-
-<ul>
-<li>オブジェクト -> Pythonのすべてのデータはオブジェクト</li>
-<li>タイプ -> オブジェクトの一種</li>
-</ul>
-
-
-<h3 id="数値">数値</h3>
-
-<p>整数型、浮動小数点型、複素数型などが使える</p>
-
-<ul>
-<li><p>余り
-``` python</p>
-
-<blockquote><blockquote><blockquote><p>10%3
-1
-```</p></blockquote></blockquote></blockquote></li>
-<li><p>複素数
-``` python</p>
-
-<blockquote><blockquote><blockquote><p>(1+2j) + (2+3j)
-(3+5j)
-```</p></blockquote></blockquote></blockquote></li>
-<li><p>乱数
-``` python</p>
-
-<blockquote><blockquote><blockquote><p>import random</p></blockquote></blockquote></blockquote></li>
-</ul>
-
-
-<blockquote><blockquote><blockquote><p>random.random()
-0.89164962407887893     * 0 - 1 の間の浮動小数がランダムに出力される</p>
-
-<p>L=[1,2,3,4,5]       * 1 - 5 の間の整数がランダムに出力される
-random.choice(L)
-1
-random.choice(L)
-1
-random.choice(L)
-4
-random.choice(L)
-5
-```</p></blockquote></blockquote></blockquote>
-
-<ul>
-<li>mathモジュール<br/>
-数学的な演算ができる
-``` python
-
-<blockquote><blockquote><blockquote><p>import math
-math.pi             * 円周率の計算
-3.1415926535897931
-```</p></blockquote></blockquote></blockquote></li>
-</ul>
-
-
-<h3 id="文字列">文字列</h3>
-
-<p>``` python</p>
-
-<blockquote><blockquote><blockquote><p>a = 'ABCdE'
-a
-'ABCdE'</p>
-
-<p>a[0]    * 先頭の文字
-'A'
-a[4]
-'E'
-a[-1]   * 最後尾の文字
-'E'
-a[-5]
-'A'
-a[1:2]  * 2文字目のみ表示
-'B'
-a[1:3]  * 2-3文字目を表示
-'BC'
-len(a)  * 文字数表示
-5
-a.find('C')  * 文字列中にCが出てくるのが何文字目かを出す(出力結果+1文字目に出現する)
-2
-a.upper()  * すべて大文字にする
-'ABCDE'
-```</p></blockquote></blockquote></blockquote>
-
-<ul>
-<li>アトリビュートの取得と関数のhelp表示</li>
-</ul>
-
-
-<p>``` python</p>
-
-<blockquote><blockquote><blockquote><p>dir(a)
-['<strong>add</strong>', '<strong>class</strong>', '<strong>contains</strong>', '<strong>delattr</strong>', '<strong>doc</strong>', '<strong>eq</strong>', '<strong>format</strong>', '<strong>ge</strong>', '<strong>getattribute</strong>', '<strong>getitem</strong>', '<strong>getnewargs</strong>', '<strong>getslice</strong>', '<strong>gt</strong>', '<strong>hash</strong>', '<strong>init</strong>', '<strong>le</strong>', '<strong>len</strong>', '<strong>lt</strong>', '<strong>mod</strong>', '<strong>mul</strong>', '<strong>ne</strong>', '<strong>new</strong>', '<strong>reduce</strong>', '<strong>reduce_ex</strong>', '<strong>repr</strong>', '<strong>rmod</strong>', '<strong>rmul</strong>', '<strong>setattr</strong>', '<strong>sizeof</strong>', '<strong>str</strong>', '<strong>subclasshook</strong>', '<em>formatter_field_name_split', '</em>formatter_parser', 'capitalize', 'center', 'count', 'decode', 'encode', 'endswith', 'expandtabs', 'find', 'format', 'index', 'isalnum', 'isalpha', 'isdigit', 'islower', 'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip', 'partition', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']</p>
-
-<p>help(a.join)
-Help on built-in function join:</p></blockquote></blockquote></blockquote>
-
-<p>join(...)</p>
-
-<pre><code>S.join(iterable) -&gt; string
-
-Return a string which is the concatenation of the strings in the
-iterable.  The separator between elements is S.
-</code></pre>
-
-<p>```</p>
-
-<ul>
-<li>フォーマット
-``` python
-
-<blockquote><blockquote><blockquote><p>'{0} FG'.format(a)
-'ABCdE FG'</p></blockquote></blockquote></blockquote></li>
-</ul>
-
-
-<blockquote><blockquote><blockquote><p>x = 10/3     * 計算結果は整数になる
-x
-3
-x = 10.0/3   * 計算結果は浮動小数になる
-x
-3.3333333333333335</p>
-
-<p>'{0:.3f}'.format(x)
-'3.333'
-'{0:.1f}'.format(x)
-'3.3'
-```</p></blockquote></blockquote></blockquote>
-
-<h3 id="リスト">リスト</h3>
-
-<p>かっこで要素をかこむ。</p>
-
-<p>``` python</p>
-
-<blockquote><blockquote><blockquote><p>L = [2,4,6,8,10]
-L[1:3]
-[4, 6]</p>
-
-<p>M = L + [1,3,5]
-M
-[2, 4, 6, 8, 10, 1, 3, 5]</p>
-
-<p>M.sort()
-M
-[1, 2, 3, 4, 5, 6, 8, 10]</p>
-
-<p>M.append(100)
-M
-[1, 2, 3, 4, 5, 6, 8, 10, 100]</p>
-
-<p>M.pop()
-100
-M
-[1, 2, 3, 4, 5, 6, 8, 10]</p>
-
-<p>len(M)
-8</p>
-
-<p>[1,1,1,2,2,3].count(1)
-3
-[1,1,1,2,2,3].count(2)
-2</p>
-
-<p>L = [ 1, 'Hello', 3.14 ]
-L[1]
-'Hello'
-L[1][1]
-'e'</p>
-
-<p>N = [[1,2,3], 'Hello', {'name':'Keisuke Oyama','age':37}]
-N[1]
-'Hello'</p>
-
-<p>N[2]
-{'age': 37, 'name': 'Keisuke Oyama'}
-N[2]['age']
-37
-```</p></blockquote></blockquote></blockquote>
-
-<ul>
-<li>内包表記(Comprehensions)
-簡単にあるリストから条件に適合するリストを作成できる。</li>
-</ul>
-
-
-<p>``` python</p>
-
-<blockquote><blockquote><blockquote><p>L = [1,2,3,4,5]
-[x for x in L if x > 2]
-[3, 4, 5]
-[3*x for x in L if x > 2]
-[9, 12, 15]</p>
-
-<p>L = ['hello','world']
-[x.upper() for x in L]
-['HELLO', 'WORLD']
-```</p></blockquote></blockquote></blockquote>
-
-<h2 id="タプル(Tuple)">タプル(Tuple)</h2>
-
-<ul>
-<li>複数のオブジェクトをひとつにまとめたもの</li>
-<li>()でくくったものがタプルだが、必須ではない。でもかっこでくくったほうがわかりやすくて親切</li>
-</ul>
-
-
-<p>``` python</p>
-
-<blockquote><blockquote><blockquote><p>A = ('Keisuke', 37)
-A
-('Keisuke', 37)</p>
-
-<p>a, b = A
-a
-'Keisuke'
-b
-37</p>
-
-<p>A = ('Keisuke', )   * オブジェクト1個のタプルも作成可能
-A
-('Keisuke',)</p>
-
-<p>A[0] = 'Shinya'     * 要素への代入ができないこところがリストと違う
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-TypeError: 'tuple' object does not support item assignment
-```</p></blockquote></blockquote></blockquote>
-
-<h2 id="ディクショナリ+(dictionary)">ディクショナリ (dictionary)</h2>
-
-<ul>
-<li>マッピングタイプのひとつ</li>
-<li>キーと値のペアを保持するオブジェクト</li>
-</ul>
-
-
-<p>``` python</p>
-
-<blockquote><blockquote><blockquote><p>D = {'name':'Keisuke Oyama', 'age':37}
-D['name']
-'Keisuke Oyama'</p>
-
-<p>E['car'] = 'Sianna'
-E['make'] = 'Toyota'
-E
-{'car': 'Sianna', 'make': 'Toyota'}</p>
-
-<p>dir(D)
-['<strong>class</strong>', '<strong>cmp</strong>', '<strong>contains</strong>', '<strong>delattr</strong>', '<strong>delitem</strong>', '<strong>doc</strong>', '<strong>eq</strong>', '<strong>format</strong>', '<strong>ge</strong>', '<strong>getattribute</strong>', '<strong>getitem</strong>', '<strong>gt</strong>', '<strong>hash</strong>', '<strong>init</strong>', '<strong>iter</strong>', '<strong>le</strong>', '<strong>len</strong>', '<strong>lt</strong>', '<strong>ne</strong>', '<strong>new</strong>', '<strong>reduce</strong>', '<strong>reduce_ex</strong>', '<strong>repr</strong>', '<strong>setattr</strong>', '<strong>setitem</strong>', '<strong>sizeof</strong>', '<strong>str</strong>', '<strong>subclasshook</strong>', 'clear', 'copy', 'fromkeys', 'get', 'has_key', 'items', 'iteritems', 'iterkeys', 'itervalues', 'keys', 'pop', 'popitem', 'setdefault', 'update', 'values']</p>
-
-<p>D.keys()
-['age', 'name']
-D.values()
-[37, 'Keisuke Oyama']</p>
-
-<p>D.has_key('name')
-True
-D.has_key('address')
-False</p>
-
-<p>'name' in D    * 上と同じ
-True
-'address' in D
-False</p>
-
-<p>```</p></blockquote></blockquote></blockquote>
-
-<h2 id="セット(set)">セット(set)</h2>
-
-<p>順序付けされていないユニークな要素で構成された、コレクション</p>
-
-<p>``` python</p>
-
-<blockquote><blockquote><blockquote><p>L = ['a', 'a', 'b', 'c', 'c', 'a']
-S = set(L)
-S
-set(['a', 'c', 'b'])   * 重複がなくなっている</p>
-
-<p>M = set('Hello')
-M
-set(['H', 'e', 'l', 'o'])  * 文字列からセットを作成</p>
-
-<p>A = set('Hello')
-B = set('World')
-A
-set(['H', 'e', 'l', 'o'])
-B
-set(['d', 'r', 'o', 'W', 'l'])</p>
-
-<p>A - B
-set(['H', 'e'])</p>
-
-<p>A | B
-set(['e', 'd', 'H', 'l', 'o', 'r', 'W'])</p>
-
-<p>A &amp; B
-set(['l', 'o'])</p>
-
-<p>A ^ B
-set(['e', 'd', 'H', 'r', 'W'])  * AとBそれぞれに存在しているものを表示
-→ lとoはAとB両方に含まれているので表示しない。それ以外は表示
-```</p></blockquote></blockquote></blockquote>
-
-<h1 id="JSONファイルの利用">JSONファイルの利用</h1>
-
-<ul>
-<li><a href="http://tmlife.net/programming/python/python-json-module.html">Python : json モジュールで json 読み込み</a></li>
-<li><a href="http://jsonlint.com/">The JSON Validator</a></li>
-</ul>
-
-
-<hr />
-
-<h2 id="リンク">リンク</h2>
-
-<ul>
-<li><a href="http://d.hatena.ne.jp/oneshotlife_tom/20121026/1351255211">Pythonで楽天ウェブサービスを使う。サンプルコード。</a></li>
-<li><a href="https://sites.google.com/site/kuraitlab/programing-language/python/python-oop1">Pythonでオブジェクト指向①</a></li>
-<li><a href="http://kuenishi.hatenadiary.jp/entry/2013/04/23/162205">メモリリークとは何か</a></li>
-<li><a href="http://tmlife.net/programming/python/python-json-module.html">Python : json モジュールで json 読み込み</a></li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[fabric]]></title>
-    <link href="http://ftakao2007.github.com/blog/2013/04/06/fabric/"/>
-    <updated>2013-04-06T21:53:00+09:00</updated>
-    <id>http://ftakao2007.github.com/blog/2013/04/06/fabric</id>
-    <content type="html"><![CDATA[<h1 id="Fabricインストール">Fabricインストール</h1>
-
-<h2 id="CentOS6.4の場合">CentOS6.4の場合</h2>
-
-<p><code>
-su -
-bash
-yum update
-yum -y install python python-devel gcc
-curl http://python-distribute.org/distribute_setup.py | python
-curl https://raw.github.com/pypa/pip/master/contrib/get-pip.py | python
-pip install fabric fexpect
-</code></p>
-
-<p>pycryptoのバージョンによっては、実行時に以下のエラーが出る
-<code>
-AttributeError: 'module' object has no attribute 'HAVE_DECL_MPZ_POWM_SEC'
-</code></p>
-
-<p>pycryptoのバージョンを変更すればよい
-<code>
-pip uninstall pycrypto
-pip install PyCrypto==2.3
-</code></p>
-
-<h3 id="テスト">テスト</h3>
-
-<p>``` python fabric_test.py
-from fabric.api import *</p>
-
-<p>def host_type() :</p>
-
-<pre><code>run('uname -s')
-</code></pre>
-
-<p>```</p>
-
-<p>``` bash
-[ftakao2007 script]$ fab -f fabric_test.py -H localhost host_type
-[localhost] Executing task 'host_type'
-[localhost] run: uname -s
-[localhost] Login password for 'ftakao2007':
-[localhost] out: Linux
-[localhost] out:</p>
-
-<p>Done.
-Disconnecting from localhost... done.
-[ftakao2007 script]$
-```</p>
-
-<h1 id="EC2で利用する">EC2で利用する</h1>
-
-<p>インスタンスを作成してsshでアクセスできるところまでは設定済みの想定</p>
-
-<h2 id="実行方法">実行方法</h2>
-
-<p>ec2上のユーザ:ec2-user<br/>
-ec2のアドレス:10.160.26.123 (仮)<br/>
-秘密鍵:hoge.pem</p>
-
-<p>``` bash
-[ftakao2007 script]$ fab -f fablic_test.py -i hoge.pem -H ec2-user@10.160.26.123 host_type</p>
-
-<p>[10.160.26.123] Executing task 'host_type'
-[10.160.26.123] run: uname -s
-[10.160.26.123] out: Linux
-[10.160.26.123] out:</p>
-
-<p>Done.
-Disconnecting from localhost... done.
-```</p>
-
-<h1 id="テクニック">テクニック</h1>
-
-<h2 id="キーボードから入力した値をfabricで利用する">キーボードから入力した値をfabricで利用する</h2>
-
-<p>fabricというよりpythonの使い方かな。。</p>
-
-<p>``` python
-name = raw_input('Enter name: ')</p>
-
-<h1 id="name+=++aaa+">name = "aaa"</h1>
-
-<h1 id="print+name">print name</h1>
-
-<p>def var_test(var=name):</p>
-
-<pre><code>    run("echo {in_var}".format(in_var=var))
-</code></pre>
-
-<p>```
-※ 「raw_input」のところでnameに入力した値が入る<br/>
-※ nameの中身がvar_test関数の中の変数varに代入される<br/>
-※ varの中身がin_varに入り、runの中で変数が展開される</p>
-
-<p>``` bash
-[ftakao2007 script]$ fab -f fabric_test.py -H localhost var_test
-Enter name: hogehoge
-[localhost] Executing task 'var_test'
-[localhost] run: echo hogehoge
-[localhost] Login password for 'ftakao2007':
-[localhost] out: hogehoge
-[localhost] out:</p>
-
-<p>Done.
-Disconnecting from localhost... done.
-```</p>
-
-<p>2変数を使う場合
-``` python
-sei_name = raw_input('Enter family sei_name: ')
-na_name = raw_input('Enter first na_name: ')</p>
-
-<p>def var_test(var1=sei_name,var2=na_name):</p>
-
-<pre><code>    run(""" 
-    echo {in_var1} {in_var2}
-    """.format(in_var1=var1,in_var2=var2))
-</code></pre>
-
-<p>```</p>
-
-<p>``` bash
-[ftakao2007 script]$ fab -f fabric_test.py -H localhost var_test
-Enter family sei_name: yamada
-Enter first na_name: taro
-[localhost] Executing task 'var_test'
-[localhost] run:</p>
-
-<pre><code>echo yamada taro
-</code></pre>
-
-<p>[localhost] Login password for 'ftakao2007':
-[localhost] out: yamada taro
-[localhost] out:</p>
-
-<p>Done.
-Disconnecting from localhost... done.
-```</p>
-
-<h1 id="リンク">リンク</h1>
-
-<ul>
-<li><a href="http://www.slideshare.net/tafujish/hbstudy41-auto-scalingv13">FablicとMonitを使ってオートスケーリングを自作してみよう</a></li>
-<li><a href="http://d.hatena.ne.jp/shiumachi/touch/20130414/1365920515">今日からすぐに使えるデプロイ・システム管理ツール Fabric 入門</a></li>
-<li><a href="http://dekokun.github.io/posts/2013-04-07.html">Python製デプロイツール Fabricを初めて使う際に役立つTips</a></li>
-</ul>
-
 ]]></content>
   </entry>
   
