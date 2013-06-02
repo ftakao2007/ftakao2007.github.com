@@ -1362,7 +1362,7 @@ Eclipse IDE for Java EE Developers<br/>
 
 <h1 id="モジュール分割">モジュール分割</h1>
 
-<p>roleとtaskを組み合わせてモジュール分割</p>
+<p>rolesとtaskを組み合わせてモジュール分割</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -1448,6 +1448,90 @@ Eclipse IDE for Java EE Developers<br/>
 <li><a href="http://d.hatena.ne.jp/feiz/20110915/1316107432">fabfileの構造化</a></li>
 </ul>
 
+
+<h1 id="定数の実装">定数の実装</h1>
+
+<p>参考リンクのとおり</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="p">[</span><span class="n">const</span><span class="o">.</span><span class="n">py</span><span class="p">]</span>
+</span><span class='line'><span class="k">class</span> <span class="nc">_const</span><span class="p">:</span>
+</span><span class='line'>    <span class="k">class</span> <span class="nc">ConstError</span><span class="p">(</span><span class="ne">TypeError</span><span class="p">):</span> <span class="k">pass</span>
+</span><span class='line'>    <span class="k">def</span> <span class="nf">__setattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">name</span><span class="p">,</span><span class="n">value</span><span class="p">):</span>
+</span><span class='line'>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">__dict__</span><span class="o">.</span><span class="n">has_key</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+</span><span class='line'>            <span class="k">raise</span> <span class="bp">self</span><span class="o">.</span><span class="n">ConstError</span><span class="p">,</span> <span class="s">&quot;Can&#39;t rebind const(</span><span class="si">%s</span><span class="s">)&quot;</span><span class="o">%</span><span class="n">name</span>
+</span><span class='line'>        <span class="bp">self</span><span class="o">.</span><span class="n">__dict__</span><span class="p">[</span><span class="n">name</span><span class="p">]</span><span class="o">=</span><span class="n">value</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">sys</span>
+</span><span class='line'><span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">[</span><span class="n">__name__</span><span class="p">]</span><span class="o">=</span><span class="n">_const</span><span class="p">()</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">[</span><span class="n">fabfile</span><span class="o">.</span><span class="n">py</span><span class="p">]</span>
+</span><span class='line'><span class="c">#!/usr/bin/python</span>
+</span><span class='line'><span class="c"># coding: utf-8</span>
+</span><span class='line'>
+</span><span class='line'><span class="kn">from</span> <span class="nn">fabric.api</span> <span class="kn">import</span> <span class="n">run</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">const</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">const</span><span class="o">.</span><span class="n">dev_ssh_path</span> <span class="o">=</span> <span class="s">&quot;/usr/bin&quot;</span>
+</span><span class='line'><span class="n">const</span><span class="o">.</span><span class="n">dev_sudo_path</span> <span class="o">=</span> <span class="s">&quot;/usr/local/bin&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">def</span> <span class="nf">check_df</span><span class="p">():</span>
+</span><span class='line'>  <span class="n">run</span><span class="p">(</span><span class="s">&quot;{sudo_path}/sudo {ssh_path}/ssh nasserver1 df -h vol_takao&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ssh_path</span><span class="o">=</span><span class="n">const</span><span class="o">.</span><span class="n">dev_ssh_path</span><span class="p">,</span><span class="n">sudo_path</span><span class="o">=</span><span class="n">const</span><span class="o">.</span><span class="n">dev_sudo_path</span><span class="p">))</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>実行結果</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="err">$</span> <span class="n">fab</span> <span class="o">-</span><span class="n">H</span> <span class="n">devserver1</span> <span class="o">-</span><span class="n">u</span> <span class="n">ftakao2007</span> <span class="n">check_df</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">Executing</span> <span class="n">task</span> <span class="s">&#39;check_df&#39;</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">run</span><span class="p">:</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">sudo</span> <span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">ssh</span> <span class="n">nasserver1</span> <span class="n">df</span> <span class="o">-</span><span class="n">h</span> <span class="n">vol_takao</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">Login</span> <span class="n">password</span> <span class="k">for</span> <span class="s">&#39;ftakao2007&#39;</span><span class="p">:</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">out</span><span class="p">:</span> <span class="n">Filesystem</span>               <span class="n">total</span>       <span class="n">used</span>      <span class="n">avail</span> <span class="n">capacity</span>  <span class="n">Mounted</span> <span class="n">on</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">out</span><span class="p">:</span> <span class="o">/</span><span class="n">vol</span><span class="o">/</span><span class="n">vol_takao</span><span class="o">/</span>         <span class="mi">2764</span><span class="n">MB</span>      <span class="mi">117</span><span class="n">MB</span>     <span class="mi">2647</span><span class="n">MB</span>       <span class="mi">4</span><span class="o">%</span>  <span class="o">/</span><span class="n">vol</span><span class="o">/</span><span class="n">vol_takao</span><span class="o">/</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">out</span><span class="p">:</span> <span class="o">/</span><span class="n">vol</span><span class="o">/</span><span class="n">vol_takao</span><span class="o">/.</span><span class="n">snapshot</span>      <span class="mi">307</span><span class="n">MB</span>      <span class="mi">224</span><span class="n">KB</span>      <span class="mi">306</span><span class="n">MB</span>       <span class="mi">0</span><span class="o">%</span>  <span class="o">/</span><span class="n">vol</span><span class="o">/</span><span class="n">vol_takao</span><span class="o">/.</span><span class="n">snapshot</span>
+</span><span class='line'><span class="p">[</span><span class="n">devserver1</span><span class="p">]</span> <span class="n">out</span><span class="p">:</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="n">Done</span><span class="o">.</span>
+</span><span class='line'><span class="n">Disconnecting</span> <span class="kn">from</span> <span class="nn">devserver1...</span> <span class="nn">done.</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>連想配列使えばformatの中身がきっとすっきりする。</p>
+
+<h2 id="リンク">リンク</h2>
 
 <hr />
 

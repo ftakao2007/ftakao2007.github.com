@@ -4,7 +4,7 @@
   <title><![CDATA[Category: fabric | Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/blog/categories/fabric/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-06-02T10:52:40+09:00</updated>
+  <updated>2013-06-02T15:20:50+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -899,7 +899,7 @@ Disconnecting from devserver1... done.
 
 <h1 id="モジュール分割">モジュール分割</h1>
 
-<p>roleとtaskを組み合わせてモジュール分割</p>
+<p>rolesとtaskを組み合わせてモジュール分割</p>
 
 <p>``` python
 [fabfile.py]</p>
@@ -954,6 +954,57 @@ Disconnecting from devserver1... done.
 <li><a href="http://d.hatena.ne.jp/feiz/20110915/1316107432">fabfileの構造化</a></li>
 </ul>
 
+
+<h1 id="定数の実装">定数の実装</h1>
+
+<p>参考リンクのとおり
+``` python
+[const.py]
+class _const:</p>
+
+<pre><code>class ConstError(TypeError): pass
+def __setattr__(self,name,value):
+    if self.__dict__.has_key(name):
+        raise self.ConstError, "Can't rebind const(%s)"%name
+    self.__dict__[name]=value
+</code></pre>
+
+<p>import sys
+sys.modules[<strong>name</strong>]=_const()</p>
+
+<p>[fabfile.py]</p>
+
+<h1 id="!/usr/bin/python">!/usr/bin/python</h1>
+
+<h1 id="coding:+utf-8">coding: utf-8</h1>
+
+<p>from fabric.api import run
+import const</p>
+
+<p>const.dev_ssh_path = "/usr/bin"
+const.dev_sudo_path = "/usr/local/bin"</p>
+
+<p>def check_df():
+  run("{sudo_path}/sudo {ssh_path}/ssh nasserver1 df -h vol_takao".format(ssh_path=const.dev_ssh_path,sudo_path=const.dev_sudo_path))</p>
+
+<p><code>
+実行結果
+</code>
+$ fab -H devserver1 -u ftakao2007 check_df
+[devserver1] Executing task 'check_df'
+[devserver1] run: /usr/local/bin/sudo /bin/ssh nasserver1 df -h vol_takao
+[devserver1] Login password for 'ftakao2007':
+[devserver1] out: Filesystem               total       used      avail capacity  Mounted on
+[devserver1] out: /vol/vol_takao/         2764MB      117MB     2647MB       4%  /vol/vol_takao/
+[devserver1] out: /vol/vol_takao/.snapshot      307MB      224KB      306MB       0%  /vol/vol_takao/.snapshot
+[devserver1] out:</p>
+
+<p>Done.
+Disconnecting from devserver1... done.
+```
+連想配列使えばformatの中身がきっとすっきりする。</p>
+
+<h2 id="リンク">リンク</h2>
 
 <hr />
 
