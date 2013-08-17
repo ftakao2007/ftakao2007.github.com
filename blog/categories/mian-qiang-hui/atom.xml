@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 勉強会 | Octopress Blog]]></title>
   <link href="http://ftakao2007.github.com/blog/categories/mian-qiang-hui/atom.xml" rel="self"/>
   <link href="http://ftakao2007.github.com/"/>
-  <updated>2013-06-02T15:54:15+09:00</updated>
+  <updated>2013-08-17T16:40:19+09:00</updated>
   <id>http://ftakao2007.github.com/</id>
   <author>
     <name><![CDATA[ftakao2007]]></name>
@@ -12,6 +12,356 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[第31回R勉強会＠東京]]></title>
+    <link href="http://ftakao2007.github.com/blog/2013/06/01/study-r/"/>
+    <updated>2013-06-01T15:06:00+09:00</updated>
+    <id>http://ftakao2007.github.com/blog/2013/06/01/study-r</id>
+    <content type="html"><![CDATA[<h2 id="[第31回R勉強会＠東京](http://atnd.org/events/38992)"><a href="http://atnd.org/events/38992">第31回R勉強会＠東京</a></h2>
+
+<h2 id="お勧め資料">お勧め資料</h2>
+
+<p>はじめてのR masaha03 (SlideShare) 超お勧め</p>
+
+<h2 id="データの読み込み">データの読み込み</h2>
+
+<ul>
+<li><p>組み込み関数
+read.table read.csv</p></li>
+<li><p>外部パッケージを使う
+Eccel
+画像ファイル</p></li>
+<li><p>データ構造
+データフレームがメイン</p></li>
+</ul>
+
+
+<h2 id="分析の前処理">分析の前処理</h2>
+
+<p>データの結合 merge, rbind, cbind
+データの抽出 subset</p>
+
+<h2 id="分析">分析</h2>
+
+<ul>
+<li>各種手法の適用
+ここで外部パッケージを使うことが多い
+便利パッケージの紹介は本編</li>
+</ul>
+
+
+<h2 id="ファイル出力">ファイル出力</h2>
+
+<ul>
+<li><p>テキスト、Excel</p></li>
+<li><p>図
+組み込みのplot
+外部パッケージ
+lattice
+ggplot2 (最近はこちらが多い)</p></li>
+<li><p>レポーティング
+knitr 普通のレポート
+slidify パワーポイントに出力
+Rpubs</p></li>
+</ul>
+
+
+<p>(昔はTeXとかでまとめることが多かった)</p>
+
+<h2 id="エディタ">エディタ</h2>
+
+<p>RGUI Windowsは使いにくい
+RStudio 最近の定番。メモリは食う。一番無難
+ESS Emacs
+EZR 医学系ではやりつつある
+Rzパッケージ SPSSの使いやすさ(GUI)をRで実現、masaha03さんが作った</p>
+
+<h2 id="情報収集">情報収集</h2>
+
+<h3 id="検索">検索</h3>
+
+<ul>
+<li><p>seekR
+Rについて検索しやすい</p></li>
+<li><p>Rseek
+英語版</p></li>
+</ul>
+
+
+<h2 id="Web資料">Web資料</h2>
+
+<p>R-tips
+Rjpwiki
+同志社大学　金明哲先生
+群馬大学　青木繁伸先生</p>
+
+<h2 id="書籍">書籍</h2>
+
+<ul>
+<li><p>ほかプログラミング言語の経験あり
+R言語逆引きハンドブック
+Rによるデータサイエンス
+Rパッケージガイドブック</p></li>
+<li><p>データ分析自体の不慣れ
+データ解析のための統計モデリング入門
+デー玉イニング入門 早稲田大学　豊田先生　シナリオに沿ってRを使っていく</p></li>
+</ul>
+
+
+<h2 id="勉強会">勉強会</h2>
+
+<p>ゼロからはじめるR言語勉強会 最近はじまった勉強会
+Wako.R (6/8開催) dritoshiさん R界のアイドルらしい。とがっている。人によっては引く
+Tokyowebmining 充実した議論、主催者の自己紹介が長い
+Zansa ガチで意も技術も高い大学生
+集合地プログラミング勉強会 tetsuroitoさん 元はPythonをやっていた。今はやってない</p>
+
+<p>さくさくテキストマイニング 資料が豊富。今はやってない
+社会科学研究のためのR勉強会 ネットワーク関連</p>
+
+<h2 id="さあやってみよう">さあやってみよう</h2>
+
+<p>cran task view   目的別に外部パッケージがまとめられている。やりたいことが無い人はとっかかりに良いかも</p>
+
+<p>Julia   Rに我慢なら無い人が作り始めた次世代統計言語
+脅威のPython勢
+pandas:RのデータフレームをPythonで
+Bokeh:ggplot2ライクな可視化
+scikit-learn:機械学習  機械学習向け
+Orange:統計、機械学習  統計向け</p>
+
+<p>Jubatsu ゆばたす。分散したデータを常に素早く深く分析する。元はC++のライブラリ。機械学習</p>
+
+<hr />
+
+<h1 id="Rによるやさしい統計学(分散分析)+aad34210さん">Rによるやさしい統計学(分散分析) aad34210さん</h1>
+
+<h2 id="分散分析">分散分析</h2>
+
+<p>分散分析　
+3つ以上の平均値を比較するための統計的方法
+2つの平均値を比較する方法はt検定</p>
+
+<h2 id="二元配置分散分析(二要因とも対応なし)">二元配置分散分析(二要因とも対応なし)</h2>
+
+<p>主効果：それぞれの要因ごとの効果   常温か、冷温か
+交互作用効果:ふたつの要因が組み合わされた場合に生じる効果。単純に二つの足し算ではない</p>
+
+<h2 id="二元配置分散分析(二要因とも対応あり)">二元配置分散分析(二要因とも対応あり)</h2>
+
+<p>評価者によって主観が入っているのではないか？を分析</p>
+
+<p>主効果:温度によって簿平均は異なるか？</p>
+
+<pre><code>   銘柄によって異なるか？
+</code></pre>
+
+<h2 id="二元配置分散分析(一要因のみ対応あり)">二元配置分散分析(一要因のみ対応あり)</h2>
+
+<p>冷蔵と常温をそれぞれ別の人たちに評価してもらったとき</p>
+
+<hr />
+
+<h2 id="seekRの中の人">seekRの中の人</h2>
+
+<p>seekR管理人平村さん</p>
+
+<p>LinkedInのR Projectがおすすめ
+httpo://linkedin/</p>
+
+<h2 id="RForcecomパッケージ">RForcecomパッケージ</h2>
+
+<p>Salesforce.com,Force.comに接続するパッケージ
+CRMにはいているデータを検索、引き出してRで分析してSalesforceに戻す</p>
+
+<hr />
+
+<h2 id="はじめよう多変量解析～主成分分析編～+sanoche16さん">はじめよう多変量解析～主成分分析編～ sanoche16さん</h2>
+
+<h3 id="多変量解析とは">多変量解析とは</h3>
+
+<p>多数の変量をもつデータを分析する</p>
+
+<p>1変量、2変量の分析ができなければできない</p>
+
+<p>平均、分散、共分散、相関係数、行列演算
+微分積分、分布</p>
+
+<h3 id="主成分分析">主成分分析</h3>
+
+<p>分散を最大化させるのが一番合理的</p>
+
+<p>因子分析は何が因子になっているかということを重視する
+アルゴリズムは主成分分析</p>
+
+<p>主成分分析か、因子分析か？
+-> 因子分析でうまくいくかわからないようなものを分析するときは、とりあえずprcompに入れて主成分分析
+-> 特徴を考えて要因分けしたい場合は因子分析</p>
+
+<p>質の分析に主成分分析
+-> 分散行列でやったとき、生の行列でやったとき、相関係数でやったとき
+   -> 係数の順序は変わらないが、寄与率が変わる。寄与率が99%とかなってしまった。</p>
+
+<p>相関の高い係数があると、使えるのか
+相関係数の信頼区間が重要。
+重回帰分析、目的変数がいかに精度を持っているかが重要</p>
+
+<p>主成分分析は、どんな要素があるか、よりわかりやすく見るために使う。</p>
+
+<hr />
+
+<h1 id="R言語で学ぶマーケティング分析+-+競争ポジショニング戦略+-+yokkunsさん">R言語で学ぶマーケティング分析 - 競争ポジショニング戦略 - yokkunsさん</h1>
+
+<h2 id="競争ポジショニング戦略">競争ポジショニング戦略</h2>
+
+<p>市場はさまざまな価値感や趣向の人たちで構成されている。ターゲットになる人を決めたい。</p>
+
+<p>レコメンドエンジンはもともとあるサービスに対するもの。
+戦略ポジショニングは</p>
+
+<p>どんな人たちで構成されていて　セグメンテーション
+その中で誰をターゲットにして　ターゲティング
+どんなサービスを提供するか　ポジショニング</p>
+
+<h2 id="セグメンテーション">セグメンテーション</h2>
+
+<p>市場を意味のあるグループに分ける</p>
+
+<p>セグメント1,2,3,4</p>
+
+<p>区分する方法：昔からの方法では、年代、性別、地域、職業など。
+-> 趣味趣向が多様化しているので基本的な属性による区分では意味のあるグループができなくなってきている
+-> 同じセグメント内でも、さまざまな趣向や価値観の人が存在するようになった。</p>
+
+<h3 id="クラスタリングによるセグメンテーション">クラスタリングによるセグメンテーション</h3>
+
+<p>ログやアンケートで、その人の趣向や消費行動を見て本質的なグループわけをすること
+職業や性別ではなく、本質的なところでグループ分けする</p>
+
+<p>主成分分析を駆使して可視化する。
+k-means方</p>
+
+<p>fmsbパッケージのradarchart関数で実行できる</p>
+
+<h2 id="ターゲッティング">ターゲッティング</h2>
+
+<p>どのセグメントをターゲットにするかを決定する</p>
+
+<p>こだわりデジタル層
+飛びつきミーハーそう</p>
+
+<h2 id="ポジショニング">ポジショニング</h2>
+
+<p>ターゲットセグメントの頭の中の自分たちのサービスと競合サービスの位置づけを理解し、彼らにどんなサービスを提供するかを決める</p>
+
+<p>視覚マップを作成する
+ユーザにとってのサービスの位置づけマップ。マップ上で近い位置にあるサービスは競争関係になる</p>
+
+<p>視覚マップ上でユーザが重視している方角を見つける</p>
+
+<p>視覚マップはMDSでつくる (発表者がMDSが好きだから)
+個体間の距離や非類似関係からマップを構築する</p>
+
+<p>MASSパッケージのisoMDS関数で作成できる</p>
+
+<p>説明変数？</p>
+
+<hr />
+
+<h1 id="R+による自然言語処理入門+a_bickyさん">R による自然言語処理入門 a_bickyさん</h1>
+
+<h2 id="基礎知識">基礎知識</h2>
+
+<p>形態素解析　ざっくりというと単語分割のこと
+「お酒」は「お」が接頭詞になる。ただ人によっては「お酒」で一語</p>
+
+<p>「mecab」でできる
+mecab
+ハードルは高ければ高いほどくぐりやすい    &lt;- 入力する</p>
+
+<p>ベクトル空間モデル
+文書をベクトル空間の1点として表現する
+素性(そせい feature) のとり方は色々ある</p>
+
+<p>Unigram model</p>
+
+<p>maxsentパッケージ  New York Timesの記事のタイトルのデータ
+N-gram model</p>
+
+<p>文字列処理はPythonでやったほうがやりやすい</p>
+
+<hr />
+
+<h1 id="ABテスト">ABテスト</h1>
+
+<p>AパターンとBパターンを実際に試して結果が良いほうを選ぶ
+本当に数値が高いほうを客観的に選べる</p>
+
+<p>検定
+起きた結果が偶然なのかを判断する</p>
+
+<p>-> ABテストだけは簡単だが、検定を加えるととたんに難しくなる</p>
+
+<p>A あったらいいなを形にする
+B 無限の可能性をあなたに</p>
+
+<p>好きなほうのキャッチコピーを選んでください
+-> AとBを実際に選んでもらって決める</p>
+
+<p>検定
+A1 B2</p>
+
+<p>この結果は偶然。どちらか一方が優れているとは言い切れない。
+この時点でははっきりしない</p>
+
+<p>「偶然おきる」
+A.3打席1安打の3割りバッター
+B.300打席100安打の3割バッター</p>
+
+<p>Aは偶然かも、Bはすごい
+binom.test</p>
+
+<p>で検定ができる</p>
+
+<hr />
+
+<p>ZeroMQ(rzmq)つかうとRやほかの言語間で通信できる</p>
+
+<hr />
+
+<h1 id="RとPythonによるデータ解析入門">RとPythonによるデータ解析入門</h1>
+
+<p>Python から R を呼び出す
+Webクローラを書く、データベースを操作、文字列処理が楽になる</p>
+
+<p>scikit-learnが物足りない</p>
+
+<p>Pandas
+Rで言うデータフレームが使える</p>
+
+<p>Webデータ取得 -> csvに整形 -> 前処理 -> R</p>
+
+<p>rpy2
+で簡単にPythonとRの連携が非常に楽</p>
+
+<p>pip install rpy2</p>
+
+<p>これらよりjsonでzeroMQ使う方が連携しやすい?</p>
+
+<p>ironpythonを使うほうが良い？</p>
+
+<h2 id="リンク">リンク</h2>
+
+<ul>
+<li><a href="http://www.slideshare.net/hiratake55/seekrjp-22281554">中の人が語る seekR.jpの裏側</a></li>
+<li><a href="http://blog.gepuro.net/archives/36">RとPythonによるデータ解析入門</a></li>
+<li><a href="http://www.slideshare.net/teramonagi/tokyo-r31-20130601">可視化周辺の進化がヤヴァイ</a></li>
+<li><a href="http://www.slideshare.net/sanoche16/tokyor31-22291701">はじめよう多変量解析〜主成分分析〜</a></li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[東京渋谷 “初心者向けiPhoneアプリ開発” 勉強会② (5/22)]]></title>
@@ -666,391 +1016,6 @@ ifやループは使わない事に喜びをおぼえてきたら立派なR使�
 <ul>
 <li>何かを計算する場合、テールの部分の情報は必要なのかを考えると良い<br/>
 データが全部必要なのか、一部あればよいのか考慮することで計算量を少なくすることができる可能性がある</li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[20130419 第14回「ネットワーク パケットを読む会（仮）」]]></title>
-    <link href="http://ftakao2007.github.com/blog/2013/04/20/study-network/"/>
-    <updated>2013-04-20T05:37:00+09:00</updated>
-    <id>http://ftakao2007.github.com/blog/2013/04/20/study-network</id>
-    <content type="html"><![CDATA[<p><a href="http://atnd.org/events/38649">第14回「ネットワーク パケットを読む会（仮）」</a>に参加しましたので覚書です。
-ネットワークキャプチャ関連の覚書はここのページに順次追記していきます。</p>
-
-<hr />
-
-<h1 id="[フレッシャーズのためのパケット解析入門+(hebikuzure+さん)](http://www.slideshare.net/hebikuzure/20130419-19149363)"><a href="http://www.slideshare.net/hebikuzure/20130419-19149363">フレッシャーズのためのパケット解析入門 (hebikuzure さん)</a></h1>
-
-<p>なんとなくフワッと使っていた単語をイメージで捉える。</p>
-
-<h3 id="パケット通信方式">パケット通信方式</h3>
-
-<p>連続データを一定量ずつ蓄積して1個の伝送単位にして、伝送路の開いているタイミングで送出、
-受信したデータを元の連続データに復元する方式。</p>
-
-<h3 id="パケット">パケット</h3>
-
-<p>パケット通信方式における情報の伝送単位</p>
-
-<h3 id="イメージ">イメージ</h3>
-
-<table>
-<thead>
-<tr>
-<th align="center">単語</th>
-<th align="center">例え</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">連続データ</td>
-<td align="center">水道から流れ出てている水</td>
-</tr>
-<tr>
-<td align="center">伝送単位(パケット)</td>
-<td align="center">水を入れたペットボトル</td>
-</tr>
-</tbody>
-</table>
-
-
-<p>パケット通信は水道水をペットボトルに入れて運ぶみたいなイメージ</p>
-
-<hr />
-
-<h2 id="パケット解析とは">パケット解析とは</h2>
-
-<ol>
-<li>パケットキャプチャをする</li>
-<li>キャプチャしたパケットを上位のプロトコルごとにその内容を解析する</li>
-</ol>
-
-
-<hr />
-
-<h2 id="パケットキャプチャ">パケットキャプチャ</h2>
-
-<p>パケット一つ一つに含まれるデータを記録する</p>
-
-<h3 id="パケットに含まれているデータ">パケットに含まれているデータ</h3>
-
-<ul>
-<li>送信元</li>
-<li>送信先</li>
-<li>サイズ(パケット長)</li>
-<li>データの種類(上位プロトコル)</li>
-</ul>
-
-
-<h3 id="キャプチャされる場所(〜モデル)">キャプチャされる場所(〜モデル)</h3>
-
-<p><a href="http://en.wikipedia.org/wiki/OSI_model">OSI参照モデル</a></p>
-
-<ul>
-<li>ネットワーク層</li>
-<li>データリンク層</li>
-</ul>
-
-
-<p><a href="http://en.wikipedia.org/wiki/Internet_protocol_suite">TCPモデル(IETF)</a></p>
-
-<ul>
-<li>リンク層</li>
-</ul>
-
-
-<h3 id="パケットをキャプチャする場所(実際の場所)">パケットをキャプチャする場所(実際の場所)</h3>
-
-<ul>
-<li><p>対象デバイス内? or デバイス外?</p>
-
-<ul>
-<li><p>実際の現場ではデバイス外でキャプチャすることが多い<br/>
-→Android、iOS、テレビ、ゲーム機などはそもそもデバイス内でキャプチャを取ることができないことがほとんど</p></li>
-<li><p>学習、研究、トラブルシューティングはデバイス内で行える</p></li>
-</ul>
-</li>
-<li><p>対象デバイス内</p>
-
-<ol>
-<li>オペレーティング・システムに付属するツールを利用する
-
-<ul>
-<li>tcpdump (Linux / Unix環境)</li>
-</ul>
-</li>
-<li>オペレーティング・システムベンダー提供のツール
-
-<ul>
-<li>WinPcap / Network Monitor (Windows環境)</li>
-</ul>
-</li>
-<li>サードパーティのツールを利用する
-
-<ul>
-<li>Wireshark / OmniPeek / NetworkMiner / tshark</li>
-</ul>
-</li>
-</ol>
-</li>
-<li><p>対象デバイス外</p>
-
-<ol>
-<li><a href="http://e-words.jp/w/E3839DE383BCE38388E3839FE383A9E383BCE383AAE383B3E382B0.html">ミラーポート</a>
-
-<ul>
-<li>あるポートが送受信するデータを、同時に別のポートから送出する機能</li>
-<li><a href="http://e-words.jp/w/E382B9E382A4E38383E38381E383B3E382B0E3838FE38396.html">スイッチングハブ</a>やルータはMACアドレスを覚えて特定のPCのみとデータ通信をするようになっているのでミラーポートを利用してパケットキャプチャする</li>
-<li><a href="http://e-words.jp/w/E383AAE38394E383BCE382BFE3838FE38396.html">リピーターハブ</a>は接続しているPC全部にデータが送られているのでミラーポートを利用しなくてもデータを拾うことができる。</li>
-</ul>
-</li>
-<li>タップ
-
-<ul>
-<li><a href="http://www.bitrieve.co.jp/products/lan_tap/">タップ</a>を挟んでデータの通信を分岐させる</li>
-</ul>
-</li>
-<li>プロキシやゲートウェイ
-
-<ul>
-<li>プロキシやゲートウェイ配下のサーバの通信が取得できる</li>
-</ul>
-</li>
-<li>通信対向側(サーバ側)でのキャプチャ
-
-<ul>
-<li>サーバ側で取得できているデータは、本当に目的のクライアントからの通信なのか確認する必要がある<br/>
-→<a href="http://e-words.jp/w/SSLE382A2E382AFE382BBE383A9E383ACE383BCE382BF.html">SSLアクセラレータ</a>、プロキシ、ロードバランサなどの通信である可能性がある</li>
-</ul>
-</li>
-</ol>
-</li>
-</ul>
-
-
-<p>＊ どこでキャプチャするのが適切なのか検討し、複数の場所でキャプチャするなど工夫が必要</p>
-
-<h3 id="パケットをキャプチャする方法">パケットをキャプチャする方法</h3>
-
-<ul>
-<li><p>ハードウェア<br/>
-最近はソフトウェアでキャプチャすることがほとんど。キャプチャ用のハード機器はものすごく高価らしい。</p></li>
-<li><p>ソフトウェア</p>
-
-<ol>
-<li><p>GUI</p>
-
-<ul>
-<li>Wireshark / NetworkMiner / OmniPeek / Network Monitor
-
-<ul>
-<li>設定がわかりやすい</li>
-<li>結果がすぐに確認できる</li>
-<li>その場で解析が可能</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>CUI</p>
-
-<ul>
-<li>tcpdump / WinPcap / tshark
-
-<ul>
-<li>動作が軽快</li>
-<li>バッチ処理向き</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-</li>
-</ul>
-
-
-<h3 id="ソフトウェアによるパケットキャプチャまとめ">ソフトウェアによるパケットキャプチャまとめ</h3>
-
-<table>
-<thead>
-<tr>
-<th align="center">ソフト</th>
-<th align="center">OS</th>
-<th align="center">CUI/GUI</th>
-<th align="center">特徴</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center"><a href="http://ja.wikipedia.org/wiki/Tcpdump">tcpdump</a></td>
-<td align="center">Unix</td>
-<td align="center">CUI</td>
-<td align="center">Unix系のCUIでよく利用される。libpcapに含まれている。</td>
-</tr>
-<tr>
-<td align="center"><a href="http://ja.wikipedia.org/wiki/Netcat">netcat</a></td>
-<td align="center">Unix</td>
-<td align="center">CUI</td>
-<td align="center">-</td>
-</tr>
-<tr>
-<td align="center"><a href="http://ja.wikipedia.org/wiki/Pcap">WinPcap</a></td>
-<td align="center">Windows</td>
-<td align="center">CUI</td>
-<td align="center">-</td>
-</tr>
-<tr>
-<td align="center"><a href="http://www.wireshark.org/docs/man-pages/tshark.html">tshark</a></td>
-<td align="center">Unix/Windows</td>
-<td align="center">CUI</td>
-<td align="center">WiresharkのCUI版</td>
-</tr>
-<tr>
-<td align="center"><a href="http://ja.wikipedia.org/wiki/Wireshark">Wireshark</a></td>
-<td align="center">Unix/Windows</td>
-<td align="center">GUI</td>
-<td align="center">FreeのGUIツールでは一番有名</td>
-</tr>
-<tr>
-<td align="center"><a href="http://support.microsoft.com/kb/933741/ja">Network Monitor</a></td>
-<td align="center">Windows</td>
-<td align="center">GUI</td>
-<td align="center">プロセス単位で通信状態を確認できる</td>
-</tr>
-<tr>
-<td align="center"><a href="http://www.dit.co.jp/products/omni_peek/omnipeek.html">OmniPeek</a></td>
-<td align="center">Unix/Windows</td>
-<td align="center">GUI</td>
-<td align="center">商用ツール</td>
-</tr>
-<tr>
-<td align="center"><a href="http://www.netresec.com/?page=NetworkMiner">NetworkMiner</a></td>
-<td align="center">Unix/Windows</td>
-<td align="center">GUI</td>
-<td align="center">画像やcookieなど、アプリケーションレベルの確認がしやすい</td>
-</tr>
-</tbody>
-</table>
-
-
-<h3 id="データ形式">データ形式</h3>
-
-<table>
-<thead>
-<tr>
-<th align="center">形式</th>
-<th align="center">拡張子</th>
-<th align="center">特徴</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">libpcap形式</td>
-<td align="center">pcap</td>
-<td align="center">一番汎用的な形式</td>
-</tr>
-<tr>
-<td align="center">Wireshark新形式</td>
-<td align="center">pcapng</td>
-<td align="center">pcapより詳細な情報が取れる。ngはNextGenerationの略</td>
-</tr>
-<tr>
-<td align="center">Network Monitor形式</td>
-<td align="center">cap</td>
-<td align="center">Windowsで使う場合</td>
-</tr>
-</tbody>
-</table>
-
-
-<p>※ とりあえずpcap形式にしておけば大概のソフトで読める</p>
-
-<h3 id="どんなデータが記録されるか">どんなデータが記録されるか</h3>
-
-<ul>
-<li>パケット全体のバイナリデータ</li>
-<li>記録した時刻</li>
-<li>キャプチャしたインターフェイス</li>
-<li>トラフィックを発生させたプロセス</li>
-</ul>
-
-
-<hr />
-
-<h2 id="パケット解析">パケット解析</h2>
-
-<h3 id="基本的にはツールを利用する">基本的にはツールを利用する</h3>
-
-<p>Wireshark / NetworkMiner / OmniPeek / Network Monitor</p>
-
-<h3 id="力技で独自解析">力技で独自解析</h3>
-
-<p>pcap形式などのフォーマットは公開されているので独自にバイナリ解析をする</p>
-
-<hr />
-
-<h1 id="tcpdumpから始まるネットワークエンジニアの朝+(twovs+さん)">tcpdumpから始まるネットワークエンジニアの朝 (twovs さん)</h1>
-
-<h2 id="tcpdumpとWireshark">tcpdumpとWireshark</h2>
-
-<ul>
-<li><p>tcpdump<br/>
-軽い、低機能、とりあえず見る、サーバ側でキャプチャ、感じ取る、気づく</p></li>
-<li><p>Wireshark<br/>
-重い、高機能、じっくり見る、ローカルのPCで結果を見る、探しだす、確認する</p></li>
-</ul>
-
-
-<h2 id="パケット解析で大切なこと">パケット解析で大切なこと</h2>
-
-<h3 id="正常系を知っておくこと">正常系を知っておくこと</h3>
-
-<p>異常な状態を察知するには正常な状態を知っておくことが大切</p>
-
-<h2 id="何もしてないのに壊れましたー">何もしてないのに壊れましたー</h2>
-
-<h3 id="IPv4だと問題なかったのにIPv6だとつながらない">IPv4だと問題なかったのにIPv6だとつながらない</h3>
-
-<p>IPv6アドレスにpingを打ってみたが反応がなかった<br/>
-→IPv4はARPでMACアドレスを取得しているが<strong>IPv6はICMPでMACアドレスを取得している</strong><br/>
-→IPv6ではICMPをフィルタしちゃダメ!!</p>
-
-<h3 id="IPv6の通信で送り元と送り先でサイズが違う">IPv6の通信で送り元と送り先でサイズが違う</h3>
-
-<p>送り先でパケットを見たら「padding」というのがひっついていた<br/>
-→小さいデータを送るときは「0」を付加して64byteにしてから投げるようになっている設定があるらしい</p>
-
-<h3 id="MTU=1500にもかかわらずものすごい大きなデータを送ろうとしていた">MTU=1500にもかかわらずものすごい大きなデータを送ろうとしていた</h3>
-
-<p>送信元でものすごいでかいデータを送信先に投げている。でも送信先のキャプチャは正常<br/>
-→ VMwareのGuestOSでキャプチャするとき、Virtual Switchに行く前のデータをキャプチャしていた<br/>
-→ Virtual Switchを通過すると通常のサイズになるらしい。</p>
-
-<h2 id="まとめ">まとめ</h2>
-
-<h3 id="LANケーブルは刺さってる？">LANケーブルは刺さってる？</h3>
-
-<p>意外と多いらしい。お客様には「ケーブル刺さってるか確認してください」と言うと「馬鹿にしてるのか！」とお叱りを受けるので
-「LANケーブルの抜き差しで直ることがありますので試してください」と言うと、双方ハッピー。</p>
-
-<h3 id="FireWallの設定とか大丈夫？">FireWallの設定とか大丈夫？</h3>
-
-<h3 id="IPv6つかってるのにICMPをフィルタしてない？">IPv6つかってるのにICMPをフィルタしてない？</h3>
-
-<h3 id="どこのキャプチャを撮ってる？">どこのキャプチャを撮ってる？</h3>
-
-<p>内部？外部？内部でもどこ？VMwareだとVirtual Switchの前？後？</p>
-
-<h1 id="とある環境(3G回線)であるアプリのパケットを見てみた(totoromasaki+さん)">とある環境(3G回線)であるアプリのパケットを見てみた(totoromasaki さん)</h1>
-
-<p>私は何も聞いてないです。。</p>
-
-<h1 id="リンク">リンク</h1>
-
-<ul>
-<li><a href="http://gvtkne.blogspot.jp/2013/04/14.html">ネットワークパケットを読む会(仮) 14回に参加してきた(otahi さん)</a></li>
-<li><a href="http://www.slideshare.net/tohakushi/tcpdumptcpreplay">tcpdumpとtcpreplayとtcprewriteと他。</a></li>
 </ul>
 
 ]]></content>

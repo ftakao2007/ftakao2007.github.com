@@ -138,6 +138,383 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2013/06/01/study-r/">第31回R勉強会＠東京</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-06-01T15:06:00+09:00" pubdate data-updated="true">Jun 1<span>st</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2 id="[第31回R勉強会＠東京](http://atnd.org/events/38992)"><a href="http://atnd.org/events/38992">第31回R勉強会＠東京</a></h2>
+
+<h2 id="お勧め資料">お勧め資料</h2>
+
+<p>はじめてのR masaha03 (SlideShare) 超お勧め</p>
+
+<h2 id="データの読み込み">データの読み込み</h2>
+
+<ul>
+<li><p>組み込み関数
+read.table read.csv</p></li>
+<li><p>外部パッケージを使う
+Eccel
+画像ファイル</p></li>
+<li><p>データ構造
+データフレームがメイン</p></li>
+</ul>
+
+
+<h2 id="分析の前処理">分析の前処理</h2>
+
+<p>データの結合 merge, rbind, cbind
+データの抽出 subset</p>
+
+<h2 id="分析">分析</h2>
+
+<ul>
+<li>各種手法の適用
+ここで外部パッケージを使うことが多い
+便利パッケージの紹介は本編</li>
+</ul>
+
+
+<h2 id="ファイル出力">ファイル出力</h2>
+
+<ul>
+<li><p>テキスト、Excel</p></li>
+<li><p>図
+組み込みのplot
+外部パッケージ
+lattice
+ggplot2 (最近はこちらが多い)</p></li>
+<li><p>レポーティング
+knitr 普通のレポート
+slidify パワーポイントに出力
+Rpubs</p></li>
+</ul>
+
+
+<p>(昔はTeXとかでまとめることが多かった)</p>
+
+<h2 id="エディタ">エディタ</h2>
+
+<p>RGUI Windowsは使いにくい
+RStudio 最近の定番。メモリは食う。一番無難
+ESS Emacs
+EZR 医学系ではやりつつある
+Rzパッケージ SPSSの使いやすさ(GUI)をRで実現、masaha03さんが作った</p>
+
+<h2 id="情報収集">情報収集</h2>
+
+<h3 id="検索">検索</h3>
+
+<ul>
+<li><p>seekR
+Rについて検索しやすい</p></li>
+<li><p>Rseek
+英語版</p></li>
+</ul>
+
+
+<h2 id="Web資料">Web資料</h2>
+
+<p>R-tips
+Rjpwiki
+同志社大学　金明哲先生
+群馬大学　青木繁伸先生</p>
+
+<h2 id="書籍">書籍</h2>
+
+<ul>
+<li><p>ほかプログラミング言語の経験あり
+R言語逆引きハンドブック
+Rによるデータサイエンス
+Rパッケージガイドブック</p></li>
+<li><p>データ分析自体の不慣れ
+データ解析のための統計モデリング入門
+デー玉イニング入門 早稲田大学　豊田先生　シナリオに沿ってRを使っていく</p></li>
+</ul>
+
+
+<h2 id="勉強会">勉強会</h2>
+
+<p>ゼロからはじめるR言語勉強会 最近はじまった勉強会
+Wako.R (6/8開催) dritoshiさん R界のアイドルらしい。とがっている。人によっては引く
+Tokyowebmining 充実した議論、主催者の自己紹介が長い
+Zansa ガチで意も技術も高い大学生
+集合地プログラミング勉強会 tetsuroitoさん 元はPythonをやっていた。今はやってない</p>
+
+<p>さくさくテキストマイニング 資料が豊富。今はやってない
+社会科学研究のためのR勉強会 ネットワーク関連</p>
+
+<h2 id="さあやってみよう">さあやってみよう</h2>
+
+<p>cran task view   目的別に外部パッケージがまとめられている。やりたいことが無い人はとっかかりに良いかも</p>
+
+<p>Julia   Rに我慢なら無い人が作り始めた次世代統計言語
+脅威のPython勢
+pandas:RのデータフレームをPythonで
+Bokeh:ggplot2ライクな可視化
+scikit-learn:機械学習  機械学習向け
+Orange:統計、機械学習  統計向け</p>
+
+<p>Jubatsu ゆばたす。分散したデータを常に素早く深く分析する。元はC++のライブラリ。機械学習</p>
+
+<hr />
+
+<h1 id="Rによるやさしい統計学(分散分析)+aad34210さん">Rによるやさしい統計学(分散分析) aad34210さん</h1>
+
+<h2 id="分散分析">分散分析</h2>
+
+<p>分散分析　
+3つ以上の平均値を比較するための統計的方法
+2つの平均値を比較する方法はt検定</p>
+
+<h2 id="二元配置分散分析(二要因とも対応なし)">二元配置分散分析(二要因とも対応なし)</h2>
+
+<p>主効果：それぞれの要因ごとの効果   常温か、冷温か
+交互作用効果:ふたつの要因が組み合わされた場合に生じる効果。単純に二つの足し算ではない</p>
+
+<h2 id="二元配置分散分析(二要因とも対応あり)">二元配置分散分析(二要因とも対応あり)</h2>
+
+<p>評価者によって主観が入っているのではないか？を分析</p>
+
+<p>主効果:温度によって簿平均は異なるか？</p>
+
+<pre><code>   銘柄によって異なるか？
+</code></pre>
+
+<h2 id="二元配置分散分析(一要因のみ対応あり)">二元配置分散分析(一要因のみ対応あり)</h2>
+
+<p>冷蔵と常温をそれぞれ別の人たちに評価してもらったとき</p>
+
+<hr />
+
+<h2 id="seekRの中の人">seekRの中の人</h2>
+
+<p>seekR管理人平村さん</p>
+
+<p>LinkedInのR Projectがおすすめ
+httpo://linkedin/</p>
+
+<h2 id="RForcecomパッケージ">RForcecomパッケージ</h2>
+
+<p>Salesforce.com,Force.comに接続するパッケージ
+CRMにはいているデータを検索、引き出してRで分析してSalesforceに戻す</p>
+
+<hr />
+
+<h2 id="はじめよう多変量解析～主成分分析編～+sanoche16さん">はじめよう多変量解析～主成分分析編～ sanoche16さん</h2>
+
+<h3 id="多変量解析とは">多変量解析とは</h3>
+
+<p>多数の変量をもつデータを分析する</p>
+
+<p>1変量、2変量の分析ができなければできない</p>
+
+<p>平均、分散、共分散、相関係数、行列演算
+微分積分、分布</p>
+
+<h3 id="主成分分析">主成分分析</h3>
+
+<p>分散を最大化させるのが一番合理的</p>
+
+<p>因子分析は何が因子になっているかということを重視する
+アルゴリズムは主成分分析</p>
+
+<p>主成分分析か、因子分析か？
+-> 因子分析でうまくいくかわからないようなものを分析するときは、とりあえずprcompに入れて主成分分析
+-> 特徴を考えて要因分けしたい場合は因子分析</p>
+
+<p>質の分析に主成分分析
+-> 分散行列でやったとき、生の行列でやったとき、相関係数でやったとき
+   -> 係数の順序は変わらないが、寄与率が変わる。寄与率が99%とかなってしまった。</p>
+
+<p>相関の高い係数があると、使えるのか
+相関係数の信頼区間が重要。
+重回帰分析、目的変数がいかに精度を持っているかが重要</p>
+
+<p>主成分分析は、どんな要素があるか、よりわかりやすく見るために使う。</p>
+
+<hr />
+
+<h1 id="R言語で学ぶマーケティング分析+-+競争ポジショニング戦略+-+yokkunsさん">R言語で学ぶマーケティング分析 - 競争ポジショニング戦略 - yokkunsさん</h1>
+
+<h2 id="競争ポジショニング戦略">競争ポジショニング戦略</h2>
+
+<p>市場はさまざまな価値感や趣向の人たちで構成されている。ターゲットになる人を決めたい。</p>
+
+<p>レコメンドエンジンはもともとあるサービスに対するもの。
+戦略ポジショニングは</p>
+
+<p>どんな人たちで構成されていて　セグメンテーション
+その中で誰をターゲットにして　ターゲティング
+どんなサービスを提供するか　ポジショニング</p>
+
+<h2 id="セグメンテーション">セグメンテーション</h2>
+
+<p>市場を意味のあるグループに分ける</p>
+
+<p>セグメント1,2,3,4</p>
+
+<p>区分する方法：昔からの方法では、年代、性別、地域、職業など。
+-> 趣味趣向が多様化しているので基本的な属性による区分では意味のあるグループができなくなってきている
+-> 同じセグメント内でも、さまざまな趣向や価値観の人が存在するようになった。</p>
+
+<h3 id="クラスタリングによるセグメンテーション">クラスタリングによるセグメンテーション</h3>
+
+<p>ログやアンケートで、その人の趣向や消費行動を見て本質的なグループわけをすること
+職業や性別ではなく、本質的なところでグループ分けする</p>
+
+<p>主成分分析を駆使して可視化する。
+k-means方</p>
+
+<p>fmsbパッケージのradarchart関数で実行できる</p>
+
+<h2 id="ターゲッティング">ターゲッティング</h2>
+
+<p>どのセグメントをターゲットにするかを決定する</p>
+
+<p>こだわりデジタル層
+飛びつきミーハーそう</p>
+
+<h2 id="ポジショニング">ポジショニング</h2>
+
+<p>ターゲットセグメントの頭の中の自分たちのサービスと競合サービスの位置づけを理解し、彼らにどんなサービスを提供するかを決める</p>
+
+<p>視覚マップを作成する
+ユーザにとってのサービスの位置づけマップ。マップ上で近い位置にあるサービスは競争関係になる</p>
+
+<p>視覚マップ上でユーザが重視している方角を見つける</p>
+
+<p>視覚マップはMDSでつくる (発表者がMDSが好きだから)
+個体間の距離や非類似関係からマップを構築する</p>
+
+<p>MASSパッケージのisoMDS関数で作成できる</p>
+
+<p>説明変数？</p>
+
+<hr />
+
+<h1 id="R+による自然言語処理入門+a_bickyさん">R による自然言語処理入門 a_bickyさん</h1>
+
+<h2 id="基礎知識">基礎知識</h2>
+
+<p>形態素解析　ざっくりというと単語分割のこと
+「お酒」は「お」が接頭詞になる。ただ人によっては「お酒」で一語</p>
+
+<p>「mecab」でできる
+mecab
+ハードルは高ければ高いほどくぐりやすい    &lt;- 入力する</p>
+
+<p>ベクトル空間モデル
+文書をベクトル空間の1点として表現する
+素性(そせい feature) のとり方は色々ある</p>
+
+<p>Unigram model</p>
+
+<p>maxsentパッケージ  New York Timesの記事のタイトルのデータ
+N-gram model</p>
+
+<p>文字列処理はPythonでやったほうがやりやすい</p>
+
+<hr />
+
+<h1 id="ABテスト">ABテスト</h1>
+
+<p>AパターンとBパターンを実際に試して結果が良いほうを選ぶ
+本当に数値が高いほうを客観的に選べる</p>
+
+<p>検定
+起きた結果が偶然なのかを判断する</p>
+
+<p>-> ABテストだけは簡単だが、検定を加えるととたんに難しくなる</p>
+
+<p>A あったらいいなを形にする
+B 無限の可能性をあなたに</p>
+
+<p>好きなほうのキャッチコピーを選んでください
+-> AとBを実際に選んでもらって決める</p>
+
+<p>検定
+A1 B2</p>
+
+<p>この結果は偶然。どちらか一方が優れているとは言い切れない。
+この時点でははっきりしない</p>
+
+<p>「偶然おきる」
+A.3打席1安打の3割りバッター
+B.300打席100安打の3割バッター</p>
+
+<p>Aは偶然かも、Bはすごい
+binom.test</p>
+
+<p>で検定ができる</p>
+
+<hr />
+
+<p>ZeroMQ(rzmq)つかうとRやほかの言語間で通信できる</p>
+
+<hr />
+
+<h1 id="RとPythonによるデータ解析入門">RとPythonによるデータ解析入門</h1>
+
+<p>Python から R を呼び出す
+Webクローラを書く、データベースを操作、文字列処理が楽になる</p>
+
+<p>scikit-learnが物足りない</p>
+
+<p>Pandas
+Rで言うデータフレームが使える</p>
+
+<p>Webデータ取得 -> csvに整形 -> 前処理 -> R</p>
+
+<p>rpy2
+で簡単にPythonとRの連携が非常に楽</p>
+
+<p>pip install rpy2</p>
+
+<p>これらよりjsonでzeroMQ使う方が連携しやすい?</p>
+
+<p>ironpythonを使うほうが良い？</p>
+
+<h2 id="リンク">リンク</h2>
+
+<ul>
+<li><a href="http://www.slideshare.net/hiratake55/seekrjp-22281554">中の人が語る seekR.jpの裏側</a></li>
+<li><a href="http://blog.gepuro.net/archives/36">RとPythonによるデータ解析入門</a></li>
+<li><a href="http://www.slideshare.net/teramonagi/tokyo-r31-20130601">可視化周辺の進化がヤヴァイ</a></li>
+<li><a href="http://www.slideshare.net/sanoche16/tokyor31-22291701">はじめよう多変量解析〜主成分分析〜</a></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2013/05/25/python-words/">Python単語帳</a></h1>
     
     
@@ -1335,49 +1712,6 @@ ifやループは使わない事に喜びをおぼえてきたら立派なR使�
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/04/29/vagrant/">Vagrant</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-04-29T12:29:00+09:00" pubdate data-updated="true">Apr 29<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2 id="リンク">リンク</h2>
-
-<ul>
-<li><a href="http://d.hatena.ne.jp/naoya/touch/20130205/1360062070">Vagrant</a></li>
-<li><a href="http://d.hatena.ne.jp/thinkAmi/20130407/1365310673">Windows7上で Vagrant + Chef solo + knife-soloを使い、Ubuntu + ubuntu-desktopの環境を構築してみた</a></li>
-<li><a href="http://tily.hatenablog.com/entry/2013/04/06/171335">ニフティクラウドを vagrant のように使える some コマンド</a></li>
-</ul>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -1397,6 +1731,10 @@ ifやループは使わない事に喜びをおぼえてきたら立派なR使�
       </li>
     
       <li class="post">
+        <a href="/blog/2013/06/01/study-r/">第31回R勉強会＠東京</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/05/25/python-words/">Python単語帳</a>
       </li>
     
@@ -1408,15 +1746,11 @@ ifやループは使わない事に喜びをおぼえてきたら立派なR使�
         <a href="/blog/2013/05/18/python-mini-hack-a-thon/">(第31回)Python mini Hack-a-thon</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/05/15/iphone-app-study/">第4回 iphoneアプリ開発超初心者講習会</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/about/'>about (3)</a></li><li><a href='/blog/categories/aws/'>aws (3)</a></li><li><a href='/blog/categories/bash/'>bash (2)</a></li><li><a href='/blog/categories/book/'>book (2)</a></li><li><a href='/blog/categories/chef/'>chef (2)</a></li><li><a href='/blog/categories/command/'>command (5)</a></li><li><a href='/blog/categories/construct/'>construct (1)</a></li><li><a href='/blog/categories/diary/'>diary (3)</a></li><li><a href='/blog/categories/ec-cube/'>EC-CUBE (1)</a></li><li><a href='/blog/categories/ec2/'>ec2 (1)</a></li><li><a href='/blog/categories/eclipse/'>eclipse (1)</a></li><li><a href='/blog/categories/etc/'>etc (1)</a></li><li><a href='/blog/categories/fabric/'>fabric (4)</a></li><li><a href='/blog/categories/fluentd/'>fluentd (1)</a></li><li><a href='/blog/categories/git/'>git (3)</a></li><li><a href='/blog/categories/google/'>google (1)</a></li><li><a href='/blog/categories/heroku/'>heroku (1)</a></li><li><a href='/blog/categories/ios/'>iOS (2)</a></li><li><a href='/blog/categories/json/'>JSON (1)</a></li><li><a href='/blog/categories/monitor/'>monitor (5)</a></li><li><a href='/blog/categories/munin/'>munin (1)</a></li><li><a href='/blog/categories/network/'>network (2)</a></li><li><a href='/blog/categories/octopress/'>octopress (1)</a></li><li><a href='/blog/categories/os/'>OS (3)</a></li><li><a href='/blog/categories/php/'>PHP (1)</a></li><li><a href='/blog/categories/python/'>Python (7)</a></li><li><a href='/blog/categories/r/'>R (1)</a></li><li><a href='/blog/categories/raspberrypi/'>RaspberryPi (1)</a></li><li><a href='/blog/categories/redmine/'>Redmine (2)</a></li><li><a href='/blog/categories/seo/'>SEO (1)</a></li><li><a href='/blog/categories/splunk/'>splunk (1)</a></li><li><a href='/blog/categories/statistics/'>statistics (1)</a></li><li><a href='/blog/categories/vagrant/'>vagrant (1)</a></li><li><a href='/blog/categories/vim/'>vim (1)</a></li><li><a href='/blog/categories/xcode/'>Xcode (2)</a></li><li><a href='/blog/categories/zaim/'>zaim (1)</a></li><li><a href='/blog/categories/mian-qiang-hui/'>勉強会 (7)</a></li><li><a href='/blog/categories/dan-yu-zhang/'>単語帳 (1)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/about/'>about (3)</a></li><li><a href='/blog/categories/aws/'>aws (3)</a></li><li><a href='/blog/categories/bash/'>bash (2)</a></li><li><a href='/blog/categories/book/'>book (2)</a></li><li><a href='/blog/categories/chef/'>chef (2)</a></li><li><a href='/blog/categories/command/'>command (5)</a></li><li><a href='/blog/categories/construct/'>construct (1)</a></li><li><a href='/blog/categories/diary/'>diary (3)</a></li><li><a href='/blog/categories/ec-cube/'>EC-CUBE (1)</a></li><li><a href='/blog/categories/ec2/'>ec2 (1)</a></li><li><a href='/blog/categories/eclipse/'>eclipse (1)</a></li><li><a href='/blog/categories/etc/'>etc (1)</a></li><li><a href='/blog/categories/fabric/'>fabric (4)</a></li><li><a href='/blog/categories/fluentd/'>fluentd (1)</a></li><li><a href='/blog/categories/git/'>git (3)</a></li><li><a href='/blog/categories/google/'>google (1)</a></li><li><a href='/blog/categories/heroku/'>heroku (1)</a></li><li><a href='/blog/categories/ios/'>iOS (2)</a></li><li><a href='/blog/categories/json/'>JSON (1)</a></li><li><a href='/blog/categories/monitor/'>monitor (5)</a></li><li><a href='/blog/categories/munin/'>munin (1)</a></li><li><a href='/blog/categories/network/'>network (2)</a></li><li><a href='/blog/categories/octopress/'>octopress (1)</a></li><li><a href='/blog/categories/os/'>OS (3)</a></li><li><a href='/blog/categories/php/'>PHP (1)</a></li><li><a href='/blog/categories/python/'>Python (7)</a></li><li><a href='/blog/categories/r/'>R (2)</a></li><li><a href='/blog/categories/raspberrypi/'>RaspberryPi (1)</a></li><li><a href='/blog/categories/redmine/'>Redmine (2)</a></li><li><a href='/blog/categories/seo/'>SEO (1)</a></li><li><a href='/blog/categories/splunk/'>splunk (1)</a></li><li><a href='/blog/categories/statistics/'>statistics (1)</a></li><li><a href='/blog/categories/vagrant/'>vagrant (1)</a></li><li><a href='/blog/categories/vim/'>vim (1)</a></li><li><a href='/blog/categories/xcode/'>Xcode (2)</a></li><li><a href='/blog/categories/zaim/'>zaim (1)</a></li><li><a href='/blog/categories/mian-qiang-hui/'>勉強会 (8)</a></li><li><a href='/blog/categories/dan-yu-zhang/'>単語帳 (1)</a></li></ul>
 </section>
 <section>
 <script type="text/javascript"><!--

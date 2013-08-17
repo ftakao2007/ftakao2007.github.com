@@ -9,9 +9,8 @@
   <meta name="author" content="ftakao2007">
 
   
-  <meta name="description" content="AWSのUbuntuでChefを動かす デフォルトのAWSで用意されているUbuntuにChefをインストールする。
-ハンズオンのインスタンスは必要なパッケージがすでにいくらかインストールされていたみたいなので
-トライアンドエラーで設定。 事前準備 &hellip;">
+  <meta name="description" content="第14回「ネットワーク パケットを読む会（仮）」に参加しましたので覚書です。
+ネットワークキャプチャ関連の覚書はここのページに順次追記していきます。 フレッシャーズのためのパケット解析入門 (hebikuzure さん) なんとなくフワッと使っていた単語をイメージで捉える。 パケット通信方式 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -82,6 +81,418 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/04/20/study-network/">20130419 第14回「ネットワーク パケットを読む会（仮）」</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-20T05:37:00+09:00" pubdate data-updated="true">Apr 20<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://atnd.org/events/38649">第14回「ネットワーク パケットを読む会（仮）」</a>に参加しましたので覚書です。
+ネットワークキャプチャ関連の覚書はここのページに順次追記していきます。</p>
+
+<hr />
+
+<h1 id="[フレッシャーズのためのパケット解析入門+(hebikuzure+さん)](http://www.slideshare.net/hebikuzure/20130419-19149363)"><a href="http://www.slideshare.net/hebikuzure/20130419-19149363">フレッシャーズのためのパケット解析入門 (hebikuzure さん)</a></h1>
+
+<p>なんとなくフワッと使っていた単語をイメージで捉える。</p>
+
+<h3 id="パケット通信方式">パケット通信方式</h3>
+
+<p>連続データを一定量ずつ蓄積して1個の伝送単位にして、伝送路の開いているタイミングで送出、
+受信したデータを元の連続データに復元する方式。</p>
+
+<h3 id="パケット">パケット</h3>
+
+<p>パケット通信方式における情報の伝送単位</p>
+
+<h3 id="イメージ">イメージ</h3>
+
+<table>
+<thead>
+<tr>
+<th align="center">単語</th>
+<th align="center">例え</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">連続データ</td>
+<td align="center">水道から流れ出てている水</td>
+</tr>
+<tr>
+<td align="center">伝送単位(パケット)</td>
+<td align="center">水を入れたペットボトル</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>パケット通信は水道水をペットボトルに入れて運ぶみたいなイメージ</p>
+
+<hr />
+
+<h2 id="パケット解析とは">パケット解析とは</h2>
+
+<ol>
+<li>パケットキャプチャをする</li>
+<li>キャプチャしたパケットを上位のプロトコルごとにその内容を解析する</li>
+</ol>
+
+
+<hr />
+
+<h2 id="パケットキャプチャ">パケットキャプチャ</h2>
+
+<p>パケット一つ一つに含まれるデータを記録する</p>
+
+<h3 id="パケットに含まれているデータ">パケットに含まれているデータ</h3>
+
+<ul>
+<li>送信元</li>
+<li>送信先</li>
+<li>サイズ(パケット長)</li>
+<li>データの種類(上位プロトコル)</li>
+</ul>
+
+
+<h3 id="キャプチャされる場所(〜モデル)">キャプチャされる場所(〜モデル)</h3>
+
+<p><a href="http://en.wikipedia.org/wiki/OSI_model">OSI参照モデル</a></p>
+
+<ul>
+<li>ネットワーク層</li>
+<li>データリンク層</li>
+</ul>
+
+
+<p><a href="http://en.wikipedia.org/wiki/Internet_protocol_suite">TCPモデル(IETF)</a></p>
+
+<ul>
+<li>リンク層</li>
+</ul>
+
+
+<h3 id="パケットをキャプチャする場所(実際の場所)">パケットをキャプチャする場所(実際の場所)</h3>
+
+<ul>
+<li><p>対象デバイス内? or デバイス外?</p>
+
+<ul>
+<li><p>実際の現場ではデバイス外でキャプチャすることが多い<br/>
+→Android、iOS、テレビ、ゲーム機などはそもそもデバイス内でキャプチャを取ることができないことがほとんど</p></li>
+<li><p>学習、研究、トラブルシューティングはデバイス内で行える</p></li>
+</ul>
+</li>
+<li><p>対象デバイス内</p>
+
+<ol>
+<li>オペレーティング・システムに付属するツールを利用する
+
+<ul>
+<li>tcpdump (Linux / Unix環境)</li>
+</ul>
+</li>
+<li>オペレーティング・システムベンダー提供のツール
+
+<ul>
+<li>WinPcap / Network Monitor (Windows環境)</li>
+</ul>
+</li>
+<li>サードパーティのツールを利用する
+
+<ul>
+<li>Wireshark / OmniPeek / NetworkMiner / tshark</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>対象デバイス外</p>
+
+<ol>
+<li><a href="http://e-words.jp/w/E3839DE383BCE38388E3839FE383A9E383BCE383AAE383B3E382B0.html">ミラーポート</a>
+
+<ul>
+<li>あるポートが送受信するデータを、同時に別のポートから送出する機能</li>
+<li><a href="http://e-words.jp/w/E382B9E382A4E38383E38381E383B3E382B0E3838FE38396.html">スイッチングハブ</a>やルータはMACアドレスを覚えて特定のPCのみとデータ通信をするようになっているのでミラーポートを利用してパケットキャプチャする</li>
+<li><a href="http://e-words.jp/w/E383AAE38394E383BCE382BFE3838FE38396.html">リピーターハブ</a>は接続しているPC全部にデータが送られているのでミラーポートを利用しなくてもデータを拾うことができる。</li>
+</ul>
+</li>
+<li>タップ
+
+<ul>
+<li><a href="http://www.bitrieve.co.jp/products/lan_tap/">タップ</a>を挟んでデータの通信を分岐させる</li>
+</ul>
+</li>
+<li>プロキシやゲートウェイ
+
+<ul>
+<li>プロキシやゲートウェイ配下のサーバの通信が取得できる</li>
+</ul>
+</li>
+<li>通信対向側(サーバ側)でのキャプチャ
+
+<ul>
+<li>サーバ側で取得できているデータは、本当に目的のクライアントからの通信なのか確認する必要がある<br/>
+→<a href="http://e-words.jp/w/SSLE382A2E382AFE382BBE383A9E383ACE383BCE382BF.html">SSLアクセラレータ</a>、プロキシ、ロードバランサなどの通信である可能性がある</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+
+
+<p>＊ どこでキャプチャするのが適切なのか検討し、複数の場所でキャプチャするなど工夫が必要</p>
+
+<h3 id="パケットをキャプチャする方法">パケットをキャプチャする方法</h3>
+
+<ul>
+<li><p>ハードウェア<br/>
+最近はソフトウェアでキャプチャすることがほとんど。キャプチャ用のハード機器はものすごく高価らしい。</p></li>
+<li><p>ソフトウェア</p>
+
+<ol>
+<li><p>GUI</p>
+
+<ul>
+<li>Wireshark / NetworkMiner / OmniPeek / Network Monitor
+
+<ul>
+<li>設定がわかりやすい</li>
+<li>結果がすぐに確認できる</li>
+<li>その場で解析が可能</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>CUI</p>
+
+<ul>
+<li>tcpdump / WinPcap / tshark
+
+<ul>
+<li>動作が軽快</li>
+<li>バッチ処理向き</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+
+
+<h3 id="ソフトウェアによるパケットキャプチャまとめ">ソフトウェアによるパケットキャプチャまとめ</h3>
+
+<table>
+<thead>
+<tr>
+<th align="center">ソフト</th>
+<th align="center">OS</th>
+<th align="center">CUI/GUI</th>
+<th align="center">特徴</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><a href="http://ja.wikipedia.org/wiki/Tcpdump">tcpdump</a></td>
+<td align="center">Unix</td>
+<td align="center">CUI</td>
+<td align="center">Unix系のCUIでよく利用される。libpcapに含まれている。</td>
+</tr>
+<tr>
+<td align="center"><a href="http://ja.wikipedia.org/wiki/Netcat">netcat</a></td>
+<td align="center">Unix</td>
+<td align="center">CUI</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="center"><a href="http://ja.wikipedia.org/wiki/Pcap">WinPcap</a></td>
+<td align="center">Windows</td>
+<td align="center">CUI</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="center"><a href="http://www.wireshark.org/docs/man-pages/tshark.html">tshark</a></td>
+<td align="center">Unix/Windows</td>
+<td align="center">CUI</td>
+<td align="center">WiresharkのCUI版</td>
+</tr>
+<tr>
+<td align="center"><a href="http://ja.wikipedia.org/wiki/Wireshark">Wireshark</a></td>
+<td align="center">Unix/Windows</td>
+<td align="center">GUI</td>
+<td align="center">FreeのGUIツールでは一番有名</td>
+</tr>
+<tr>
+<td align="center"><a href="http://support.microsoft.com/kb/933741/ja">Network Monitor</a></td>
+<td align="center">Windows</td>
+<td align="center">GUI</td>
+<td align="center">プロセス単位で通信状態を確認できる</td>
+</tr>
+<tr>
+<td align="center"><a href="http://www.dit.co.jp/products/omni_peek/omnipeek.html">OmniPeek</a></td>
+<td align="center">Unix/Windows</td>
+<td align="center">GUI</td>
+<td align="center">商用ツール</td>
+</tr>
+<tr>
+<td align="center"><a href="http://www.netresec.com/?page=NetworkMiner">NetworkMiner</a></td>
+<td align="center">Unix/Windows</td>
+<td align="center">GUI</td>
+<td align="center">画像やcookieなど、アプリケーションレベルの確認がしやすい</td>
+</tr>
+</tbody>
+</table>
+
+
+<h3 id="データ形式">データ形式</h3>
+
+<table>
+<thead>
+<tr>
+<th align="center">形式</th>
+<th align="center">拡張子</th>
+<th align="center">特徴</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">libpcap形式</td>
+<td align="center">pcap</td>
+<td align="center">一番汎用的な形式</td>
+</tr>
+<tr>
+<td align="center">Wireshark新形式</td>
+<td align="center">pcapng</td>
+<td align="center">pcapより詳細な情報が取れる。ngはNextGenerationの略</td>
+</tr>
+<tr>
+<td align="center">Network Monitor形式</td>
+<td align="center">cap</td>
+<td align="center">Windowsで使う場合</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>※ とりあえずpcap形式にしておけば大概のソフトで読める</p>
+
+<h3 id="どんなデータが記録されるか">どんなデータが記録されるか</h3>
+
+<ul>
+<li>パケット全体のバイナリデータ</li>
+<li>記録した時刻</li>
+<li>キャプチャしたインターフェイス</li>
+<li>トラフィックを発生させたプロセス</li>
+</ul>
+
+
+<hr />
+
+<h2 id="パケット解析">パケット解析</h2>
+
+<h3 id="基本的にはツールを利用する">基本的にはツールを利用する</h3>
+
+<p>Wireshark / NetworkMiner / OmniPeek / Network Monitor</p>
+
+<h3 id="力技で独自解析">力技で独自解析</h3>
+
+<p>pcap形式などのフォーマットは公開されているので独自にバイナリ解析をする</p>
+
+<hr />
+
+<h1 id="tcpdumpから始まるネットワークエンジニアの朝+(twovs+さん)">tcpdumpから始まるネットワークエンジニアの朝 (twovs さん)</h1>
+
+<h2 id="tcpdumpとWireshark">tcpdumpとWireshark</h2>
+
+<ul>
+<li><p>tcpdump<br/>
+軽い、低機能、とりあえず見る、サーバ側でキャプチャ、感じ取る、気づく</p></li>
+<li><p>Wireshark<br/>
+重い、高機能、じっくり見る、ローカルのPCで結果を見る、探しだす、確認する</p></li>
+</ul>
+
+
+<h2 id="パケット解析で大切なこと">パケット解析で大切なこと</h2>
+
+<h3 id="正常系を知っておくこと">正常系を知っておくこと</h3>
+
+<p>異常な状態を察知するには正常な状態を知っておくことが大切</p>
+
+<h2 id="何もしてないのに壊れましたー">何もしてないのに壊れましたー</h2>
+
+<h3 id="IPv4だと問題なかったのにIPv6だとつながらない">IPv4だと問題なかったのにIPv6だとつながらない</h3>
+
+<p>IPv6アドレスにpingを打ってみたが反応がなかった<br/>
+→IPv4はARPでMACアドレスを取得しているが<strong>IPv6はICMPでMACアドレスを取得している</strong><br/>
+→IPv6ではICMPをフィルタしちゃダメ!!</p>
+
+<h3 id="IPv6の通信で送り元と送り先でサイズが違う">IPv6の通信で送り元と送り先でサイズが違う</h3>
+
+<p>送り先でパケットを見たら「padding」というのがひっついていた<br/>
+→小さいデータを送るときは「0」を付加して64byteにしてから投げるようになっている設定があるらしい</p>
+
+<h3 id="MTU=1500にもかかわらずものすごい大きなデータを送ろうとしていた">MTU=1500にもかかわらずものすごい大きなデータを送ろうとしていた</h3>
+
+<p>送信元でものすごいでかいデータを送信先に投げている。でも送信先のキャプチャは正常<br/>
+→ VMwareのGuestOSでキャプチャするとき、Virtual Switchに行く前のデータをキャプチャしていた<br/>
+→ Virtual Switchを通過すると通常のサイズになるらしい。</p>
+
+<h2 id="まとめ">まとめ</h2>
+
+<h3 id="LANケーブルは刺さってる？">LANケーブルは刺さってる？</h3>
+
+<p>意外と多いらしい。お客様には「ケーブル刺さってるか確認してください」と言うと「馬鹿にしてるのか！」とお叱りを受けるので
+「LANケーブルの抜き差しで直ることがありますので試してください」と言うと、双方ハッピー。</p>
+
+<h3 id="FireWallの設定とか大丈夫？">FireWallの設定とか大丈夫？</h3>
+
+<h3 id="IPv6つかってるのにICMPをフィルタしてない？">IPv6つかってるのにICMPをフィルタしてない？</h3>
+
+<h3 id="どこのキャプチャを撮ってる？">どこのキャプチャを撮ってる？</h3>
+
+<p>内部？外部？内部でもどこ？VMwareだとVirtual Switchの前？後？</p>
+
+<h1 id="とある環境(3G回線)であるアプリのパケットを見てみた(totoromasaki+さん)">とある環境(3G回線)であるアプリのパケットを見てみた(totoromasaki さん)</h1>
+
+<p>私は何も聞いてないです。。</p>
+
+<h1 id="リンク">リンク</h1>
+
+<ul>
+<li><a href="http://gvtkne.blogspot.jp/2013/04/14.html">ネットワークパケットを読む会(仮) 14回に参加してきた(otahi さん)</a></li>
+<li><a href="http://www.slideshare.net/tohakushi/tcpdumptcpreplay">tcpdumpとtcpreplayとtcprewriteと他。</a></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -2286,83 +2697,6 @@ n番目の発生を置換</li>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/04/10/git-command/">Git-command</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-04-10T20:13:00+09:00" pubdate data-updated="true">Apr 10<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2 id="git+init">git init</h2>
-
-<h1 id="リポジトリとのやりとり関連コマンド">リポジトリとのやりとり関連コマンド</h1>
-
-<h2 id="fetch,+marge,+push">fetch, marge, push</h2>
-
-<p><a href="http://dqn.sakusakutto.jp/2012/11/git_pull.html">Git pullを使うべきでない３つの理由</a>によると
-リモートリポジトリとやり取りするときは以下のコマンドを使えれば問題ないみたい。</p>
-
-<table>
-<thead>
-<tr>
-<th align="center">コマンド</th>
-<th align="center">意味</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">fetch</td>
-<td align="center">ダウンロード</td>
-</tr>
-<tr>
-<td align="center">marge</td>
-<td align="center">2つのブランチを統合</td>
-</tr>
-<tr>
-<td align="center">push</td>
-<td align="center">アップロード</td>
-</tr>
-</tbody>
-</table>
-
-
-<p>pullを使うのはfetchした後margeするのがめんどくさく感じるようになった時。</p>
-
-<h3 id="fetch,+marge">fetch, marge</h3>
-
-<p><a href="http://qiita.com/items/e082d64f3f8b424e9b7d">fetch と pullの違い</a></p>
-
-<h3 id="push">push</h3>
-
-<h1 id="戻し、削除関連">戻し、削除関連</h1>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/4/">&larr; Older</a>
@@ -2384,6 +2718,10 @@ n番目の発生を置換</li>
       </li>
     
       <li class="post">
+        <a href="/blog/2013/06/01/study-r/">第31回R勉強会＠東京</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/05/25/python-words/">Python単語帳</a>
       </li>
     
@@ -2395,15 +2733,11 @@ n番目の発生を置換</li>
         <a href="/blog/2013/05/18/python-mini-hack-a-thon/">(第31回)Python mini Hack-a-thon</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/05/15/iphone-app-study/">第4回 iphoneアプリ開発超初心者講習会</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/about/'>about (3)</a></li><li><a href='/blog/categories/aws/'>aws (3)</a></li><li><a href='/blog/categories/bash/'>bash (2)</a></li><li><a href='/blog/categories/book/'>book (2)</a></li><li><a href='/blog/categories/chef/'>chef (2)</a></li><li><a href='/blog/categories/command/'>command (5)</a></li><li><a href='/blog/categories/construct/'>construct (1)</a></li><li><a href='/blog/categories/diary/'>diary (3)</a></li><li><a href='/blog/categories/ec-cube/'>EC-CUBE (1)</a></li><li><a href='/blog/categories/ec2/'>ec2 (1)</a></li><li><a href='/blog/categories/eclipse/'>eclipse (1)</a></li><li><a href='/blog/categories/etc/'>etc (1)</a></li><li><a href='/blog/categories/fabric/'>fabric (4)</a></li><li><a href='/blog/categories/fluentd/'>fluentd (1)</a></li><li><a href='/blog/categories/git/'>git (3)</a></li><li><a href='/blog/categories/google/'>google (1)</a></li><li><a href='/blog/categories/heroku/'>heroku (1)</a></li><li><a href='/blog/categories/ios/'>iOS (2)</a></li><li><a href='/blog/categories/json/'>JSON (1)</a></li><li><a href='/blog/categories/monitor/'>monitor (5)</a></li><li><a href='/blog/categories/munin/'>munin (1)</a></li><li><a href='/blog/categories/network/'>network (2)</a></li><li><a href='/blog/categories/octopress/'>octopress (1)</a></li><li><a href='/blog/categories/os/'>OS (3)</a></li><li><a href='/blog/categories/php/'>PHP (1)</a></li><li><a href='/blog/categories/python/'>Python (7)</a></li><li><a href='/blog/categories/r/'>R (1)</a></li><li><a href='/blog/categories/raspberrypi/'>RaspberryPi (1)</a></li><li><a href='/blog/categories/redmine/'>Redmine (2)</a></li><li><a href='/blog/categories/seo/'>SEO (1)</a></li><li><a href='/blog/categories/splunk/'>splunk (1)</a></li><li><a href='/blog/categories/statistics/'>statistics (1)</a></li><li><a href='/blog/categories/vagrant/'>vagrant (1)</a></li><li><a href='/blog/categories/vim/'>vim (1)</a></li><li><a href='/blog/categories/xcode/'>Xcode (2)</a></li><li><a href='/blog/categories/zaim/'>zaim (1)</a></li><li><a href='/blog/categories/mian-qiang-hui/'>勉強会 (7)</a></li><li><a href='/blog/categories/dan-yu-zhang/'>単語帳 (1)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/about/'>about (3)</a></li><li><a href='/blog/categories/aws/'>aws (3)</a></li><li><a href='/blog/categories/bash/'>bash (2)</a></li><li><a href='/blog/categories/book/'>book (2)</a></li><li><a href='/blog/categories/chef/'>chef (2)</a></li><li><a href='/blog/categories/command/'>command (5)</a></li><li><a href='/blog/categories/construct/'>construct (1)</a></li><li><a href='/blog/categories/diary/'>diary (3)</a></li><li><a href='/blog/categories/ec-cube/'>EC-CUBE (1)</a></li><li><a href='/blog/categories/ec2/'>ec2 (1)</a></li><li><a href='/blog/categories/eclipse/'>eclipse (1)</a></li><li><a href='/blog/categories/etc/'>etc (1)</a></li><li><a href='/blog/categories/fabric/'>fabric (4)</a></li><li><a href='/blog/categories/fluentd/'>fluentd (1)</a></li><li><a href='/blog/categories/git/'>git (3)</a></li><li><a href='/blog/categories/google/'>google (1)</a></li><li><a href='/blog/categories/heroku/'>heroku (1)</a></li><li><a href='/blog/categories/ios/'>iOS (2)</a></li><li><a href='/blog/categories/json/'>JSON (1)</a></li><li><a href='/blog/categories/monitor/'>monitor (5)</a></li><li><a href='/blog/categories/munin/'>munin (1)</a></li><li><a href='/blog/categories/network/'>network (2)</a></li><li><a href='/blog/categories/octopress/'>octopress (1)</a></li><li><a href='/blog/categories/os/'>OS (3)</a></li><li><a href='/blog/categories/php/'>PHP (1)</a></li><li><a href='/blog/categories/python/'>Python (7)</a></li><li><a href='/blog/categories/r/'>R (2)</a></li><li><a href='/blog/categories/raspberrypi/'>RaspberryPi (1)</a></li><li><a href='/blog/categories/redmine/'>Redmine (2)</a></li><li><a href='/blog/categories/seo/'>SEO (1)</a></li><li><a href='/blog/categories/splunk/'>splunk (1)</a></li><li><a href='/blog/categories/statistics/'>statistics (1)</a></li><li><a href='/blog/categories/vagrant/'>vagrant (1)</a></li><li><a href='/blog/categories/vim/'>vim (1)</a></li><li><a href='/blog/categories/xcode/'>Xcode (2)</a></li><li><a href='/blog/categories/zaim/'>zaim (1)</a></li><li><a href='/blog/categories/mian-qiang-hui/'>勉強会 (8)</a></li><li><a href='/blog/categories/dan-yu-zhang/'>単語帳 (1)</a></li></ul>
 </section>
 <section>
 <script type="text/javascript"><!--
